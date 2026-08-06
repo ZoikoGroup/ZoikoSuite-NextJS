@@ -45,7 +45,7 @@ const navItems = [
 /* --- Platform Data --- */
 const discoverLinks = [
   { label: "Platform Overview", href: "/platform-overview" },
-  { label: "How ZoikoSuite Works", href: "/platform/how-it-works" },
+  { label: "How ZoikoSuite Works", href: "/how-it-works" },
   {
     label: "Governed Business Operations Intelligence",
     href: "/platform/governed-operations",
