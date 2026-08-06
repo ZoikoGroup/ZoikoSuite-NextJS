@@ -44,7 +44,7 @@ const navItems = [
 /* --- Platform Data --- */
 /* --- Platform Data --- */
 const discoverLinks = [
-  { label: "Platform Overview", href: "/platform/overview" },
+  { label: "Platform Overview", href: "/platform-overview" },
   { label: "How ZoikoSuite Works", href: "/platform/how-it-works" },
   {
     label: "Governed Business Operations Intelligence",
@@ -437,7 +437,7 @@ export default function Navbar() {
       <div className="w-full h-24 flex items-center justify-between px-[110px] relative z-20 bg-[#FFFFFF]">
         {/* Brand Logo Image */}
         <motion.a
-          href=""
+          href="/"
           className="flex items-center"
           variants={itemVariants}
         >
