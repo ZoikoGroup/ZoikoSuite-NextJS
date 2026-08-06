@@ -19,9 +19,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-screen flex flex-col font-sans">
         <Navbar />
-        {children}
+
+        <main className="flex-1">{children}</main>
+
         <Footer />
       </body>
     </html>
