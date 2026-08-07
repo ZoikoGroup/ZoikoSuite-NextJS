@@ -48,7 +48,7 @@ const discoverLinks = [
   { label: "How ZoikoSuite Works", href: "/how-it-works" },
   {
     label: "Governed Business Operations Intelligence",
-    href: "/platform/governed-operations",
+    href: "/governed-business-operations",
   },
   { label: "Why ZoikoSuite Is Not an ERP", href: "/platform/not-an-erp" },
   { label: "Platform Tour", href: "/platform/tour" },
