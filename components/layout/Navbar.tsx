@@ -51,9 +51,9 @@ const discoverLinks = [
     label: "Governed Business Operations Intelligence",
     href: "/governed-business-operations",
   },
-  { label: "Why ZoikoSuite Is Not an ERP", href: "/platform/not-an-erp" },
+  { label: "Why ZoikoSuite Is Not an ERP", href: "/not-an-erp" },
   { label: "Platform Tour", href: "/platform/tour" },
-  { label: "Product Roadmap", href: "/platform/roadmap" },
+  { label: "Product Roadmap", href: "/product-roadmap" },
   { label: "Deployment Options", href: "/platform/deployment" },
 ] as const;
 
