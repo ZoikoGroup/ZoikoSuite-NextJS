@@ -1,0 +1,16 @@
+export { default as PlatformFoundationHeroSection } from "./PlatformFoundationHeroSection";
+export { default as WhatIsPlatformFoundationSection } from "./WhatIsPlatformFoundationSection";
+export { default as OrganizedByQuestionCapabilitiesSection } from "./OrganizedByQuestionCapabilitiesSection";
+export { default as RelationshipRegisterSection } from "./RelationshipRegisterSection";
+export { default as ThreeHierarchiesSection } from "./ThreeHierarchiesSection";
+export { default as SourceFirstCoverageStatesSection } from "./SourceFirstCoverageStatesSection";
+export { default as DataLocationLifecycleSection } from "./DataLocationLifecycleSection";
+export { default as ApiPlatformPublicationStateSection } from "./ApiPlatformPublicationStateSection";
+export { default as SystemClassesNotLogoWallSection } from "./SystemClassesNotLogoWallSection";
+export { default as DataAndEventArchitectureSection } from "./DataAndEventArchitectureSection";
+export { default as EvidenceArchitectureSection } from "./EvidenceArchitectureSection";
+export { default as ScopeFirstFiveStepsSection } from "./ScopeFirstFiveStepsSection";
+export { default as ReliabilityQuarantineAdoptionSection } from "./ReliabilityQuarantineAdoptionSection";
+export { default as BringYourArchitectureSection } from "./BringYourArchitectureSection";
+export { default as PlatformFoundationFaqSection } from "./PlatformFoundationFaqSection";
+export { default as PlatformFoundationGovernOperationsSection } from "./PlatformFoundationGovernOperationsSection";

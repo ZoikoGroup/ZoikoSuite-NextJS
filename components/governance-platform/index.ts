@@ -1,0 +1,17 @@
+export { default as GovernancePlatformHeroSection } from "./GovernancePlatformHeroSection";
+export { default as WhatIsGovernancePlatformSection } from "./WhatIsGovernancePlatformSection";
+export { default as WhyGovernanceMustBeOperationalSection } from "./WhyGovernanceMustBeOperationalSection";
+export { default as TenCapabilitiesSection } from "./TenCapabilitiesSection";
+export { default as NineRegionsInFixedOrderSection } from "./NineRegionsInFixedOrderSection";
+export { default as GovernanceControlPlaneOrchestratorSection } from "./GovernanceControlPlaneOrchestratorSection";
+export { default as ApplicabilityAndEffectiveStateSection } from "./ApplicabilityAndEffectiveStateSection";
+export { default as CoverageStateSourceDateSection } from "./CoverageStateSourceDateSection";
+export { default as FourDutiesFourPermissionsSection } from "./FourDutiesFourPermissionsSection";
+export { default as SevenEvidenceStatesSection } from "./SevenEvidenceStatesSection";
+export { default as SourcesFirstGovernedAISection } from "./SourcesFirstGovernedAISection";
+export { default as GovernanceAnalyticsDefinitionLedSection } from "./GovernanceAnalyticsDefinitionLedSection";
+export { default as CrossModuleHandoffsSection } from "./CrossModuleHandoffsSection";
+export { default as WhereClaimsVerifiedSection } from "./WhereClaimsVerifiedSection";
+export { default as BringTheControlThatKeepsFailingSection } from "./BringTheControlThatKeepsFailingSection";
+export { default as GovernancePlatformFaqSection } from "./GovernancePlatformFaqSection";
+export { default as GovernancePlatformGovernOperationsSection } from "./GovernancePlatformGovernOperationsSection";
