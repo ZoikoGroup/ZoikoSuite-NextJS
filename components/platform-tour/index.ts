@@ -1,0 +1,12 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as WhatIsPlatformTourSection } from "./WhatIsPlatformTourSection";
+export { default as SixPathsSection } from "./SixPathsSection";
+export { default as OneFictitiousActionSection } from "./OneFictitiousActionSection";
+export { default as TwelveStopsSection } from "./TwelveStopsSection";
+export { default as WhatHappenedSection } from "./WhatHappenedSection";
+export { default as SwitchPathSection } from "./SwitchPathSection";
+export { default as NeutralArtifactSection } from "./NeutralArtifactSection";
+export { default as DiligenceRoutesSection } from "./DiligenceRoutesSection";
+export { default as ThreeRoutesSection } from "./ThreeRoutesSection";
+export { default as FAQSection } from "./FAQSection";
+export { default as MobileNextStepSection } from "./MobileNextStepSection";
