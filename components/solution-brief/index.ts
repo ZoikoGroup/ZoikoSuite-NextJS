@@ -1,0 +1,9 @@
+export { default as SolutionBriefHeroSection } from "./SolutionBriefHeroSection";
+export { default as WhatIsZoikoSuiteSection } from "./WhatIsZoikoSuiteSection";
+export { default as OperatingModelSection } from "./OperatingModelSection";
+export { default as ArchitectureLayersSection } from "./ArchitectureLayersSection";
+export { default as WhereItFitsSection } from "./WhereItFitsSection";
+export { default as GovernanceClaimsSection } from "./GovernanceClaimsSection";
+export { default as AdoptionAndProofSection } from "./AdoptionAndProofSection";
+export { default as BookDemoSection } from "./BookDemoSection";
+export { default as FaqSection } from "./FaqSection";

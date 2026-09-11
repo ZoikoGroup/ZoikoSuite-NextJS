@@ -53,7 +53,7 @@ const NAV_COLUMNS: FooterColumn[] = [
     "Platform Foundation",
     "Migration & Shadow Mode",
   ]),
-  col("Solutions", "/solutions", [
+  col("Solutions", "", [
     "Leadership Teams",
     "CFOs",
     "General Counsel",
