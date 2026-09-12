@@ -422,41 +422,19 @@ const mobileMenuConfig: Record<(typeof navItems)[number], MobileGroup[]> = {
   ],
 };
 
-const containerVariants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-      staggerChildren: 0.05,
-    },
-  },
-} as const;
-
-const itemVariants = {
-  hidden: { opacity: 0, y: -5 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.3 },
-  },
-} as const;
-
 const megaMenuVariants = {
-  hidden: { opacity: 0, y: 10, display: "none" },
+  hidden: { opacity: 0, y: 6, display: "none" },
   visible: {
     opacity: 1,
     y: 0,
     display: "block",
-    transition: { duration: 0.25, ease: "easeOut" },
+    transition: { duration: 0.14, ease: [0.16, 1, 0.3, 1] },
   },
   exit: {
     opacity: 0,
-    y: 10,
+    y: 6,
     transitionEnd: { display: "none" },
-    transition: { duration: 0.2, ease: "easeIn" },
+    transition: { duration: 0.1, ease: "easeIn" },
   },
 } as const;
 
@@ -494,6 +472,29 @@ export default function Navbar() {
   const [openMobileGroups, setOpenMobileGroups] = useState<Set<string>>(
     new Set()
   );
+
+  // Hover-intent timers so opening feels instant and closing doesn't flicker
+  // when the pointer briefly crosses the small gap between the trigger and menu.
+  const closeTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const openMenu = (item: (typeof navItems)[number]) => {
+    clearCloseTimeout();
+    setActiveMenu(item);
+  };
+
+  const scheduleClose = () => {
+    clearCloseTimeout();
+    closeTimeoutRef.current = setTimeout(() => setActiveMenu(null), 80);
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 8);
@@ -537,23 +538,16 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
+      <nav
         className={`fixed top-0 left-0 z-50 w-full bg-[#FFFFFF] transition-shadow duration-300 ${
           isScrolled ? "shadow-md" : "shadow-none"
         }`}
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
       >
         <div className="w-full max-w-[1440px] mx-auto relative overflow-visible flex flex-col items-center">
           {/* ============ DESKTOP TOP ROW (lg and up) — unchanged ============ */}
           <div className="hidden lg:flex w-full h-24 items-center justify-between px-[110px] relative z-20 bg-[#FFFFFF]">
             {/* Brand Logo Image */}
-            <motion.a
-              href="/"
-              className="flex items-center"
-              variants={itemVariants}
-            >
+            <a href="/" className="flex items-center">
               <div className="w-[160px] h-[64px] relative overflow-hidden">
                 <Image
                   src="/logo.png"
@@ -563,76 +557,61 @@ export default function Navbar() {
                   priority
                 />
               </div>
-            </motion.a>
+            </a>
 
             {/* Navigation Links */}
             <div className="flex items-center gap-4">
               {navItems.map((item) => (
-                <motion.div
+                <div
                   key={item}
                   className="flex flex-col justify-start items-start relative"
-                  variants={itemVariants}
-                  onMouseEnter={() => {
-                    if (
-                      item === "Platform" ||
-                      item === "Solutions" ||
-                      item === "Industries" ||
-                      item === "Trust" ||
-                      item === "Resources" ||
-                      item === "Company"
-                    ) {
-                      setActiveMenu(item);
-                    } else {
-                      setActiveMenu(null);
-                    }
-                  }}
-                  onMouseLeave={() => setActiveMenu(null)}
+                  onMouseEnter={() => openMenu(item)}
+                  onMouseLeave={scheduleClose}
                 >
                   <a
                     href=""
-                    className="min-h-11 px-2 py-3.5 rounded-lg inline-flex justify-start items-center gap-1.5 hover:bg-[#EAEEF4]/50 transition-colors"
+                    className="min-h-11 px-2 py-3.5 rounded-lg inline-flex justify-start items-center gap-1.5 hover:bg-[#EAEEF4]/50 transition-colors duration-150"
                   >
                     <span className="text-center justify-center text-[#12365E] text-sm font-medium font-['Inter']">
                       {item}
                     </span>
                     <div className="pb-px inline-flex flex-col justify-start items-center">
-                      <LuChevronDown className="w-[9px] h-[9px] text-[#9AA6B5]" />
+                      <LuChevronDown
+                        className={`w-[9px] h-[9px] text-[#9AA6B5] transition-transform duration-150 ${
+                          activeMenu === item ? "rotate-180" : ""
+                        }`}
+                      />
                     </div>
                   </a>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Right Side Controls */}
             <div className="pl-4 flex items-center gap-2">
               {/* Search Icon Button */}
-              <motion.button
-                className="w-11 h-11 px-1.5 py-px rounded-[10px] flex justify-center items-center hover:bg-[#EAEEF4]/50 transition-colors"
-                variants={itemVariants}
-              >
+              <button className="w-11 h-11 px-1.5 py-px rounded-[10px] flex justify-center items-center hover:bg-[#EAEEF4]/50 transition-colors">
                 <LuSearch className="w-5 h-5 text-[#12365E]" />
-              </motion.button>
+              </button>
 
               {/* Sign in Link */}
-              <motion.a
+              <a
                 href=""
                 className="min-h-11 px-3 py-2.5 flex justify-start items-center text-[#9AA6B5] text-sm font-medium font-['Inter'] leading-6 hover:text-[#12365E] transition-colors"
-                variants={itemVariants}
               >
                 Sign in
-              </motion.a>
+              </a>
 
               {/* Book Demo CTA Button */}
-              <motion.a
+              <a
                 href=""
                 className="min-h-12 px-3.5 py-3 bg-[#C0872B] rounded-[999px] border border-[#C0872B] flex justify-center items-center gap-2.5 hover:bg-[#A9761F] hover:border-[#A9761F] transition-colors"
-                variants={itemVariants}
               >
                 <span className="justify-center text-[#FFFFFF] text-sm font-semibold font-['Inter'] leading-5">
                   Book demo
                 </span>
                 <LuArrowRight className="w-3.5 h-3.5 text-[#FFFFFF] stroke-[2.5]" />
-              </motion.a>
+              </a>
             </div>
           </div>
 
@@ -684,8 +663,8 @@ export default function Navbar() {
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => setActiveMenu("Platform")}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => openMenu("Platform")}
+                onMouseLeave={scheduleClose}
               >
                 <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
                   {/* Top Announcement Banner */}
@@ -873,8 +852,8 @@ export default function Navbar() {
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => setActiveMenu("Solutions")}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => openMenu("Solutions")}
+                onMouseLeave={scheduleClose}
               >
                 <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
                   {/* Header Section */}
@@ -1014,7 +993,7 @@ export default function Navbar() {
                       </div>
                     </div>
                     <a
-                      href=""
+                      href="/executive-resources"
                       className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-5 py-3 rounded-lg text-base font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       Explore Executive Resources
@@ -1034,8 +1013,8 @@ export default function Navbar() {
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => setActiveMenu("Industries")}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => openMenu("Industries")}
+                onMouseLeave={scheduleClose}
               >
                 <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
                   {/* Header Section */}
@@ -1170,8 +1149,8 @@ export default function Navbar() {
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => setActiveMenu("Trust")}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => openMenu("Trust")}
+                onMouseLeave={scheduleClose}
               >
                 <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
                   {/* Header Section */}
@@ -1321,8 +1300,8 @@ export default function Navbar() {
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => setActiveMenu("Resources")}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => openMenu("Resources")}
+                onMouseLeave={scheduleClose}
               >
                 <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
                   {/* Header Section */}
@@ -1493,8 +1472,8 @@ export default function Navbar() {
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => setActiveMenu("Company")}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseEnter={() => openMenu("Company")}
+                onMouseLeave={scheduleClose}
               >
                 <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
                   {/* Header Section */}
@@ -1616,7 +1595,7 @@ export default function Navbar() {
             )}
           </AnimatePresence>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Spacer so fixed nav never overlaps page content. Matches mobile (h-16/h-20) and desktop (h-24) nav heights. */}
       <div className="h-16 sm:h-20 lg:h-24" aria-hidden="true" />
