@@ -1,0 +1,16 @@
+export { default as MigrationShadowModeHeroSection } from "./MigrationShadowModeHeroSection";
+export { default as WhatIsMigrationShadowModeSection } from "./WhatIsMigrationShadowModeSection";
+export { default as SevenPhasesNoPromisedDurationSection } from "./SevenPhasesNoPromisedDurationSection";
+export { default as CurrentTruthFirstTargetSecondSection } from "./CurrentTruthFirstTargetSecondSection";
+export { default as FiveOutcomesRecordedPerScopeSection } from "./FiveOutcomesRecordedPerScopeSection";
+export { default as CorrectingDataSeparateAuthoritySection } from "./CorrectingDataSeparateAuthoritySection";
+export { default as StateBoundaryBeforeShowingComparisonSection } from "./StateBoundaryBeforeShowingComparisonSection";
+export { default as CurrentVersusProposedCauseNamedSection } from "./CurrentVersusProposedCauseNamedSection";
+export { default as WhatWasActuallyTestedSection } from "./WhatWasActuallyTestedSection";
+export { default as EightDispositionsSection } from "./EightDispositionsSection";
+export { default as FifteenGatesSection } from "./FifteenGatesSection";
+export { default as ReversibilityStatedTruthfullySection } from "./ReversibilityStatedTruthfullySection";
+export { default as MigrationShadowModeFaqSection } from "./MigrationShadowModeFaqSection";
+export { default as WhereMigrationClaimsGetVerifiedSection } from "./WhereMigrationClaimsGetVerifiedSection";
+export { default as StartFromProcessYouWouldNotRiskBreakingSection } from "./StartFromProcessYouWouldNotRiskBreakingSection";
+export { default as MigrationGovernGlobalOperationsSection } from "./MigrationGovernGlobalOperationsSection";
