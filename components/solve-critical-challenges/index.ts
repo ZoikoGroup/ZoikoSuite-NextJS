@@ -1,0 +1,12 @@
+export { default as SolveCriticalChallengesHeroSection } from "./SolveCriticalChallengesHeroSection";
+export { default as WhatDoesSolveMeanSection } from "./WhatDoesSolveMeanSection";
+export { default as SystemsOfRecordStaySection } from "./SystemsOfRecordStaySection";
+export { default as TheTenChallengesSection } from "./TheTenChallengesSection";
+export { default as OneNewEntitySixChallengesSection } from "./OneNewEntitySixChallengesSection";
+export { default as WhatEachChallengeDoesNotEstablishSection } from "./WhatEachChallengeDoesNotEstablishSection";
+export { default as TheSamePatternInEveryChallengeSection } from "./TheSamePatternInEveryChallengeSection";
+export { default as WhyNoChallengeLinksToChildPageSection } from "./WhyNoChallengeLinksToChildPageSection";
+export { default as WhereChallengeClaimsGetVerifiedSection } from "./WhereChallengeClaimsGetVerifiedSection";
+export { default as BringTheChallengeThatKeepsRecurringSection } from "./BringTheChallengeThatKeepsRecurringSection";
+export { default as ScopeBoundariesRoutesFAQSection } from "./ScopeBoundariesRoutesFAQSection";
+export { default as GovernGlobalOperationsSolveCTA } from "./GovernGlobalOperationsSolveCTA";
