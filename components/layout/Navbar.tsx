@@ -394,26 +394,66 @@ const mobileMenuConfig: Record<(typeof navItems)[number], MobileGroup[]> = {
   ],
   Solutions: [
     { title: "For Leadership Teams", icon: LuUser, links: leadershipLinks },
-    { title: "Solve Critical Challenges", icon: LuTarget, links: challengesLinks },
-    { title: "Modernize Operations", icon: LuTrendingUp, links: modernizeLinks },
-    { title: "Organization Types", icon: LuBuilding2, links: organizationLinks },
+    {
+      title: "Solve Critical Challenges",
+      icon: LuTarget,
+      links: challengesLinks,
+    },
+    {
+      title: "Modernize Operations",
+      icon: LuTrendingUp,
+      links: modernizeLinks,
+    },
+    {
+      title: "Organization Types",
+      icon: LuBuilding2,
+      links: organizationLinks,
+    },
   ],
   Industries: [
-    { title: "Regulated Industries", icon: LuShieldCheck, links: regulatedIndustriesLinks },
-    { title: "Complex Operations", icon: LuRefreshCw, links: complexOperationsLinks },
-    { title: "Knowledge and Growth Sectors", icon: LuGraduationCap, links: knowledgeGrowthLinks },
+    {
+      title: "Regulated Industries",
+      icon: LuShieldCheck,
+      links: regulatedIndustriesLinks,
+    },
+    {
+      title: "Complex Operations",
+      icon: LuRefreshCw,
+      links: complexOperationsLinks,
+    },
+    {
+      title: "Knowledge and Growth Sectors",
+      icon: LuGraduationCap,
+      links: knowledgeGrowthLinks,
+    },
   ],
   Trust: [
-    { title: "Security Architecture", icon: LuShieldCheck, links: securityArchitectureLinks },
-    { title: "Compliance Framework", icon: LuClipboardCheck, links: complianceFrameworkLinks },
+    {
+      title: "Security Architecture",
+      icon: LuShieldCheck,
+      links: securityArchitectureLinks,
+    },
+    {
+      title: "Compliance Framework",
+      icon: LuClipboardCheck,
+      links: complianceFrameworkLinks,
+    },
     { title: "Audit and Assurance", icon: LuScale, links: auditAssuranceLinks },
     { title: "Data Sovereignty", icon: LuGlobe, links: dataSovereigntyLinks },
   ],
   Resources: [
     { title: "Learn", icon: LuGraduationCap, links: learnLinks },
     { title: "Executive Resources", icon: LuUser, links: execResourcesLinks },
-    { title: "Architecture & Technical", icon: LuCpu, links: techArchitectureLinks },
-    { title: "Customer Resources", icon: LuUserCheck, links: customerResourcesLinks },
+    {
+      title: "Architecture & Technical",
+      icon: LuCpu,
+      links: techArchitectureLinks,
+    },
+    {
+      title: "Customer Resources",
+      icon: LuUserCheck,
+      links: customerResourcesLinks,
+    },
   ],
   Company: [
     { title: "About", icon: LuUsers, links: aboutLinks },
@@ -470,13 +510,13 @@ export default function Navbar() {
     (typeof navItems)[number] | null
   >(null);
   const [openMobileGroups, setOpenMobileGroups] = useState<Set<string>>(
-    new Set()
+    new Set(),
   );
 
   // Hover-intent timers so opening feels instant and closing doesn't flicker
   // when the pointer briefly crosses the small gap between the trigger and menu.
   const closeTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(
-    null
+    null,
   );
 
   const clearCloseTimeout = () => {
@@ -548,11 +588,12 @@ export default function Navbar() {
           <div className="hidden lg:flex w-full h-24 items-center justify-between px-[110px] relative z-20 bg-[#FFFFFF]">
             {/* Brand Logo Image */}
             <a href="/" className="flex items-center">
-              <div className="w-[160px] h-[64px] relative overflow-hidden">
+              <div className="relative">
                 <Image
                   src="/logo.png"
                   alt="Zoiko Suite Logo"
-                  fill
+                  width={150}
+                  height={40}
                   className="object-contain object-left"
                   priority
                 />
@@ -670,10 +711,11 @@ export default function Navbar() {
                   {/* Top Announcement Banner */}
                   <div className="flex flex-col items-center justify-center text-center gap-4">
                     <p className="text-[#12365E] text-base font-bold font-['Inter'] max-w-[1100px] leading-relaxed">
-                      ZoikoSuite is a governed business operations platform. Built
-                      on a unified data and controls foundation, <br /> it connects
-                      core business modules with a governance control plane so every
-                      operation is policy-aligned, auditable, and AI-ready.
+                      ZoikoSuite is a governed business operations platform.
+                      Built on a unified data and controls foundation, <br /> it
+                      connects core business modules with a governance control
+                      plane so every operation is policy-aligned, auditable, and
+                      AI-ready.
                     </p>
 
                     {/* Yellow Feature Box */}
@@ -687,7 +729,8 @@ export default function Navbar() {
                           />
                         </div>
                         <span className="text-[#12365E] text-2xl font-bold font-['Inter'] text-left">
-                          Business operations must execute <br /> inside governance.
+                          Business operations must execute <br /> inside
+                          governance.
                         </span>
                       </div>
                       <a
@@ -811,7 +854,8 @@ export default function Navbar() {
                           Governance by design. Built for enterprise scale.
                         </h4>
                         <p className="text-[#5A6675] text-xs font-normal font-['Inter']">
-                          Unify operations, enforce policy, and drive confidence.
+                          Unify operations, enforce policy, and drive
+                          confidence.
                         </p>
                       </div>
                     </div>
@@ -827,7 +871,8 @@ export default function Navbar() {
                             Explore how ZoikoSuite works for you.
                           </h4>
                           <p className="text-[#5A6675] text-xs font-normal font-['Inter']">
-                            See tailored outcomes across your business functions.
+                            See tailored outcomes across your business
+                            functions.
                           </p>
                         </div>
                       </div>
@@ -987,8 +1032,9 @@ export default function Navbar() {
                           Build the enterprise case for ZoikoSuite
                         </span>
                         <span className="text-[#5A6675] text-base font-normal font-['Inter'] text-left">
-                          Access tailored business cases, ROI models, and executive
-                          briefs to drive alignment and accelerate decisions.
+                          Access tailored business cases, ROI models, and
+                          executive briefs to drive alignment and accelerate
+                          decisions.
                         </span>
                       </div>
                     </div>
@@ -1164,7 +1210,8 @@ export default function Navbar() {
                       </h2>
                       <p className="text-[#5A6675] text-base font-normal font-['Inter']">
                         Give procurement, security, legal, compliance, and
-                        regulatory stakeholders direct access to trust architecture.
+                        regulatory stakeholders direct access to trust
+                        architecture.
                       </p>
                     </div>
                   </div>
@@ -1276,7 +1323,8 @@ export default function Navbar() {
                         <LuShieldCheck className="w-8 h-8 text-[#C0872B]" />
                       </div>
                       <span className="text-[#FFFFFF] text-2xl font-bold font-['Inter'] text-left">
-                        Trust status must use verified, status-qualified language.
+                        Trust status must use verified, status-qualified
+                        language.
                       </span>
                     </div>
                     <a
@@ -1314,8 +1362,8 @@ export default function Navbar() {
                         Resources
                       </h2>
                       <p className="text-[#5A6675] text-base font-normal font-['Inter']">
-                        Support discovery, education, evaluation, implementation,
-                        and customer success.
+                        Support discovery, education, evaluation,
+                        implementation, and customer success.
                       </p>
                     </div>
                   </div>
@@ -1486,8 +1534,9 @@ export default function Navbar() {
                         Company
                       </h2>
                       <p className="text-[#5A6675] text-base font-normal font-['Inter']">
-                        Establish corporate credibility, leadership, partnerships,
-                        careers, communications, and institutional identity.
+                        Establish corporate credibility, leadership,
+                        partnerships, careers, communications, and institutional
+                        identity.
                       </p>
                     </div>
                   </div>
@@ -1686,7 +1735,9 @@ export default function Navbar() {
                                   <div key={groupKey} className="flex flex-col">
                                     <button
                                       className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#EAEEF4]/50 transition-colors text-left"
-                                      onClick={() => toggleMobileGroup(groupKey)}
+                                      onClick={() =>
+                                        toggleMobileGroup(groupKey)
+                                      }
                                       aria-expanded={isGroupOpen}
                                     >
                                       <span className="flex items-center gap-2.5">
@@ -1706,7 +1757,10 @@ export default function Navbar() {
                                       {isGroupOpen && (
                                         <motion.div
                                           initial={{ height: 0, opacity: 0 }}
-                                          animate={{ height: "auto", opacity: 1 }}
+                                          animate={{
+                                            height: "auto",
+                                            opacity: 1,
+                                          }}
                                           exit={{ height: 0, opacity: 0 }}
                                           transition={{
                                             duration: 0.18,
