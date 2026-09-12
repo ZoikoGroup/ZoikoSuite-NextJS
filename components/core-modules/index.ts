@@ -1,0 +1,14 @@
+export { default as CoreModulesHeroSection } from "./CoreModulesHeroSection";
+export { default as WhatAreCoreModulesSection } from "./WhatAreCoreModulesSection";
+export { default as AuthoritativeSystemDecisionSection } from "./AuthoritativeSystemDecisionSection";
+export { default as ChooseEvaluationViewSection } from "./ChooseEvaluationViewSection";
+export { default as AllTenModulesWorkSameWaySection } from "./AllTenModulesWorkSameWaySection";
+export { default as ModuleCommandCenterSection } from "./ModuleCommandCenterSection";
+export { default as EachModuleControlsSection } from "./EachModuleControlsSection";
+export { default as OneSupplierChangeSixModulesSection } from "./OneSupplierChangeSixModulesSection";
+export { default as WhatModuleArchitectureDoesNotClaimSection } from "./WhatModuleArchitectureDoesNotClaimSection";
+export { default as WhereToStartByWhatYouOwnSection } from "./WhereToStartByWhatYouOwnSection";
+export { default as WhereModuleClaimsVerifiedSection } from "./WhereModuleClaimsVerifiedSection";
+export { default as BringTheModulesYouNeedSection } from "./BringTheModulesYouNeedSection";
+export { default as CoreModulesFAQSection } from "./CoreModulesFAQSection";
+export { default as CoreModulesGovernOperationsSection } from "./CoreModulesGovernOperationsSection";
