@@ -77,8 +77,8 @@ const NAV_COLUMNS: FooterColumn[] = [
   {
     title: "Industries",
     links: [
-      { label: "Financial Service", href: "/industries/financial-service" },
-      { label: "Banking", href: "/industries/banking" },
+      { label: "Financial Service", href: "/financial-service" },
+      { label: "Banking", href: "/banking" },
       { label: "Insurance", href: "/industries/insurance" },
       { label: "Healthcare", href: "/industries/healthcare" },
       { label: "Telecommunication & MVNOs", href: "/industries/telecom-mvnos" },

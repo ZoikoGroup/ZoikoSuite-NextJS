@@ -9,7 +9,9 @@ export default function BookEnterpriseDemoSection() {
   const [organization, setOrganization] = useState("");
   const [role, setRole] = useState("CFO / finance");
   const [entitiesScope, setEntitiesScope] = useState("");
-  const [patternsApply, setPatternsApply] = useState("Growing Companies");
+  const [primaryQuestion, setPrimaryQuestion] = useState(
+    "Governed approvals and authority",
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,15 +36,15 @@ export default function BookEnterpriseDemoSection() {
 
           {/* Main Heading */}
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] mb-6">
-            Bring your actual structure, not the closest label
+            Bring the control you cannot currently evidence
           </h2>
 
           {/* Description */}
           <p className="text-gray-300 text-sm lg:text-base leading-relaxed mb-8 max-w-xl">
-            Most organizations match two or three patterns at once, and the
-            interesting part is where they conflict &mdash; a partnership that
-            has become multi-entity, or a nonprofit entering a regulated market.
-            That tension is what an architecture conversation should start from.
+            A payment approval nobody can reconstruct. A close dependency that
+            blocks every month for the same reason. A jurisdiction rule whose
+            source nobody owns. We will trace one through the policy, authority
+            and evidence model against your own entity and jurisdiction scope.
           </p>
 
           {/* Bottom Note Box with Left Border */}
@@ -53,9 +55,9 @@ export default function BookEnterpriseDemoSection() {
             }}
           >
             <p className="text-xs text-gray-300 leading-relaxed">
-              No classification, eligibility, entitlement, pricing, plan
-              assignment or capability commitment follows from any pattern
-              selection on this page.
+              No capability availability, jurisdiction coverage, residency
+              option, certification or regulated outcome is committed outside an
+              approved commercial document.
             </p>
           </div>
         </div>
@@ -66,7 +68,7 @@ export default function BookEnterpriseDemoSection() {
             Book enterprise demo
           </h3>
           <p className="text-xs text-[#64748B] mb-6">
-            Every pattern was readable without this form.
+            Every section of this page was readable without it.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -124,7 +126,7 @@ export default function BookEnterpriseDemoSection() {
               </div>
             </div>
 
-            {/* Row 3: Entities and jurisdictions in scope & Which patterns apply? */}
+            {/* Row 3: Entities and jurisdictions in scope & Primary question */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-medium text-[#0F172A]">
@@ -141,12 +143,12 @@ export default function BookEnterpriseDemoSection() {
 
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-medium text-[#0F172A]">
-                  Which patterns apply?
+                  Primary question
                 </label>
                 <input
                   type="text"
-                  value={patternsApply}
-                  onChange={(e) => setPatternsApply(e.target.value)}
+                  value={primaryQuestion}
+                  onChange={(e) => setPrimaryQuestion(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-lg border border-[#CBD5E1] text-sm text-[#0F172A] focus:outline-none focus:border-[#0F476A] transition-all bg-white"
                 />
               </div>
@@ -155,7 +157,7 @@ export default function BookEnterpriseDemoSection() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="mt-2 w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-sm font-medium text-gray-950 transition-all hover:opacity-90 shadow-md"
+              className="mt-2 w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-semibold text-gray-950 transition-all hover:opacity-90 shadow-md"
               style={{
                 backgroundColor: "#D0AA55",
                 border: "1px solid #D0AA55",
