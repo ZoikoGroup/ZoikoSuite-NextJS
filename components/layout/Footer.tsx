@@ -79,11 +79,11 @@ const NAV_COLUMNS: FooterColumn[] = [
     links: [
       { label: "Financial Service", href: "/financial-service" },
       { label: "Banking", href: "/banking" },
-      { label: "Insurance", href: "/industries/insurance" },
+      { label: "Insurance", href: "/insurance" },
       { label: "Healthcare", href: "/industries/healthcare" },
       { label: "Telecommunication & MVNOs", href: "/industries/telecom-mvnos" },
-      { label: "Manufacturing", href: "/industries/manufacturing" },
-      { label: "Energy & Utilities", href: "/industries/energy-utilities" },
+      { label: "Manufacturing", href: "/manufacturing" },
+      { label: "Energy & Utilities", href: "/energy-utilities" },
       { label: "Retail & Commerce", href: "/industries/retail-commerce" },
       {
         label: "Government & Public Sector",
