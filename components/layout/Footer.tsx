@@ -7,13 +7,13 @@ import { LuGlobe, LuRss } from "react-icons/lu";
  * ZoikoSuite site footer.
  *
  * Palette (from design spec):
- *  --azure-ink      #08222F  background
+ *  --azure-ink     #08222F  background
  *  --azure-accent   #1A4670  borders / hover accents
  *  --azure-neutral  #3D3D3D  neutral fallback
  *  --azure-white    #FFFFFF  base for all "color-azure-NN" text/border
- *                            tokens below, which are just white at
- *                            different opacities (e.g. azure-63-2 =
- *                            white/63.2%).
+ *                           tokens below, which are just white at
+ *                           different opacities (e.g. azure-63-2 =
+ *                           white/63.2%).
  *
  * Layout is rebuilt as responsive flex/grid; the original was
  * absolutely-positioned Figma output.
@@ -26,95 +26,119 @@ import { LuGlobe, LuRss } from "react-icons/lu";
 type FooterLink = { label: string; href: string };
 type FooterColumn = { title: string; links: FooterLink[] };
 
-const slugify = (label: string) =>
-  label
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-
-const col = (title: string, base: string, labels: string[]): FooterColumn => ({
-  title,
-  links: labels.map((label) => ({ label, href: `${base}/${slugify(label)}` })),
-});
-
 const NAV_COLUMNS: FooterColumn[] = [
-  col("Platform", "/platform", [
-    "Platform overview",
-    "How ZoikoSuite works",
-    "Governed Business",
-    "Operating Intelligence",
-    "Why ZoikoSuite Is Not an ERP",
-    "Platform Tour",
-    "Product Roadmap",
-    "Deployment Options",
-    "Core Modules",
-    "Governance Platform",
-    "Platform Foundation",
-    "Migration & Shadow Mode",
-  ]),
-  col("Solutions", "", [
-    "Leadership Teams",
-    "CFOs",
-    "General Counsel",
-    "Solve Critical Challenges",
-    "Modernize Operations",
-    "Organization Type",
-    "Expansion",
-    "Executive Resources",
-    "Customer Stories",
-    "Solution Brief",
-  ]),
-  col("Industries", "/industries", [
-    "Financial Service",
-    "Banking",
-    "Insurance",
-    "Healthcare",
-    "Telecommunication & MVNOs",
-    "Manufacturing",
-    "Energy & Utilities",
-    "Retail & Commerce",
-    "Government & Public Sector",
-    "All Industries",
-    "Industry Solutions",
-  ]),
-  col("Trust", "/trust", [
-    "Trust Center",
-    "Security Overview",
-    "Compliance Overview",
-    "Data Residency",
-    "Privacy Architecture",
-    "Evidence Architecture",
-    "Responsible AI",
-    "Accessibility",
-    "Certifications",
-    "Policies",
-    "System Status",
-  ]),
-  col("Resources", "/resources", [
-    "Resource Center",
-    "Executive Briefs",
-    "Documentation",
-    "Knowledge Base",
-    "Training Academy",
-    "Webinars & Events",
-    "Case Studies",
-    "Blog & Insights",
-    "Templates & Tools",
-    "Support Center",
-  ]),
-  col("Company", "/company", [
-    "About ZoikoSuite",
-    "Founder's Vision",
-    "Leadership",
-    "Partners",
-    "Careers",
-    "Newsroom",
-    "Zoiko Tech",
-    "Zoiko Group",
-    "Investor Relations",
-    "Sustainability",
-  ]),
+  {
+    title: "Platform",
+    links: [
+      { label: "Platform overview", href: "/platform-overview" },
+      { label: "How ZoikoSuite works", href: "/how-it-works" },
+      { label: "Governed Business", href: "/governed-business-operations" },
+      {
+        label: "Operating Intelligence",
+        href: "/operating-intelligence",
+      },
+      {
+        label: "Why ZoikoSuite Is Not an ERP",
+        href: "/not-an-erp",
+      },
+      { label: "Platform Tour", href: "/platform-tour" },
+      { label: "Product Roadmap", href: "/product-roadmap" },
+      { label: "Deployment Options", href: "/deployment-options" },
+      { label: "Core Modules", href: "/core-modules" },
+      { label: "Governance Platform", href: "/governance-platform" },
+      { label: "Platform Foundation", href: "/platform-foundation" },
+      {
+        label: "Migration & Shadow Mode",
+        href: "/migration-shadow-mode",
+      },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { label: "Leadership Teams", href: "/leadership-teams" },
+      { label: "CFOs", href: "/cfos" },
+      { label: "General Counsel", href: "/general-counsel" },
+      {
+        label: "Solve Critical Challenges",
+        href: "/solve-critical-challenges",
+      },
+      {
+        label: "Modernize Operations",
+        href: "/modernize-operations",
+      },
+      { label: "Organization Type", href: "/organization-type" },
+      { label: "Expansion", href: "/expansion" },
+      { label: "Executive Resources", href: "/executive-resources" },
+      { label: "Customer Stories", href: "/customer-stories" },
+      { label: "Solution Brief", href: "/solution-brief" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { label: "Financial Service", href: "/financial-service" },
+      { label: "Banking", href: "/banking" },
+      { label: "Insurance", href: "/industries/insurance" },
+      { label: "Healthcare", href: "/industries/healthcare" },
+      { label: "Telecommunication & MVNOs", href: "/industries/telecom-mvnos" },
+      { label: "Manufacturing", href: "/industries/manufacturing" },
+      { label: "Energy & Utilities", href: "/industries/energy-utilities" },
+      { label: "Retail & Commerce", href: "/industries/retail-commerce" },
+      {
+        label: "Government & Public Sector",
+        href: "/industries/government-public-sector",
+      },
+      { label: "All Industries", href: "/industries/all-industries" },
+      { label: "Industry Solutions", href: "/industries/industry-solutions" },
+    ],
+  },
+  {
+    title: "Trust",
+    links: [
+      { label: "Trust Center", href: "/trust/center" },
+      { label: "Security Overview", href: "/trust/security-overview" },
+      { label: "Compliance Overview", href: "/trust/compliance-overview" },
+      { label: "Data Residency", href: "/trust/data-residency" },
+      { label: "Privacy Architecture", href: "/trust/privacy-architecture" },
+      { label: "Evidence Architecture", href: "/trust/evidence-architecture" },
+      { label: "Responsible AI", href: "/trust/responsible-ai" },
+      { label: "Accessibility", href: "/trust/accessibility" },
+      { label: "Certifications", href: "/trust/certifications" },
+      { label: "Policies", href: "/trust/policies" },
+      { label: "System Status", href: "/trust/system-status" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Resource Center", href: "/resources/center" },
+      { label: "Executive Briefs", href: "/resources/executive-briefs" },
+      { label: "Documentation", href: "/resources/documentation" },
+      { label: "Knowledge Base", href: "/resources/knowledge-base" },
+      { label: "Training Academy", href: "/resources/training-academy" },
+      { label: "Webinars & Events", href: "/resources/webinars-events" },
+      { label: "Case Studies", href: "/resources/case-studies" },
+      { label: "Blog & Insights", href: "/resources/blog-insights" },
+      { label: "Templates & Tools", href: "/resources/templates-tools" },
+      { label: "Support Center", href: "/resources/support-center" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About ZoikoSuite", href: "/company/about" },
+      { label: "Founder's Vision", href: "/company/founders-vision" },
+      { label: "Leadership", href: "/company/leadership" },
+      { label: "Partners", href: "/company/partners" },
+      { label: "Careers", href: "/company/careers" },
+      { label: "Newsroom", href: "/company/newsroom" },
+      { label: "Zoiko Tech", href: "/company/zoiko-tech" },
+      { label: "Zoiko Group", href: "/company/zoiko-group" },
+      { label: "Investor Relations", href: "/company/investor-relations" },
+      { label: "Sustainability", href: "/company/sustainability" },
+    ],
+  },
 ];
 
 type Office = {

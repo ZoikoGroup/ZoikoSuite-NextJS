@@ -52,9 +52,9 @@ const discoverLinks = [
     href: "/governed-business-operations",
   },
   { label: "Why ZoikoSuite Is Not an ERP", href: "/not-an-erp" },
-  { label: "Platform Tour", href: "/platform/tour" },
+  { label: "Platform Tour", href: "/platform-tour" },
   { label: "Product Roadmap", href: "/product-roadmap" },
-  { label: "Deployment Options", href: "/platform/deployment" },
+  { label: "Deployment Options", href: "/deployment-options" },
 ] as const;
 
 const coreModulesLinks = [
@@ -113,8 +113,8 @@ const foundationLinks = [
 
 /* --- Solutions Data --- */
 const leadershipLinks = [
-  { label: "For CFOs", href: "/solutions/cfos" },
-  { label: "For General Counsel", href: "/solutions/general-counsel" },
+  { label: "For CFOs", href: "/cfos" },
+  { label: "For General Counsel", href: "/general-counsel" },
   { label: "For CHROs", href: "/solutions/chros" },
   { label: "For CIOs", href: "/solutions/cios" },
   { label: "For COOs", href: "/solutions/coos" },
@@ -155,11 +155,11 @@ const modernizeLinks = [
   },
   {
     label: "Move From Manual to Governed Operations",
-    href: "/solutions/governed-operations",
+    href: "/governed-business-operations",
   },
   {
     label: "Prepare for International Expansion",
-    href: "/solutions/international-expansion",
+    href: "/expansion",
   },
   {
     label: "Strengthen Internal Controls",
@@ -167,7 +167,7 @@ const modernizeLinks = [
   },
   {
     label: "Modernize Finance Operations",
-    href: "/solutions/modernize-finance",
+    href: "/modernize-operations",
   },
   {
     label: "Transform Payroll and HR",
@@ -200,8 +200,8 @@ const organizationLinks = [
 
 /* --- Industries Data --- */
 const regulatedIndustriesLinks = [
-  { label: "Financial Services", href: "/industries/financial-services" },
-  { label: "Banking", href: "/industries/banking" },
+  { label: "Financial Services", href: "/financial-services" },
+  { label: "Banking", href: "/banking" },
   { label: "Fintech", href: "/industries/fintech" },
   { label: "Insurance", href: "/industries/insurance" },
   { label: "Telecommunications and MVNOs", href: "/industries/telecom-mvno" },

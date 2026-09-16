@@ -1,0 +1,12 @@
+export { default as OrganizationSection } from "./OrganizationSection";
+export { default as OrganizationTypeExplanation } from "./OrganizationTypeExplanation";
+export { default as NinePatternsSection } from "./NinePatternsSection";
+export { default as TwoSeparateAxesSection } from "./TwoSeparateAxesSection";
+export { default as SharedGovernanceSection } from "./SharedGovernanceSection";
+export { default as ProductProofSection } from "./ProductProofSection";
+export { default as ComparePatternsSection } from "./ComparePatternsSection";
+export { default as TransitionWithoutInventingSection } from "./TransitionWithoutInventingSection";
+export { default as HumanAuthoritySection } from "./HumanAuthoritySection";
+export { default as TechnicalAndTrustDiligenceSection } from "./TechnicalAndTrustDiligenceSection";
+export { default as BookEnterpriseDemoSection } from "./BookEnterpriseDemoSection";
+export { default as FAQSection } from "./FAQSection";

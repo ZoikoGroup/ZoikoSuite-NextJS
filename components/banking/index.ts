@@ -1,0 +1,14 @@
+export { default as BankingHeroSection } from "./BankingHeroSection";
+export { default as WhatZoikoSuiteDoesForBanksSection } from "./WhatZoikoSuiteDoesForBanksSection";
+export { default as ControlProblemSection } from "./ControlProblemSection";
+export { default as GovernedOperatingModelSection } from "./GovernedOperatingModelSection";
+export { default as CapabilityGridSection } from "./CapabilityGridSection";
+export { default as ContextResolutionSection } from "./ContextResolutionSection";
+export { default as ComplianceEvidenceSection } from "./ComplianceEvidenceSection";
+export { default as LegalVendorGovernanceSection } from "./LegalVendorGovernanceSection";
+export { default as SecurityDiligenceSection } from "./SecurityDiligenceSection";
+export { default as IntegrationAndCoexistenceSection } from "./IntegrationAndCoexistenceSection";
+export { default as GovernedIntelligenceSection } from "./GovernedIntelligenceSection";
+export { default as ExecutiveAlignmentSection } from "./ExecutiveAlignmentSection";
+export { default as BookEnterpriseDemoSection } from "./BookEnterpriseDemoSection";
+export { default as FAQSection } from "./FAQSection";
