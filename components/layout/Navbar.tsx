@@ -699,143 +699,169 @@ export default function Navbar() {
             {activeMenu === "Platform" && (
               <motion.div
                 key="platform-menu"
-                className="absolute top-24 left-0 w-full bg-[#FFFFFF] border-t border-[#EAEEF4] shadow-2xl z-50 px-12 py-8 max-h-[calc(100vh-6rem)] overflow-y-auto"
+                className="absolute top-24 left-1/2 -translate-x-1/2 w-[calc(100%-6rem)] max-w-6xl bg-[#FFFFFF] border border-[#EAEEF4] shadow-2xl rounded-xl z-50 px-8 py-5 max-h-[calc(100vh-8rem)]"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => openMenu("Platform")}
-                onMouseLeave={scheduleClose}
+                onMouseEnter={() => {
+                  document.body.style.overflowY = "scroll";
+                  document.body.style.scrollbarGutter = "stable";
+                  openMenu("Platform");
+                }}
+                onMouseLeave={() => {
+                  document.body.style.overflowY = "";
+                  document.body.style.scrollbarGutter = "";
+                  scheduleClose();
+                }}
+                onWheel={(e) => {
+                  // Stops background page scrolling while allowing this menu to scroll internally if needed
+                  e.stopPropagation();
+                }}
+                onTouchMove={(e) => {
+                  e.stopPropagation();
+                }}
               >
-                <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
+                <div className="max-w-[1220px] mx-auto flex flex-col gap-4">
                   {/* Top Announcement Banner */}
-                  <div className="flex flex-col items-center justify-center text-center gap-4">
-                    <p className="text-[#12365E] text-base font-bold font-['Inter'] max-w-[1100px] leading-relaxed">
+                  <div className="flex flex-col items-center justify-center text-center gap-2">
+                    <p className="text-[#12365E] text-xs font-bold font-['Inter'] max-w-[1100px] leading-snug">
                       ZoikoSuite is a governed business operations platform.
-                      Built on a unified data and controls foundation, <br /> it
-                      connects core business modules with a governance control
-                      plane so every operation is policy-aligned, auditable, and
-                      AI-ready.
+                      Built on a unified data and controls foundation, <br />
+                      it connects core business modules with a governance
+                      control plane so every operation is policy-aligned,
+                      auditable, and AI-ready.
                     </p>
 
                     {/* Yellow Feature Box */}
-                    <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-6 flex items-center justify-between shadow-sm">
-                      <div className="flex items-center gap-6">
-                        <div className="w-[150px] h-[125px] relative flex-shrink-0">
+                    <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl px-4 py-3 flex items-center justify-between shadow-sm">
+                      <div className="flex items-center gap-4">
+                        <div className="w-[90px] h-[70px] relative flex-shrink-0">
                           <img
                             src="/navbar/shield.png"
                             alt="Shield Icon"
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <span className="text-[#12365E] text-2xl font-bold font-['Inter'] text-left">
-                          Business operations must execute <br /> inside
-                          governance.
+
+                        <span className="text-[#12365E] text-base font-bold font-['Inter'] text-left leading-snug">
+                          Business operations must execute
+                          <br />
+                          inside governance.
                         </span>
                       </div>
+
                       <a
                         href=""
-                        className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-5 py-3 rounded-lg text-sm font-semibold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
+                        className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2 rounded-lg text-xs font-semibold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                       >
                         Read the Category Brief
-                        <LuArrowRight className="w-4 h-4" />
+                        <LuArrowRight className="w-3.5 h-3.5" />
                       </a>
                     </div>
                   </div>
 
                   {/* 4 Main Link Columns */}
-                  <div className="grid grid-cols-4 gap-8 border-b border-[#EAEEF4] pb-8">
-                    {/* Column 1: Discover ZoikoSuite */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 bg-[#EAEEF4] rounded-lg flex items-center justify-center p-1.5">
-                          <LuCompass className="w-5 h-5 text-[#12365E]" />
+                  <div className="grid grid-cols-4 gap-4 border-b border-[#EAEEF4] pb-4">
+                    {/* Column 1 */}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 bg-[#EAEEF4] rounded-lg flex items-center justify-center p-1.5 flex-shrink-0">
+                          <LuCompass className="w-4 h-4 text-[#12365E]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           Discover ZoikoSuite
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {discoverLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#5A6675] hover:text-[#12365E] text-[15px] font-medium font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#5A6675] hover:text-[#12365E] text-sm font-medium font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-3.5 h-3.5 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
                     </div>
 
-                    {/* Column 2: Core Modules */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 bg-[#FDF6EA] rounded-lg flex items-center justify-center p-1.5">
-                          <LuBoxes className="w-5 h-5 text-[#C0872B]" />
+                    {/* Column 2 */}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 bg-[#FDF6EA] rounded-lg flex items-center justify-center p-1.5 flex-shrink-0">
+                          <LuBoxes className="w-4 h-4 text-[#C0872B]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           Core Modules
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {coreModulesLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#5A6675] hover:text-[#12365E] text-[15px] font-medium font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#5A6675] hover:text-[#12365E] text-sm font-medium font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-3.5 h-3.5 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
                     </div>
 
-                    {/* Column 3: Governance Platform */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 bg-[#EAEEF4] rounded-lg flex items-center justify-center p-1.5">
-                          <LuLandmark className="w-5 h-5 text-[#12365E]" />
+                    {/* Column 3 */}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 bg-[#EAEEF4] rounded-lg flex items-center justify-center p-1.5 flex-shrink-0">
+                          <LuLandmark className="w-4 h-4 text-[#12365E]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           Governance Platform
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {governanceLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#5A6675] hover:text-[#12365E] text-[15px] font-medium font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#5A6675] hover:text-[#12365E] text-sm font-medium font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-3.5 h-3.5 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
                     </div>
 
-                    {/* Column 4: Platform Foundation */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 bg-[#EAEEF4] rounded-lg flex items-center justify-center p-1.5">
-                          <LuLayers className="w-5 h-5 text-[#12365E]" />
+                    {/* Column 4 */}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 bg-[#EAEEF4] rounded-lg flex items-center justify-center p-1.5 flex-shrink-0">
+                          <LuLayers className="w-4 h-4 text-[#12365E]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           Platform Foundation
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {foundationLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#5A6675] hover:text-[#12365E] text-[15px] font-medium font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#5A6675] hover:text-[#12365E] text-sm font-medium font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-3.5 h-3.5 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
@@ -843,17 +869,19 @@ export default function Navbar() {
                   </div>
 
                   {/* Bottom Cards */}
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-2 gap-4">
                     {/* Left Card */}
-                    <div className="border border-[#EAEEF4] rounded-xl p-5 flex items-center gap-4 bg-[#FFFFFF] hover:border-[#9AA6B5] transition-colors">
-                      <div className="w-12 h-12 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
-                        <LuShieldCheck className="w-6 h-6 text-[#C0872B]" />
+                    <div className="border border-[#EAEEF4] rounded-xl p-3 flex items-center gap-3 bg-[#FFFFFF] hover:border-[#9AA6B5] transition-colors">
+                      <div className="w-9.5 h-9.5 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                        <LuShieldCheck className="w-4.5 h-4.5 text-[#C0872B]" />
                       </div>
+
                       <div className="flex flex-col gap-0.5">
-                        <h4 className="text-[#12365E] text-sm font-bold font-['Inter']">
+                        <h4 className="text-[#12365E] text-xs font-bold font-['Inter']">
                           Governance by design. Built for enterprise scale.
                         </h4>
-                        <p className="text-[#5A6675] text-xs font-normal font-['Inter']">
+
+                        <p className="text-[#5A6675] text-[11px] font-normal font-['Inter'] leading-tight">
                           Unify operations, enforce policy, and drive
                           confidence.
                         </p>
@@ -861,24 +889,27 @@ export default function Navbar() {
                     </div>
 
                     {/* Right Card */}
-                    <div className="border border-[#EAEEF4] rounded-xl p-5 flex items-center justify-between bg-[#FFFFFF] hover:border-[#9AA6B5] transition-colors">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
-                          <LucideBarChart2 className="w-6 h-6 text-[#C0872B]" />
+                    <div className="border border-[#EAEEF4] rounded-xl p-3 flex items-center justify-between bg-[#FFFFFF] hover:border-[#9AA6B5] transition-colors">
+                      <div className="flex items-center gap-3">
+                        <div className="w-9.5 h-9.5 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                          <LucideBarChart2 className="w-4.5 h-4.5 text-[#C0872B]" />
                         </div>
+
                         <div className="flex flex-col gap-0.5">
-                          <h4 className="text-[#12365E] text-sm font-bold font-['Inter']">
+                          <h4 className="text-[#12365E] text-xs font-bold font-['Inter']">
                             Explore how ZoikoSuite works for you.
                           </h4>
-                          <p className="text-[#5A6675] text-xs font-normal font-['Inter']">
+
+                          <p className="text-[#5A6675] text-[11px] font-normal font-['Inter'] leading-tight">
                             See tailored outcomes across your business
                             functions.
                           </p>
                         </div>
                       </div>
+
                       <a
                         href=""
-                        className="border border-[#C0872B] text-[#C0872B] hover:bg-[#FDF6EA] px-4 py-2.5 rounded-lg text-xs font-semibold font-['Inter'] flex-shrink-0 transition-colors"
+                        className="border border-[#C0872B] text-[#C0872B] hover:bg-[#FDF6EA] px-3 py-1.5 rounded-lg text-[11px] font-semibold font-['Inter'] flex-shrink-0 transition-colors"
                       >
                         Book Enterprise Demo
                       </a>
@@ -892,25 +923,43 @@ export default function Navbar() {
             {activeMenu === "Solutions" && (
               <motion.div
                 key="solutions-menu"
-                className="absolute top-24 left-0 w-full bg-[#FFFFFF] border-t border-[#EAEEF4] shadow-2xl z-50 px-12 py-8 max-h-[calc(100vh-6rem)] overflow-y-auto"
+                className="absolute top-24 left-1/2 -translate-x-1/2 w-[calc(100%-6rem)] max-w-6xl bg-[#FFFFFF] border border-[#EAEEF4] shadow-2xl rounded-xl z-50 px-8 py-4.5 overflow-hidden"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => openMenu("Solutions")}
-                onMouseLeave={scheduleClose}
+                onMouseEnter={() => {
+                  // Force reserve scrollbar gutter to prevent layout/width shifts
+                  document.body.style.overflowY = "scroll";
+                  document.body.style.scrollbarGutter = "stable";
+                  openMenu("Solutions");
+                }}
+                onMouseLeave={() => {
+                  document.body.style.overflowY = "";
+                  document.body.style.scrollbarGutter = "";
+                  scheduleClose();
+                }}
+                onWheel={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                }}
+                onTouchMove={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                }}
               >
-                <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
+                <div className="max-w-[1220px] mx-auto flex flex-col gap-4.5">
                   {/* Header Section */}
-                  <div className="flex items-center gap-4 border-b border-[#EAEEF4] pb-6">
-                    <div className="w-[104px] h-[104px] rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
-                      <LuPuzzle className="w-10 h-10 text-[#C0872B]" />
+                  <div className="flex items-center gap-3 border-b border-[#EAEEF4] pb-3.5">
+                    <div className="w-15 h-15 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                      <LuPuzzle className="w-6.5 h-6.5 text-[#C0872B]" />
                     </div>
-                    <div className="flex flex-col gap-1">
-                      <h2 className="text-[#12365E] text-3xl font-bold font-['Inter']">
+
+                    <div className="flex flex-col gap-0.5">
+                      <h2 className="text-[#12365E] text-2xl font-bold font-['Inter']">
                         Solutions
                       </h2>
-                      <p className="text-[#5A6675] text-base font-normal font-['Inter']">
+                      <p className="text-[#5A6675] text-sm font-normal font-['Inter'] leading-snug">
                         Enable buyers to enter through executive responsibility,
                         business challenge, organization type, or transformation
                         objective.
@@ -919,98 +968,102 @@ export default function Navbar() {
                   </div>
 
                   {/* 4 Link Columns */}
-                  <div className="grid grid-cols-4 gap-8">
+                  <div className="grid grid-cols-4 gap-4.5">
                     {/* Column 1: For Leadership Teams */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] flex items-center justify-center">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
                           <LuUser className="w-4 h-4 text-[#12365E]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           For Leadership Teams
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {leadershipLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
                     </div>
 
                     {/* Column 2: Solve Critical Challenges */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] flex items-center justify-center">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
                           <LuTarget className="w-4 h-4 text-[#12365E]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           Solve Critical Challenges
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {challengesLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
                     </div>
 
                     {/* Column 3: Modernize Operations */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] flex items-center justify-center">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
                           <LuTrendingUp className="w-4 h-4 text-[#12365E]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           Modernize Operations
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {modernizeLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
                     </div>
 
                     {/* Column 4: Organization Types */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] flex items-center justify-center">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                        <div className="w-9.5 h-9.5 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
                           <LuBuilding2 className="w-4 h-4 text-[#12365E]" />
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+                        <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
                           Organization Types
                         </h3>
                       </div>
-                      <div className="flex flex-col gap-2.5">
+
+                      <div className="flex flex-col gap-1">
                         {organizationLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
+                            className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
                           >
                             <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
                           </a>
                         ))}
                       </div>
@@ -1018,32 +1071,34 @@ export default function Navbar() {
                   </div>
 
                   {/* Bottom Yellow Feature Banner */}
-                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-6 flex items-center justify-between shadow-sm mt-2">
-                    <div className="flex items-center gap-6">
-                      <div className="w-[150px] h-[125px] relative flex-shrink-0">
+                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl px-4 py-3 flex items-center justify-between shadow-sm">
+                    <div className="flex items-center gap-4">
+                      <div className="w-[90px] h-[70px] relative flex-shrink-0">
                         <img
                           src="/navbar/shield.png"
                           alt="Shield Icon"
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <div className="flex flex-col gap-1">
-                        <span className="text-[#12365E] text-2xl font-bold font-['Inter'] text-left">
+
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-[#12365E] text-base font-bold font-['Inter'] text-left leading-snug">
                           Build the enterprise case for ZoikoSuite
                         </span>
-                        <span className="text-[#5A6675] text-base font-normal font-['Inter'] text-left">
+                        <span className="text-[#5A6675] text-sm font-normal font-['Inter'] text-left leading-snug">
                           Access tailored business cases, ROI models, and
                           executive briefs to drive alignment and accelerate
                           decisions.
                         </span>
                       </div>
                     </div>
+
                     <a
                       href="/executive-resources"
-                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-5 py-3 rounded-lg text-base font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
+                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       Explore Executive Resources
-                      <LuArrowRight className="w-4 h-4" />
+                      <LuArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -1054,132 +1109,160 @@ export default function Navbar() {
             {activeMenu === "Industries" && (
               <motion.div
                 key="industries-menu"
-                className="absolute top-24 left-0 w-full bg-[#FFFFFF] border-t border-[#EAEEF4] shadow-2xl z-50 px-12 py-8 max-h-[calc(100vh-6rem)] overflow-y-auto"
+                className="absolute top-24 left-1/2 -translate-x-1/2 w-[calc(100%-6rem)] max-w-6xl bg-[#FFFFFF] border border-[#EAEEF4] shadow-2xl rounded-xl z-50 px-8 py-5 max-h-[calc(100vh-9rem)]"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => openMenu("Industries")}
-                onMouseLeave={scheduleClose}
+                onMouseEnter={() => {
+                  document.body.style.overflowY = "scroll";
+                  document.body.style.scrollbarGutter = "stable";
+                  openMenu("Industries");
+                }}
+                onMouseLeave={() => {
+                  document.body.style.overflowY = "";
+                  document.body.style.scrollbarGutter = "";
+                  scheduleClose();
+                }}
+                onWheel={(e) => {
+                  e.stopPropagation();
+                }}
+                onTouchMove={(e) => {
+                  e.stopPropagation();
+                }}
               >
-                <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
-                  {/* Header Section */}
-                  <div className="flex items-center gap-4 border-b border-[#EAEEF4] pb-6">
-                    <div className="w-[104px] h-[104px] rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
-                      <LuBuilding2 className="w-10 h-10 text-[#C0872B]" />
+                <div className="max-w-[1220px] mx-auto flex flex-col justify-between min-h-[535px] gap-5">
+                  {/* Top Content Area */}
+                  <div className="flex flex-col gap-5">
+                    {/* Header Section */}
+                    <div className="flex items-center gap-3 border-b border-[#EAEEF4] pb-4">
+                      <div className="w-14 h-14 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                        <LuBuilding2 className="w-6 h-6 text-[#C0872B]" />
+                      </div>
+
+                      <div className="flex flex-col gap-0.5">
+                        <h2 className="text-[#12365E] text-xl font-bold font-['Inter'] leading-tight">
+                          Industries
+                        </h2>
+
+                        <p className="text-[#5A6675] text-xs font-normal font-['Inter'] leading-snug">
+                          Demonstrate governance, jurisdictional intelligence,
+                          and evidence controls for high-complexity sectors.
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex flex-col gap-1">
-                      <h2 className="text-[#12365E] text-3xl font-bold font-['Inter']">
-                        Industries
-                      </h2>
-                      <p className="text-[#5A6675] text-base font-normal font-['Inter']">
-                        Demonstrate governance, jurisdictional intelligence, and
-                        evidence controls for high-complexity sectors.
-                      </p>
+
+                    {/* 3 Link Columns */}
+                    <div className="grid grid-cols-3 gap-6">
+                      {/* Column 1: Regulated Industries */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
+                            <LuShieldCheck className="w-4 h-4 text-[#12365E]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Regulated Industries
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {regulatedIndustriesLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 2: Complex Operations */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
+                            <LuRefreshCw className="w-4 h-4 text-[#12365E]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Complex Operations
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {complexOperationsLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 3: Knowledge and Growth Sectors */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
+                            <LuGraduationCap className="w-4 h-4 text-[#12365E]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Knowledge and Growth Sectors
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {knowledgeGrowthLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* 3 Link Columns */}
-                  <div className="grid grid-cols-3 gap-8">
-                    {/* Column 1: Regulated Industries */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] flex items-center justify-center">
-                          <LuShieldCheck className="w-4 h-4 text-[#12365E]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Regulated Industries
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {regulatedIndustriesLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Column 2: Complex Operations */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] flex items-center justify-center">
-                          <LuRefreshCw className="w-4 h-4 text-[#12365E]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Complex Operations
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {complexOperationsLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Column 3: Knowledge and Growth Sectors */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] flex items-center justify-center">
-                          <LuGraduationCap className="w-4 h-4 text-[#12365E]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Knowledge and Growth Sectors
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {knowledgeGrowthLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Yellow Feature Banner */}
-                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-6 flex items-center justify-between shadow-sm mt-2">
-                    <div className="flex items-center gap-6">
-                      <div className="w-[150px] h-[125px] relative flex-shrink-0">
+                  {/* Bottom Yellow Feature Banner (Pinned to bottom of fixed height layout) */}
+                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-4 flex items-center justify-between shadow-sm mb-2">
+                    <div className="flex items-center gap-4">
+                      <div className="w-[100px] h-[75px] relative flex-shrink-0">
                         <img
                           src="/navbar/shield.png"
                           alt="Shield Icon"
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <div className="flex flex-col gap-1">
-                        <span className="text-[#12365E] text-2xl font-bold font-['Inter'] text-left">
+
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-[#12365E] text-base font-bold font-['Inter'] text-left leading-snug">
                           Tailored Industry Solutions
                         </span>
-                        <span className="text-[#5A6675] text-base font-normal font-['Inter'] text-left">
+
+                        <span className="text-[#5A6675] text-xs font-normal font-['Inter'] text-left leading-snug">
                           Discover industry-specific governance capabilities and
                           compliance workflows.
                         </span>
                       </div>
                     </div>
+
                     <a
                       href=""
-                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-5 py-3 rounded-lg text-base font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
+                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2.5 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       View Industry Solutions
-                      <LuArrowRight className="w-4 h-4" />
+                      <LuArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -1190,149 +1273,184 @@ export default function Navbar() {
             {activeMenu === "Trust" && (
               <motion.div
                 key="trust-menu"
-                className="absolute top-24 left-0 w-full bg-[#FFFFFF] border-t border-[#EAEEF4] shadow-2xl z-50 px-12 py-8 max-h-[calc(100vh-6rem)] overflow-y-auto"
+                className="absolute top-24 left-1/2 -translate-x-1/2 w-[calc(100%-6rem)] max-w-6xl bg-[#FFFFFF] border border-[#EAEEF4] shadow-2xl rounded-xl z-50 px-8 py-5 max-h-[calc(100vh-9rem)]"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => openMenu("Trust")}
-                onMouseLeave={scheduleClose}
+                onMouseEnter={() => {
+                  document.body.style.overflowY = "scroll";
+                  document.body.style.scrollbarGutter = "stable";
+                  openMenu("Trust");
+                }}
+                onMouseLeave={() => {
+                  document.body.style.overflowY = "";
+                  document.body.style.scrollbarGutter = "";
+                  scheduleClose();
+                }}
+                onWheel={(e) => {
+                  e.stopPropagation();
+                }}
+                onTouchMove={(e) => {
+                  e.stopPropagation();
+                }}
               >
-                <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
-                  {/* Header Section */}
-                  <div className="flex items-center gap-4 border-b border-[#EAEEF4] pb-6">
-                    <div className="w-[60px] h-[60px] rounded-full flex items-center justify-center flex-shrink-0">
-                      <LuShieldCheck className="w-12 h-12 text-[#C0872B]" />
+                <div className="max-w-[1220px] mx-auto flex flex-col justify-between min-h-[535px] gap-5">
+                  {/* Top Content Area */}
+                  <div className="flex flex-col gap-5">
+                    {/* Header Section */}
+                    <div className="flex items-center gap-3 border-b border-[#EAEEF4] pb-4">
+                      <div className="w-14 h-14 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                        <LuShieldCheck className="w-6 h-6 text-[#C0872B]" />
+                      </div>
+
+                      <div className="flex flex-col gap-0.5">
+                        <h2 className="text-[#12365E] text-xl font-bold font-['Inter'] leading-tight">
+                          Trust
+                        </h2>
+
+                        <p className="text-[#5A6675] text-xs font-normal font-['Inter'] leading-snug">
+                          Give procurement, security, legal, compliance, and
+                          regulatory stakeholders direct access to trust
+                          architecture.
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex flex-col gap-1">
-                      <h2 className="text-[#12365E] text-3xl font-bold font-['Inter']">
-                        Trust
-                      </h2>
-                      <p className="text-[#5A6675] text-base font-normal font-['Inter']">
-                        Give procurement, security, legal, compliance, and
-                        regulatory stakeholders direct access to trust
-                        architecture.
-                      </p>
+
+                    {/* 4 Link Columns */}
+                    <div className="grid grid-cols-4 gap-6">
+                      {/* Column 1: Security Architecture */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
+                            <LuShieldCheck className="w-4 h-4 text-[#12365E]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Security Architecture
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {securityArchitectureLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 2: Compliance Framework */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
+                            <LuClipboardCheck className="w-4 h-4 text-[#12365E]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Compliance Framework
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {complianceFrameworkLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 3: Audit and Assurance */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
+                            <LuScale className="w-4 h-4 text-[#12365E]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Audit and Assurance
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {auditAssuranceLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 4: Data Sovereignty */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] flex items-center justify-center flex-shrink-0">
+                            <LuGlobe className="w-4 h-4 text-[#12365E]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Data Sovereignty
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {dataSovereigntyLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* 4 Link Columns */}
-                  <div className="grid grid-cols-4 gap-8">
-                    {/* Column 1: Security Architecture */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col gap-3 pb-2">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                          <LuShieldCheck className="w-8 h-8 text-[#12365E]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Security Architecture
-                        </h3>
+                  {/* Bottom Banner (Refactored to match Industries card dimensions/style structure) */}
+                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-4 flex items-center justify-between shadow-sm mb-2">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                        <LuShieldCheck className="w-5 h-5 text-[#C0872B]" />
                       </div>
-                      <div className="flex flex-col gap-2.5">
-                        {securityArchitectureLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
+
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-[#12365E] text-base font-bold font-['Inter'] text-left leading-snug">
+                          Trust status must use verified, status-qualified
+                          language.
+                        </span>
+
+                        <span className="text-[#5A6675] text-xs font-normal font-['Inter'] text-left leading-snug">
+                          Access up-to-date compliance records and architecture
+                          overviews.
+                        </span>
                       </div>
                     </div>
 
-                    {/* Column 2: Compliance Framework */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col gap-3 pb-2">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                          <LuClipboardCheck className="w-8 h-8 text-[#C0872B]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Compliance Framework
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {complianceFrameworkLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Column 3: Audit and Assurance */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col gap-3 pb-2">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                          <LuScale className="w-8 h-8 text-[#12365E]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Audit and Assurance
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {auditAssuranceLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Column 4: Data Sovereignty */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col gap-3 pb-2">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                          <LuGlobe className="w-8 h-8 text-[#12365E]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Data Sovereignty
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {dataSovereigntyLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Navy Banner with Vector Badge */}
-                  <div className="w-full bg-[#0F2C57] rounded-xl p-6 flex items-center justify-between shadow-md mt-2">
-                    <div className="flex items-center gap-6">
-                      {/* Circular Shield Badge */}
-                      <div className="w-16 h-16 rounded-full border-2 border-[#C0872B] bg-[#0A1F3E] flex items-center justify-center flex-shrink-0">
-                        <LuShieldCheck className="w-8 h-8 text-[#C0872B]" />
-                      </div>
-                      <span className="text-[#FFFFFF] text-2xl font-bold font-['Inter'] text-left">
-                        Trust status must use verified, status-qualified
-                        language.
-                      </span>
-                    </div>
                     <a
                       href=""
-                      className="bg-[#D3A04C] hover:bg-[#C0872B] text-[#0F2C57] px-6 py-3.5 rounded-lg text-base font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
+                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2.5 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       Visit the Trust Center
-                      <LuArrowRight className="w-4 h-4" />
+                      <LuArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -1343,139 +1461,166 @@ export default function Navbar() {
             {activeMenu === "Resources" && (
               <motion.div
                 key="resources-menu"
-                className="absolute top-24 left-0 w-full bg-[#FFFFFF] border-t border-[#EAEEF4] shadow-2xl z-50 px-12 py-8 max-h-[calc(100vh-6rem)] overflow-y-auto"
+                className="absolute top-24 left-1/2 -translate-x-1/2 w-[calc(100%-6rem)] max-w-6xl bg-[#FFFFFF] border border-[#EAEEF4] shadow-2xl rounded-xl z-50 px-8 py-5 max-h-[calc(100vh-9rem)]"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => openMenu("Resources")}
-                onMouseLeave={scheduleClose}
+                onMouseEnter={() => {
+                  document.body.style.overflowY = "scroll";
+                  document.body.style.scrollbarGutter = "stable";
+                  openMenu("Resources");
+                }}
+                onMouseLeave={() => {
+                  document.body.style.overflowY = "";
+                  document.body.style.scrollbarGutter = "";
+                  scheduleClose();
+                }}
+                onWheel={(e) => {
+                  e.stopPropagation();
+                }}
+                onTouchMove={(e) => {
+                  e.stopPropagation();
+                }}
               >
-                <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
-                  {/* Header Section */}
-                  <div className="flex items-center gap-4 border-b border-[#EAEEF4] pb-6">
-                    <div className="w-[104px] h-[104px] rounded-full bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
-                      <LuBookOpen className="w-10 h-10 text-[#C0872B]" />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <h2 className="text-[#12365E] text-3xl font-bold font-['Inter']">
-                        Resources
-                      </h2>
-                      <p className="text-[#5A6675] text-base font-normal font-['Inter']">
-                        Support discovery, education, evaluation,
-                        implementation, and customer success.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* 4 Link Columns */}
-                  <div className="grid grid-cols-4 gap-8">
-                    {/* Column 1: Learn */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center">
-                          <LuGraduationCap className="w-4 h-4 text-[#C0872B]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Learn
-                        </h3>
+                <div className="max-w-[1220px] mx-auto flex flex-col justify-between min-h-[535px] gap-5">
+                  {/* Top Content Area */}
+                  <div className="flex flex-col gap-5">
+                    {/* Header Section */}
+                    <div className="flex items-center gap-3 border-b border-[#EAEEF4] pb-4">
+                      <div className="w-14 h-14 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                        <LuBookOpen className="w-6 h-6 text-[#C0872B]" />
                       </div>
-                      <div className="flex flex-col gap-2.5">
-                        {learnLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
+
+                      <div className="flex flex-col gap-0.5">
+                        <h2 className="text-[#12365E] text-xl font-bold font-['Inter'] leading-tight">
+                          Resources
+                        </h2>
+
+                        <p className="text-[#5A6675] text-xs font-normal font-['Inter'] leading-snug">
+                          Support discovery, education, evaluation,
+                          implementation, and customer success.
+                        </p>
                       </div>
                     </div>
 
-                    {/* Column 2: Executive Resources */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center">
-                          <LuUser className="w-4 h-4 text-[#C0872B]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Executive Resources
-                        </h3>
-                      </div>
+                    {/* 4 Link Columns */}
+                    <div className="grid grid-cols-4 gap-6">
+                      {/* Column 1: Learn */}
                       <div className="flex flex-col gap-2.5">
-                        {execResourcesLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
+                            <LuGraduationCap className="w-4 h-4 text-[#C0872B]" />
+                          </div>
 
-                    {/* Column 3: Architecture & Technical */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center">
-                          <LuCpu className="w-4 h-4 text-[#C0872B]" />
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Learn
+                          </h3>
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Architecture & Technical
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {techArchitectureLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
 
-                    {/* Column 4: Customer Resources */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center">
-                          <LuUserCheck className="w-4 h-4 text-[#C0872B]" />
+                        <div className="flex flex-col gap-1.5">
+                          {learnLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
                         </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Customer Resources
-                        </h3>
                       </div>
+
+                      {/* Column 2: Executive Resources */}
                       <div className="flex flex-col gap-2.5">
-                        {customerResourcesLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
+                            <LuUser className="w-4 h-4 text-[#C0872B]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Executive Resources
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {execResourcesLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 3: Architecture & Technical */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
+                            <LuCpu className="w-4 h-4 text-[#C0872B]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Architecture & Technical
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {techArchitectureLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 4: Customer Resources */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
+                            <LuUserCheck className="w-4 h-4 text-[#C0872B]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Customer Resources
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {customerResourcesLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Bottom Yellow Feature Banner */}
-                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-6 flex items-center justify-between shadow-sm mt-2 relative overflow-hidden">
-                    <div className="flex items-center gap-6 relative z-10">
-                      <div className="w-[120px] h-[95px] flex items-center justify-center flex-shrink-0 relative">
+                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-4 flex items-center justify-between shadow-sm mb-2">
+                    <div className="flex items-center gap-4">
+                      <div className="w-[100px] h-[75px] relative flex-shrink-0 flex items-center justify-center">
                         <svg
                           viewBox="0 0 100 120"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
-                          className="w-full h-full"
+                          className="w-full h-full object-contain"
                         >
                           <path
                             d="M50 8L15 28V62C15 88 50 112 50 112C50 112 85 88 85 62V28L50 8Z"
@@ -1495,16 +1640,24 @@ export default function Navbar() {
                         </svg>
                       </div>
 
-                      <span className="text-[#12365E] text-2xl font-bold font-['Inter'] text-left">
-                        Why governance must live inside execution
-                      </span>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-[#12365E] text-base font-bold font-['Inter'] text-left leading-snug">
+                          Why governance must live inside execution
+                        </span>
+
+                        <span className="text-[#5A6675] text-xs font-normal font-['Inter'] text-left leading-snug">
+                          Read the comprehensive architecture brief and
+                          implementation breakdown.
+                        </span>
+                      </div>
                     </div>
+
                     <a
                       href=""
-                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-5 py-3 rounded-lg text-base font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0 relative z-10"
+                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2.5 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       Read the Architecture Brief
-                      <LuArrowRight className="w-4 h-4" />
+                      <LuArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -1515,128 +1668,155 @@ export default function Navbar() {
             {activeMenu === "Company" && (
               <motion.div
                 key="company-menu"
-                className="absolute top-24 left-0 w-full bg-[#FFFFFF] border-t border-[#EAEEF4] shadow-2xl z-50 px-12 py-8 max-h-[calc(100vh-6rem)] overflow-y-auto"
+                className="absolute top-24 left-1/2 -translate-x-1/2 w-[calc(100%-6rem)] max-w-6xl bg-[#FFFFFF] border border-[#EAEEF4] shadow-2xl rounded-xl z-50 px-8 py-5 max-h-[calc(100vh-9rem)]"
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 variants={megaMenuVariants}
-                onMouseEnter={() => openMenu("Company")}
-                onMouseLeave={scheduleClose}
+                onMouseEnter={() => {
+                  document.body.style.overflowY = "scroll";
+                  document.body.style.scrollbarGutter = "stable";
+                  openMenu("Company");
+                }}
+                onMouseLeave={() => {
+                  document.body.style.overflowY = "";
+                  document.body.style.scrollbarGutter = "";
+                  scheduleClose();
+                }}
+                onWheel={(e) => {
+                  e.stopPropagation();
+                }}
+                onTouchMove={(e) => {
+                  e.stopPropagation();
+                }}
               >
-                <div className="max-w-[1220px] mx-auto flex flex-col gap-8">
-                  {/* Header Section */}
-                  <div className="flex items-center gap-4 border-b border-[#EAEEF4] pb-6">
-                    <div className="w-[104px] h-[104px] rounded-full bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
-                      <LuBuilding2 className="w-10 h-10 text-[#12365E]" />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <h2 className="text-[#12365E] text-3xl font-bold font-['Inter']">
-                        Company
-                      </h2>
-                      <p className="text-[#5A6675] text-base font-normal font-['Inter']">
-                        Establish corporate credibility, leadership,
-                        partnerships, careers, communications, and institutional
-                        identity.
-                      </p>
-                    </div>
-                  </div>
+                <div className="max-w-[1220px] mx-auto flex flex-col justify-between min-h-[535px] gap-5">
+                  {/* Top Content Area */}
+                  <div className="flex flex-col gap-5">
+                    {/* Header Section */}
+                    <div className="flex items-center gap-3 border-b border-[#EAEEF4] pb-4">
+                      <div className="w-14 h-14 rounded-full bg-[#0F2C57] flex items-center justify-center flex-shrink-0">
+                        <LuBuilding2 className="w-6 h-6 text-[#C0872B]" />
+                      </div>
 
-                  {/* 3 Link Columns */}
-                  <div className="grid grid-cols-3 gap-8">
-                    {/* Column 1: About */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center">
-                          <LuUsers className="w-4 h-4 text-[#C0872B]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          About
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {aboutLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Column 2: Ecosystem */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center">
-                          <LuNetwork className="w-4 h-4 text-[#C0872B]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
-                          Ecosystem
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        {ecosystemLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Column 3: Company */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 pb-2 border-b-2 border-[#C0872B]">
-                        <div className="w-12 h-12 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center">
-                          <LuBriefcase className="w-4 h-4 text-[#C0872B]" />
-                        </div>
-                        <h3 className="text-[#12365E] text-base font-bold font-['Inter']">
+                      <div className="flex flex-col gap-0.5">
+                        <h2 className="text-[#12365E] text-xl font-bold font-['Inter'] leading-tight">
                           Company
-                        </h3>
+                        </h2>
+
+                        <p className="text-[#5A6675] text-xs font-normal font-['Inter'] leading-snug">
+                          Establish corporate credibility, leadership,
+                          partnerships, careers, communications, and
+                          institutional identity.
+                        </p>
                       </div>
+                    </div>
+
+                    {/* 3 Link Columns */}
+                    <div className="grid grid-cols-3 gap-6">
+                      {/* Column 1: About */}
                       <div className="flex flex-col gap-2.5">
-                        {companyLinks.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-[#12365E] hover:text-[#C0872B] text-[15px] font-normal font-['Inter'] flex items-center justify-between group transition-colors"
-                          >
-                            <span>{item.label}</span>
-                            <LuChevronRight className="w-4 h-4 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                          </a>
-                        ))}
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
+                            <LuUsers className="w-4 h-4 text-[#C0872B]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            About
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {aboutLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 2: Ecosystem */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
+                            <LuNetwork className="w-4 h-4 text-[#C0872B]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Ecosystem
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {ecosystemLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Column 3: Company */}
+                      <div className="flex flex-col gap-2.5">
+                        <div className="flex items-center gap-2 pb-1.5 border-b-2 border-[#C0872B]">
+                          <div className="w-10 h-10 rounded-full border border-[#EBDCC0] bg-[#FDF6EA] flex items-center justify-center flex-shrink-0">
+                            <LuBriefcase className="w-4 h-4 text-[#C0872B]" />
+                          </div>
+
+                          <h3 className="text-[#12365E] text-sm font-bold font-['Inter'] leading-tight">
+                            Company
+                          </h3>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                          {companyLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="text-[#12365E] hover:text-[#C0872B] text-sm font-normal font-['Inter'] flex items-center justify-between group transition-colors leading-tight py-0.5"
+                            >
+                              <span>{item.label}</span>
+                              <LuChevronRight className="w-3 h-3 text-[#9AA6B5] flex-shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Bottom Yellow Feature Banner with Heritage Image */}
-                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-6 flex items-center justify-between shadow-sm mt-2">
-                    <div className="flex items-center gap-6">
-                      <div className="w-[150px] h-[125px] relative flex-shrink-0">
+                  <div className="w-full bg-[#FDF6EA] border border-[#EBD9B6] rounded-xl p-4 flex items-center justify-between shadow-sm mb-2">
+                    <div className="flex items-center gap-4">
+                      <div className="w-[100px] h-[75px] relative flex-shrink-0">
                         <img
                           src="/navbar/heritage.png"
                           alt="Heritage Icon"
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <span className="text-[#12365E] text-2xl font-bold font-['Inter'] text-left">
-                        Built from 32 years of professional <br /> and operating
+
+                      <span className="text-[#12365E] text-base font-bold font-['Inter'] text-left leading-snug">
+                        Built from 32 years of professional and operating
                         experience
                       </span>
                     </div>
+
                     <a
                       href=""
-                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-5 py-3 rounded-lg text-base font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
+                      className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2.5 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       Read Our Story
-                      <LuArrowRight className="w-4 h-4" />
+                      <LuArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
