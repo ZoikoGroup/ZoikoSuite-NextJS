@@ -207,7 +207,7 @@ const regulatedIndustriesLinks = [
   { label: "Telecommunications and MVNOs", href: "/industries/telecom-mvno" },
   { label: "Healthcare", href: "/industries/healthcare" },
   { label: "Life Sciences", href: "/industries/life-sciences" },
-  { label: "Government and Public Sector", href: "/industries/government" },
+  { label: "Government and Public Sector", href: "/government-public-sector" },
 ] as const;
 
 const complexOperationsLinks = [
@@ -219,7 +219,7 @@ const complexOperationsLinks = [
     href: "/industries/construction",
   },
   { label: "Real Estate", href: "/industries/real-estate" },
-  { label: "Retail and Commerce", href: "/industries/retail" },
+  { label: "Retail and Commerce", href: "/retail-commerce" },
   { label: "Transportation", href: "/industries/transportation" },
   { label: "Hospitality", href: "/industries/hospitality" },
 ] as const;
