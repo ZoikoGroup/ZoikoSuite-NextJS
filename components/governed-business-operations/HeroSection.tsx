@@ -99,7 +99,7 @@ export default function HeroSection() {
             >
               <div className="w-full relative overflow-hidden rounded-2xl border border-[#C9D6DF]">
                 <img
-                  src="/governed-business-operations/hero.png"
+                  src="/integration-catalog/HeroVisual-IntegrationOverview.png"
                   alt="A professional operating a governed intelligence console with multiple holographic data streams, authorization loops, and security badges"
                   className="w-full h-auto object-cover block rounded-2xl"
                 />
