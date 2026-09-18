@@ -96,9 +96,9 @@ const NAV_COLUMNS: FooterColumn[] = [
   {
     title: "Trust",
     links: [
-      { label: "Trust Center", href: "/trust/center" },
-      { label: "Security Overview", href: "/trust/security-overview" },
-      { label: "Compliance Overview", href: "/trust/compliance-overview" },
+      { label: "Trust Center", href: "/trust-center" },
+      { label: "Security Overview", href: "/security-overview" },
+      { label: "Compliance Overview", href: "/compliance-overview" },
       { label: "Data Residency", href: "/trust/data-residency" },
       { label: "Privacy Architecture", href: "/trust/privacy-architecture" },
       { label: "Evidence Architecture", href: "/trust/evidence-architecture" },
