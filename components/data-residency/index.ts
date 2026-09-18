@@ -1,0 +1,12 @@
+export { default as DataResidencySection } from "./DataResidencySection";
+export { default as ResidencyOperatingModel } from "./ResidencyOperatingModel";
+export { default as ResidencyControlPlane } from "./ResidencyControlPlane";
+export { default as DataLocationDimensions } from "./DataLocationDimensions";
+export { default as DeploymentModelsSection } from "./DeploymentModelsSection";
+export { default as CoverageStatesSection } from "./CoverageStatesSection";
+export { default as CrossBorderDependencies } from "./CrossBorderDependencies";
+export { default as LifecycleRetentionSection } from "./LifecycleRetentionSection";
+export { default as ResidencyEvidenceSection } from "./ResidencyEvidenceSection";
+export { default as ResidencyAssessment } from "./ResidencyAssessment";
+export { default as SolutionsArchitectSection } from "./SolutionsArchitectSection";
+export { default as FAQSection } from "./FAQSection";
