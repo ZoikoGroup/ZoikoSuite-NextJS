@@ -104,7 +104,7 @@ const foundationLinks = [
   { label: "Integrations", href: "/foundation/integrations" },
   { label: "Developer Platform", href: "/foundation/developer-platform" },
   { label: "Migration & Shadow Mode", href: "/foundation/migration" },
-  { label: "Evidence Architecture", href: "/foundation/evidence-architecture" },
+  { label: "Evidence Architecture", href: "/evidence-architecture" },
   {
     label: "Data and Event Architecture",
     href: "/foundation/data-event-architecture",
@@ -282,7 +282,7 @@ const auditAssuranceLinks = [
 ] as const;
 
 const dataSovereigntyLinks = [
-  { label: "Data Residency", href: "/trust/data-residency" },
+  { label: "Data Residency", href: "/data-residency" },
   { label: "Regional Hosting", href: "/trust/regional-hosting" },
   { label: "Dedicated Private Cloud", href: "/trust/private-cloud" },
   { label: "Enterprise Single-Tenant", href: "/trust/single-tenant" },
