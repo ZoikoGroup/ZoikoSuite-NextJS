@@ -204,8 +204,8 @@ const regulatedIndustriesLinks = [
   { label: "Banking", href: "/banking" },
   { label: "Fintech", href: "/industries/fintech" },
   { label: "Insurance", href: "/insurance" },
-  { label: "Telecommunications and MVNOs", href: "/industries/telecom-mvno" },
-  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Telecommunications and MVNOs", href: "/telecom-mvno" },
+  { label: "Healthcare", href: "/healthcare" },
   { label: "Life Sciences", href: "/industries/life-sciences" },
   { label: "Government and Public Sector", href: "/government-public-sector" },
 ] as const;
@@ -1258,7 +1258,7 @@ export default function Navbar() {
                     </div>
 
                     <a
-                      href=""
+                      href="/industry-solutions"
                       className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2.5 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       View Industry Solutions
