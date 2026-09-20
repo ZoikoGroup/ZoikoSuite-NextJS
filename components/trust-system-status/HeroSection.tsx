@@ -6,13 +6,14 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section
-      className="w-full text-white font-sans relative overflow-hidden"
+      className="w-full text-white font-sans relative overflow-hidden py-16 lg:py-24 px-6 md:px-14 flex justify-center"
       style={{
         background: "linear-gradient(to bottom, #0A1E2C, #0E2A3D)",
       }}
     >
-      <div className="max-w-[1320px] mx-auto px-6 md:px-12 pt-20 md:pt-24 pb-0">
-        <div className="relative">
+      <div className="max-w-[1320px] w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        {/* Left Column */}
+        <div className="lg:col-span-6 flex flex-col items-start">
           {/* Eyebrow */}
           <div className="flex items-center gap-2.5 mb-4">
             <span className="w-4 h-[1.5px] bg-[#D4943A]" />
@@ -29,20 +30,18 @@ export default function HeroSection() {
 
           {/* Heading */}
           <h1
-            className="text-4xl md:text-5xl font-bold leading-[1.14] mb-5 max-w-3xl"
-            style={{ fontFamily: "'Archivo', sans-serif", color: "#E8E4DC" }}
+            className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-[1.14] mb-5 text-[#E8E4DC] tracking-tight"
+            style={{ fontFamily: "'Archivo', sans-serif" }}
           >
-            Some ZoikoSuite services
-            <br />
-            are experiencing
-            <br />
+            Some ZoikoSuite services <br />
+            are experiencing <br />
             degraded performance.
           </h1>
 
           {/* Subtext */}
           <p
-            className="text-base md:text-lg font-normal leading-7 mb-6 max-w-[633px]"
-            style={{ fontFamily: "'Archivo', sans-serif", color: "#A8BFCC" }}
+            className="text-base text-[#A8BFCC] leading-relaxed mb-8 max-w-[560px] font-normal"
+            style={{ fontFamily: "'Archivo', sans-serif" }}
           >
             See current service health, active incidents, scheduled maintenance,
             and historical status for the ZoikoSuite services covered by this
@@ -50,10 +49,10 @@ export default function HeroSection() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap items-center gap-3 mb-16 md:mb-24">
+          <div className="flex flex-wrap items-center gap-3">
             <a
               href="#active-incident"
-              className="inline-flex items-center justify-center px-6 h-11 rounded-full text-base font-semibold transition-all hover:opacity-90"
+              className="inline-flex items-center justify-center px-6 h-11 rounded-full text-sm sm:text-base font-semibold transition-all hover:opacity-90"
               style={{
                 fontFamily: "'Archivo', sans-serif",
                 backgroundColor: "#D4943A",
@@ -71,7 +70,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#notifications"
-              className="inline-flex items-center justify-center px-6 h-11 rounded-full text-base font-semibold transition-all hover:border-gray-400"
+              className="inline-flex items-center justify-center px-6 h-11 rounded-full text-sm sm:text-base font-semibold transition-all hover:border-gray-400"
               style={{
                 fontFamily: "'Archivo', sans-serif",
                 color: "#E6E2DA",
@@ -81,29 +80,15 @@ export default function HeroSection() {
               Subscribe to updates
             </a>
           </div>
+        </div>
 
-          {/* Mockup Image Container */}
-          <div
-            className="relative w-full rounded-2xl overflow-visible"
-            style={{
-              backgroundColor: "#0F1F2B",
-              border: "1px solid #1C3A50",
-            }}
-          >
-            {/* Left-aligned product mockup with shadow */}
-            <div className="relative w-full md:w-[55%] h-[300px] sm:h-[400px] md:h-[549px]">
-              <Image
-                src="/Trust-SystemStatus/Live status product mockup_shadow.png"
-                alt="System Status Live Dashboard Mockup"
-                fill
-                priority
-                className="object-cover object-top rounded-2xl"
-                style={{
-                  boxShadow: "0px 30px 70px -30px rgba(0,0,0,0.60)",
-                }}
-              />
-            </div>
-          </div>
+        {/* Right Column: Graphic Mockup */}
+        <div className="lg:col-span-6 w-full flex justify-center lg:justify-end">
+          <img
+            src="/Trust-SystemStatus/Live status product mockup_shadow.png"
+            alt="System Status Live Dashboard Mockup"
+            className="w-full max-w-[620px] h-auto object-contain block m-0 p-0"
+          />
         </div>
       </div>
     </section>

@@ -59,14 +59,13 @@ export default function ActiveIncidentSection() {
           </div>
 
           {/* Content Grid */}
-          <div className="mt-11 grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="mt-11 grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
             {/* Left: Image */}
             <div
-              className="relative w-full h-[350px] sm:h-[450px] lg:h-[576px] rounded-2xl overflow-hidden"
-              style={{ border: "1px solid #D6DEE3" }}
+              className="relative w-full h-[300px] sm:h-[351px] rounded-2xl overflow-hidden border border-[#D6DEE3]"
             >
               <Image
-                src="/Trust-SystemStatus/div.card (1).png"
+                src="/Trust-SystemStatus/io.png"
                 alt="Active Incident Details"
                 fill
                 className="object-cover object-top"
@@ -74,61 +73,38 @@ export default function ActiveIncidentSection() {
             </div>
 
             {/* Right: Timeline */}
-            <div
-              className="bg-white rounded-2xl px-7 py-7 flex flex-col"
-              style={{ border: "1px solid #D6DEE3" }}
-            >
-              <div className="pb-7">
-                <span
-                  className="text-xs font-normal uppercase tracking-wide"
-                  style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    color: "#3E5A6B",
-                  }}
-                >
+            <div className="self-stretch px-7 py-7 bg-white rounded-2xl border border-[#D6DEE3] flex flex-col justify-start items-start h-full">
+              <div className="self-stretch pb-7 flex flex-col justify-start items-start">
+                <div className="self-stretch justify-center text-[#3E5A6B] text-xs font-normal font-['JetBrains_Mono'] uppercase leading-4 tracking-wide">
                   Timeline (newest first)
-                </span>
+                </div>
               </div>
 
               {timelineEntries.map((entry, idx) => (
                 <div
                   key={idx}
-                  className={`flex gap-4 pt-3.5 pb-4 ${
+                  className={`self-stretch pt-3.5 pb-4 inline-flex justify-start items-start gap-4 ${
                     idx < timelineEntries.length - 1
                       ? "border-b border-[#D6DEE3]"
                       : ""
                   }`}
                 >
-                  <div className="w-32 shrink-0">
-                    <span
-                      className="text-xs font-normal"
-                      style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        color: "#3E5A6B",
-                      }}
-                    >
+                  <div className="w-32 shrink-0 inline-flex flex-col justify-start items-start">
+                    <div className="justify-center text-[#3E5A6B] text-xs font-normal font-['JetBrains_Mono'] leading-5">
                       {entry.time}
-                    </span>
+                    </div>
                   </div>
-                  <div className="flex-1 flex flex-col gap-1">
-                    <span
-                      className="text-xs font-normal uppercase tracking-wide"
-                      style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        color: "#173D52",
-                      }}
-                    >
-                      {entry.status}
-                    </span>
-                    <p
-                      className="text-sm font-normal leading-6"
-                      style={{
-                        fontFamily: "'Archivo', sans-serif",
-                        color: "#0D2636",
-                      }}
-                    >
-                      {entry.description}
-                    </p>
+                  <div className="flex-1 inline-flex flex-col justify-start items-start gap-1">
+                    <div className="self-stretch flex flex-col justify-start items-start">
+                      <div className="self-stretch justify-center text-[#173D52] text-xs font-normal font-['JetBrains_Mono'] uppercase leading-4 tracking-wide">
+                        {entry.status}
+                      </div>
+                    </div>
+                    <div className="self-stretch flex flex-col justify-start items-start">
+                      <div className="self-stretch justify-center text-[#0D2636] text-sm font-normal font-['Archivo'] leading-6">
+                        {entry.description}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

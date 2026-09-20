@@ -10,7 +10,7 @@ import {
   LearningEventsSection,
   InsightsToolsSection,
   FaqSection,
-} from "@/components/resources";
+} from "@/components/resources-center";
 
 export const metadata: Metadata = {
   title: "Resources | ZoikoSuite",
