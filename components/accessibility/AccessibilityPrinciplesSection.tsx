@@ -60,8 +60,8 @@ export default function AccessibilityPrinciplesSection() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-5 h-[2px] bg-[#c5a059]" />
-            <span className="text-[10.5px] font-semibold tracking-[0.2em] text-[#c5a059] uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+            <span className="w-5 h-[2px] bg-[#A07A2E]" />
+            <span className="text-[10.5px] font-semibold tracking-[0.2em] text-[#A07A2E] uppercase font-['JetBrains_Mono']">
               ACCESSIBILITY PRINCIPLES
             </span>
           </div>

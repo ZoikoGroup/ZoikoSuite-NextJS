@@ -22,8 +22,8 @@ export default function TestThisPageSection() {
           >
             {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-5 h-[2px] bg-[#c5a059]" />
-              <span className="text-[11px] font-semibold tracking-[0.22em] text-[#c5a059] uppercase font-mono">
+              <span className="w-5 h-[2px] bg-[#A07A2E]" />
+              <span className="text-[11px] font-semibold tracking-[0.22em] text-[#A07A2E] uppercase font-['JetBrains_Mono']">
                 NEXT STEP
               </span>
             </div>

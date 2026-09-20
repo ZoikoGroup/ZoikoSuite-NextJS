@@ -30,7 +30,7 @@ const issues: Issue[] = [
     workaroundLabel: "Workaround: ",
     workaround:
       "the same data is available in the adjacent registry table for most views.",
-    statusLabel: "Remediation in progress",
+    statusLabel: "REMEDIATION IN PROGRESS",
     status: "inProgress",
     owner: "Design system lead",
     note: "No completion date published until the fix is approved for release.",
@@ -43,7 +43,7 @@ const issues: Issue[] = [
       "Keyboard focus moves to the document start, forcing users to re-traverse the page.",
     workaroundLabel: "Workaround: ",
     workaround: "none currently available.",
-    statusLabel: "Remediation in progress",
+    statusLabel: "REMEDIATION IN PROGRESS",
     status: "inProgress",
     owner: "Web app engineering",
     note: "Regression gate added so the fix cannot silently revert.",
@@ -57,7 +57,7 @@ const issues: Issue[] = [
     mitigationLabel: "Mitigation: ",
     mitigation:
       "an equivalent non-embedded path is provided for the same task.",
-    statusLabel: "Third-party dependency",
+    statusLabel: "THIRD-PARTY DEPENDENCY",
     status: "thirdParty",
     owner: "Vendor management — raised with supplier",
     note: "Vendor accessibility evidence requested; response pending.",
@@ -74,13 +74,13 @@ export default function KnownLimitationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col mb-9"
+          className="flex flex-col mb-10"
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span className="w-4 h-[1.5px] bg-[#A07A2E]" />
             <span
-              className="text-xs font-medium tracking-widest text-orange-400 uppercase leading-5"
+              className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               KNOWN LIMITATIONS AND REMEDIATION
@@ -88,16 +88,16 @@ export default function KnownLimitationsSection() {
           </div>
 
           {/* Heading left — subtitle right */}
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <h2
-              className="text-3xl sm:text-4xl lg:text-[48px] font-semibold tracking-tight text-[#101828] leading-[49px] shrink-0"
+              className="text-3xl sm:text-4xl lg:text-[44px] font-semibold tracking-tight text-[#101828] leading-[48px] shrink-0"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
               Sixteen open issues, published<br />
               with owners
             </h2>
             <p
-              className="text-[15px] sm:text-xl text-[#3a5277] leading-8 mt-3 lg:mt-1 max-w-[500px]"
+              className="text-[15px] sm:text-base text-[#475467] leading-6 mt-1 max-w-[480px]"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
               Two high, five medium, nine low. The high-severity items are listed<br />
@@ -108,7 +108,7 @@ export default function KnownLimitationsSection() {
         </motion.div>
 
         {/* Issue cards */}
-        <div className="pt-6 flex flex-col gap-1.5">
+        <div className="flex flex-col gap-4">
           {issues.map((issue, index) => (
             <motion.article
               key={issue.label}
@@ -116,99 +116,84 @@ export default function KnownLimitationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.06 }}
-              className={`bg-white rounded-tr-lg rounded-br-lg border-l-[3px] border-y border-r border-[#c5d4e8] px-3.5 py-3 flex flex-col ${
+              className={`bg-white rounded-md border border-stone-200 border-l-[4px] p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-start shadow-sm ${
                 issue.status === "thirdParty"
-                  ? "border-l-[#a78bfa]"
-                  : "border-l-[#dc2626]"
+                  ? "border-l-[#8b5cf6]"
+                  : "border-l-[#ef4444]"
               }`}
             >
-              {/* Label + title + affects */}
-              <div className="flex flex-col gap-0.5">
+              {/* Col 1: Title & Affects */}
+              <div className="md:col-span-4 flex flex-col gap-1.5">
                 <span
-                  className="text-[8px] font-medium uppercase leading-3 tracking-wide text-[#3a5277]"
+                  className="text-[10px] font-medium uppercase leading-4 tracking-wider text-[#667085]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   {issue.label}
                 </span>
                 <h3
-                  className="text-xs font-bold text-[#101828] leading-5"
+                  className="text-sm font-bold text-[#101828] leading-5"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
                   {issue.title}
                 </h3>
                 <p
-                  className="text-xs text-[#3a5277] leading-5"
+                  className="text-xs text-[#475467] leading-5"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
-                  Affects: {issue.affects}
+                  <span className="text-[#667085]">Affects:</span> {issue.affects}
                 </p>
               </div>
 
-              {/* User impact + workaround/mitigation */}
-              <div className="mt-2 flex flex-col gap-0.5">
+              {/* Col 2: User Impact & Workaround */}
+              <div className="md:col-span-4 flex flex-col gap-1.5">
                 <span
-                  className="text-[8px] font-medium uppercase leading-3 tracking-wide text-[#3a5277]"
+                  className="text-[10px] font-medium uppercase leading-4 tracking-wider text-[#667085]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
-                  User impact
+                  User Impact
                 </span>
                 <p
-                  className="text-xs text-[#3a5277] leading-5"
+                  className="text-xs text-[#475467] leading-5"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
                   {issue.impact}
                 </p>
                 <p
-                  className="text-xs text-[#3a5277] leading-5"
+                  className="text-xs text-[#475467] leading-5 mt-1"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
                   {issue.workaroundLabel && (
-                    <strong className="font-bold">{issue.workaroundLabel}</strong>
+                    <strong className="font-semibold text-[#344054]">{issue.workaroundLabel}</strong>
                   )}
                   {issue.workaround}
                   {issue.mitigationLabel && (
-                    <strong className="font-bold">{issue.mitigationLabel}</strong>
+                    <strong className="font-semibold text-[#344054]">{issue.mitigationLabel}</strong>
                   )}
                   {issue.mitigation}
                 </p>
               </div>
 
-              {/* Status */}
-              <div className="mt-2 flex flex-col gap-0.5">
-                <span
-                  className="text-[8px] font-medium uppercase leading-3 tracking-wide text-[#3a5277]"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  Status
-                </span>
-                <div className="mt-0.5">
+              {/* Col 3: Status & Owner */}
+              <div className="md:col-span-4 flex flex-col gap-2">
+                <div>
                   {issue.status === "inProgress" ? (
                     <span
-                      className="inline-flex items-center justify-center px-2.5 py-[3px] rounded-sm"
-                      style={{
-                        backgroundColor: "#FAF5D8",
-                        outline: "1px solid #C8A951",
-                        borderLeft: "3px solid #C8A951",
-                      }}
+                      className="inline-flex items-center justify-center px-2.5 py-1 rounded bg-[#FEF0C7] border border-[#F7D070]"
                     >
                       <span
-                        className="text-[8.5px] font-medium uppercase leading-3 tracking-wide"
-                        style={{ fontFamily: "'JetBrains Mono', monospace", color: "#826644" }}
+                        className="text-[10px] font-bold uppercase tracking-wider text-[#B54708]"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
                       >
                         {issue.statusLabel}
                       </span>
                     </span>
                   ) : (
                     <span
-                      className="inline-flex items-center justify-center px-1.5 py-[3px] rounded-sm"
-                      style={{
-                        backgroundColor: "#f3f0fe",
-                        outline: "1px solid #a78bfa",
-                      }}
+                      className="inline-flex items-center justify-center px-2.5 py-1 rounded bg-[#F4F3FF] border border-[#D9D6FE]"
                     >
                       <span
-                        className="text-[8.5px] font-medium uppercase leading-3 tracking-wide"
-                        style={{ fontFamily: "'JetBrains Mono', monospace", color: "#5b21b6" }}
+                        className="text-[10px] font-bold uppercase tracking-wider text-[#5925DC]"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
                       >
                         {issue.statusLabel}
                       </span>
@@ -216,13 +201,13 @@ export default function KnownLimitationsSection() {
                   )}
                 </div>
                 <p
-                  className="mt-1 text-xs text-[#3a5277] leading-5"
+                  className="text-xs text-[#475467] leading-5"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
-                  <strong className="font-bold text-[#101828]">Owner:</strong> {issue.owner}
+                  <span className="text-[#667085]">Owner:</span> <strong className="font-semibold text-[#344054]">{issue.owner}</strong>
                 </p>
                 <p
-                  className="text-xs text-[#3a5277] leading-5"
+                  className="text-xs text-[#667085] leading-5"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
                   {issue.note}

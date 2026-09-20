@@ -1,92 +1,135 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
-const contractItems = [
+interface DetailBlock {
+  title: string;
+  description: string;
+  badge: string;
+}
+
+const blocks: DetailBlock[] = [
   {
     title: "Intended use",
-    desc: "The task this asset supports, and just as importantly the situations it is not built for.",
-    tag: "Required block",
+    description:
+      "The task this asset supports, and just as importantly the situations it is not built for.",
+    badge: "Required block",
   },
   {
     title: "Prerequisites",
-    desc: "What you need before starting — inputs, access, roles involved, or prior work.",
-    tag: "Required block",
+    description:
+      "What you need before starting — inputs, access, roles involved, or prior work.",
+    badge: "Required block",
   },
   {
     title: "Owner and currentness",
-    desc: "Named owner, version or last-reviewed date, and review cadence.",
-    tag: "Required block",
+    description:
+      "Named owner, version or last-reviewed date, and review cadence.",
+    badge: "Required block",
   },
   {
     title: "Access and format",
-    desc: "Access state, execution mode, and the file record where a download exists.",
-    tag: "Required block",
+    description:
+      "Access state, execution mode, and the file record where a download exists.",
+    badge: "Required block",
   },
   {
     title: "Methodology and limitations",
-    desc: "For anything that calculates: assumptions, units, boundaries and what the output does not tell you.",
-    tag: "Required where applicable",
+    description:
+      "For anything that calculates: assumptions, units, boundaries and what the output does not tell you.",
+    badge: "Required where applicable",
   },
   {
     title: "Data handling",
-    desc: "What happens to anything you enter — where it goes, whether it is retained, and who can see it.",
-    tag: "Required for interactive",
+    description:
+      "What happens to anything you enter — where it goes, whether it is retained, and who can see it.",
+    badge: "Required for interactive",
   },
 ];
 
 export default function AssetDetailContract() {
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-20 font-sans text-[#111827]">
-      <div className="max-w-6xl mx-auto flex flex-col items-start">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start w-full mb-12">
-          {/* Text Content */}
-          <div className="flex flex-col flex-1">
-            {/* Eyebrow Tag */}
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-4 h-[1.5px] bg-[#C9B07A]"></span>
-              <span className="text-[#C9B07A] text-xs font-semibold tracking-widest uppercase font-mono">
-                Asset detail contract
-              </span>
-            </div>
-            {/* Main Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-              What a detail page must answer<br className="hidden md:block" />
+    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 flex justify-center">
+      <div className="max-w-[1240px] w-full flex flex-col gap-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col"
+        >
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 mb-4 pt-2.5">
+            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span
+              className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              Asset detail contract
+            </span>
+          </div>
+
+          {/* Heading left — subtitle right */}
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+            <h2
+              className="text-3xl sm:text-4xl lg:text-[48px] font-semibold tracking-tight text-[#101828] leading-[49.28px] shrink-0"
+              style={{ fontFamily: "'Archivo', sans-serif" }}
+            >
+              What a detail page must answer
+              <br />
               before you act
             </h2>
-          </div>
-          
-          <div className="flex-1">
-            <p className="text-[#4B5563] text-lg md:text-xl leading-relaxed max-w-xl">
+            <p
+              className="text-[15px] sm:text-lg lg:text-xl text-[#475467] leading-8 mt-1 max-w-[690px]"
+              style={{ fontFamily: "'Archivo', sans-serif" }}
+            >
               Fit and prerequisites come before the action. A visitor should be
+              <br />
               able to decide the asset is wrong for them without downloading it.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        {/* List of items */}
-        <div className="w-full flex flex-col gap-3">
-          {contractItems.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row md:items-center bg-white border-l-4 border-l-[#08222F] border border-[#E5E7EB] rounded-r-lg p-5 gap-4 md:gap-8 hover:bg-gray-50 transition-colors"
+        {/* Rows */}
+        <div className="flex flex-col gap-2">
+          {blocks.map((block, index) => (
+            <motion.div
+              key={block.title}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="bg-white rounded-tr-lg rounded-br-lg border-l-[3px] border-r border-t border-b border-[#c5d4e8] px-4 py-3 flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
-              <div className="md:w-1/4">
-                <h3 className="text-sm font-bold text-[#111827] leading-snug">
-                  {item.title}
+              <div className="w-44 shrink-0">
+                <h3
+                  className="text-sm font-bold text-[#101828] leading-5"
+                  style={{ fontFamily: "'Archivo', sans-serif" }}
+                >
+                  {block.title}
                 </h3>
               </div>
-              <div className="md:w-1/2 flex-1">
-                <p className="text-sm text-[#4B5563] leading-relaxed">
-                  {item.desc}
+              <div className="flex-1">
+                <p
+                  className="text-xs text-[#475467] leading-5 font-normal"
+                  style={{ fontFamily: "'Archivo', sans-serif" }}
+                >
+                  {block.description}
                 </p>
               </div>
-              <div className="md:w-auto shrink-0 flex justify-start md:justify-end">
-                <span className="inline-block px-2 py-1 bg-green-50 border border-green-200 text-green-700 text-[10px] font-semibold uppercase tracking-wider font-mono rounded">
-                  {item.tag}
+              <div className="shrink-0">
+                <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-sm bg-[#F2F4F7] border border-[#D0D5DD]">
+                  <span
+                    className="text-[8.50px] font-medium uppercase leading-3 tracking-wide text-[#344054] whitespace-nowrap"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    {block.badge}
+                  </span>
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

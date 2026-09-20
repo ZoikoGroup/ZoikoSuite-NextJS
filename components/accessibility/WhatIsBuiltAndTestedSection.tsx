@@ -96,9 +96,8 @@ export default function WhatIsBuiltAndTestedSection() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
-            <span className="text-xs font-medium tracking-widest text-orange-400 uppercase leading-5"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+            <span className="w-4 h-[1.5px] bg-[#A07A2E]" />
+            <span className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5 font-['JetBrains_Mono']">
               Operability, semantics and visual design
             </span>
           </div>

@@ -21,8 +21,8 @@ export default function AccessibilityStatusScopeSection() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-5 h-[1.5px]" style={{ backgroundColor: '#A88B2E' }} />
-            <span className="text-xs font-medium tracking-widest uppercase leading-5" style={{ fontFamily: "'JetBrains Mono', monospace", color: '#A88B2E' }}>
+            <span className="w-5 h-[1.5px] bg-[#A07A2E]" />
+            <span className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5 font-['JetBrains_Mono']">
               CURRENT STATUS AND SCOPE
             </span>
           </div>

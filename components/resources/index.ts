@@ -1,0 +1,10 @@
+export { default as ResourcesHero } from "./ResourcesHero";
+export { default as ResourceNavigatorSection } from "./ResourceNavigatorSection";
+export { default as FeaturedResourcesSection } from "./FeaturedResourcesSection";
+export { default as GoalRoutingSection } from "./GoalRoutingSection";
+export { default as ResourceLibrarySection } from "./ResourceLibrarySection";
+export { default as ExecutiveEvaluationSection } from "./ExecutiveEvaluationSection";
+export { default as DocumentationKnowledgeSection } from "./DocumentationKnowledgeSection";
+export { default as LearningEventsSection } from "./LearningEventsSection";
+export { default as InsightsToolsSection } from "./InsightsToolsSection";
+export { default as FaqSection } from "./FaqSection";
