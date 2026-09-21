@@ -85,7 +85,7 @@ const faqs = [
     answer: (
       <p>
         No. The processing activity can reference a legal basis, but the
-        customer's lawful basis is not determined by the system.
+        customer&apos;s lawful basis is not determined by the system.
       </p>
     ),
   },

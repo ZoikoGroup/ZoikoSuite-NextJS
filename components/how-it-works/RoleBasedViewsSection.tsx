@@ -167,14 +167,14 @@ export default function RoleBasedViewsSection() {
             className="border border-[#CFDEE7] rounded-2xl p-8 mb-8 shadow-sm"
           >
             <h4 className="text-xs uppercase tracking-widest font-bold text-[#0F476A] mb-3">
-              Why can or can't I do this?
+              Why can or can&apos;t I do this?
             </h4>
             <p className="text-[#0f172a] text-sm sm:text-base leading-relaxed">
               Every unavailable control states the rule, the missing condition,
-              and the route to resolve it — for example: "Approve is
+              and the route to resolve it — for example: &quot;Approve is
               unavailable: EVD-AP-003 requires a call-back verification record
               for creditor-account changes. Request evidence, or return for
-              correction."
+              correction.&quot;
             </p>
           </motion.div>
 

@@ -16,7 +16,7 @@ export default function CustomerStoriesExplanation() {
             source, evidence and rights record supports every public fact.
             Stories may be narrative and human, but each material outcome
             exposes its evidence class, measured period and limitations. A story
-            describes one organization's experience under its own conditions; it
+            describes one organization&apos;s experience under its own conditions; it
             does not establish a guaranteed or equivalent outcome for anyone
             else.
           </p>

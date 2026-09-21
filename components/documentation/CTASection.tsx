@@ -20,7 +20,7 @@ export default function CTASection() {
 
         {/* Description Paragraph */}
         <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
-          Bring your specific governance model and we'll walk through
+          Bring your specific governance model and we&apos;ll walk through
           implementation options together.
         </p>
 
