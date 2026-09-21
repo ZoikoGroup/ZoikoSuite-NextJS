@@ -104,7 +104,7 @@ const foundationLinks = [
   { label: "Integrations", href: "/foundation/integrations" },
   { label: "Developer Platform", href: "/foundation/developer-platform" },
   { label: "Migration & Shadow Mode", href: "/foundation/migration" },
-  { label: "Evidence Architecture", href: "/foundation/evidence-architecture" },
+  { label: "Evidence Architecture", href: "/evidence-architecture" },
   {
     label: "Data and Event Architecture",
     href: "/foundation/data-event-architecture",
@@ -204,8 +204,8 @@ const regulatedIndustriesLinks = [
   { label: "Banking", href: "/banking" },
   { label: "Fintech", href: "/industries/fintech" },
   { label: "Insurance", href: "/insurance" },
-  { label: "Telecommunications and MVNOs", href: "/industries/telecom-mvno" },
-  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Telecommunications and MVNOs", href: "/telecom-mvno" },
+  { label: "Healthcare", href: "/healthcare" },
   { label: "Life Sciences", href: "/industries/life-sciences" },
   { label: "Government and Public Sector", href: "/government-public-sector" },
 ] as const;
@@ -240,7 +240,7 @@ const knowledgeGrowthLinks = [
 
 /* --- Trust Data --- */
 const securityArchitectureLinks = [
-  { label: "Security Overview", href: "/trust/security-overview" },
+  { label: "Security Overview", href: "/security-overview" },
   { label: "Zero-Trust Architecture", href: "/trust/zero-trust" },
   { label: "Identity and Access Management", href: "/trust/iam" },
   { label: "Encryption and Key Management", href: "/trust/encryption" },
@@ -256,7 +256,7 @@ const securityArchitectureLinks = [
 ] as const;
 
 const complianceFrameworkLinks = [
-  { label: "Compliance Overview", href: "/trust/compliance-overview" },
+  { label: "Compliance Overview", href: "/compliance-overview" },
   { label: "SOC 2 Readiness", href: "/trust/soc-2" },
   { label: "ISO 27001 Alignment", href: "/trust/iso-27001" },
   { label: "GDPR Controls", href: "/trust/gdpr" },
@@ -264,7 +264,7 @@ const complianceFrameworkLinks = [
   { label: "Data Processing Agreement", href: "/trust/dpa" },
   { label: "Subprocessor List", href: "/trust/subprocessors" },
   { label: "Records Retention", href: "/trust/records-retention" },
-  { label: "Responsible AI", href: "/trust/responsible-ai" },
+  { label: "Responsible AI", href: "/responsible-ai" },
   { label: "Accessibility", href: "/trust/accessibility" },
 ] as const;
 
@@ -282,7 +282,7 @@ const auditAssuranceLinks = [
 ] as const;
 
 const dataSovereigntyLinks = [
-  { label: "Data Residency", href: "/trust/data-residency" },
+  { label: "Data Residency", href: "/data-residency" },
   { label: "Regional Hosting", href: "/trust/regional-hosting" },
   { label: "Dedicated Private Cloud", href: "/trust/private-cloud" },
   { label: "Enterprise Single-Tenant", href: "/trust/single-tenant" },
@@ -307,7 +307,7 @@ const learnLinks = [
 ] as const;
 
 const execResourcesLinks = [
-  { label: "Executive Briefs", href: "/resources/executive-briefs" },
+  { label: "Executive Briefs", href: "/executive-briefs" },
   { label: "CFO Resources", href: "/resources/cfo" },
   { label: "General Counsel Resources", href: "/resources/general-counsel" },
   { label: "CHRO Resources", href: "/resources/chro" },
@@ -335,7 +335,7 @@ const techArchitectureLinks = [
 ] as const;
 
 const customerResourcesLinks = [
-  { label: "Documentation", href: "/support/documentation" },
+  { label: "Documentation", href: "/documentation" },
   { label: "Knowledge Base", href: "/support/knowledge-base" },
   { label: "Training Academy", href: "/support/academy" },
   { label: "Certification", href: "/support/certification" },
@@ -631,7 +631,10 @@ export default function Navbar() {
             {/* Right Side Controls */}
             <div className="pl-4 flex items-center gap-2">
               {/* Search Icon Button */}
-              <button className="w-11 h-11 px-1.5 py-px rounded-[10px] flex justify-center items-center hover:bg-[#EAEEF4]/50 transition-colors">
+              <button
+                suppressHydrationWarning
+                className="w-11 h-11 px-1.5 py-px rounded-[10px] flex justify-center items-center hover:bg-[#EAEEF4]/50 transition-colors"
+              >
                 <LuSearch className="w-5 h-5 text-[#12365E]" />
               </button>
 
@@ -674,6 +677,7 @@ export default function Navbar() {
             {/* Right Side Controls */}
             <div className="flex items-center gap-1">
               <button
+                suppressHydrationWarning
                 className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
                 aria-label="Search"
               >
@@ -681,6 +685,7 @@ export default function Navbar() {
               </button>
 
               <button
+                suppressHydrationWarning
                 className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
                 aria-label="Open menu"
                 aria-expanded={isMobileMenuOpen}
@@ -1258,7 +1263,7 @@ export default function Navbar() {
                     </div>
 
                     <a
-                      href=""
+                      href="/industry-solutions"
                       className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2.5 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       View Industry Solutions
@@ -1446,7 +1451,7 @@ export default function Navbar() {
                     </div>
 
                     <a
-                      href=""
+                      href="/trust-center"
                       className="bg-[#C0872B] hover:bg-[#A9761F] text-[#FFFFFF] px-4 py-2.5 rounded-lg text-xs font-bold font-['Inter'] flex items-center gap-2 transition-colors flex-shrink-0"
                     >
                       Visit the Trust Center
