@@ -8,9 +8,9 @@ export default function AccessibilityStatusScopeSection() {
   return (
     <section
       id="current-status"
-      className="w-full bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-20 flex justify-center"
+      className="w-full bg-white py-16 sm:py-24 px-6 lg:px-14 flex justify-center"
     >
-      <div className="max-w-[1240px] w-full flex flex-col gap-4">
+      <div className="max-w-[1320px] w-full flex flex-col gap-4">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}

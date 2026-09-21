@@ -48,8 +48,8 @@ const commitments: Commitment[] = [
 
 export default function AccessibilityPrinciplesSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col">
+    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col">
         {/* Header — eyebrow + h2 on left, subtitle on right */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}

@@ -50,8 +50,8 @@ const blocks: DetailBlock[] = [
 
 export default function AssetDetailContract() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col gap-10">
+    <section className="w-full bg-white py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col gap-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -62,10 +62,10 @@ export default function AssetDetailContract() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span className="w-4 h-[1.5px] bg-[#D4943A]" />
             <span
-              className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="text-xs font-medium tracking-widest text-[#D4943A] uppercase leading-5"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Asset detail contract
             </span>
@@ -82,8 +82,8 @@ export default function AssetDetailContract() {
               before you act
             </h2>
             <p
-              className="text-[15px] sm:text-lg lg:text-xl text-[#475467] leading-8 mt-1 max-w-[690px]"
-              style={{ fontFamily: "'Archivo', sans-serif" }}
+              className="text-[15px] sm:text-lg lg:text-xl text-[#646E75] leading-8 mt-1 lg:whitespace-nowrap"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Fit and prerequisites come before the action. A visitor should be
               <br />
@@ -101,12 +101,12 @@ export default function AssetDetailContract() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-white rounded-tr-lg rounded-br-lg border-l-[3px] border-r border-t border-b border-[#c5d4e8] px-4 py-3 flex flex-col md:flex-row md:items-center justify-between gap-4"
+              className="bg-white rounded-tr-lg rounded-br-lg border-l-[3px] border-l-[#2A6386] border-r border-t border-b border-[#c5d4e8] px-4 py-3 flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
               <div className="w-44 shrink-0">
                 <h3
                   className="text-sm font-bold text-[#101828] leading-5"
-                  style={{ fontFamily: "'Archivo', sans-serif" }}
+                  style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {block.title}
                 </h3>
@@ -114,16 +114,16 @@ export default function AssetDetailContract() {
               <div className="flex-1">
                 <p
                   className="text-xs text-[#475467] leading-5 font-normal"
-                  style={{ fontFamily: "'Archivo', sans-serif" }}
+                  style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {block.description}
                 </p>
               </div>
               <div className="shrink-0">
-                <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-sm bg-[#F2F4F7] border border-[#D0D5DD]">
+                <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-sm bg-[#ECF8E8] border border-[#9AC2B8]">
                   <span
-                    className="text-[8.50px] font-medium uppercase leading-3 tracking-wide text-[#344054] whitespace-nowrap"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    className="text-[8.50px] font-medium uppercase leading-3 tracking-wide text-[#126B40] whitespace-nowrap"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {block.badge}
                   </span>

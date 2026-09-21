@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 interface FieldProps {
   label: React.ReactNode;
@@ -45,14 +44,14 @@ export default function AccessibilityIssueReportSection() {
   return (
     <section
       id="accessibility-report-form"
-      className="w-full py-14 px-4 sm:px-6 flex justify-center bg-white"
+      className="w-full py-14 px-6 lg:px-14 flex justify-center bg-white"
     >
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-[1224px] rounded-xl overflow-hidden border-2 border-[#0F476A] bg-[#EEF2F5] shadow-lg"
+        className="w-full max-w-[1320px] rounded-xl overflow-hidden border-2 border-[#0F476A] bg-[#EEF2F5] shadow-lg"
       >
         {/* Header band */}
         <div className="px-4 sm:px-6 py-3.5 bg-[#0F476A] flex flex-col gap-[5px]">
@@ -125,13 +124,19 @@ export default function AccessibilityIssueReportSection() {
             placeholder=""
           />
 
-          <div className="min-h-12 pt-1 flex flex-col items-start">
+          <div className="w-full pt-1 flex flex-col items-start">
             <button
               type="submit"
-              className="min-h-12 px-6 py-3 rounded-full bg-[#D0AA55] hover:bg-[#c29c4c] inline-flex justify-center items-center gap-2.5 font-semibold text-base text-[#08222F] transition-colors cursor-pointer"
+              className="self-stretch min-h-12 px-6 py-3 bg-[#D0AA55] rounded-[999px] outline outline-1 outline-offset-[-1px] outline-[#D0AA55] inline-flex justify-center items-center gap-2.5 transition-colors cursor-pointer hover:bg-[#c29c4c]"
             >
-              Submit accessibility issue
-              <ArrowRight className="w-4 h-4 opacity-90" />
+              <span className="text-center justify-center text-[#08222F] text-base font-semibold font-['Archivo']">
+                Submit accessibility issue
+              </span>
+              <span className="pb-[3px] opacity-90 inline-flex flex-col justify-start items-center">
+                <span className="text-center justify-center text-[#08222F] text-xs font-semibold font-['JetBrains_Mono']">
+                  →
+                </span>
+              </span>
             </button>
           </div>
 

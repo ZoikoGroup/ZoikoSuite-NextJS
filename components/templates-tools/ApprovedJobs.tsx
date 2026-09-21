@@ -8,7 +8,7 @@ const jobs = [
     title: "Plan an implementation",
     description: (
       <>
-        Structure scope, sequencing, dependencies and owners before
+        <span className="whitespace-nowrap">Structure scope, sequencing, dependencies and owners before</span>
         <br />
         committing to a delivery approach.
       </>
@@ -18,7 +18,7 @@ const jobs = [
     title: "Assess readiness",
     description: (
       <>
-        Evaluate whether the prerequisites for a governed change are actually in
+        <span className="whitespace-nowrap">Evaluate whether the prerequisites for a governed change are actually in</span>
         <br />
         place.
       </>
@@ -36,7 +36,7 @@ const jobs = [
     title: "Design governance",
     description: (
       <>
-        Work through authority, segregation, obligations and evidence for a
+        <span className="whitespace-nowrap">Work through authority, segregation, obligations and evidence for a</span>
         <br />
         specific workflow.
       </>
@@ -46,7 +46,7 @@ const jobs = [
     title: "Prepare for diligence",
     description: (
       <>
-        Organise the security, privacy and compliance questions a review will
+        <span className="whitespace-nowrap">Organise the security, privacy and compliance questions a review will</span>
         <br />
         raise.
       </>
@@ -56,7 +56,7 @@ const jobs = [
     title: "Drive adoption",
     description: (
       <>
-        Plan enablement, role readiness and change communication across
+        <span className="whitespace-nowrap">Plan enablement, role readiness and change communication across</span>
         <br />
         affected teams.
       </>
@@ -78,9 +78,9 @@ export default function ApprovedJobs() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span className="w-4 h-[1.5px] bg-[#D4943A]" />
             <span
-              className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5"
+              className="text-xs font-medium tracking-widest text-[#D4943A] uppercase leading-5"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Start with the task
@@ -90,13 +90,13 @@ export default function ApprovedJobs() {
           {/* Heading left — subtitle right */}
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <h2
-              className="text-3xl sm:text-4xl lg:text-[48px] font-semibold tracking-tight text-[#101828] leading-[49.28px] shrink-0"
+              className="text-3xl sm:text-4xl lg:text-[48px] font-semibold tracking-tight text-[#08222F] leading-[49.28px] shrink-0"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
               Six approved jobs
             </h2>
             <p
-              className="text-[15px] sm:text-lg lg:text-xl text-[#475467] leading-8 mt-1 max-w-[690px]"
+              className="text-xl font-normal text-[#64748B] leading-8 mt-1 max-w-[690px]"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
               Task taxonomy is approved and published. Utility counts are
@@ -117,29 +117,33 @@ export default function ApprovedJobs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-white rounded-tr-[10px] rounded-br-[10px] border-l-[3px] border-r border-t border-b border-[#c5d4e8] p-4 flex flex-col justify-between shadow-sm min-h-[140px]"
+              className="self-stretch px-3 py-3 bg-white rounded-tr-[10px] rounded-br-[10px] border-l-[3px] border-l-[#08222F] border-r border-t border-b border-[#2A6386]/35 inline-flex flex-col justify-start items-start gap-[3.30px] shadow-sm min-h-[104px]"
             >
-              <div className="flex flex-col gap-1">
+              <div className="self-stretch pb-1.5 flex flex-col justify-start items-start">
                 <h3
-                  className="text-xs font-bold text-[#101828] leading-5"
+                  className="self-stretch justify-center text-[#08222F] text-xs font-bold leading-5 whitespace-nowrap"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
                   {job.title}
                 </h3>
+              </div>
+              <div className="self-stretch pb-1.5 flex flex-col justify-start items-start">
                 <div
-                  className="text-xs text-[#475467] leading-4 font-normal"
+                  className="self-stretch justify-center text-[#475467] text-xs font-normal leading-4"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
                   {job.description}
                 </div>
               </div>
-              <div className="pt-2">
-                <span
-                  className="text-[8.50px] font-normal uppercase leading-3 tracking-wide text-[#475467]"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  0 utilities available
-                </span>
+              <div className="self-stretch pt-0.5 flex flex-col justify-start items-start">
+                <div className="self-stretch pb-1.5 flex flex-col justify-start items-start">
+                  <span
+                    className="self-stretch justify-center text-[#475467] text-[8.50px] font-normal uppercase leading-3 tracking-wide"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    0 utilities available
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -1,54 +1,69 @@
 "use client";
 
 import React from "react";
-import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export default function TemplatesToolsHero() {
   return (
-    <section className="w-full bg-[#08222F] text-white py-20 px-6 lg:px-12 flex justify-center items-center font-sans overflow-hidden relative">
-      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="w-full bg-[#08222F] text-white py-16 sm:py-20 px-6 lg:px-14 flex justify-center items-center font-sans overflow-hidden relative">
+      <div className="max-w-[1320px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center z-10">
         {/* Left Column: Text Content */}
-        <div className="flex flex-col items-start z-10">
+        <div className="lg:col-span-6 flex flex-col items-start">
           {/* Eyebrow Tag */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-4 h-[1.5px] bg-[#D0AA55]"></span>
-            <span className="text-xs font-medium uppercase tracking-widest font-sans text-[#D0AA55] leading-5">
+          <div className="flex items-center gap-2.5 mb-4 sm:mb-5">
+            <span className="w-4 h-[1.5px] bg-[#D4943A]" />
+            <span
+              className="text-xs font-medium uppercase tracking-widest text-[#D4943A] leading-5"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
               TEMPLATES & TOOLS
             </span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl lg:text-6xl font-bold font-['Archivo'] leading-[67.20px] mb-6">
-            Practical resources<br />
-            for planning,<br />
-            evaluating, and<br />
+          <h1
+            className="text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight leading-[1.12] mb-6"
+            style={{ fontFamily: "'Archivo', sans-serif" }}
+          >
+            Practical resources
+            <br />
+            for planning,
+            <br />
+            evaluating, and
+            <br />
             getting work done
           </h1>
 
-          {/* Description - constrained to 4 lines */}
-          <p className="text-gray-300 text-lg font-normal font-sans leading-7 mb-8 max-w-[530px]">
-            Explore approved ZoikoSuite templates and tools for structured planning, readiness, implementation, governance, adoption and other supported tasks. Available types and utilities are rendered from the Resource Utility Registry.
+          {/* Description with exact 4 lines */}
+          <p
+            className="text-[#B4C7C6] text-base sm:text-lg leading-7 mb-8 max-w-[580px] font-normal"
+            style={{ fontFamily: "'Archivo', sans-serif" }}
+          >
+            Explore approved ZoikoSuite templates and tools for structured
+            <br />
+            planning, readiness, implementation, governance, adoption and other
+            <br />
+            supported tasks. Available types and utilities are rendered from the
+            <br />
+            Resource Utility Registry.
           </p>
 
           {/* Buttons Container */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3.5">
             {/* Primary Button */}
             <a
-              href="#"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold font-sans leading-6 text-[#20180A] transition-all hover:opacity-90 shadow-lg gap-2"
-              style={{
-                backgroundColor: "#D0AA55",
-                border: "1px solid #D0AA55",
-              }}
+              href="#catalog"
+              className="inline-flex shrink-0 items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D0AA55] text-[#08222F] font-semibold text-[13.5px] hover:bg-[#c29c4c] transition-all duration-200 shadow-sm whitespace-nowrap"
             >
-              Browse templates & tools
-              <ChevronRight className="w-4 h-4" />
+              <span>Browse templates & tools</span>
+              <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
             </a>
 
             {/* Secondary Button */}
             <a
-              href="#"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold font-sans leading-6 text-gray-300 bg-transparent border border-gray-600 hover:border-gray-400 transition-all"
+              href="#search"
+              className="inline-flex shrink-0 items-center justify-center px-6 py-3.5 rounded-full bg-transparent hover:bg-white/5 border border-white/20 font-semibold text-[13.5px] text-white transition-colors whitespace-nowrap"
             >
               Search resources
             </a>
@@ -56,17 +71,19 @@ export default function TemplatesToolsHero() {
         </div>
 
         {/* Right Column: Image */}
-        <div className="relative w-full flex justify-center lg:justify-end z-10">
-          <div className="relative w-full max-w-[586px] h-[300px] sm:h-[400px] lg:h-[533px]">
-            <img
+        <div className="lg:col-span-6 relative w-full flex justify-center lg:justify-end">
+          <div className="relative w-full max-w-[586px] h-[340px] sm:h-[420px] lg:h-[533px] rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl">
+            <Image
               src="/templates-tools/ki.png"
               alt="Templates and Tools Overview"
-              className="object-cover rounded-[16px] shadow-2xl border border-gray-700/50 w-full h-full"
+              fill
+              priority
+              className="object-cover"
             />
           </div>
         </div>
       </div>
-      
+
       {/* Background radial gradient */}
       <div className="absolute top-0 left-0 w-full h-[700px] bg-[radial-gradient(ellipse_at_82%_8%,rgba(15,71,106,0.85)_0%,rgba(15,71,106,0)_62%)] pointer-events-none" />
     </section>

@@ -23,39 +23,40 @@ export default function EnterpriseStatusSection() {
       <div className="max-w-[1320px] mx-auto px-0 md:px-12">
         <div className="flex flex-col gap-12">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-            <div className="flex flex-col gap-3.5">
-              <span
-                className="text-xs font-normal tracking-wider"
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  color: "#D4943A",
-                }}
-              >
-                11 / ENTERPRISE
-              </span>
+          <div className="flex flex-col gap-3 mb-2">
+            <span
+              className="text-xs font-normal tracking-wider"
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                color: "#D4943A",
+              }}
+            >
+              11 / ENTERPRISE
+            </span>
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
               <h2
-                className="text-3xl md:text-4xl font-semibold leading-10"
+                className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight"
                 style={{
                   fontFamily: "'Archivo', sans-serif",
                   color: "#0D2636",
                 }}
               >
                 Enterprise &amp; environment-specific
-                <br className="hidden md:block" />
+                <br />
                 status
               </h2>
+              <p
+                className="text-base md:text-lg font-normal leading-7 max-w-[520px] text-left"
+                style={{
+                  fontFamily: "'Archivo', sans-serif",
+                  color: "#3E5A6B",
+                }}
+              >
+                Public status cannot safely represent every dedicated or{" "}
+                <br className="hidden sm:inline" />
+                customer-controlled environment — so this page says so, clearly.
+              </p>
             </div>
-            <p
-              className="text-base md:text-lg font-normal leading-7 max-w-[633px] md:text-right md:pl-14"
-              style={{
-                fontFamily: "'Archivo', sans-serif",
-                color: "#3E5A6B",
-              }}
-            >
-              Public status cannot safely represent every dedicated or
-              customer-controlled environment — so this page says so, clearly.
-            </p>
           </div>
 
           {/* Cards Row */}

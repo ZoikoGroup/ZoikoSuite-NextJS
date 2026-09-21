@@ -23,8 +23,8 @@ const cadenceItems: string[] = [
 
 export default function TestingAndAssistiveTechnologySection() {
   return (
-    <section className="w-full bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-28 flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col">
+    <section className="w-full bg-white py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
