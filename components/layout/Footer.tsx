@@ -100,7 +100,7 @@ const NAV_COLUMNS: FooterColumn[] = [
       { label: "Security Overview", href: "/security-overview" },
       { label: "Compliance Overview", href: "/compliance-overview" },
       { label: "Data Residency", href: "/data-residency" },
-      { label: "Privacy Architecture", href: "/trust/privacy-architecture" },
+      { label: "Privacy Architecture", href: "/privacy-architecture" },
       { label: "Evidence Architecture", href: "/evidence-architecture" },
       { label: "Responsible AI", href: "/trust/responsible-ai" },
       { label: "Accessibility", href: "/trust/accessibility" },
