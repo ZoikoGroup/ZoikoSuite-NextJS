@@ -264,7 +264,7 @@ const complianceFrameworkLinks = [
   { label: "Data Processing Agreement", href: "/trust/dpa" },
   { label: "Subprocessor List", href: "/trust/subprocessors" },
   { label: "Records Retention", href: "/trust/records-retention" },
-  { label: "Responsible AI", href: "/trust/responsible-ai" },
+  { label: "Responsible AI", href: "/responsible-ai" },
   { label: "Accessibility", href: "/trust/accessibility" },
 ] as const;
 
@@ -307,7 +307,7 @@ const learnLinks = [
 ] as const;
 
 const execResourcesLinks = [
-  { label: "Executive Briefs", href: "/resources/executive-briefs" },
+  { label: "Executive Briefs", href: "/executive-briefs" },
   { label: "CFO Resources", href: "/resources/cfo" },
   { label: "General Counsel Resources", href: "/resources/general-counsel" },
   { label: "CHRO Resources", href: "/resources/chro" },
@@ -335,7 +335,7 @@ const techArchitectureLinks = [
 ] as const;
 
 const customerResourcesLinks = [
-  { label: "Documentation", href: "/support/documentation" },
+  { label: "Documentation", href: "/documentation" },
   { label: "Knowledge Base", href: "/support/knowledge-base" },
   { label: "Training Academy", href: "/support/academy" },
   { label: "Certification", href: "/support/certification" },
