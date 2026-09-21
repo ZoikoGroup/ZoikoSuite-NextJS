@@ -1,4 +1,4 @@
-export { default as ResponsibleAiHeroSection } from "./ResponsibleAIHeroSection";
+export { default as ResponsibleAiHeroSection } from "./ResponsibleAiHeroSection";
 export { default as ResponsibleAiSnapshotSection } from "./ResponsibleAiSnapshotSection";
 export { default as ResponsibleAiCapabilityRegisterSection } from "./ResponsibleAiCapabilityRegisterSection";
 export { default as ResponsibleAiOperationalMatrixSection } from "./ResponsibleAiOperationalMatrixSection";

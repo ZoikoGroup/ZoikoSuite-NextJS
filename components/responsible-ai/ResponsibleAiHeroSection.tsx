@@ -1,56 +1,84 @@
-import React from "react";
+"use client";
 
-export default function ResponsibleAIHeroSection() {
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { AlertTriangle } from "lucide-react";
+
+export default function ResponsibleAiHeroSection() {
   return (
-    <section className="w-full bg-[#08222F] py-16 px-6 md:px-12 lg:px-20 flex items-center justify-center font-sans">
-      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left Column: Content */}
-        <div className="flex flex-col items-start justify-center">
-          {/* Subtitle / Breadcrumb */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-6 h-[1px] bg-[#A07A2E]" />
-            <span className="text-[#A07A2E] text-xs font-bold tracking-[0.2em] uppercase">
+    <section className="w-full bg-[#F7F5F0] text-[#0A2029] py-16 sm:py-20 lg:py-24 px-6 sm:px-10 lg:px-20 flex justify-center border-b border-[#123B4C]/10">
+      <div className="max-w-[1240px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Left Column */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="lg:col-span-7 flex flex-col items-start"
+        >
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 mb-5">
+            <span className="w-8 h-[2px] bg-[#C44242]" />
+            <span className="text-xs sm:text-sm font-bold font-mono tracking-[0.12em] text-[#C44242] uppercase">
               RESPONSIBLE AI
             </span>
           </div>
 
-          {/* Main Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[60px] font-bold text-white leading-[1.2] tracking-tight mb-6">
-            AI can assist. Governance remains in control.
-          </h2>
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-extrabold text-[#0A2029] tracking-[-0.023em] leading-[1.12] mb-6 font-sans">
+            AI assistance with explicit boundaries and accountable control.
+          </h1>
 
-          {/* Description Paragraph */}
-          <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
-            ZoikoSuite applies intelligence within policy, authorization,
-            evidence, source-truth and human-review boundaries across finance,
-            workforce, legal, tax, compliance and evidence workflows.
+          {/* Paragraph */}
+          <p className="text-[#5B6670] text-base sm:text-[17px] leading-[26px] max-w-xl mb-8 font-medium">
+            We govern capabilities through continuous evaluation, precise data/model boundaries,
+            deterministic evaluation metrics, and human-in-the-loop validation checkpoints.
+            Empowering defense without sacrificing sovereignty or risk control.
           </p>
 
-          {/* Buttons / Action Group */}
-          <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="#"
-              className="bg-[#D0AA55] hover:bg-[#b08b30] text-[#111827] font-semibold text-sm px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8 w-full sm:w-auto">
+            <Link
+              href="#controls"
+              className="inline-flex items-center justify-center px-6 py-3.5 sm:py-4 rounded-[10px] bg-[#C44242] hover:bg-[#ad3737] text-white font-bold text-[15px] transition-all shadow-sm active:scale-[0.98]"
             >
-              Request a Responsible AI review →
-            </a>
-            <a
-              href="#"
-              className="bg-transparent hover:bg-white/5 text-white border border-slate-700 font-semibold text-sm px-6 py-3 rounded-full transition-colors"
+              Explore AI controls
+            </Link>
+            <Link
+              href="#evidence"
+              className="inline-flex items-center justify-center px-6 py-3.5 sm:py-4 rounded-[10px] bg-transparent hover:bg-[#0A2440]/5 text-[#0A2440] font-bold text-[15px] border border-[#0A2440] transition-all active:scale-[0.98]"
             >
-              Talk to a solutions architect
-            </a>
+              Request AI assurance evidence
+            </Link>
           </div>
-        </div>
 
-        {/* Right Column: Visual Graphic */}
-        <div className="relative w-full aspect-[3/3] overflow-hidden">
-          <img
-            src="/responsible/1.png"
-            alt="AI can assist. Governance remains in control illustration"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
+          {/* Proof / Trust Microcopy */}
+          <div className="flex items-start sm:items-center gap-2.5 text-[#5B6670]">
+            <AlertTriangle className="w-4 h-4 text-[#C44242] shrink-0 mt-0.5 sm:mt-0" />
+            <span className="text-xs font-mono font-medium leading-relaxed">
+              Trust Microcopy: AI output is not automatically evidence, fact, approval, or a security decision.
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Right Column: Hero Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+          className="lg:col-span-5 flex justify-center"
+        >
+          <div className="relative w-full max-w-[520px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-[#123B4C]/15 bg-white">
+            <Image
+              src="/responsible-ai/responsible-ai-hero.png"
+              alt="AI assistance with explicit boundaries"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
