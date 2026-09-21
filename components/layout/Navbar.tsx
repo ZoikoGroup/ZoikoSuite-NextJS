@@ -631,7 +631,10 @@ export default function Navbar() {
             {/* Right Side Controls */}
             <div className="pl-4 flex items-center gap-2">
               {/* Search Icon Button */}
-              <button className="w-11 h-11 px-1.5 py-px rounded-[10px] flex justify-center items-center hover:bg-[#EAEEF4]/50 transition-colors">
+              <button
+                suppressHydrationWarning
+                className="w-11 h-11 px-1.5 py-px rounded-[10px] flex justify-center items-center hover:bg-[#EAEEF4]/50 transition-colors"
+              >
                 <LuSearch className="w-5 h-5 text-[#12365E]" />
               </button>
 
@@ -674,6 +677,7 @@ export default function Navbar() {
             {/* Right Side Controls */}
             <div className="flex items-center gap-1">
               <button
+                suppressHydrationWarning
                 className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
                 aria-label="Search"
               >
@@ -681,6 +685,7 @@ export default function Navbar() {
               </button>
 
               <button
+                suppressHydrationWarning
                 className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
                 aria-label="Open menu"
                 aria-expanded={isMobileMenuOpen}
