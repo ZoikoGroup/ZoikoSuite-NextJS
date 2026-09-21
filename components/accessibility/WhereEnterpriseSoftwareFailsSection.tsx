@@ -43,8 +43,8 @@ const cards: CardItem[] = [
 
 export default function WhereEnterpriseSoftwareFailsSection() {
   return (
-    <section className="w-full bg-[#071E2A] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 text-white flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col gap-10">
+    <section className="w-full bg-[#071E2A] py-16 sm:py-24 px-6 lg:px-14 text-white flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col gap-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

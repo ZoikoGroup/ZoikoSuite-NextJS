@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function InteractiveToolWorkspace() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col gap-10">
+    <section className="w-full bg-white py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col gap-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -17,9 +17,9 @@ export default function InteractiveToolWorkspace() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span className="w-4 h-[1.5px] bg-[#C5A059]" />
             <span
-              className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5"
+              className="text-xs font-medium uppercase tracking-widest text-[#C5A059] leading-5"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Interactive tool workspace
@@ -37,25 +37,25 @@ export default function InteractiveToolWorkspace() {
               reset
             </h2>
             <p
-              className="text-[15px] sm:text-lg lg:text-xl text-[#475467] leading-8 mt-1 max-w-[690px]"
+              className="text-xl font-normal text-[#64748B] leading-8 mt-1 max-w-[690px]"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
-              The execution surface for a registered interactive tool. It renders in
+              <span className="whitespace-nowrap">The execution surface for a registered interactive tool. It renders in</span>
               <br />
-              a disabled state because no calculation version is currently
+              <span className="whitespace-nowrap">a disabled state because no calculation version is currently</span>
               <br />
               approved.
             </p>
           </div>
         </motion.div>
 
-        {/* Workspace Image */}
+        {/* Workspace Image with thin Chathams Blue border */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="w-full rounded-xl border border-stone-200 overflow-hidden bg-white"
+          className="w-full rounded-xl border border-[#2A6386] overflow-hidden bg-white"
         >
           <img
             src="/templates-tools/div.workspace.png"

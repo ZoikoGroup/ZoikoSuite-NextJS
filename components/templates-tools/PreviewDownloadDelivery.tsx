@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function PreviewDownloadDelivery() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col gap-10">
+    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col gap-14">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -17,9 +17,9 @@ export default function PreviewDownloadDelivery() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span className="w-4 h-[1.5px] bg-[#D4943A]" />
             <span
-              className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5"
+              className="text-xs font-medium tracking-widest text-[#D4943A] uppercase leading-5"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Preview, download and file delivery
@@ -27,9 +27,9 @@ export default function PreviewDownloadDelivery() {
           </div>
 
           {/* Heading left — subtitle right */}
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 w-full">
             <h2
-              className="text-3xl sm:text-4xl lg:text-[48px] font-semibold tracking-tight text-[#101828] leading-[49.28px] shrink-0"
+              className="text-3xl sm:text-4xl lg:text-[48px] font-semibold tracking-tight text-[#0D2636] leading-[49.28px] shrink-0"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
               Preview before retrieve, and a
@@ -39,7 +39,7 @@ export default function PreviewDownloadDelivery() {
               download
             </h2>
             <p
-              className="text-[15px] sm:text-lg lg:text-xl text-[#475467] leading-8 mt-1 max-w-[690px]"
+              className="text-xl text-[#3E5A6B] leading-8 mt-1 max-w-[690px]"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
               A download link without a file record is not publishable. These
@@ -49,53 +49,64 @@ export default function PreviewDownloadDelivery() {
           </div>
         </motion.div>
 
-        {/* Content Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 w-full items-start">
-          {/* Left Cards */}
-          <div className="flex-1 flex flex-col gap-4 w-full">
-            <div className="bg-white rounded-2xl border-l-[3px] border-r border-t border-b border-[#c5d4e8] p-7 flex flex-col gap-3">
-              <span
-                className="text-xs text-[#475467] font-normal uppercase leading-5 tracking-wide"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
-                Preview comes first
-              </span>
-              <p
-                className="text-base text-[#101828] leading-6 font-normal"
-                style={{ fontFamily: "'Archivo', sans-serif" }}
-              >
-                Where a preview is safe to render, it appears before the download
-                action — so a visitor can judge fit without retrieving a file they
-                will not use.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-200 p-7 flex flex-col gap-3">
-              <span
-                className="text-xs text-[#475467] font-normal uppercase leading-5 tracking-wide"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
-                No form wall on public assets
-              </span>
-              <p
-                className="text-base text-[#101828] leading-6 font-normal"
-                style={{ fontFamily: "'Archivo', sans-serif" }}
-              >
-                A public asset does not become gated at the moment of download.
-                Where sign-in genuinely applies, that state is shown on the card{" "}
-                <strong className="font-bold">before</strong> the click, and the
-                user returns to the intended asset afterwards.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="flex-1 w-full">
+        {/* Content Layout — Image on Left (485px), Cards on Right */}
+        <div className="flex flex-col lg:flex-row justify-start items-center lg:items-start w-full gap-10 lg:gap-[45px] mt-2">
+          {/* Left Image (485px) */}
+          <div className="w-full lg:w-[485px] shrink-0 flex justify-center lg:justify-start">
             <img
               src="/templates-tools/div.speccard.png"
               alt="Preview specimen"
-              className="w-full h-[485px] object-cover rounded-xl border border-stone-200 block"
+              className="w-full lg:w-[485px] h-[485px] object-cover rounded-2xl block"
             />
+          </div>
+
+          {/* Right Cards */}
+          <div className="flex flex-col gap-2.5 flex-1 w-full max-w-[740px]">
+            {/* Card 1 */}
+            <div className="w-full min-h-[172px] px-7 py-7 bg-white rounded-2xl border-l-[3px] border-l-[#2d4e88] flex flex-col justify-start items-start gap-3 shadow-sm">
+              <div className="self-stretch flex flex-col justify-start items-start">
+                <span
+                  className="self-stretch text-[#3E5A6B] text-xs font-normal uppercase leading-5 tracking-wide"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  Preview comes first
+                </span>
+              </div>
+              <div className="self-stretch pt-1 flex flex-col justify-start items-start">
+                <p
+                  className="self-stretch text-[#0D2636] text-base font-normal leading-6 whitespace-nowrap overflow-hidden text-ellipsis"
+                  style={{ fontFamily: "'Archivo', sans-serif" }}
+                >
+                  Where a preview is safe to render, it appears before the download action — so a visitor can judge
+                  <br />
+                  fit without retrieving a file they will not use.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="w-full min-h-[172px] px-7 py-7 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-200 flex flex-col justify-start items-start gap-3 shadow-sm">
+              <div className="self-stretch flex flex-col justify-start items-start">
+                <span
+                  className="self-stretch text-[#3E5A6B] text-xs font-normal uppercase leading-5 tracking-wide"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  No form wall on public assets
+                </span>
+              </div>
+              <div className="self-stretch pt-1 flex flex-col justify-start items-start">
+                <p
+                  className="self-stretch text-[#0D2636] text-base font-normal leading-6 whitespace-nowrap overflow-hidden text-ellipsis"
+                  style={{ fontFamily: "'Archivo', sans-serif" }}
+                >
+                  A public asset does not become gated at the moment of download. Where sign-in genuinely
+                  <br />
+                  applies, that state is shown on the card <strong className="font-bold">before</strong> the click, and the user returns to the intended
+                  <br />
+                  asset afterwards.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

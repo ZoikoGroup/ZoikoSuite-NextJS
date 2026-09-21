@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function UtilityStateContract() {
   return (
-    <section className="w-full bg-[#08222F] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 text-white flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col gap-10">
+    <section className="w-full bg-[#08222F] py-16 sm:py-24 px-6 lg:px-14 text-white flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col gap-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -17,9 +17,9 @@ export default function UtilityStateContract() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span className="w-4 h-[1.5px] bg-[#D4943A]" />
             <span
-              className="text-xs font-medium tracking-widest text-orange-400 uppercase leading-5"
+              className="text-xs font-medium tracking-widest text-[#D4943A] uppercase leading-5"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Utility state contract
@@ -37,10 +37,10 @@ export default function UtilityStateContract() {
               behaviours
             </h2>
             <p
-              className="text-[15px] sm:text-lg lg:text-xl text-[#7a9ac4] leading-8 mt-1 max-w-[690px]"
+              className="text-xl font-normal text-[#7A9AC4] leading-8 mt-1 max-w-[690px]"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
-              A utility is never silently implied to be current. Each state
+              <span className="whitespace-nowrap">A utility is never silently implied to be current. Each state</span>
               <br />
               determines exactly what the public catalog does.
             </p>

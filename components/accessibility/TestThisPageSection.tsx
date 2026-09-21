@@ -8,9 +8,9 @@ export default function TestThisPageSection() {
   return (
     <section
       id="solutions-architect"
-      className="w-full bg-[#0F476A] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 text-white flex justify-center"
+      className="w-full bg-[#0F476A] py-16 sm:py-24 px-6 lg:px-14 text-white flex justify-center"
     >
-      <div className="max-w-[1240px] w-full">
+      <div className="max-w-[1320px] w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Content */}
           <motion.div

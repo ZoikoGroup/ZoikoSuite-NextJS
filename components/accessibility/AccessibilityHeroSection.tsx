@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react";
 
 export default function AccessibilityHeroSection() {
   return (
-    <section className="w-full bg-[#08222F] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-28 flex justify-center overflow-hidden">
-      <div className="max-w-[1240px] w-full flex flex-col">
+    <section className="w-full bg-[#08222F] text-white py-16 sm:py-20 px-6 lg:px-14 flex justify-center overflow-hidden">
+      <div className="max-w-[1320px] w-full flex flex-col">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Content */}
           <motion.div
@@ -33,11 +33,8 @@ export default function AccessibilityHeroSection() {
             </h1>
 
             {/* Description */}
-            <p className="text-[#B5C7C7] text-[14px] sm:text-base leading-[1.65] max-w-[600px] mb-8 font-normal">
-              ZoikoSuite treats accessibility as a product-quality requirement<br />
-              across navigation, forms, data, approvals, reports and support<br />
-              — with standards-based testing, documented scope, visible<br />
-              limitations and continuous remediation.
+            <p className="text-[#B5C7C7] text-base sm:text-lg leading-7 max-w-[600px] mb-8 font-normal font-['Archivo']">
+              An accountability artifact, not a public relations gesture. This page details WCAG conformance, known issues, assistive technology coverage, and how to request alternative formats or report barriers.
             </p>
 
             {/* CTA Buttons */}

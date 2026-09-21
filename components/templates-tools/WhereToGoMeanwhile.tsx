@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function WhereToGoMeanwhile() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 sm:py-24 px-4 sm:px-6 lg:px-28 flex justify-center">
-      <div className="max-w-[1240px] w-full flex flex-col gap-10">
+    <section className="w-full bg-white py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
+      <div className="max-w-[1320px] w-full flex flex-col gap-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -18,9 +18,9 @@ export default function WhereToGoMeanwhile() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4 pt-2.5">
-            <span className="w-4 h-[1.5px] bg-orange-400" />
+            <span className="w-4 h-[1.5px] bg-[#D4943A]" />
             <span
-              className="text-xs font-medium tracking-widest text-[#A07A2E] uppercase leading-5"
+              className="text-xs font-medium tracking-widest text-[#D4943A] uppercase leading-5"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Where to go meanwhile
@@ -51,7 +51,7 @@ export default function WhereToGoMeanwhile() {
         {/* 6 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
           {/* Card 1 */}
-          <div className="bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-200 p-6 flex flex-col justify-between h-64">
+          <div className="bg-white rounded-2xl border border-[#E5E7EB] p-6 flex flex-col justify-between h-64">
             <div>
               <span
                 className="text-xs font-normal tracking-wider text-[#C2410C] leading-4 block mb-4"
@@ -94,7 +94,7 @@ export default function WhereToGoMeanwhile() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-200 p-6 flex flex-col justify-between h-64">
+          <div className="bg-white rounded-2xl border border-[#E5E7EB] p-6 flex flex-col justify-between h-64">
             <div>
               <span
                 className="text-xs font-normal tracking-wider text-[#C2410C] leading-4 block mb-4"
@@ -137,7 +137,7 @@ export default function WhereToGoMeanwhile() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-200 p-6 flex flex-col justify-between h-64">
+          <div className="bg-white rounded-2xl border border-[#E5E7EB] p-6 flex flex-col justify-between h-64">
             <div>
               <span
                 className="text-xs font-normal tracking-wider text-[#C2410C] leading-4 block mb-4"
@@ -186,7 +186,7 @@ export default function WhereToGoMeanwhile() {
           </div>
 
           {/* Card 4 */}
-          <div className="bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-200 p-6 flex flex-col justify-between h-64">
+          <div className="bg-white rounded-2xl border border-[#E5E7EB] p-6 flex flex-col justify-between h-64">
             <div>
               <span
                 className="text-xs font-normal tracking-wider text-[#C2410C] leading-4 block mb-4"
@@ -229,7 +229,7 @@ export default function WhereToGoMeanwhile() {
           </div>
 
           {/* Card 5 */}
-          <div className="bg-[#F7F5F0] rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-200 p-6 flex flex-col justify-between h-64">
+          <div className="bg-[#F7F5F0] rounded-2xl border border-[#E5E7EB] p-6 flex flex-col justify-between h-64">
             <div>
               <span
                 className="text-xs font-normal tracking-wider text-[#C2410C] leading-4 block mb-2"
@@ -238,7 +238,7 @@ export default function WhereToGoMeanwhile() {
                 Templates & tools
               </span>
               <h3
-                className="text-xl font-semibold text-[#101828] leading-6 mb-2"
+                className="text-xl font-semibold text-[#54381C] leading-6 mb-2"
                 style={{ fontFamily: "'Archivo', sans-serif" }}
               >
                 Registry empty
@@ -253,20 +253,20 @@ export default function WhereToGoMeanwhile() {
               </p>
             </div>
             <div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#FEF0C7] border border-[#F7D070]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B54708]" />
-                <span
-                  className="text-xs font-medium uppercase tracking-wide text-[#B54708]"
+              <div className="px-2.5 py-[5px] bg-[#FEF0C7] rounded-[5px] outline outline-1 outline-offset-[-1px] outline-[#D97706] inline-flex justify-start items-center gap-1.5">
+                <div className="w-1.5 h-1.5 bg-[#D97706] rounded-[3px]" />
+                <div
+                  className="justify-center text-[#D97706] text-xs font-medium uppercase leading-4 tracking-wide"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   0 published
-                </span>
-              </span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Card 6 */}
-          <div className="bg-[#FFF7ED] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#FDBA74] p-6 flex flex-col justify-between h-64">
+          <div className="bg-[#F5EFE6] rounded-2xl border border-[#E5D4B8] p-6 flex flex-col justify-between h-64">
             <div>
               <span
                 className="text-xs font-normal tracking-wider text-[#C2410C] leading-4 block mb-2"
@@ -275,7 +275,7 @@ export default function WhereToGoMeanwhile() {
                 Content boundary
               </span>
               <p
-                className="text-base text-[#9A3412] leading-6 font-normal"
+                className="text-base text-[#54381C] leading-6 font-normal"
                 style={{ fontFamily: "'Archivo', sans-serif" }}
               >
                 Utilities published here support your own planning and
@@ -285,15 +285,15 @@ export default function WhereToGoMeanwhile() {
               </p>
             </div>
             <div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F2F4F7] border border-[#D0D5DD]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#344054]" />
-                <span
-                  className="text-xs font-medium uppercase tracking-wide text-[#344054]"
+              <div className="px-2.5 py-[5px] bg-[#F5EFE6] rounded-[5px] outline outline-1 outline-offset-[-1px] outline-[#8C7A6B] inline-flex justify-start items-center gap-1.5">
+                <div className="w-1.5 h-1.5 bg-[#8C7A6B] rounded-[3px]" />
+                <div
+                  className="justify-center text-[#8C7A6B] text-xs font-medium uppercase leading-4 tracking-wide"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   Applies to all utilities
-                </span>
-              </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
