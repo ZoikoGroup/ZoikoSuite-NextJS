@@ -347,11 +347,11 @@ const customerResourcesLinks = [
 
 /* --- Company Data --- */
 const aboutLinks = [
-  { label: "About ZoikoSuite", href: "/company/about" },
+  { label: "About ZoikoSuite", href: "/about" },
   { label: "Our Category", href: "/company/category" },
   { label: "Our Mission", href: "/company/mission" },
-  { label: "Founder's Vision", href: "/company/vision" },
-  { label: "Leadership", href: "/company/leadership" },
+  { label: "Founder's Vision", href: "/founders-vision" },
+  { label: "Leadership", href: "/leadership" },
   { label: "Corporate Governance", href: "/company/corporate-governance" },
   { label: "Locations", href: "/company/locations" },
   { label: "Contact", href: "/company/contact" },
