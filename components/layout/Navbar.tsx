@@ -270,7 +270,7 @@ const complianceFrameworkLinks = [
 ] as const;
 
 const auditAssuranceLinks = [
-  { label: "Evidence Architecture", href: "/trust/evidence-architecture" },
+  { label: "Evidence Architecture", href: "/evidence-architecture" },
   { label: "Immutable Audit Trails", href: "/trust/audit-trails" },
   { label: "Policy Decision Logging", href: "/trust/policy-logging" },
   { label: "Evidence Manifests", href: "/trust/evidence-manifests" },
@@ -279,7 +279,7 @@ const auditAssuranceLinks = [
   { label: "Internal Controls", href: "/trust/internal-controls" },
   { label: "Segregation of Duties", href: "/trust/segregation-of-duties" },
   { label: "Compliance Reporting", href: "/trust/compliance-reporting" },
-  { label: "Trust Center", href: "/trust/center" },
+  { label: "Trust Center", href: "/trust-center" },
 ] as const;
 
 const dataSovereigntyLinks = [
@@ -297,7 +297,7 @@ const dataSovereigntyLinks = [
 
 /* --- Resources Data --- */
 const learnLinks = [
-  { label: "Resource Center", href: "/resources/center" },
+  { label: "Resource Center", href: "/resources-center" },
   { label: "Platform Tour", href: "/resources/platform-tour" },
   { label: "Product Demonstrations", href: "/resources/demos" },
   { label: "Articles and Insights", href: "/resources/insights" },
