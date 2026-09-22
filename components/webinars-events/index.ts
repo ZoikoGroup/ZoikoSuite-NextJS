@@ -1,0 +1,11 @@
+export { default as WebinarsEventsHeroSection } from "./WebinarsEventsHeroSection";
+export { default as EditorialDiscoverySection } from "./EditorialDiscoverySection";
+export { default as EventCatalogSection } from "./EventCatalogSection";
+export { default as EventDetailTemplateSection } from "./EventDetailTemplateSection";
+export { default as RegistrationSection } from "./RegistrationSection";
+export { default as ConfirmationCalendarSection } from "./ConfirmationCalendarSection";
+export { default as LiveJoinAccessSection } from "./LiveJoinAccessSection";
+export { default as OnDemandReplaySection } from "./OnDemandReplaySection";
+export { default as EnterpriseEnablementSection } from "./EnterpriseEnablementSection";
+export { default as RelatedResourcesSection } from "./RelatedResourcesSection";
+export { default as WebinarsFAQSection } from "./WebinarsFAQSection";
