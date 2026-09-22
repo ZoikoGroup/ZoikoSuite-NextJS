@@ -1,0 +1,12 @@
+export { default as SupportCenterSection } from "./SupportCenterSection";
+export { default as PopularHelp } from "./PopularHelp";
+export { default as BrowseByProductOrIssue } from "./BrowseByProductOrIssue";
+export { default as SearchResults } from "./SearchResults";
+export { default as GuidedTroubleshootingWorkspace } from "./GuidedTroubleshootingWorkspace";
+export { default as ContactSupport } from "./ContactSupport";
+export { default as SubmitSupportRequest } from "./SubmitSupportRequest";
+export { default as SubmissionConfirmation } from "./SubmissionConfirmation";
+export { default as MySupportRequests } from "./MySupportRequests";
+export { default as SpecialistAuthorityHandoffs } from "./SpecialistAuthorityHandoffs";
+export { default as EnterpriseSupportCTA } from "./EnterpriseSupportCTA";
+export { default as SupportCenterFAQ } from "./SupportCenterFAQ";
