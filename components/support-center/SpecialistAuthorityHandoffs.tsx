@@ -1,0 +1,38 @@
+import React from "react";
+import Image from "next/image";
+
+export default function SpecialistAuthorityHandoffs() {
+  return (
+    <section className="w-full bg-[#F7F5F0] py-16 px-6 md:px-12 lg:px-24 flex items-center justify-center">
+      <div className="max-w-6xl w-full flex flex-col items-start">
+        {/* Subtitle */}
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#A07A2E]">
+            10 / SPECIALIST HANDOFFS
+          </span>
+        </div>
+
+        {/* Main Heading */}
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#111827] tracking-tight mb-2">
+          Specialist authority handoffs
+        </h2>
+
+        {/* Subtext info */}
+        <p className="text-[#4B5563] text-sm md:text-base mb-8 max-w-2xl">
+          Some intents route directly to the team with actual authority — not
+          through a generic support form.
+        </p>
+
+        {/* Hero Image Showcase */}
+        <div className="relative w-full aspect-[16/9] md:aspect-[2/1] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] bg-[#F3F4F6]">
+          <Image
+            src="/support/5.png"
+            alt="Specialist authority handoffs illustration showing routing from support requests directly to specialist teams"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
