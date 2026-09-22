@@ -17,7 +17,10 @@ jobs:
           script: |
             set -e
             cd /var/www/zoiko-suite/app
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
+            git clean -fd
+            rm -rf .next
             npm install
             npm run build
             pm2 restart zoiko-suite

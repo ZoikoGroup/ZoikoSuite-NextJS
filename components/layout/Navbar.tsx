@@ -265,7 +265,6 @@ const complianceFrameworkLinks = [
   { label: "Data Processing Agreement", href: "/trust/dpa" },
   { label: "Subprocessor List", href: "/trust/subprocessors" },
   { label: "Records Retention", href: "/trust/records-retention" },
-  { label: "Responsible AI", href: "/responsible-ai" },
   { label: "Accessibility", href: "/trust/accessibility" },
 ] as const;
 
