@@ -1,0 +1,10 @@
+export { default as TrainingAcademyHero } from "./TrainingAcademyHero";
+export { default as LearningPaths } from "./LearningPaths";
+export { default as FeaturedTraining } from "./FeaturedTraining";
+export { default as TrainingCatalog } from "./TrainingCatalog";
+export { default as CourseDetail } from "./CourseDetail";
+export { default as LessonViewer } from "./LessonViewer";
+export { default as WhyTrainingAcademy } from "./WhyTrainingAcademy";
+export { default as EnterpriseTeams } from "./EnterpriseTeams";
+export { default as RelatedSupport } from "./RelatedSupport";
+export { default as FAQ } from "./FAQ";
