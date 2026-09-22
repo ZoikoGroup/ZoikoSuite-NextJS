@@ -78,7 +78,7 @@ export default function MarketGovernanceSection() {
           <div className="lg:col-span-5 flex items-start w-full">
             <p className="text-gray-300 text-sm lg:text-base leading-relaxed w-full">
               Licence conditions are governance context, not a licence register
-              of record. The regulator's own record remains authoritative.
+              of record. The regulator&apos;s own record remains authoritative.
             </p>
           </div>
         </div>

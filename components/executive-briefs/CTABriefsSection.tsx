@@ -20,7 +20,7 @@ export default function CTABriefsSection() {
 
         {/* Description Paragraph */}
         <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
-          Bring your deployment context and we'll connect the brief's framework
+          Bring your deployment context and we&apos;ll connect the brief&apos;s framework
           to your actual operating model.
         </p>
 

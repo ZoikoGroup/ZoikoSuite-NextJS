@@ -251,7 +251,7 @@ export default function CoverageStateSourceDateSection() {
 
               {/* Subtext Note */}
               <p className="text-[10.5px] text-slate-500 mt-3 leading-relaxed">
-                Coverage describes software configuration and source currency. It is not legal advice, and it does not assume that a jurisdiction's requirements are fully met—a good decision retains the source version used at the time.
+                Coverage describes software configuration and source currency. It is not legal advice, and it does not assume that a jurisdiction&apos;s requirements are fully met—a good decision retains the source version used at the time.
               </p>
             </div>
           </motion.div>

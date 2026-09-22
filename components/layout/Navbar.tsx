@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LuChevronDown,
@@ -587,7 +588,7 @@ export default function Navbar() {
           {/* ============ DESKTOP TOP ROW (lg and up) — unchanged ============ */}
           <div className="hidden lg:flex w-full h-24 items-center justify-between px-[110px] relative z-20 bg-[#FFFFFF]">
             {/* Brand Logo Image */}
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <div className="relative">
                 <Image
                   src="/logo.png"
@@ -598,7 +599,7 @@ export default function Navbar() {
                   priority
                 />
               </div>
-            </a>
+            </Link>
 
             {/* Navigation Links */}
             <div className="flex items-center gap-4">
@@ -662,7 +663,7 @@ export default function Navbar() {
           {/* ============ MOBILE TOP ROW (below lg) ============ */}
           <div className="flex lg:hidden w-full h-16 sm:h-20 items-center justify-between px-4 sm:px-6 relative z-20 bg-[#FFFFFF]">
             {/* Brand Logo Image */}
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <div className="w-[120px] h-[48px] relative overflow-hidden">
                 <Image
                   src="/logo.png"
@@ -672,7 +673,7 @@ export default function Navbar() {
                   priority
                 />
               </div>
-            </a>
+            </Link>
 
             {/* Right Side Controls */}
             <div className="flex items-center gap-1">
