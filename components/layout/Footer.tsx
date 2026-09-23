@@ -126,9 +126,9 @@ const NAV_COLUMNS: FooterColumn[] = [
   {
     title: "Company",
     links: [
-      { label: "About ZoikoSuite", href: "/company/about" },
-      { label: "Founder's Vision", href: "/company/founders-vision" },
-      { label: "Leadership", href: "/company/leadership" },
+      { label: "About ZoikoSuite", href: "/about" },
+      { label: "Founder's Vision", href: "/founders-vision" },
+      { label: "Leadership", href: "/leadership" },
       { label: "Partners", href: "/company/partners" },
       { label: "Careers", href: "/company/careers" },
       { label: "Newsroom", href: "/company/newsroom" },
