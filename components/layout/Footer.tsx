@@ -133,9 +133,9 @@ const NAV_COLUMNS: FooterColumn[] = [
       { label: "Careers", href: "/company/careers" },
       { label: "Newsroom", href: "/newsroom" },
       { label: "Zoiko Tech", href: "/zoiko-tech" },
-      { label: "Zoiko Group", href: "/company/zoiko-group" },
-      { label: "Investor Relations", href: "/company/investor-relations" },
-      { label: "Sustainability", href: "/company/sustainability" },
+      { label: "Zoiko Group", href: "/zoiko-group" },
+      { label: "Investor Relations", href: "/investor-relations" },
+      { label: "Sustainability", href: "/sustainability" },
     ],
   },
 ];
