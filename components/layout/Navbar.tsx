@@ -369,11 +369,11 @@ const ecosystemLinks = [
 
 const companyLinks = [
   { label: "Careers", href: "/company/careers" },
-  { label: "Newsroom", href: "/company/newsroom" },
+  { label: "Newsroom", href: "/newsroom" },
   { label: "Press and Media", href: "/company/press" },
   { label: "Events", href: "/company/events" },
   { label: "Investor Information", href: "/company/investors" },
-  { label: "Zoiko Tech", href: "/company/zoiko-tech" },
+  { label: "Zoiko Tech", href: "/zoiko-tech" },
   { label: "Zoiko Group", href: "/company/zoiko-group" },
   { label: "Contact Corporate Affairs", href: "/company/corporate-affairs" },
 ] as const;
