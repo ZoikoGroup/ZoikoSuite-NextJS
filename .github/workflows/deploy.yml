@@ -14,6 +14,8 @@ jobs:
           host: ${{ secrets.GCP_SSH_HOST }}
           username: ${{ secrets.GCP_SSH_USER }}
           key: ${{ secrets.GCP_SSH_KEY }}
+          # Default is 10m; install + next build (compile + TypeScript) exceeds that on the server
+          command_timeout: 30m
           script: |
             set -e
             cd /var/www/zoiko-suite/app
