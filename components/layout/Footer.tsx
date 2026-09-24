@@ -190,15 +190,16 @@ const OFFICES: Office[] = [
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
-  { label: "Terms of Service", href: "/legal/terms-of-service" },
+  { label: "Terms of Service", href: "/terms-of-service" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Cookie Policy", href: "/cookie-policy" },
   { label: "Cookie Preferences", href: "/cookie-preferences" },
   { label: "Data Processing Agreement", href: "/dpa" },
-  { label: "Subprocessor List", href: "/legal/subprocessors" },
-  { label: "Acceptable Use Policy", href: "/legal/acceptable-use" },
-  { label: "Accessibility Statement", href: "/legal/accessibility-statement" },
-  { label: "Security Disclosure", href: "/legal/security-disclosure" },
+  { label: "Subprocessor List", href: "/subprocessors" },
+  { label: "Acceptable Use Policy", href: "/acceptable-use" },
+  { label: "Accessibility Statement", href: "/accessibility-statement" },
+  { label: "Responsible Ai", href: "/responsible-ai" },
+  { label: "Security Disclosure", href: "/security-disclosure" },
   { label: "Legal Notices", href: "/legal/notices" },
   { label: "Trademark Guidelines", href: "/legal/trademark-guidelines" },
   { label: "Licenses", href: "/legal/licenses" },
