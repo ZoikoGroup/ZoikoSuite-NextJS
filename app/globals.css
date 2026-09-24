@@ -11,6 +11,31 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --color-color-azure-16-2: #16223A;
+  --color-color-azure-37-2: #4B5872;
+  --color-color-orange-44: #A8843A;
+  --color-color-orange-82: #DCD6C8;
+  --color-color-grey-93-7: #F6F1E6;
+  --color-color-grey-98-8: #FBFAF7;
+  --color-color-white-solid: #FFFFFF;
+
+  --color-color-azure-12-3: #0A1D34;
+  --color-color-azure-16: #0E2843;
+  --color-color-azure-27-3: #1A4270;
+  --color-color-spring-green-36: #3D7A52;
+  --color-color-grey-46: #4B5872;
+  --color-color-azure-83-5: #93A3BD;
+  --color-color-red-44: #A8433A;
+  --color-color-spring-green-79: #BCD9C6;
+  --color-color-azure-66-3: #C7D2E2;
+  --color-color-orange-54: #C8A24A;
+  --color-color-orange-76-2: #E2CFA3;
+  --color-color-red-84-3: #E6CBC6;
+  --color-color-grey-93-8: #E9F2EC;
+  --color-color-grey-94-8: #F7EAE8;
+  --color-color-grey-93-9: #F7EFE1;
+  --color-color-white--12: rgba(255, 255, 255, 0.12);
 }
 
 @media (prefers-color-scheme: dark) {
