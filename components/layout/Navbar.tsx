@@ -262,7 +262,7 @@ const complianceFrameworkLinks = [
   { label: "ISO 27001 Alignment", href: "/trust/iso-27001" },
   { label: "GDPR Controls", href: "/trust/gdpr" },
   { label: "CCPA Controls", href: "/trust/ccpa" },
-  { label: "Data Processing Agreement", href: "/trust/dpa" },
+  { label: "Data Processing Agreement", href: "/dpa" },
   { label: "Subprocessor List", href: "/trust/subprocessors" },
   { label: "Records Retention", href: "/trust/records-retention" },
   { label: "Accessibility", href: "/trust/accessibility" },
