@@ -190,7 +190,7 @@ const OFFICES: Office[] = [
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
-  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Terms of Service", href: "/legal/terms-of-service" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Cookie Policy", href: "/cookie-policy" },
   { label: "Cookie Preferences", href: "/cookie-preferences" },
