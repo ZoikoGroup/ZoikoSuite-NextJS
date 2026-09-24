@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
 
+# Deploys share one working directory on the server; running two at once lets one
+# `rm -rf .next` while the other is still building (ENOENT on _buildManifest.js.tmp).
+concurrency:
+  group: deploy-zoiko-suite
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,6 +25,9 @@ jobs:
           script: |
             set -e
             cd /var/www/zoiko-suite/app
+            # A timed-out run leaves its build running on the server; stop it before
+            # touching .next. The [n] keeps pkill from matching this script itself.
+            pkill -f "[n]ext build" || true
             git fetch origin main
             git reset --hard origin/main
             git clean -fd
