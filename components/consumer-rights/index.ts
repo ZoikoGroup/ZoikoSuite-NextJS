@@ -1,0 +1,12 @@
+export { default as PrivacyRightsSection } from "./PrivacyRightsSection";
+export { default as JurisdictionRouterSection } from "./JurisdictionRouterSection";
+export { default as RightsSelectorSection } from "./RightsSelectorSection";
+export { default as RequestFormSection } from "./RequestFormSection";
+export { default as VerificationArchitectureSection } from "./VerificationArchitectureSection";
+export { default as ReviewConsentAndSubmissionSection } from "./ReviewConsentAndSubmissionSection";
+export { default as ReceiptStatusSection } from "./ReceiptStatusSection";
+export { default as RequestLifecycleSection } from "./RequestLifecycleSection";
+export { default as AuthorizedAgentFlowSection } from "./AuthorizedAgentFlowSection";
+export { default as CustomerRoutingSection } from "./CustomerRoutingSection";
+export { default as SalesAlignmentSection } from "./SalesAlignmentSection";
+export { default as CommonQuestionsPrivacySection } from "./CommonQuestionsPrivacySection";
