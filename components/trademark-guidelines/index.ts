@@ -1,0 +1,17 @@
+export { default as TrademarkHeroSection } from "./TrademarkHeroSection";
+export { default as BrandRelationshipMapSection } from "./BrandRelationshipMapSection";
+export { default as PublicTrademarkRegistrySection } from "./PublicTrademarkRegistrySection";
+export { default as WordmarksSection } from "./WordmarksSection";
+export { default as LogosVisualMarksSection } from "./LogosVisualMarksSection";
+export { default as SymbolsAttributionSection } from "./SymbolsAttributionSection";
+export { default as EditorialMediaSection } from "./EditorialMediaSection";
+export { default as PartnersCoBrandingSection } from "./PartnersCoBrandingSection";
+export { default as DeveloperIntegrationNamingSection } from "./DeveloperIntegrationNamingSection";
+export { default as ScreenshotsDemoSection } from "./ScreenshotsDemoSection";
+export { default as DomainsSocialAdsSection } from "./DomainsSocialAdsSection";
+export { default as AiGeneratedBrandUseSection } from "./AiGeneratedBrandUseSection";
+export { default as ProhibitedUsesSection } from "./ProhibitedUsesSection";
+export { default as BrandPermissionCenterSection } from "./BrandPermissionCenterSection";
+export { default as ReportMisuseSection } from "./ReportMisuseSection";
+export { default as AssetLibrarySection } from "./AssetLibrarySection";
+export { default as TrademarkFaqSection } from "./TrademarkFaqSection";
