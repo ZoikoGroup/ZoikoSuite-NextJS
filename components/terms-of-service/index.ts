@@ -1,0 +1,9 @@
+export { default as TermsBreadcrumbSection } from "./TermsBreadcrumbSection";
+export { default as TermsMastheadSection } from "./TermsMastheadSection";
+export { default as TermsMetadataBarSection } from "./TermsMetadataBarSection";
+export { default as TermsReadingFrameSection } from "./TermsReadingFrameSection";
+export { default as TermsSectionsNav } from "./TermsSectionsNav";
+export { default as TermsClause } from "./TermsClause";
+export { default as TermsVersionHistorySection } from "./TermsVersionHistorySection";
+export { default as RelatedLegalDocumentsSection } from "./RelatedLegalDocumentsSection";
+export { default as TermsContactSection } from "./TermsContactSection";
