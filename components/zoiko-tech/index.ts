@@ -1,0 +1,16 @@
+export { default as ZoikoTechSection } from "./ZoikoTechSection";
+export { default as RelationshipMapSection } from "./RelationshipMapSection";
+export { default as ZoikoTechAtAGlanceSection } from "./ZoikoTechAtAGlanceSection";
+export { default as TechnologyCompanyThesisSection } from "./TechnologyCompanyThesisSection";
+export { default as SixCapabilityPillarsSection } from "./SixCapabilityPillarsSection";
+export { default as WhatZoikoTechContributesSection } from "./WhatZoikoTechContributesSection";
+export { default as UnifiedTechnologyArchitectureSection } from "./UnifiedTechnologyArchitectureSection";
+export { default as AiAndIntelligenceSection } from "./AiAndIntelligenceSection";
+export { default as InfrastructureSecurityAndAssuranceSection } from "./InfrastructureSecurityAndAssuranceSection";
+export { default as DeveloperAndIntegrationLayerSection } from "./DeveloperAndIntegrationLayerSection";
+export { default as SelectedTechnologyEstateSection } from "./SelectedTechnologyEstateSection";
+export { default as IndustriesAndComplexOperatingEnvironmentsSection } from "./IndustriesAndComplexOperatingEnvironmentsSection";
+export { default as GlobalOperatingFootprintSection } from "./GlobalOperatingFootprintSection";
+export { default as FounderAndInstitutionalContextSection } from "./FounderAndInstitutionalContextSection";
+export { default as IntentRouterSection } from "./IntentRouterSection";
+export { default as CommonQuestionsSection } from "./CommonQuestionsSection";

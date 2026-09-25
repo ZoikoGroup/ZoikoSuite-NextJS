@@ -1,0 +1,12 @@
+export { default as DataProcessingTermsSection } from "./DataProcessingTermsSection";
+export { default as AgreementFitCheckerSection } from "./AgreementFitCheckerSection";
+export { default as HowTheDPARelatesToYourOtherAgreementsSection } from "./HowTheDPARelatesToYourOtherAgreementsSection";
+export { default as IdentifiedPerProcessingActivitySection } from "./IdentifiedPerProcessingActivitySection";
+export { default as Article28StyleParticularsSection } from "./Article28StyleParticularsSection";
+export { default as ClauseGroupsSummarizedSection } from "./ClauseGroupsSummarizedSection";
+export { default as SecurityIncidentAndPersonalDataBreachAssistanceSection } from "./SecurityIncidentAndPersonalDataBreachAssistanceSection";
+export { default as ATieredEvidenceHierarchySection } from "./ATieredEvidenceHierarchySection";
+export { default as AModularScheduleSection } from "./AModularScheduleSection";
+export { default as SixExecutionPathsSection } from "./SixExecutionPathsSection";
+export { default as PriorVersionsNeverOverwrittenSection } from "./PriorVersionsNeverOverwrittenSection";
+export { default as FrequentlyAskedQuestionsSection } from "./FrequentlyAskedQuestionsSection";

@@ -262,7 +262,7 @@ const complianceFrameworkLinks = [
   { label: "ISO 27001 Alignment", href: "/trust/iso-27001" },
   { label: "GDPR Controls", href: "/trust/gdpr" },
   { label: "CCPA Controls", href: "/trust/ccpa" },
-  { label: "Data Processing Agreement", href: "/trust/dpa" },
+  { label: "Data Processing Agreement", href: "/dpa" },
   { label: "Subprocessor List", href: "/trust/subprocessors" },
   { label: "Records Retention", href: "/trust/records-retention" },
   { label: "Accessibility", href: "/trust/accessibility" },
@@ -347,11 +347,11 @@ const customerResourcesLinks = [
 
 /* --- Company Data --- */
 const aboutLinks = [
-  { label: "About ZoikoSuite", href: "/company/about" },
+  { label: "About ZoikoSuite", href: "/about" },
   { label: "Our Category", href: "/company/category" },
   { label: "Our Mission", href: "/company/mission" },
-  { label: "Founder's Vision", href: "/company/vision" },
-  { label: "Leadership", href: "/company/leadership" },
+  { label: "Founder's Vision", href: "/founders-vision" },
+  { label: "Leadership", href: "/leadership" },
   { label: "Corporate Governance", href: "/company/corporate-governance" },
   { label: "Locations", href: "/company/locations" },
   { label: "Contact", href: "/company/contact" },
@@ -369,12 +369,12 @@ const ecosystemLinks = [
 
 const companyLinks = [
   { label: "Careers", href: "/company/careers" },
-  { label: "Newsroom", href: "/company/newsroom" },
+  { label: "Newsroom", href: "/newsroom" },
   { label: "Press and Media", href: "/company/press" },
   { label: "Events", href: "/company/events" },
-  { label: "Investor Information", href: "/company/investors" },
-  { label: "Zoiko Tech", href: "/company/zoiko-tech" },
-  { label: "Zoiko Group", href: "/company/zoiko-group" },
+  { label: "Investor Information", href: "/investors-relations" },
+  { label: "Zoiko Tech", href: "/zoiko-tech" },
+  { label: "Zoiko Group", href: "/zoiko-group" },
   { label: "Contact Corporate Affairs", href: "/company/corporate-affairs" },
 ] as const;
 

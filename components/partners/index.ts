@@ -1,0 +1,14 @@
+export { default as PartnersHeroSection } from "./PartnersHeroSection";
+export { default as EcosystemModelSection } from "./EcosystemModelSection";
+export { default as BuyerPartnerFinderSection } from "./BuyerPartnerFinderSection";
+export { default as PartnerDirectorySection } from "./PartnerDirectorySection";
+export { default as TechnologyIntegrationPartnersSection } from "./TechnologyIntegrationPartnersSection";
+export { default as PartnerSupportedSection } from "./PartnerSupportedSection";
+export { default as ChannelStrategicRelationshipsSection } from "./ChannelStrategicRelationshipsSection";
+export { default as WhyPartnerSection } from "./WhyPartnerSection";
+export { default as PartnerLifecycleSection } from "./PartnerLifecycleSection";
+export { default as TrustAndDiligenceSection } from "./TrustAndDiligenceSection";
+export { default as ApplicationQualificationSection } from "./ApplicationQualificationSection";
+export { default as CustomerProtectionSection } from "./CustomerProtectionSection";
+export { default as ContinueTheStorySection } from "./ContinueTheStorySection";
+export { default as PartnersFaqSection } from "./PartnersFaqSection";
