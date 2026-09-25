@@ -62,7 +62,7 @@ export default function GovernanceSection() {
             </a>
 
             <a
-              href="#"
+              href="/platform-overview"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-[#e2e8f0] font-medium text-sm border border-[#1e3a5f] hover:bg-[#13293d] transition-all duration-200"
             >
               Explore the platform

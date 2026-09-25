@@ -130,7 +130,7 @@ export default function GovernedIntelligence() {
 
             <div>
               <a
-                href="#"
+                href="/platform-overview"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#c5a059] hover:text-[#e2c27b] transition-colors"
               >
                 Explore the platform

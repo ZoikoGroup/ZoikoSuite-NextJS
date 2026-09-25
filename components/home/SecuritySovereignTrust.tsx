@@ -139,7 +139,7 @@ export default function SecuritySovereignTrust() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="#"
+            href="/security-overview"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#124d73] transition-all duration-200 shadow-lg shadow-[#0F476A]/20"
           >
             Review security & trust
