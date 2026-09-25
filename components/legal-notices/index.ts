@@ -1,0 +1,15 @@
+export { default as LegalNoticesMastheadSection } from "./LegalNoticesMastheadSection";
+export { default as LegalIdentityAtAGlanceSection } from "./LegalIdentityAtAGlanceSection";
+export { default as OperatorInformationSection } from "./OperatorInformationSection";
+export { default as CopyrightIpNoticeSection } from "./CopyrightIpNoticeSection";
+export { default as TrademarkNoticeSection } from "./TrademarkNoticeSection";
+export { default as ProductAvailabilityNoticeSection } from "./ProductAvailabilityNoticeSection";
+export { default as StandardsAssuranceSection } from "./StandardsAssuranceSection";
+export { default as ProfessionalAdviceBoundarySection } from "./ProfessionalAdviceBoundarySection";
+export { default as ThirdPartyContentSection } from "./ThirdPartyContentSection";
+export { default as FormalNoticesRoutingSection } from "./FormalNoticesRoutingSection";
+export { default as LocationsContactRoutingSection } from "./LocationsContactRoutingSection";
+export { default as RelatedLegalDocumentsSection } from "./RelatedLegalDocumentsSection";
+export { default as TrustCrossLinksSection } from "./TrustCrossLinksSection";
+export { default as VersionControlSection } from "./VersionControlSection";
+export { default as LegalFaqSection } from "./LegalFaqSection";

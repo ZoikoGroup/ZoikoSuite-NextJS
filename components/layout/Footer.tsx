@@ -200,7 +200,7 @@ const LEGAL_LINKS: FooterLink[] = [
   { label: "Accessibility Statement", href: "/accessibility-statement" },
   { label: "Responsible Ai", href: "/responsible-ai" },
   { label: "Security Disclosure", href: "/security-disclosure" },
-  { label: "Legal Notices", href: "/legal/notices" },
+  { label: "Legal Notices", href: "/legal-notices" },
   { label: "Trademark Guidelines", href: "/legal/trademark-guidelines" },
   { label: "Licenses", href: "/legal/licenses" },
   {
