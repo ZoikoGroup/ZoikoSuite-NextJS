@@ -205,22 +205,22 @@ const LEGAL_LINKS: FooterLink[] = [
   { label: "Licenses", href: "/licenses" },
   {
     label: "Modern Slavery Statement",
-    href: "/legal/modern-slavery-statement",
+    href: "/modern-slavery-statement",
   },
 ];
 
 const PRIVACY_LINKS: FooterLink[] = [
   { label: "California Privacy Notice", href: "/legal/privacy/california" },
   { label: "UK Privacy Notice", href: "/uk-privacy-notice" },
-  { label: "EU Privacy Notice", href: "/legal/privacy/eu" },
+  { label: "EU Privacy Notice", href: "/eu-privacy-notice" },
   {
     label: "Do Not Sell or Share My Personal Information",
-    href: "/legal/privacy/do-not-sell",
+    href: "/do-not-sell-or-share",
   },
-  { label: "Consumer Rights Request", href: "/legal/privacy/consumer-rights" },
+  { label: "Consumer Rights Request", href: "/consumer-rights" },
   {
     label: "Whistleblowing and Ethics Reporting",
-    href: "/legal/ethics-reporting",
+    href: "/whistleblowing-ethics-reporting",
   },
 ];
 
