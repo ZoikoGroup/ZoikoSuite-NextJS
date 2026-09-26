@@ -1,0 +1,13 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as WrongChannelRoutingSection } from "./WrongChannelRoutingSection";
+export { default as WhatYouCanReportSection } from "./WhatYouCanReportSection";
+export { default as ProtectionSection } from "./ProtectionSection";
+export { default as ReportingModeSection } from "./ReportingModeSection";
+export { default as HowReportingWorksSection } from "./HowReportingWorksSection";
+export { default as ReportWorkflowSection } from "./ReportWorkflowSection";
+export { default as ReviewSubmitSection } from "./ReviewSubmitSection";
+export { default as ConfirmationSection } from "./ConfirmationSection";
+export { default as SecureStatusCenterSection } from "./SecureStatusCenterSection";
+export { default as ExternalReportingSection } from "./ExternalReportingSection";
+export { default as PrivacyRetentionSection } from "./PrivacyRetentionSection";
+export { default as FaqSection } from "./FaqSection";
