@@ -16,6 +16,7 @@ const domainsData = [
   {
     icon: BarChart3,
     title: "Finance & Tax",
+    href: "/financial-service",
     description:
       "Continuous financial truth with jurisdiction-aware treatment.",
     tags: ["Ledger", "AP / AR", "Close & consolidation"],
@@ -33,6 +34,7 @@ const domainsData = [
   {
     icon: Users,
     title: "Workforce & Payroll",
+    href: "#",
     description:
       "Governed employment and pay across local and cross-border operations.",
     tags: ["Payroll", "Benefits & leave", "Workforce compliance"],
@@ -50,6 +52,7 @@ const domainsData = [
   {
     icon: FileText,
     title: "Legal & Commercial",
+    href: "/general-counsel",
     description:
       "Move contracts, obligations, approvals, and spend through controlled execution.",
     tags: ["Contract lifecycle", "Clauses", "Vendor diligence"],
@@ -67,6 +70,7 @@ const domainsData = [
   {
     icon: FileCheck,
     title: "Compliance & Obligations",
+    href: "/compliance-overview",
     description:
       "Know what is due, why it is due, who owns it, and what evidence exists.",
     tags: ["Obligations registry", "Filing tracker", "Escalations"],
@@ -84,6 +88,7 @@ const domainsData = [
   {
     icon: Shield,
     title: "Evidence & Audit",
+    href: "/evidence-architecture",
     description:
       "Retrieve the complete action, decision, rule, document, and approval lineage.",
     tags: ["Audit events", "Document vault", "Evidence manifests"],
@@ -101,6 +106,7 @@ const domainsData = [
   {
     icon: TrendingUp,
     title: "Intelligence & Reporting",
+    href: "/operating-intelligence",
     description:
       "Forecast exposure and prioritize risk without changing source truth.",
     tags: ["Anomalies", "Forecasting", "Executive reporting"],
@@ -164,7 +170,7 @@ export default function UnifiedPlatformDomains() {
             return (
               <div
                 key={index}
-                className={`${domain.cardBg} border ${domain.cardBorder} rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-200`}
+                className={`${domain.cardBg} border${domain.cardBorder} rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-200`}
               >
                 <div>
                   {/* Icon */}
@@ -172,11 +178,14 @@ export default function UnifiedPlatformDomains() {
                     <IconComponent className="w-6 h-6 stroke-[1.5]" />
                   </div>
 
-                  {/* Title */}
-                  <h3
-                    className={`text-xl font-bold tracking-tight mb-3 ${domain.textColor}`}
-                  >
-                    {domain.title}
+                  {/* Title Link */}
+                  <h3 className="mb-3">
+                    <a
+                      href={domain.href}
+                      className={`text-xl font-bold tracking-tight hover:underline block ${domain.textColor}`}
+                    >
+                      {domain.title}
+                    </a>
                   </h3>
 
                   {/* Description */}
@@ -202,7 +211,7 @@ export default function UnifiedPlatformDomains() {
                 {/* Explore Link */}
                 <div>
                   <a
-                    href="#"
+                    href={domain.href}
                     className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors ${domain.linkColor}`}
                   >
                     Explore

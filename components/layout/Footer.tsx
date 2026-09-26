@@ -196,13 +196,13 @@ const LEGAL_LINKS: FooterLink[] = [
   { label: "Cookie Preferences", href: "/cookie-preferences" },
   { label: "Data Processing Agreement", href: "/dpa" },
   { label: "Subprocessor List", href: "/subprocessors" },
-  { label: "Acceptable Use Policy", href: "/acceptable-use" },
+  { label: "Acceptable Use Policy", href: "/acceptable-use-policy" },
   { label: "Accessibility Statement", href: "/accessibility-statement" },
   { label: "Responsible Ai", href: "/responsible-ai" },
   { label: "Security Disclosure", href: "/security-disclosure" },
   { label: "Legal Notices", href: "/legal-notices" },
-  { label: "Trademark Guidelines", href: "/legal/trademark-guidelines" },
-  { label: "Licenses", href: "/legal/licenses" },
+  { label: "Trademark Guidelines", href: "/trademark-guidelines" },
+  { label: "Licenses", href: "/licenses" },
   {
     label: "Modern Slavery Statement",
     href: "/legal/modern-slavery-statement",
@@ -211,7 +211,7 @@ const LEGAL_LINKS: FooterLink[] = [
 
 const PRIVACY_LINKS: FooterLink[] = [
   { label: "California Privacy Notice", href: "/legal/privacy/california" },
-  { label: "UK Privacy Notice", href: "/legal/privacy/uk" },
+  { label: "UK Privacy Notice", href: "/uk-privacy-notice" },
   { label: "EU Privacy Notice", href: "/legal/privacy/eu" },
   {
     label: "Do Not Sell or Share My Personal Information",
