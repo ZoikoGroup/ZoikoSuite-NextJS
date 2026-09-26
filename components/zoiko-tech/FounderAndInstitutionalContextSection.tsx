@@ -19,7 +19,7 @@ export default function FounderAndInstitutionalContextSection() {
 
           {/* Description (16.5px for lg devices) */}
           <p className="text-gray-600 font-light leading-relaxed text-[16.5px]">
-            Zoiko Tech's official About material identifies Lennox McLeod as its
+            Zoiko Tech&apos;s official About material identifies Lennox McLeod as its
             founder, separately published as Founder & Executive Chairman of
             Zoiko Group. No ZoikoSuite operating title, board seat, or ownership
             percentage is assigned by inference.

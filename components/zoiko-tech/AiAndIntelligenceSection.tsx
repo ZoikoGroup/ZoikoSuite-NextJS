@@ -27,7 +27,7 @@ export default function AiAndIntelligenceSection() {
 
           {/* Description (16.5px for lg devices) */}
           <p className="text-gray-300 font-light leading-relaxed text-[16.5px]">
-            Zoiko Tech's public AI thesis is based on domain context, decision
+            Zoiko Tech&apos;s public AI thesis is based on domain context, decision
             structures, data, workflows, and regulatory constraints — not
             attaching a generic chatbot to every application. On ZoikoSuite, AI
             remains subordinate to policy, authority, evidence, and human
