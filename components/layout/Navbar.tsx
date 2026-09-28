@@ -36,13 +36,16 @@ import {
 import { LucideBarChart2 } from "lucide-react";
 
 const navItems = [
-  "Platform",
-  "Solutions",
-  "Industries",
-  "Trust",
-  "Resources",
-  "Company",
+  { label: "Platform", href: "/platform" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Industries", href: "/industries" },
+  { label: "Trust", href: "#trust" },
+  { label: "Resources", href: "#resources" },
+  { label: "Company", href: "#company" },
 ] as const;
+
+// Union of the labels: "Platform" | "Solutions" | "Industries" | ...
+type NavLabel = (typeof navItems)[number]["label"];
 
 /* --- Platform Data --- */
 const discoverLinks = [
@@ -385,7 +388,7 @@ type MobileGroup = {
   links: readonly { label: string; href: string }[];
 };
 
-const mobileMenuConfig: Record<(typeof navItems)[number], MobileGroup[]> = {
+const mobileMenuConfig: Record<NavLabel, MobileGroup[]> = {
   Platform: [
     { title: "Discover ZoikoSuite", icon: LuCompass, links: discoverLinks },
     { title: "Core Modules", icon: LuBoxes, links: coreModulesLinks },
@@ -491,24 +494,16 @@ const mobilePanelVariants = {
 } as const;
 
 export default function Navbar() {
-  const [activeMenu, setActiveMenu] = useState<
-    | "Platform"
-    | "Solutions"
-    | "Industries"
-    | "Trust"
-    | "Resources"
-    | "Company"
-    | null
-  >(null);
+  const [activeMenu, setActiveMenu] = useState<NavLabel | null>(null);
 
   // Fixed-on-scroll shadow state (desktop + mobile)
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Mobile drawer state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMobileSection, setOpenMobileSection] = useState<
-    (typeof navItems)[number] | null
-  >(null);
+  const [openMobileSection, setOpenMobileSection] = useState<NavLabel | null>(
+    null,
+  );
   const [openMobileGroups, setOpenMobileGroups] = useState<Set<string>>(
     new Set(),
   );
@@ -526,7 +521,7 @@ export default function Navbar() {
     }
   };
 
-  const openMenu = (item: (typeof navItems)[number]) => {
+  const openMenu = (item: NavLabel) => {
     clearCloseTimeout();
     setActiveMenu(item);
   };
@@ -554,7 +549,7 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
-  const toggleMobileSection = (item: (typeof navItems)[number]) => {
+  const toggleMobileSection = (item: NavLabel) => {
     setOpenMobileSection((prev) => (prev === item ? null : item));
   };
 
@@ -604,26 +599,27 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               {navItems.map((item) => (
                 <div
-                  key={item}
+                  key={item.label}
                   className="flex flex-col justify-start items-start relative"
-                  onMouseEnter={() => openMenu(item)}
+                  onMouseEnter={() => openMenu(item.label)}
                   onMouseLeave={scheduleClose}
                 >
-                  <a
-                    href=""
+                  <Link
+                    href={item.href}
+                    onClick={() => setActiveMenu(null)}
                     className="min-h-11 px-2 py-3.5 rounded-lg inline-flex justify-start items-center gap-1.5 hover:bg-[#EAEEF4]/50 transition-colors duration-150"
                   >
                     <span className="text-center justify-center text-[#12365E] text-sm font-medium font-['Inter']">
-                      {item}
+                      {item.label}
                     </span>
                     <div className="pb-px inline-flex flex-col justify-start items-center">
                       <LuChevronDown
                         className={`w-[9px] h-[9px] text-[#9AA6B5] transition-transform duration-150 ${
-                          activeMenu === item ? "rotate-180" : ""
+                          activeMenu === item.label ? "rotate-180" : ""
                         }`}
                       />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -1880,19 +1876,19 @@ export default function Navbar() {
               {/* Scrollable Content */}
               <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-3 py-4">
                 {navItems.map((item) => {
-                  const isSectionOpen = openMobileSection === item;
+                  const isSectionOpen = openMobileSection === item.label;
                   return (
                     <div
-                      key={item}
+                      key={item.label}
                       className="border-b border-[#EAEEF4] last:border-b-0"
                     >
                       <button
                         className="w-full flex items-center justify-between px-3 py-4 text-left"
-                        onClick={() => toggleMobileSection(item)}
+                        onClick={() => toggleMobileSection(item.label)}
                         aria-expanded={isSectionOpen}
                       >
                         <span className="text-[#12365E] text-base font-semibold font-['Inter']">
-                          {item}
+                          {item.label}
                         </span>
                         <LuChevronDown
                           className={`w-4 h-4 text-[#9AA6B5] transition-transform duration-200 ${
@@ -1911,8 +1907,18 @@ export default function Navbar() {
                             className="overflow-hidden"
                           >
                             <div className="pb-3 pl-2 flex flex-col gap-1">
-                              {mobileMenuConfig[item].map((group) => {
-                                const groupKey = `${item}::${group.title}`;
+                              {/* Link to the section's own page */}
+                              <Link
+                                href={item.href}
+                                onClick={closeMobileMenu}
+                                className="flex items-center justify-between px-3 py-2.5 rounded-lg text-[#C0872B] hover:bg-[#FDF6EA] text-sm font-semibold font-['Inter'] transition-colors"
+                              >
+                                <span>Explore {item.label}</span>
+                                <LuArrowRight className="w-3.5 h-3.5" />
+                              </Link>
+
+                              {mobileMenuConfig[item.label].map((group) => {
+                                const groupKey = `${item.label}::${group.title}`;
                                 const isGroupOpen =
                                   openMobileGroups.has(groupKey);
                                 const GroupIcon = group.icon;
