@@ -12,7 +12,7 @@ export default function BlogInsightsSection() {
             eyebrow="BLOG & INSIGHTS"
             title="Editorial analysis — clearly separate from authoritative docs."
           />
-          <p className="max-w-96 pr-7 pt-3.5 pb-5 text-base leading-6" style={{ color: C.grey44, fontFamily: FONT }}>
+          <p className="w-full lg:w-[460px] pt-3.5 pb-5 text-base leading-6 whitespace-nowrap" style={{ color: C.grey44, fontFamily: FONT }}>
             Product/legal facts link to current sources; historical
             <br />
             announcements never override current documentation.
@@ -23,16 +23,21 @@ export default function BlogInsightsSection() {
           {BLOG_CARDS.map((card) => (
             <div
               key={card.title}
-              className="flex-1 min-w-60 h-52 p-5 rounded-xl flex flex-col justify-between"
-              style={{ background: C.white, border: `1px solid ${C.grey95}` }}
+              className="w-[365px] h-[208px] p-5 rounded-xl flex flex-col justify-between shrink-0"
+              style={{ background: C.white, border: `1px solid ${C.orange87}` }}
             >
-              <div className="pb-2.5 text-xs font-bold uppercase tracking-wide" style={{ color: C.azure25, fontFamily: FONT }}>
+              <div className="pb-2.5 text-xs font-bold uppercase tracking-wide" style={{ color: "#123255", fontFamily: FONT }}>
                 {card.eyebrow}
               </div>
-              <div className="text-base font-bold leading-5" style={{ color: C.azure11, fontFamily: FONT }}>
+              <div
+                className={`text-base font-bold leading-5 ${
+                  card.title === "Why governance has to precede execution" ? "whitespace-nowrap" : ""
+                }`}
+                style={{ color: C.azure11, fontFamily: FONT }}
+              >
                 {card.title}
               </div>
-              <div className="flex-1 py-3 text-xs leading-5" style={{ color: C.grey44, fontFamily: FONT }}>
+              <div className="flex-1 py-3 text-xs leading-5 whitespace-pre-wrap" style={{ color: C.grey44, fontFamily: FONT }}>
                 {card.body}
               </div>
               <div className="pb-3 flex flex-wrap gap-1.5">

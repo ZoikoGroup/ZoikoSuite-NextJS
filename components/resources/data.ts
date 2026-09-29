@@ -80,7 +80,7 @@ export const DIRECTORY_CARDS: DirectoryCard[] = [
   {
     icon: "/resources/div.icon-chip (2).png",
     title: "Knowledge Base",
-    body: "Problem-solving and how-to content for users, admins,\nand implementers.",
+    body: "Problem-solving and how-to content for users,\nadmins, and implementers.",
     cta: "Search Knowledge Base →",
   },
   {
@@ -104,7 +104,7 @@ export const DIRECTORY_CARDS: DirectoryCard[] = [
   {
     icon: "/resources/div.icon-chip (6).png",
     title: "Templates & Tools",
-    body: "Practical checklists, worksheets, and planning utilities\n— where approved.",
+    body: "Practical checklists, worksheets, and planning utilities — where approved.",
     cta: "Explore Tools →",
     wide: true,
   },
@@ -119,40 +119,40 @@ export type TopicCard = { title: string; body: string };
 export const TOPIC_CARDS: TopicCard[] = [
   {
     title: "Platform & Governance",
-    body: "Governed execution, policy/authority, data model, operating intelligence.",
+    body: "Governed execution,\npolicy/authority, data model,\noperating intelligence.",
   },
-  { title: "Finance & Tax", body: "Ledger, close, AP/AR, tax context, controls, evidence." },
+  { title: "Finance & Tax", body: "Ledger, close, AP/AR, tax\ncontext, controls, evidence." },
   {
     title: "Workforce & Payroll",
-    body: "Payroll, workforce compliance, benefits/leave, implementation.",
+    body: "Payroll, workforce compliance,\nbenefits/leave, implementation.",
   },
   {
     title: "Legal & Commercial",
-    body: "Contracts, clauses, obligations, vendor diligence, authority.",
+    body: "Contracts, clauses, obligations,\nvendor diligence, authority.",
   },
   {
     title: "Compliance & Obligations",
-    body: "Obligation registry, filings, escalations, evidence.",
+    body: "Obligation registry, filings,\nescalations, evidence.",
   },
   {
     title: "Evidence & Audit",
-    body: "Evidence architecture, manifests, lineage, audit readiness.",
+    body: "Evidence architecture,\nmanifests, lineage, audit\nreadiness.",
   },
   {
     title: "Intelligence & Reporting",
-    body: "Analytics, anomaly/forecasting/decision support, executive reporting.",
+    body: "Analytics,\nanomaly/forecasting/decision\nsupport, executive reporting.",
   },
   {
     title: "Trust & Security",
-    body: "Security, compliance, privacy, residency, Responsible AI, accessibility, status.",
+    body: "Security, compliance, privacy,\nresidency, Responsible AI,\naccessibility, status.",
   },
   {
     title: "Integration & Migration",
-    body: "APIs, events, coexistence, shadow mode, migration integrity.",
+    body: "APIs, events, coexistence,\nshadow mode, migration\nintegrity.",
   },
   {
     title: "Administration & Adoption",
-    body: "Setup, roles, permissions, onboarding, change management, training.",
+    body: "Setup, roles, permissions,\nonboarding, change\nmanagement, training.",
   },
 ];
 
@@ -184,73 +184,73 @@ export const REGISTRY_CARDS: RegistryCard[] = [
   {
     eyebrow: "Webinar",
     title: "Governed Close: A Finance Leader's View",
-    body: "Live session on evidence-ready close across entities.",
+    body: "Live session on evidence-ready\nclose across entities.",
     meta: ["Finance", "Live · Oct 2026"],
   },
   {
     eyebrow: "Insight",
     title: "Why governance has to precede execution",
-    body: "Editorial perspective on control-before-action design.",
+    body: "Editorial perspective on control-\nbefore-action design.",
     meta: ["Editorial", "6 min read"],
   },
   {
     eyebrow: "Security",
     title: "Security & Trust Brief",
-    body: "Control objectives and claim status by deployment.",
+    body: "Control objectives and claim status\nby deployment.",
     meta: ["IT / Security", "PDF"],
   },
   {
     eyebrow: "Brief",
     title: "Executive Platform Brief",
-    body: "Category, control model, and operating case in one document.",
+    body: "Category, control model, and\noperating case in one document.",
     meta: ["Executive", "PDF"],
   },
   {
     eyebrow: "Documentation",
     title: "Platform API Reference",
-    body: "Versioned endpoints, events, identity, and integration patterns.",
+    body: "Versioned endpoints, events,\nidentity, and integration patterns.",
     meta: ["Developer", "HTML"],
   },
   {
     eyebrow: "Knowledge Base",
     title: "Configuring SSO for your workspace",
-    body: "Step-by-step setup, prerequisites, and troubleshooting for SSO.",
+    body: "Step-by-step setup, prerequisites,\nand troubleshooting for SSO.",
     meta: ["IT / Security", "Article"],
   },
   {
     eyebrow: "Training",
     title: "ZoikoSuite Foundations",
-    body: "Self-paced introduction to the platform's governance model.",
+    body: "Self-paced introduction to the\nplatform's governance model.",
     meta: ["All audiences", "Self-paced · 45 min"],
   },
   {
     eyebrow: "Documentation",
     title: "Migration integrity reference",
-    body: "Completeness, referential integrity, and lineage validation.",
+    body: "Completeness, referential integrity,\nand lineage validation.",
     meta: ["IT / Security", "HTML"],
   },
   {
     eyebrow: "Knowledge Base",
     title: "Reconciling a failed close cycle",
-    body: "Symptom-based guidance for close reconciliation issues.",
+    body: "Symptom-based guidance for close\nreconciliation issues.",
     meta: ["Finance", "Article"],
   },
   {
     eyebrow: "Webinar",
     title: "Integration Architecture Deep Dive",
-    body: "Recorded session on API/event contracts and provenance.",
+    body: "Recorded session on API/event\ncontracts and provenance.",
     meta: ["Developer", "On-demand"],
   },
   {
     eyebrow: "Training",
     title: "Administering ZoikoSuite",
-    body: "Role/permission setup and operating configuration.",
+    body: "Role/permission setup and operating\nconfiguration.",
     meta: ["IT / Security", "Instructor-led"],
   },
   {
     eyebrow: "Insight",
     title: "The case against dashboard-only proof",
-    body: "Why architecture and evidence matter more than a reporting layer.",
+    body: "Why architecture and evidence\nmatter more than a reporting layer.",
     meta: ["Editorial", "5 min read"],
   },
 ];
@@ -261,12 +261,12 @@ export const KB_ARTICLES: SimpleCard[] = [
   {
     eyebrow: "Article",
     title: "Configuring SSO for your workspace",
-    body: "Prerequisites, steps, expected result, and troubleshooting.",
+    body: "Prerequisites, steps, expected result, and\ntroubleshooting.",
   },
   {
     eyebrow: "Article",
     title: "Reconciling a failed close cycle",
-    body: "Symptom-based guidance with escalation route.",
+    body: "Symptom-based guidance with escalation\nroute.",
   },
 ];
 
@@ -274,12 +274,12 @@ export const TRAINING_CARDS: SimpleCard[] = [
   {
     eyebrow: "Self-paced · 45 min",
     title: "ZoikoSuite Foundations",
-    body: "Introduction to the governance model for all audiences.",
+    body: "Introduction to the governance model for all\naudiences.",
   },
   {
     eyebrow: "Instructor-led",
     title: "Administering ZoikoSuite",
-    body: "Role/permission setup and operating configuration.",
+    body: "Role/permission setup and operating\nconfiguration.",
   },
 ];
 
@@ -316,13 +316,13 @@ export const BLOG_CARDS: SimpleCard[] = [
   {
     eyebrow: "Editorial",
     title: "The case against dashboard-only proof",
-    body: "Why architecture and evidence outrank a reporting layer.",
+    body: "Why architecture and evidence outrank a reporting\nlayer.",
     meta: ["By ZoikoSuite Editorial", "Jan 2026"],
   },
   {
     eyebrow: "Research",
     title: "Fragmentation costs in multi-entity operations",
-    body: "Summary of operating patterns across regulated enterprises.",
+    body: "Summary of operating patterns across regulated\nenterprises.",
     meta: ["By ZoikoSuite Research", "Aug 2026"],
   },
 ];
@@ -331,19 +331,19 @@ export const TOOL_CARDS: SimpleCard[] = [
   {
     eyebrow: "Checklist",
     title: "Migration readiness checklist",
-    body: "Version, owner, and assumptions stated; editable download.",
+    body: "Version, owner, and assumptions stated; editable\ndownload.",
     meta: ["v1.0", "Reviewed Sep 2026"],
   },
   {
     eyebrow: "Worksheet",
     title: "Entity & jurisdiction mapping worksheet",
-    body: "Scope, required data, and instructions with examples.",
+    body: "Scope, required data, and instructions with\nexamples.",
     meta: ["v1.0"],
   },
   {
     eyebrow: "Assessment",
     title: "Governance readiness questionnaire",
-    body: "Purpose, methodology, and privacy notice disclosed upfront.",
+    body: "Purpose, methodology, and privacy notice disclosed\nupfront.",
     meta: ["No hidden lead capture"],
   },
 ];
@@ -354,7 +354,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What resources are available for ZoikoSuite?",
     answer:
-      "Executive briefs, documentation, knowledge, training, webinars/events, insights, and approved practical tools — only live destinations are shown here.",
+      "Executive briefs, documentation, knowledge, training, webinars/events, insights, and approved practical tools — only\nlive destinations are shown here.",
   },
   {
     question: "Where can I find technical documentation?",

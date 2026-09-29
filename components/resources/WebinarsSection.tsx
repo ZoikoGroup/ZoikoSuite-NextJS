@@ -9,7 +9,7 @@ export default function WebinarsSection() {
       <div className="w-full max-w-[1200px] px-8 py-24 flex flex-col gap-9">
         <div className="flex flex-wrap items-end justify-between">
           <SectionHead eyebrow="WEBINARS & EVENTS" title="Live and on-demand expert sessions." />
-          <p className="max-w-96 pr-8 pt-3.5 pb-5 text-base leading-6" style={{ color: C.grey44, fontFamily: FONT }}>
+          <p className="w-full lg:w-[460px] pt-3.5 pb-5 text-base leading-6 whitespace-nowrap" style={{ color: C.grey44, fontFamily: FONT }}>
             Recording status shown honestly — capacity language
             <br />
             only appears when real.
@@ -21,13 +21,13 @@ export default function WebinarsSection() {
             <div
               key={card.title}
               className="flex-1 min-w-60 px-4 py-5 rounded-xl flex flex-col gap-1.5"
-              style={{ background: C.white, border: `1px solid ${C.grey95}` }}
+              style={{ background: C.white, border: `1px solid ${C.orange87}` }}
             >
               <div
                 className="self-start px-2 py-[3px] rounded-[5px] text-[10px] font-bold uppercase"
                 style={{
-                  background: card.badgeTone === "live" ? C.azure25 : C.grey94b,
-                  color: card.badgeTone === "live" ? C.azure11 : C.green34,
+                  background: card.badgeTone === "live" ? C.azure25 : C.grey94,
+                  color: card.badgeTone === "live" ? "#123255" : C.green34,
                   fontFamily: FONT,
                 }}
               >
