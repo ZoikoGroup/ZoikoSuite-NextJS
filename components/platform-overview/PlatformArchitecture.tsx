@@ -1,16 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link"; // If using Next.js. Change to standard <a> if using standard React router
+
+interface CapabilityItem {
+  label: string;
+  href: string;
+}
 
 interface CapabilityGroup {
   group: string;
   title: string;
   description: string;
-  items: string[];
+  items: CapabilityItem[];
   allCount: string;
-  expandText: string;
+  buttonText: string;
+  customHref?: string; // Optional custom link if you want to override the automatic title-based link
 }
 
 const groups: CapabilityGroup[] = [
@@ -19,26 +26,28 @@ const groups: CapabilityGroup[] = [
     title: "Core Modules",
     description: "Where business work is initiated and completed.",
     items: [
-      "Accounting & General Ledger",
-      "Accounts Payable",
-      "Accounts Receivable",
-      "Treasury & Cash Position",
+      { label: "Accounting & General Ledger", href: "/modules/accounting" },
+      { label: "Accounts Payable", href: "/modules/accounts-payable" },
+      { label: "Accounts Receivable", href: "/modules/accounts-receivable" },
+      { label: "Treasury & Cash Position", href: "/modules/treasury" },
     ],
     allCount: "ten",
-    expandText: "Show all ten modules +",
+    buttonText: "show all ten modules +",
+    customHref: "/core-modules", // Optional: explicitly change link here if needed
   },
   {
     group: "Group 02",
     title: "Governance Platform",
     description: "What decides whether, how, and by whom work may proceed.",
     items: [
-      "Governance Control Plane",
-      "Policy Management",
-      "Jurisdiction Intelligence",
-      "Workflow & Approvals",
+      { label: "Governance Control Plane", href: "/governance/control-plane" },
+      { label: "Policy Management", href: "/governance/policy-management" },
+      { label: "Jurisdiction Intelligence", href: "/governance/jurisdiction" },
+      { label: "Workflow & Approvals", href: "/governance/workflow" },
     ],
     allCount: "ten",
-    expandText: "Show all ten capabilities +",
+    buttonText: "show all ten capabilities +",
+    customHref:"/governance-platform"
   },
   {
     group: "Group 03",
@@ -46,23 +55,22 @@ const groups: CapabilityGroup[] = [
     description:
       "How the platform connects, scales, deploys, and preserves evidence.",
     items: [
-      "Platform Architecture",
-      "Multi-Entity Operations",
-      "Multi-Jurisdiction Operations",
-      "Data Residency",
+      { label: "Platform Architecture", href: "/foundation/architecture" },
+      { label: "Multi-Entity Operations", href: "/foundation/multi-entity" },
+      { label: "Multi-Jurisdiction Operations", href: "/foundation/multi-jurisdiction" },
+      { label: "Data Residency", href: "/foundation/data-residency" },
     ],
     allCount: "ten",
-    expandText: "Show all ten foundations +",
+    buttonText: "show all ten foundations +",
+    customHref:"/platform-foundation"
   },
 ];
 
 export default function PlatformArchitecture() {
-  const [expandedGroups, setExpandedGroups] = useState<Record<number, boolean>>(
-    {},
-  );
-
-  const toggleGroup = (index: number) => {
-    setExpandedGroups((prev) => ({ ...prev, [index]: !prev[index] }));
+  // Helper to slugify the title or use customHref if provided
+  const getGroupLink = (group: CapabilityGroup) => {
+    if (group.customHref) return group.customHref;
+    return `/platform/${group.title.toLowerCase().replace(/\s+/g, "-")}`;
   };
 
   return (
@@ -103,8 +111,7 @@ export default function PlatformArchitecture() {
                   Modules execute work. Governance controls how work proceeds.
                   The foundation connects, deploys, and evidences the platform.
                 </strong>{" "}
-                Canonical labels only — the top items are visible and the full
-                list opens in place.
+                Click items to view details or click below to see the full set.
               </p>
             </motion.div>
           </div>
@@ -117,7 +124,7 @@ export default function PlatformArchitecture() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
           >
             {groups.map((group, index) => {
-              const isExpanded = !!expandedGroups[index];
+              const destinationHref = getGroupLink(group);
               return (
                 <div
                   key={index}
@@ -140,38 +147,25 @@ export default function PlatformArchitecture() {
 
                     <div className="space-y-3 mb-6 border-t border-[#E2E8F0] pt-6">
                       {group.items.map((item, itemIdx) => (
-                        <div
-                          key={itemIdx}
-                          className="text-xs sm:text-sm font-medium text-[#0f172a]"
-                        >
-                          {item}
+                        <div key={itemIdx}>
+                          <Link
+                            href={item.href}
+                            className="text-xs sm:text-sm font-medium text-[#0f172a] hover:text-[#c5a059] transition-colors inline-block"
+                          >
+                            {item.label}
+                          </Link>
                         </div>
                       ))}
-                      {isExpanded && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          transition={{ duration: 0.3 }}
-                          className="space-y-3 pt-3 text-xs sm:text-sm font-medium text-[#64748b]"
-                        >
-                          <div>Additional capability item 05</div>
-                          <div>Additional capability item 06</div>
-                          <div>Additional capability item 07</div>
-                          <div>Additional capability item 08</div>
-                          <div>Additional capability item 09</div>
-                          <div>Additional capability item 10</div>
-                        </motion.div>
-                      )}
                     </div>
                   </div>
 
                   <div>
-                    <button
-                      onClick={() => toggleGroup(index)}
+                    <Link
+                      href={destinationHref}
                       className="text-xs font-semibold text-[#0F476A] hover:text-[#c5a059] transition-colors cursor-pointer inline-flex items-center gap-1"
                     >
-                      {isExpanded ? `Show fewer items -` : group.expandText}
-                    </button>
+                      {group.buttonText}
+                    </Link>
                   </div>
                 </div>
               );

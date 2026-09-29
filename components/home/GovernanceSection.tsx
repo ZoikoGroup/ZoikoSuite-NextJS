@@ -54,7 +54,7 @@ export default function GovernanceSection() {
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#"
+              href="/book-demo"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#c5a059] text-white font-semibold text-sm hover:bg-[#b08d4a] transition-all duration-200 shadow-lg shadow-[#c5a059]/20"
             >
               Book enterprise demo
@@ -62,7 +62,7 @@ export default function GovernanceSection() {
             </a>
 
             <a
-              href="/platform-overview"
+              href="/platform"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-[#e2e8f0] font-medium text-sm border border-[#1e3a5f] hover:bg-[#13293d] transition-all duration-200"
             >
               Explore the platform

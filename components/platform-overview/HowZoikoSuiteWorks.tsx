@@ -198,7 +198,7 @@ export default function HowZoikoSuiteWorks() {
             className="flex items-center justify-center w-full"
           >
             <a
-              href="#"
+              href="/how-it-works"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-lg shadow-[#0F476A]/20"
             >
               See how ZoikoSuite works

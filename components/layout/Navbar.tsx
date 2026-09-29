@@ -538,7 +538,7 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "System Status",
             desc: "Live status of ZoikoSuite services and infrastructure.",
             icon: MonitorCheck,
-            href: "/system-status",
+            href: "/trust-system-status",
           },
         ],
         extra: {
@@ -1599,7 +1599,7 @@ function MobileDrawer({
             {/* Sticky footer actions */}
             <div className="shrink-0 border-t border-[#EAEEF4] px-4 sm:px-6 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] flex items-center gap-3 bg-[#FFFFFF]">
               <a
-                href="#"
+                href="/sign-in"
                 onClick={onClose}
                 className="flex-1 h-12 rounded-full border border-[#EAEEF4] flex items-center justify-center text-[#12365E] text-sm font-medium font-['Inter'] hover:bg-[#EAEEF4]/50 transition-colors"
               >
@@ -1791,7 +1791,7 @@ export default function Navbar() {
 
               {/* Sign in Link */}
               <a
-                href="#"
+                href="/sign-in"
                 className="min-h-11 px-3 py-2.5 flex justify-start items-center text-[#9AA6B5] text-sm font-medium font-['Inter'] leading-6 hover:text-[#12365E] transition-colors"
               >
                 Sign in

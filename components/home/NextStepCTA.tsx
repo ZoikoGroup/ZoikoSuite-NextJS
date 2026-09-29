@@ -51,7 +51,7 @@ export default function NextStepCTA() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-5xl"
         >
           <a
-            href="#"
+            href="/book-demo"
             className="inline-flex items-center justify-center gap-2 px-15 py-4 rounded-full bg-[#D0AA55] text-black font-semibold text-sm hover:bg-[#c29c4c] transition-all duration-200 shadow-lg shadow-[#D0AA55]/20 w-full sm:w-auto"
           >
             Book enterprise demo
@@ -59,7 +59,7 @@ export default function NextStepCTA() {
           </a>
 
           <a
-            href="#"
+            href="/solution-brief"
             className="inline-flex items-center justify-center px-20 py-4 rounded-full border border-[#CFDEE7] text-[#0F476A] font-semibold text-sm hover:bg-[#f8fafc] transition-all duration-200 shadow-sm w-full sm:w-auto"
           >
             Talk to a solutions architect

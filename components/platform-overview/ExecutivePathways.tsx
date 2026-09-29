@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface RoleContent {
   id: string;
@@ -11,10 +12,12 @@ interface RoleContent {
   description: string;
   tags: string[];
   ctaText: string;
+  ctaHref: string;
   cardCategory: string;
   cardTitle: string;
   cardDescription: string;
   cardButton: string;
+  cardButtonHref: string;
 }
 
 const rolesData: RoleContent[] = [
@@ -32,11 +35,13 @@ const rolesData: RoleContent[] = [
       "Consolidated reporting",
     ],
     ctaText: "View ZoikoSuite for CFOs",
+    ctaHref: "/cfos",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Financial governance",
     cardDescription:
       "Start with entity scope, approval authority, and close evidence. Bring your entity list and approval matrix to the demo.",
     cardButton: "Book enterprise demo",
+    cardButtonHref: "/book-demo",
   },
   {
     id: "gc",
@@ -52,11 +57,13 @@ const rolesData: RoleContent[] = [
       "Entity registers",
     ],
     ctaText: "View ZoikoSuite for General Counsel",
+    ctaHref: "/general-counsel",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Legal entity governance",
     cardDescription:
       "Centralize corporate registry, directorships, and resolution trails. Connect legal structure directly to operational execution.",
     cardButton: "Book legal review demo",
+    cardButtonHref: "/book-demo",
   },
   {
     id: "cio",
@@ -72,11 +79,13 @@ const rolesData: RoleContent[] = [
       "Workflow tracing",
     ],
     ctaText: "View ZoikoSuite for CIOs",
+    ctaHref: "/security-overview",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Sovereign platform control",
     cardDescription:
       "Align enterprise architecture with jurisdictional data requirements. Audit integration endpoints and policy execution limits.",
     cardButton: "Book architecture briefing",
+    cardButtonHref: "/book-demo",
   },
   {
     id: "chro",
@@ -92,11 +101,13 @@ const rolesData: RoleContent[] = [
       "Document retention",
     ],
     ctaText: "View ZoikoSuite for CHROs",
+    ctaHref: "/governed-business-operations",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Workforce governance",
     cardDescription:
       "Harmonize global HR policies with local regulatory constraints. Maintain verified oversight on compensation and role delegations.",
     cardButton: "Book workforce demo",
+    cardButtonHref: "/book-demo",
   },
   {
     id: "coo",
@@ -112,11 +123,13 @@ const rolesData: RoleContent[] = [
       "SOP compliance",
     ],
     ctaText: "View ZoikoSuite for COOs",
+    ctaHref: "/modernize-operations",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Operational orchestration",
     cardDescription:
       "Bring multi-site facilities, procurement workflows, and vendor performance under a unified governed system of record.",
     cardButton: "Book operational walkthrough",
+    cardButtonHref: "/book-demo",
   },
 ];
 
@@ -223,13 +236,13 @@ export default function ExecutivePathways() {
 
                 {/* Primary Action Link */}
                 <div>
-                  <a
-                    href="#"
+                  <Link
+                    href={currentRole.ctaHref}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F476A] hover:text-[#c5a059] transition-colors"
                   >
                     {currentRole.ctaText}
                     <ArrowRight className="w-4 h-4 text-[#c5a059]" />
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -249,13 +262,13 @@ export default function ExecutivePathways() {
                   </div>
 
                   <div>
-                    <a
-                      href="#"
+                    <Link
+                      href={currentRole.cardButtonHref}
                       className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F476A] hover:text-[#c5a059] transition-colors"
                     >
                       {currentRole.cardButton}
                       <ArrowRight className="w-4 h-4 text-[#c5a059]" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
