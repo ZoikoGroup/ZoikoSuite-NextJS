@@ -82,7 +82,7 @@ const navItems = [
   { label: "Solutions", href: "/solutions" },
   { label: "Industries", href: "/industries" },
   { label: "Trust", href: "#trust" },
-  { label: "Resources", href: "#resources" },
+  { label: "Resources", href: "/resources" },
   { label: "Company", href: "#company" },
 ] as const;
 
@@ -136,8 +136,6 @@ type MegaPanelData = {
 type MegaImageData = {
   src: string;
   alt: string;
-  width: number;
-  height: number;
   wrapperClassName: string;
 };
 
@@ -158,6 +156,12 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
+const resolveHref = (
+  menu: MegaMenuData,
+  explicit: string | undefined,
+  label: string,
+) => explicit ?? `${menu.basePath}/${slugify(label)}`;
+
 /* ------------------------------------------------------------------ */
 /*  Mega menu content (from Figma)                                     */
 /* ------------------------------------------------------------------ */
@@ -172,31 +176,31 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
           {
             title: "Platform Overview",
             desc: "See the big picture and explore key capabilities.",
-            href: "/platform",
+            href: "/platform-overview",
             icon: LayoutGrid,
           },
           {
             title: "How ZoikoSuite Works",
             desc: "Understand how the platform connects people, data, and decisions.",
-            href: "/platform/how-it-works",
+            href: "/how-it-works",
             icon: Sun,
           },
           {
             title: "Why ZoikoSuite Is Not an ERP",
             desc: "A new category for governed operations intelligence.",
-            href: "/platform/not-an-erp",
+            href: "/not-an-erp",
             icon: Layers,
           },
           {
             title: "Platform Tour",
             desc: "Take an interactive tour of the ZoikoSuite platform.",
-            href: "/platform/tour",
+            href: "/platform-tour",
             icon: PlayCircle,
           },
           {
             title: "Core Modules",
             desc: "Explore the foundational modules that power ZoikoSuite.",
-            href: "/platform/modules",
+            href: "/core-modules",
             icon: Box,
           },
         ],
@@ -207,25 +211,25 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
           {
             title: "Governed Business",
             desc: "Unify business operations with policy, authority, and oversight.",
-            href: "/platform/governed-business",
+            href: "/governed-business-operation",
             icon: Landmark,
           },
           {
             title: "Operating Intelligence",
             desc: "Turn operational data into trusted, actionable intelligence.",
-            href: "/platform/operating-intelligence",
+            href: "/operating-intelligence",
             icon: LucideBarChart2,
           },
           {
             title: "Governance Platform",
             desc: "Built-in governance, controls, and intelligent enforcement.",
-            href: "/platform/governance",
+            href: "/governance",
             icon: Shield,
           },
           {
             title: "Platform Foundation",
             desc: "A secure, scalable architecture designed for complex organizations.",
-            href: "/platform/foundation",
+            href: "/platformfoundation",
             icon: Workflow,
           },
         ],
@@ -236,19 +240,19 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
           {
             title: "Deployment Options",
             desc: "Choose the right deployment model for your organization.",
-            href: "/platform/deployment",
+            href: "/deployment-options",
             icon: Cloud,
           },
           {
             title: "Migration & Shadow Mode",
             desc: "Move forward with confidence and minimize risk.",
-            href: "/platform/migration",
+            href: "/migration-shadow-mode",
             icon: ArrowLeftRight,
           },
           {
             title: "Product Roadmap",
             desc: "See what's coming next for ZoikoSuite.",
-            href: "/platform/roadmap",
+            href: "/product-roadmap",
             icon: FileText,
           },
         ],
@@ -276,21 +280,25 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Leadership Teams",
             desc: "Designed for executive and cross-functional leadership oversight.",
             icon: Users,
+            href: "/leadership-teams",
           },
           {
             title: "CFOs",
             desc: "Support finance leaders with governed operational visibility.",
             icon: LucideBarChart2,
+            href: "/cfos",
           },
           {
             title: "General Counsel",
             desc: "Bring legal review, approvals, and evidence into workflow.",
             icon: Shield,
+            href: "/general-counsel",
           },
           {
             title: "Organization Type",
             desc: "Explore solution paths aligned to your business structure.",
             icon: Workflow,
+            href: "/organization-type",
           },
         ],
       },
@@ -301,16 +309,19 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Solve Critical Challenges",
             desc: "Address complex operational problems with governed intelligence.",
             icon: Target,
+            href: "/solve-critical-challenges",
           },
           {
             title: "Modernize Operations",
             desc: "Improve workflows without replacing the systems that run them.",
             icon: Sun,
+            href: "/modernize-operations",
           },
           {
             title: "Expansion",
             desc: "Scale into new markets, teams, and operational environments.",
             icon: Maximize2,
+            href: "/expansion",
           },
         ],
       },
@@ -321,16 +332,19 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Executive Resources",
             desc: "Access strategic material for evaluation and planning.",
             icon: FileText,
+            href: "/executive-resources",
           },
           {
             title: "Customer Stories",
             desc: "See how organizations apply ZoikoSuite in practice.",
             icon: Users,
+            href: "/customer-stories",
           },
           {
             title: "Solution Brief",
             desc: "Review a concise overview of the solution model and value.",
             icon: FileText,
+            href: "/solution-brief",
           },
         ],
       },
@@ -357,21 +371,25 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Financial Service",
             desc: "Purpose-built operating intelligence for complex financial organizations.",
             icon: Landmark,
+            href: "/financial-service",
           },
           {
             title: "Banking",
             desc: "Support governed banking operations, controls, and decision workflows.",
             icon: LucideBarChart2,
+            href: "/banking",
           },
           {
             title: "Insurance",
             desc: "Connect underwriting, evidence, approvals, and operational oversight.",
             icon: Shield,
+            href: "/insurance",
           },
           {
             title: "Healthcare",
             desc: "Bring policy, accountability, and evidence into healthcare operations.",
             icon: Plus,
+            href: "/healthcare",
           },
         ],
       },
@@ -382,16 +400,19 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Telecommunication & MVNOs",
             desc: "Manage high-volume telecom operations with stronger governance and visibility.",
             icon: Radio,
+            href: "/telecom-mvno",
           },
           {
             title: "Manufacturing",
             desc: "Align plant, process, and cross-functional operations with accountable controls.",
             icon: Sun,
+            href: "/manufacturing",
           },
           {
             title: "Energy & Utilities",
             desc: "Support regulated service operations with evidence and oversight built in.",
             icon: Zap,
+            href: "/energy-utilities",
           },
         ],
       },
@@ -402,21 +423,25 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Retail & Commerce",
             desc: "Modernize multi-channel commercial operations without losing control.",
             icon: ShoppingCart,
+            href: "/retail-commerce",
           },
           {
             title: "Government & Public Sector",
             desc: "Support public-service workflows with structured governance and trust.",
             icon: Landmark,
+            href: "/government-public-sector",
           },
           {
             title: "All Industries",
             desc: "Browse the complete ZoikoSuite industry landscape in one place.",
             icon: LayoutGrid,
+            href: "/all-industries",
           },
           {
             title: "Industry Solutions",
             desc: "Explore how ZoikoSuite adapts its governed model across sectors.",
             icon: Workflow,
+            href: "/industry-solutions",
           },
         ],
       },
@@ -443,26 +468,31 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Trust Center",
             desc: "Our approach to trust, security and responsible operations.",
             icon: ShieldCheck,
+            href: "/trust-center",
           },
           {
             title: "Security Overview",
             desc: "How we protect your data and platform.",
             icon: Lock,
+            href: "/security-overview",
           },
           {
             title: "Compliance Overview",
             desc: "Regulatory alignment and compliance framework.",
             icon: FileText,
+            href: "/compliance-overview",
           },
           {
             title: "Data Residency",
             desc: "Where your data is stored and how it is managed.",
             icon: Database,
+            href: "/data-residency",
           },
           {
             title: "Privacy Architecture",
             desc: "Built-in privacy by design.",
             icon: UserCheck,
+            href: "/privacy-architecture",
           },
         ],
       },
@@ -473,26 +503,31 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Evidence Architecture",
             desc: "How evidence is generated, managed and retained.",
             icon: FileSearch,
+            href: "/evidence-architecture",
           },
           {
             title: "Responsible AI",
             desc: "Our approach to safe, responsible and transparent AI.",
             icon: Cpu,
+            href: "/responsible-ai",
           },
           {
             title: "Accessibility",
             desc: "Inclusive design and WCAG 2.2 AA commitment.",
             icon: Accessibility,
+            href: "/accessibility",
           },
           {
             title: "Certifications",
             desc: "Third-party certifications and attestations.",
             icon: Award,
+            href: "/certifications",
           },
           {
             title: "Policies",
             desc: "Key policies for responsible use and governance.",
             icon: FileText,
+            href: "/trust/policies",
           },
         ],
       },
@@ -503,6 +538,7 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "System Status",
             desc: "Live status of ZoikoSuite services and infrastructure.",
             icon: MonitorCheck,
+            href: "/system-status",
           },
         ],
         extra: {
@@ -513,7 +549,7 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             { label: "Audit Reports" },
             { label: "Risk Management" },
             { label: "Subprocessor Transparency" },
-            { label: "Data Protection Addendum" },
+            { label: "Data Protection Addendum", href: "/dpa" },
           ],
         },
       },
@@ -521,9 +557,7 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
     image: {
       src: "/navbar/1.png",
       alt: "Trust and security illustration",
-      width: 280,
-      height: 320,
-      wrapperClassName: "w-[270px]",
+      wrapperClassName: "w-[290px]",
     },
   },
 
@@ -538,21 +572,25 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Resource Center",
             desc: "Guides, explainers and practical resources.",
             icon: BookOpen,
+            href: "/resources-center",
           },
           {
             title: "Executive Briefs",
             desc: "Concise briefs for leaders and decision makers.",
             icon: FileText,
+            href: "/executive-briefs",
           },
           {
             title: "Documentation",
             desc: "Product docs, technical guides and API references.",
             icon: FileText,
+            href: "/documentation",
           },
           {
             title: "Knowledge Base",
             desc: "Searchable answers to common questions.",
             icon: Layers,
+            href: "/knowledge-base",
           },
         ],
       },
@@ -563,21 +601,25 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Training Academy",
             desc: "Role-based training and certifications.",
             icon: GraduationCap,
+            href: "/training-academy",
           },
           {
             title: "Webinars & Events",
             desc: "Live and on-demand sessions with experts.",
             icon: CalendarDays,
+            href: "/webinars-events",
           },
           {
             title: "Case Studies",
             desc: "Real customer outcomes across industries.",
             icon: FileSearch,
+            href: "/case-studies",
           },
           {
             title: "Blog & Insights",
             desc: "Latest thinking on governance, compliance and AI.",
             icon: LucideBarChart2,
+            href: "/blog-insights",
           },
         ],
       },
@@ -588,11 +630,13 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Templates & Tools",
             desc: "Ready-to-use templates, calculators and frameworks.",
             icon: Wrench,
+            href: "/templates-tools",
           },
           {
             title: "Support Center",
             desc: "Get help, submit a request and track cases.",
             icon: Headset,
+            href: "/support-center",
           },
         ],
         extra: {
@@ -610,9 +654,7 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
     image: {
       src: "/navbar/2.png",
       alt: "Resources illustration",
-      width: 280,
-      height: 320,
-      wrapperClassName: "w-[270px]",
+      wrapperClassName: "w-[290px]",
     },
   },
 
@@ -627,26 +669,31 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "About ZoikoSuite",
             desc: "Our mission, business and what we are building.",
             icon: Building2,
+            href: "/about",
           },
           {
             title: "Founder's Vision",
             desc: "The ideas, values and beliefs that shape Zoiko.",
             icon: Eye,
+            href: "/founders-vision",
           },
           {
             title: "Leadership",
             desc: "The people guiding our strategy and growth.",
             icon: Users,
+            href: "/leadership",
           },
           {
             title: "Partners",
             desc: "Our ecosystem of strategic partners.",
             icon: Activity,
+            href: "/partners",
           },
           {
             title: "Careers",
             desc: "Build what's next with us.",
             icon: Briefcase,
+            href: "/careers",
           },
         ],
       },
@@ -657,26 +704,31 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
             title: "Newsroom",
             desc: "Latest news, announcements and company updates.",
             icon: Newspaper,
+            href: "/newsroom",
           },
           {
             title: "Zoiko Tech",
             desc: "Our technology, innovation and engineering capabilities.",
             icon: Cpu,
+            href: "/zoiko-tech",
           },
           {
             title: "Zoiko Group",
             desc: "Our parent organisation and group companies.",
             icon: Building2,
+            href: "/zoiko-group",
           },
           {
             title: "Investor Relations",
             desc: "Financial information, updates and investor resources.",
             icon: LucideBarChart2,
+            href: "/investor-relations",
           },
           {
             title: "Sustainability",
             desc: "Our commitment to a more sustainable and inclusive future.",
             icon: Leaf,
+            href: "/sustainability",
           },
         ],
       },
@@ -711,9 +763,7 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
     image: {
       src: "/navbar/3.png",
       alt: "Company illustration",
-      width: 220,
-      height: 330,
-      wrapperClassName: "w-[220px]",
+      wrapperClassName: "w-[230px]",
     },
   },
 };
@@ -982,7 +1032,7 @@ function MegaHeading({
 }) {
   return (
     <h3
-      className={`text-[#D9A03F] text-[10px] font-semibold font-['Inter'] uppercase tracking-[0.06em] leading-4 ${className}`}
+      className={`text-[#D9A03F] text-[11px] font-semibold font-['Inter'] uppercase tracking-[0.06em] leading-4 ${className}`}
     >
       {children}
     </h3>
@@ -1003,20 +1053,20 @@ function MegaItemLink({
     <Link
       href={href}
       onClick={onNavigate}
-      className="group -mx-2 px-2 py-2 rounded-lg flex items-start gap-4 hover:bg-[#F4F7FB] transition-colors duration-150"
+      className="group -mx-2.5 px-2.5 py-2.5 rounded-lg flex items-start gap-4 hover:bg-[#F4F7FB] transition-colors duration-150"
     >
-      <span className="shrink-0 w-8 h-8 rounded-lg bg-[#12365E] flex items-center justify-center transition-all duration-200 group-hover:bg-[#C0872B] group-hover:scale-105">
-        <Icon className="w-4 h-4 text-[#FFFFFF]" strokeWidth={1.75} />
+      <span className="shrink-0 w-9 h-9 rounded-[10px] bg-[#12365E] flex items-center justify-center transition-all duration-200 group-hover:bg-[#C0872B] group-hover:scale-105">
+        <Icon className="w-[18px] h-[18px] text-[#FFFFFF]" strokeWidth={1.75} />
       </span>
 
       <span className="flex-1 min-w-0 flex flex-col gap-1">
         <span className="flex items-center justify-between gap-1">
-          <span className="text-[#12365E] text-xs font-semibold font-['Inter'] leading-4 transition-colors duration-150 group-hover:text-[#C0872B]">
+          <span className="text-[#12365E] text-[13px] font-semibold font-['Inter'] leading-5 transition-colors duration-150 group-hover:text-[#C0872B]">
             {entry.title}
           </span>
           <LuChevronRight className="shrink-0 w-3.5 h-3.5 text-[#9AA6B5] transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-[#C0872B]" />
         </span>
-        <span className="text-[#9AA6B5] text-[11px] font-normal font-['Inter'] leading-[18px] transition-colors duration-150 group-hover:text-[#6B7A8D]">
+        <span className="text-[#9AA6B5] text-xs font-normal font-['Inter'] leading-5 transition-colors duration-150 group-hover:text-[#6B7A8D]">
           {entry.desc}
         </span>
       </span>
@@ -1037,7 +1087,7 @@ function MegaPlainLink({
     <Link
       href={href}
       onClick={onNavigate}
-      className="group -mx-2 px-2 py-2 rounded-lg flex items-center justify-between gap-2 text-[#12365E] text-xs font-normal font-['Inter'] leading-[18px] hover:bg-[#F4F7FB] hover:text-[#C0872B] transition-colors duration-150"
+      className="group -mx-2.5 px-2.5 py-2.5 rounded-lg flex items-center justify-between gap-2 text-[#12365E] text-[13px] font-normal font-['Inter'] leading-5 hover:bg-[#F4F7FB] hover:text-[#C0872B] transition-colors duration-150"
     >
       <span>{label}</span>
       <LuChevronRight className="shrink-0 w-3.5 h-3.5 text-[#9AA6B5] transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-[#C0872B]" />
@@ -1059,17 +1109,17 @@ function MegaFeatureCard({
     <Link
       href={href}
       onClick={onNavigate}
-      className="group rounded-lg border border-[#E3EAF3] bg-[#F4F7FB] px-4 py-3.5 flex items-center gap-3 hover:bg-[#FFFFFF] hover:border-[#C0872B]/50 hover:shadow-md transition-all duration-200"
+      className="group rounded-lg border border-[#E3EAF3] bg-[#F4F7FB] px-4 py-4 flex items-center gap-3 hover:bg-[#FFFFFF] hover:border-[#C0872B]/50 hover:shadow-md transition-all duration-200"
     >
       <Icon
-        className="shrink-0 w-4 h-4 text-[#2F5FA8] transition-colors duration-200 group-hover:text-[#C0872B]"
+        className="shrink-0 w-[18px] h-[18px] text-[#2F5FA8] transition-colors duration-200 group-hover:text-[#C0872B]"
         strokeWidth={1.75}
       />
       <span className="flex-1 min-w-0 flex flex-col gap-0.5">
-        <span className="text-[#12365E] text-xs font-semibold font-['Inter'] leading-4 transition-colors duration-150 group-hover:text-[#C0872B]">
+        <span className="text-[#12365E] text-[13px] font-semibold font-['Inter'] leading-5 transition-colors duration-150 group-hover:text-[#C0872B]">
           {card.title}
         </span>
-        <span className="text-[#9AA6B5] text-[11px] font-normal font-['Inter'] leading-[18px]">
+        <span className="text-[#9AA6B5] text-xs font-normal font-['Inter'] leading-5">
           {card.desc}
         </span>
       </span>
@@ -1086,28 +1136,31 @@ function MegaFeaturedPanel({
   onNavigate: () => void;
 }) {
   return (
-    <div className="w-[271px] shrink-0 rounded-xl bg-[#0F2B48] px-[27px] pt-[23px] pb-4 flex flex-col">
-      <span className="text-[#D9A03F] text-[9px] font-semibold font-['Inter'] uppercase tracking-[0.08em] leading-4">
+    <div className="w-[290px] shrink-0 rounded-xl bg-[#0F2B48] px-7 pt-6 pb-5 flex flex-col">
+      <span className="text-[#D9A03F] text-[10px] font-semibold font-['Inter'] uppercase tracking-[0.08em] leading-4">
         {panel.eyebrow}
       </span>
 
-      <h3 className="mt-2 text-[#FFFFFF] text-xl font-semibold font-['Inter'] leading-[25px]">
+      <h3 className="mt-2 text-[#FFFFFF] text-[22px] font-semibold font-['Inter'] leading-7">
         {panel.title}
       </h3>
 
-      <p className="mt-4 text-[#B8C5D6] text-xs font-normal font-['Inter'] leading-5">
+      <p className="mt-4 text-[#B8C5D6] text-[13px] font-normal font-['Inter'] leading-5">
         {panel.description}
       </p>
 
-      <div className="mt-5 -mx-1">
-        <PanelIllustration kind={panel.illustration} />
+      {/* Illustration absorbs any spare height so the panel never has dead space */}
+      <div className="mt-4 flex-1 min-h-[180px] flex items-center justify-center">
+        <div className="w-full">
+          <PanelIllustration kind={panel.illustration} />
+        </div>
       </div>
 
-      <div className="mt-auto pt-3 flex flex-col gap-2.5">
+      <div className="pt-3 flex flex-col gap-2.5">
         <Link
           href={panel.primaryCta.href}
           onClick={onNavigate}
-          className="group/cta h-[34px] rounded-md bg-gradient-to-r from-[#CFA04A] via-[#E4B95F] to-[#EBC77A] flex items-center justify-center gap-3 text-[#0F2B48] text-xs font-semibold font-['Inter'] shadow-sm hover:brightness-105 hover:shadow-md transition-all duration-200"
+          className="group/cta h-10 rounded-md bg-gradient-to-r from-[#CFA04A] via-[#E4B95F] to-[#EBC77A] flex items-center justify-center gap-3 text-[#0F2B48] text-[13px] font-semibold font-['Inter'] shadow-sm hover:brightness-105 hover:shadow-md transition-all duration-200"
         >
           {panel.primaryCta.label}
           <LuArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/cta:translate-x-1" />
@@ -1116,9 +1169,9 @@ function MegaFeaturedPanel({
         <Link
           href={panel.secondaryCta.href}
           onClick={onNavigate}
-          className="group/demo h-[34px] rounded-md border border-[#C0872B] flex items-center justify-center gap-2 text-[#E4B95F] text-xs font-medium font-['Inter'] hover:bg-[#C0872B]/15 hover:border-[#E4B95F] hover:text-[#F0C56E] transition-colors duration-200"
+          className="group/demo h-10 rounded-md border border-[#C0872B] flex items-center justify-center gap-2 text-[#E4B95F] text-[13px] font-medium font-['Inter'] hover:bg-[#C0872B]/15 hover:border-[#E4B95F] hover:text-[#F0C56E] transition-colors duration-200"
         >
-          <PlayCircle className="w-3.5 h-3.5 transition-transform duration-200 group-hover/demo:scale-110" />
+          <PlayCircle className="w-4 h-4 transition-transform duration-200 group-hover/demo:scale-110" />
           {panel.secondaryCta.label}
         </Link>
       </div>
@@ -1133,24 +1186,21 @@ function MegaMenuCard({
   menu: MegaMenuData;
   onNavigate: () => void;
 }) {
-  const resolve = (explicit: string | undefined, label: string) =>
-    explicit ?? `${menu.basePath}/${slugify(label)}`;
-
   return (
     <div className="flex items-stretch gap-5 bg-[#FFFFFF] rounded-2xl p-3.5 pl-7 shadow-[0_10px_30px_rgba(18,54,94,0.18)] border border-[#EAEEF4]">
       {/* ---------- Link columns ---------- */}
-      <div className="flex-1 grid grid-cols-3 gap-x-6 pt-[18px] pb-4">
+      <div className="flex-1 grid grid-cols-3 gap-x-6 pt-5 pb-5">
         {menu.columns.map((col) => (
           <div key={col.heading} className="flex flex-col">
-            <MegaHeading className="mb-[18px]">{col.heading}</MegaHeading>
+            <MegaHeading className="mb-5">{col.heading}</MegaHeading>
 
             {col.items && (
-              <ul className="flex flex-col gap-[14px]">
+              <ul className="flex flex-col gap-4">
                 {col.items.map((entry) => (
                   <li key={entry.title}>
                     <MegaItemLink
                       entry={entry}
-                      href={resolve(entry.href, entry.title)}
+                      href={resolveHref(menu, entry.href, entry.title)}
                       onNavigate={onNavigate}
                     />
                   </li>
@@ -1164,7 +1214,7 @@ function MegaMenuCard({
                   <li key={link.label}>
                     <MegaPlainLink
                       label={link.label}
-                      href={resolve(link.href, link.label)}
+                      href={resolveHref(menu, link.href, link.label)}
                       onNavigate={onNavigate}
                     />
                   </li>
@@ -1176,7 +1226,7 @@ function MegaMenuCard({
               <div
                 className={
                   col.items || col.links
-                    ? "mt-4 pt-5 border-t border-[#EAEEF4]"
+                    ? "mt-5 pt-6 border-t border-[#EAEEF4]"
                     : ""
                 }
               >
@@ -1188,7 +1238,7 @@ function MegaMenuCard({
                       <li key={link.label}>
                         <MegaPlainLink
                           label={link.label}
-                          href={resolve(link.href, link.label)}
+                          href={resolveHref(menu, link.href, link.label)}
                           onNavigate={onNavigate}
                         />
                       </li>
@@ -1202,7 +1252,7 @@ function MegaMenuCard({
                       <li key={card.title}>
                         <MegaFeatureCard
                           card={card}
-                          href={resolve(card.href, card.title)}
+                          href={resolveHref(menu, card.href, card.title)}
                           onNavigate={onNavigate}
                         />
                       </li>
@@ -1220,20 +1270,356 @@ function MegaMenuCard({
         <MegaFeaturedPanel panel={menu.panel} onNavigate={onNavigate} />
       )}
 
+      {/* Image fills the full height of the card, so no idle space either */}
       {menu.image && (
         <div
-          className={`${menu.image.wrapperClassName} shrink-0 flex items-center justify-center pr-3`}
+          className={`relative shrink-0 self-stretch min-h-[340px] ${menu.image.wrapperClassName}`}
         >
           <Image
             src={menu.image.src}
             alt={menu.image.alt}
-            width={menu.image.width}
-            height={menu.image.height}
-            className="w-full h-auto max-h-[340px] object-contain"
+            fill
+            sizes="300px"
+            className="object-contain p-2"
           />
         </div>
       )}
     </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Mobile drawer                                                      */
+/* ------------------------------------------------------------------ */
+type MobileGroup = {
+  key: string;
+  heading: string;
+  items?: MegaItem[];
+  links?: MegaLink[];
+  cards?: MegaCard[];
+};
+
+/* Flatten each column (and its "extra" block) into an accordion group */
+const getMobileGroups = (label: NavLabel, menu: MegaMenuData): MobileGroup[] =>
+  menu.columns.flatMap((col) => {
+    const groups: MobileGroup[] = [
+      {
+        key: `${label}:${col.heading}`,
+        heading: col.heading,
+        items: col.items,
+        links: col.links,
+      },
+    ];
+    if (col.extra) {
+      groups.push({
+        key: `${label}:${col.extra.heading}`,
+        heading: col.extra.heading,
+        links: col.extra.links,
+        cards: col.extra.cards,
+      });
+    }
+    return groups;
+  });
+
+function MobileItemLink({
+  entry,
+  href,
+  onNavigate,
+}: {
+  entry: MegaItem;
+  href: string;
+  onNavigate: () => void;
+}) {
+  const Icon = entry.icon;
+  return (
+    <Link
+      href={href}
+      onClick={onNavigate}
+      className="group flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-[#F4F7FB] active:bg-[#F4F7FB] transition-colors duration-150"
+    >
+      <span className="shrink-0 w-9 h-9 rounded-[10px] bg-[#12365E] flex items-center justify-center transition-colors duration-200 group-hover:bg-[#C0872B] group-active:bg-[#C0872B]">
+        <Icon className="w-[18px] h-[18px] text-[#FFFFFF]" strokeWidth={1.75} />
+      </span>
+      <span className="flex-1 min-w-0 flex flex-col gap-0.5">
+        <span className="text-[#12365E] text-sm font-semibold font-['Inter'] leading-5">
+          {entry.title}
+        </span>
+        <span className="text-[#9AA6B5] text-xs font-normal font-['Inter'] leading-5">
+          {entry.desc}
+        </span>
+      </span>
+      <LuChevronRight className="shrink-0 mt-2 w-3.5 h-3.5 text-[#9AA6B5]" />
+    </Link>
+  );
+}
+
+function MobileDrawer({
+  isOpen,
+  onClose,
+  openSection,
+  onToggleSection,
+  openGroups,
+  onToggleGroup,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  openSection: NavLabel | null;
+  onToggleSection: (item: NavLabel) => void;
+  openGroups: Set<string>;
+  onToggleGroup: (key: string) => void;
+}) {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          key="mobile-drawer"
+          className="lg:hidden fixed inset-0 z-[60]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Main menu"
+        >
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-[#0F2B48]/40"
+            onClick={onClose}
+            aria-hidden="true"
+          />
+
+          {/* Panel */}
+          <motion.aside
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="absolute right-0 top-0 h-full w-full sm:max-w-[420px] bg-[#FFFFFF] flex flex-col shadow-2xl"
+          >
+            {/* Header */}
+            <div className="shrink-0 h-16 sm:h-20 px-4 sm:px-6 flex items-center justify-between border-b border-[#EAEEF4]">
+              <Link href="/" onClick={onClose} className="flex items-center">
+                <div className="w-[120px] h-[48px] relative overflow-hidden">
+                  <Image
+                    src="/logo.png"
+                    alt="Zoiko Suite Logo"
+                    fill
+                    className="object-contain object-left"
+                  />
+                </div>
+              </Link>
+
+              <button
+                type="button"
+                suppressHydrationWarning
+                onClick={onClose}
+                aria-label="Close menu"
+                className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
+              >
+                <LuX className="w-6 h-6 text-[#12365E]" />
+              </button>
+            </div>
+
+            {/* Scrollable accordion list */}
+            <div className="flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6">
+              <ul>
+                {navItems.map((item) => {
+                  const menu = megaMenus[item.label];
+                  const expanded = openSection === item.label;
+                  const groups = getMobileGroups(item.label, menu);
+
+                  return (
+                    <li key={item.label} className="border-b border-[#EAEEF4]">
+                      <button
+                        type="button"
+                        suppressHydrationWarning
+                        onClick={() => onToggleSection(item.label)}
+                        aria-expanded={expanded}
+                        className="w-full min-h-14 flex items-center justify-between text-left text-base font-medium font-['Inter'] text-[#12365E]"
+                      >
+                        <span
+                          className={
+                            expanded ? "text-[#C0872B]" : "text-[#12365E]"
+                          }
+                        >
+                          {item.label}
+                        </span>
+                        <LuChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            expanded
+                              ? "rotate-180 text-[#C0872B]"
+                              : "text-[#9AA6B5]"
+                          }`}
+                        />
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {expanded && (
+                          <motion.div
+                            key="section"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.22, ease: "easeOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pb-4 flex flex-col gap-1">
+                              {groups.map((group) => {
+                                const groupOpen = openGroups.has(group.key);
+                                return (
+                                  <div key={group.key}>
+                                    <button
+                                      type="button"
+                                      suppressHydrationWarning
+                                      onClick={() => onToggleGroup(group.key)}
+                                      aria-expanded={groupOpen}
+                                      className="w-full h-11 px-3 rounded-lg flex items-center justify-between text-left hover:bg-[#F4F7FB] transition-colors"
+                                    >
+                                      <MegaHeading>{group.heading}</MegaHeading>
+                                      <LuChevronDown
+                                        className={`w-3.5 h-3.5 text-[#9AA6B5] transition-transform duration-200 ${
+                                          groupOpen ? "rotate-180" : ""
+                                        }`}
+                                      />
+                                    </button>
+
+                                    <AnimatePresence initial={false}>
+                                      {groupOpen && (
+                                        <motion.div
+                                          key="group"
+                                          initial={{ height: 0, opacity: 0 }}
+                                          animate={{
+                                            height: "auto",
+                                            opacity: 1,
+                                          }}
+                                          exit={{ height: 0, opacity: 0 }}
+                                          transition={{
+                                            duration: 0.2,
+                                            ease: "easeOut",
+                                          }}
+                                          className="overflow-hidden"
+                                        >
+                                          <div className="pt-1 pb-2 flex flex-col gap-0.5">
+                                            {group.items?.map((entry) => (
+                                              <MobileItemLink
+                                                key={entry.title}
+                                                entry={entry}
+                                                href={resolveHref(
+                                                  menu,
+                                                  entry.href,
+                                                  entry.title,
+                                                )}
+                                                onNavigate={onClose}
+                                              />
+                                            ))}
+
+                                            {group.links?.map((link) => (
+                                              <Link
+                                                key={link.label}
+                                                href={resolveHref(
+                                                  menu,
+                                                  link.href,
+                                                  link.label,
+                                                )}
+                                                onClick={onClose}
+                                                className="flex items-center justify-between gap-2 px-3 py-3 rounded-lg text-sm font-normal font-['Inter'] text-[#12365E] hover:bg-[#F4F7FB] hover:text-[#C0872B] active:bg-[#F4F7FB] transition-colors"
+                                              >
+                                                <span>{link.label}</span>
+                                                <LuChevronRight className="shrink-0 w-3.5 h-3.5 text-[#9AA6B5]" />
+                                              </Link>
+                                            ))}
+
+                                            {group.cards && (
+                                              <div className="flex flex-col gap-3 px-1 pt-1">
+                                                {group.cards.map((card) => (
+                                                  <MegaFeatureCard
+                                                    key={card.title}
+                                                    card={card}
+                                                    href={resolveHref(
+                                                      menu,
+                                                      card.href,
+                                                      card.title,
+                                                    )}
+                                                    onNavigate={onClose}
+                                                  />
+                                                ))}
+                                              </div>
+                                            )}
+                                          </div>
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+                                );
+                              })}
+
+                              {/* Featured panel, condensed for mobile */}
+                              {menu.panel && (
+                                <div className="mt-3 rounded-xl bg-[#0F2B48] p-5 flex flex-col">
+                                  <span className="text-[#D9A03F] text-[10px] font-semibold font-['Inter'] uppercase tracking-[0.08em] leading-4">
+                                    {menu.panel.eyebrow}
+                                  </span>
+                                  <h3 className="mt-2 text-[#FFFFFF] text-lg font-semibold font-['Inter'] leading-6">
+                                    {menu.panel.title}
+                                  </h3>
+                                  <p className="mt-2 text-[#B8C5D6] text-xs font-normal font-['Inter'] leading-5">
+                                    {menu.panel.description}
+                                  </p>
+                                  <div className="mt-4 flex flex-col gap-2.5">
+                                    <Link
+                                      href={menu.panel.primaryCta.href}
+                                      onClick={onClose}
+                                      className="group/cta h-11 rounded-md bg-gradient-to-r from-[#CFA04A] via-[#E4B95F] to-[#EBC77A] flex items-center justify-center gap-3 text-[#0F2B48] text-sm font-semibold font-['Inter'] hover:brightness-105 transition-all"
+                                    >
+                                      {menu.panel.primaryCta.label}
+                                      <LuArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/cta:translate-x-1" />
+                                    </Link>
+                                    <Link
+                                      href={menu.panel.secondaryCta.href}
+                                      onClick={onClose}
+                                      className="h-11 rounded-md border border-[#C0872B] flex items-center justify-center gap-2 text-[#E4B95F] text-sm font-medium font-['Inter'] hover:bg-[#C0872B]/15 transition-colors"
+                                    >
+                                      <PlayCircle className="w-4 h-4" />
+                                      {menu.panel.secondaryCta.label}
+                                    </Link>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            {/* Sticky footer actions */}
+            <div className="shrink-0 border-t border-[#EAEEF4] px-4 sm:px-6 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] flex items-center gap-3 bg-[#FFFFFF]">
+              <a
+                href=""
+                onClick={onClose}
+                className="flex-1 h-12 rounded-full border border-[#EAEEF4] flex items-center justify-center text-[#12365E] text-sm font-medium font-['Inter'] hover:bg-[#EAEEF4]/50 transition-colors"
+              >
+                Sign in
+              </a>
+              <a
+                href=""
+                onClick={onClose}
+                className="flex-1 h-12 rounded-full bg-[#C0872B] border border-[#C0872B] flex items-center justify-center gap-2.5 hover:bg-[#A9761F] hover:border-[#A9761F] transition-colors"
+              >
+                <span className="text-[#FFFFFF] text-sm font-semibold font-['Inter'] leading-5">
+                  Book demo
+                </span>
+                <LuArrowRight className="w-3.5 h-3.5 text-[#FFFFFF] stroke-[2.5]" />
+              </a>
+            </div>
+          </motion.aside>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
@@ -1321,6 +1707,24 @@ export default function Navbar() {
   };
 
   const currentMenu = activeMenu ? megaMenus[activeMenu] : undefined;
+
+  // Close the mobile drawer on Escape, or when resizing up to desktop
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMobileMenu();
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 1024) closeMobileMenu();
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", onResize);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -1470,6 +1874,14 @@ export default function Navbar() {
       <div className="h-16 sm:h-20 lg:h-24" aria-hidden="true" />
 
       {/* ============ MOBILE DRAWER MENU (below lg) ============ */}
+      <MobileDrawer
+        isOpen={isMobileMenuOpen}
+        onClose={closeMobileMenu}
+        openSection={openMobileSection}
+        onToggleSection={toggleMobileSection}
+        openGroups={openMobileGroups}
+        onToggleGroup={toggleMobileGroup}
+      />
     </>
   );
 }
