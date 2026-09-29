@@ -211,7 +211,7 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
           {
             title: "Governed Business",
             desc: "Unify business operations with policy, authority, and oversight.",
-            href: "/governed-business-operation",
+            href: "/governed-business-operations",
             icon: Landmark,
           },
           {
@@ -223,13 +223,13 @@ const megaMenus: Record<NavLabel, MegaMenuData> = {
           {
             title: "Governance Platform",
             desc: "Built-in governance, controls, and intelligent enforcement.",
-            href: "/governance",
+            href: "/governance-platform",
             icon: Shield,
           },
           {
             title: "Platform Foundation",
             desc: "A secure, scalable architecture designed for complex organizations.",
-            href: "/platformfoundation",
+            href: "/platform-foundation",
             icon: Workflow,
           },
         ],
@@ -1599,14 +1599,14 @@ function MobileDrawer({
             {/* Sticky footer actions */}
             <div className="shrink-0 border-t border-[#EAEEF4] px-4 sm:px-6 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] flex items-center gap-3 bg-[#FFFFFF]">
               <a
-                href=""
+                href="#"
                 onClick={onClose}
                 className="flex-1 h-12 rounded-full border border-[#EAEEF4] flex items-center justify-center text-[#12365E] text-sm font-medium font-['Inter'] hover:bg-[#EAEEF4]/50 transition-colors"
               >
                 Sign in
               </a>
               <a
-                href=""
+                href="/book-demo"
                 onClick={onClose}
                 className="flex-1 h-12 rounded-full bg-[#C0872B] border border-[#C0872B] flex items-center justify-center gap-2.5 hover:bg-[#A9761F] hover:border-[#A9761F] transition-colors"
               >
@@ -1791,7 +1791,7 @@ export default function Navbar() {
 
               {/* Sign in Link */}
               <a
-                href=""
+                href="#"
                 className="min-h-11 px-3 py-2.5 flex justify-start items-center text-[#9AA6B5] text-sm font-medium font-['Inter'] leading-6 hover:text-[#12365E] transition-colors"
               >
                 Sign in
@@ -1799,7 +1799,7 @@ export default function Navbar() {
 
               {/* Book Demo CTA Button */}
               <a
-                href=""
+                href="/book-demo"
                 className="min-h-12 px-3.5 py-3 bg-[#C0872B] rounded-[999px] border border-[#C0872B] flex justify-center items-center gap-2.5 hover:bg-[#A9761F] hover:border-[#A9761F] transition-colors"
               >
                 <span className="justify-center text-[#FFFFFF] text-sm font-semibold font-['Inter'] leading-5">
