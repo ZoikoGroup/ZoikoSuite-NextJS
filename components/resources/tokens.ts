@@ -7,6 +7,7 @@ export const C = {
   grey44: "#767676", // body text
   azure82: "#8B959D", // hero subtext / chips
   orange48: "#B8913F", // section eyebrows
+  orange87: "#E4E1D8", // card borders
   azure84: "#C7D3DA", // hero chips text
   orange58: "#CDA85B", // hero eyebrow
   azure83: "#CFD9DE", // hero chips outline

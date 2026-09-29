@@ -16,15 +16,15 @@ export default function TemplatesToolsSection() {
             <div
               key={card.title}
               className="flex-1 min-w-60 p-5 rounded-xl flex flex-col justify-between"
-              style={{ background: C.white, border: `1px solid ${C.grey95}` }}
+              style={{ background: C.white, border: `1px solid ${C.orange87}` }}
             >
-              <div className="pb-2.5 text-xs font-bold uppercase tracking-wide" style={{ color: C.azure25, fontFamily: FONT }}>
+              <div className="pb-2.5 text-xs font-bold uppercase tracking-wide" style={{ color: "#123255", fontFamily: FONT }}>
                 {card.eyebrow}
               </div>
               <div className="text-base font-bold leading-5" style={{ color: C.azure11, fontFamily: FONT }}>
                 {card.title}
               </div>
-              <div className="flex-1 py-3 text-xs leading-5" style={{ color: C.grey44, fontFamily: FONT }}>
+              <div className="flex-1 py-3 text-xs leading-5 whitespace-pre-wrap" style={{ color: C.grey44, fontFamily: FONT }}>
                 {card.body}
               </div>
               <div className="pb-3 flex flex-wrap gap-1.5">

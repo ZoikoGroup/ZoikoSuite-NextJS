@@ -2,6 +2,7 @@ import React from "react";
 import SectionHead from "./SectionHead";
 import { C, FONT } from "./tokens";
 import { DIRECTORY_CARDS } from "./data";
+import { ArrowRight } from "lucide-react";
 
 export default function ResourceDirectorySection() {
   const grid = DIRECTORY_CARDS.filter((c) => !c.wide);
@@ -17,7 +18,7 @@ export default function ResourceDirectorySection() {
             <div
               key={card.title}
               className="h-52 p-5 rounded-xl flex flex-col gap-3"
-              style={{ background: C.white, border: `1px solid #E4E1D8` }}
+              style={{ background: C.white, border: `1px solid ${C.orange87}` }}
             >
               <img src={card.icon} alt="" className="w-9 h-9" />
               <div className="pt-px text-base font-bold" style={{ color: C.azure11, fontFamily: FONT }}>
@@ -26,8 +27,9 @@ export default function ResourceDirectorySection() {
               <div className="text-xs leading-5 whitespace-pre-wrap" style={{ color: C.grey44, fontFamily: FONT }}>
                 {card.body}
               </div>
-              <div className="pt-px text-sm font-semibold" style={{ color: "#123255", fontFamily: FONT }}>
-                {card.cta}
+              <div className="pt-px text-sm font-semibold flex items-center gap-1" style={{ color: "#123255", fontFamily: FONT }}>
+                {card.cta.replace(" →", "")}
+                <ArrowRight className="w-3.5 h-3.5" />
               </div>
             </div>
           ))}
@@ -36,7 +38,7 @@ export default function ResourceDirectorySection() {
         {wide && (
           <div
             className="h-44 p-5 rounded-xl flex flex-col gap-3"
-            style={{ background: C.white, border: `1px solid #E4E1D8` }}
+            style={{ background: C.white, border: `1px solid ${C.orange87}` }}
           >
             <img src={wide.icon} alt="" className="w-9 h-9" />
             <div className="pt-px text-base font-bold" style={{ color: C.azure11, fontFamily: FONT }}>
@@ -45,8 +47,9 @@ export default function ResourceDirectorySection() {
             <div className="text-xs leading-5 whitespace-pre-wrap" style={{ color: C.grey44, fontFamily: FONT }}>
               {wide.body}
             </div>
-            <div className="pt-px text-sm font-semibold" style={{ color: "#123255", fontFamily: FONT }}>
-              {wide.cta}
+            <div className="pt-px text-sm font-semibold flex items-center gap-1" style={{ color: "#123255", fontFamily: FONT }}>
+              {wide.cta.replace(" →", "")}
+              <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </div>
         )}

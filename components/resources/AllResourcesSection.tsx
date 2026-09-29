@@ -38,7 +38,7 @@ export default function AllResourcesSection() {
                         border: `1px solid ${C.grey46}`,
                       }}
                     />
-                    <span className="text-xs" style={{ color: C.azure25 }}>
+                    <span className="text-xs" style={{ color: C.grey44 }}>
                       {option}
                     </span>
                   </label>
@@ -54,8 +54,8 @@ export default function AllResourcesSection() {
                 12 resources
               </div>
               <div
-                className="pl-4 pr-7 py-2 rounded-lg"
-                style={{ background: C.white, border: `1px solid ${C.grey95}` }}
+                className="px-4 py-2 rounded-lg flex justify-center items-center"
+                style={{ background: C.white, border: `1px solid ${C.orange87}` }}
               >
                 <span className="text-xs leading-4" style={{ color: C.azure11, fontFamily: FONT }}>
                   Newest updated
@@ -63,23 +63,23 @@ export default function AllResourcesSection() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[38px] gap-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[36px]">
               {REGISTRY_CARDS.map((card) => (
                 <div
                   key={card.title}
-                  className="min-h-64 p-5 rounded-xl flex flex-col justify-between"
-                  style={{ background: C.white, border: `1px solid ${C.grey95}` }}
+                  className="w-[269px] h-[262px] p-5 rounded-xl flex flex-col justify-between"
+                  style={{ background: C.white, border: `1px solid ${C.orange87}` }}
                 >
-                  <div className="pb-2.5 text-xs font-bold uppercase tracking-wide" style={{ color: C.azure25, fontFamily: FONT }}>
+                  <div className="pb-2.5 text-xs font-bold uppercase tracking-wide" style={{ color: "#123255", fontFamily: FONT }}>
                     {card.eyebrow}
                   </div>
                   <div className="text-base font-bold leading-5" style={{ color: C.azure11, fontFamily: FONT }}>
                     {card.title}
                   </div>
-                  <div className="flex-1 py-3 text-xs leading-5" style={{ color: C.grey44, fontFamily: FONT }}>
+                  <div className="flex-1 py-3 text-xs leading-5 whitespace-pre-wrap" style={{ color: C.grey44, fontFamily: FONT }}>
                     {card.body}
                   </div>
-                  <div className="pb-3 flex flex-wrap gap-1.5">
+                  <div className="pb-3 flex flex-nowrap gap-1.5 whitespace-nowrap overflow-hidden">
                     {card.meta.map((m) => (
                       <div
                         key={m}
