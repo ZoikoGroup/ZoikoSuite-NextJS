@@ -48,7 +48,7 @@ export default function HeroSection() {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <a
-                href="#"
+                href="/book-demo"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D0AA55] text-[#07131d] font-semibold text-sm hover:bg-[#c29c4c] transition-all duration-200 shadow-lg shadow-[#D0AA55]/20"
               >
                 Book enterprise demo
@@ -56,7 +56,7 @@ export default function HeroSection() {
               </a>
 
               <a
-                href="#"
+                href="/solution-brief"
                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-transparent border border-[#1e3a5f] text-white font-semibold text-sm hover:bg-[#0b1c2d] transition-all duration-200 shadow-sm"
               >
                 Talk to a solutions architect
@@ -66,7 +66,7 @@ export default function HeroSection() {
             {/* Platform Tour Text Link */}
             <div className="mb-8">
               <a
-                href="#"
+                href="/platform-tour"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#c5a059] hover:underline"
               >
                 View platform tour

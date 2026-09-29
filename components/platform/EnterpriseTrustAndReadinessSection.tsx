@@ -7,6 +7,7 @@ interface TrustRow {
   title: string;
   description: string;
   linkText: string;
+  href: string;
 }
 
 const trustRows: TrustRow[] = [
@@ -14,38 +15,45 @@ const trustRows: TrustRow[] = [
     title: "Security",
     description: "Concise scope/status text; no unsupported guarantees.",
     linkText: "Trust Center",
+    href: "/trust-center",
   },
   {
     title: "Compliance",
     description:
       "Current published standards/certifications with explicit scope/status.",
     linkText: "Compliance Overview",
+    href: "/compliance-overview",
   },
   {
     title: "Privacy",
     description:
       'Privacy architecture and legal notices; no vague "privacy-first" claim.',
     linkText: "Privacy Architecture",
+    href: "/privacy-architecture",
   },
   {
     title: "Data Residency",
     description: "Deployment-aware status and documented options only.",
     linkText: "Data Residency",
+    href: "/data-residency",
   },
   {
     title: "Responsible AI",
     description: "Governance principles + product controls + evidence.",
     linkText: "Responsible AI",
+    href: "/responsible-ai",
   },
   {
     title: "Accessibility",
     description: "Current conformance/evaluation status, not a vague badge.",
     linkText: "Accessibility",
+    href: "/accessibility",
   },
   {
     title: "System Status",
     description: "Live operational state.",
     linkText: "System Status",
+    href: "/trust-system-status",
   },
 ];
 
@@ -105,7 +113,7 @@ export default function EnterpriseTrustAndReadinessSection() {
               {/* Right: Route Link */}
               <div className="flex items-center">
                 <a
-                  href="#"
+                  href={row.href}
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#08222F] hover:text-[#C59B3F] transition-colors group"
                 >
                   <span>{row.linkText}</span>

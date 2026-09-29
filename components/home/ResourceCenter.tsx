@@ -112,7 +112,7 @@ export default function ResourceCenter() {
             className="flex justify-center"
           >
             <a
-              href="#"
+              href="/resources-center"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-[#CFDEE7] text-[#0F476A] font-semibold text-sm hover:bg-[#e2edf7] transition-all duration-200 shadow-sm"
             >
               View all resources

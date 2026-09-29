@@ -8,6 +8,7 @@ interface TourCard {
   title: string;
   description: string;
   actionText: string;
+  href: string;
 }
 
 const tourCards: TourCard[] = [
@@ -17,6 +18,7 @@ const tourCards: TourCard[] = [
     description:
       "See the shared platform architecture and services that support ZoikoSuite.",
     actionText: "Explore Foundation",
+    href: "/platform-foundation",
   },
   {
     number: "2",
@@ -24,12 +26,14 @@ const tourCards: TourCard[] = [
     description:
       "See how policies, approvals, controls, exceptions, and evidence connect to work.",
     actionText: "Explore Governance",
+    href: "/governance-platform",
   },
   {
     number: "3",
     title: "Modules",
     description: "Understand how modular capabilities extend the platform.",
     actionText: "Explore Core Modules",
+    href: "/core-modules",
   },
   {
     number: "4",
@@ -37,6 +41,7 @@ const tourCards: TourCard[] = [
     description:
       "See how entity, jurisdiction, residency, source, and status remain visible when relevant.",
     actionText: "Continue Tour",
+    href: "/platform-tour",
   },
   {
     number: "5",
@@ -44,6 +49,7 @@ const tourCards: TourCard[] = [
     description:
       "See how signals, exceptions, evidence, and action paths come together.",
     actionText: "Explore Operating Intelligence",
+    href: "/operating-intelligence",
   },
   {
     number: "6",
@@ -51,6 +57,7 @@ const tourCards: TourCard[] = [
     description:
       "Understand coexistence, integration, shadow mode, and trust evidence.",
     actionText: "Book a demo",
+    href: "/book-demo",
   },
 ];
 
@@ -114,7 +121,7 @@ export default function PlatformTourSection() {
               {/* Action Link / Footer */}
               <div className="">
                 <a
-                  href="#"
+                  href={item.href}
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0F476A] hover:text-[#C59B3F] transition-colors group"
                 >
                   <span>{item.actionText}</span>

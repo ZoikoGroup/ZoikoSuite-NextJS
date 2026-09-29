@@ -52,7 +52,7 @@ const domainsData = [
   {
     icon: FileText,
     title: "Legal & Commercial",
-    href: "/general-counsel",
+    href: "/legal-notices",
     description:
       "Move contracts, obligations, approvals, and spend through controlled execution.",
     tags: ["Contract lifecycle", "Clauses", "Vendor diligence"],

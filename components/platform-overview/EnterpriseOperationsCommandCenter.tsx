@@ -66,7 +66,7 @@ export default function EnterpriseOperationsCommandCenter() {
           className="flex flex-wrap items-center gap-4"
         >
           <a
-            href="#"
+            href="/platform-tour"
             className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D0AA55] text-[#07131d] font-semibold text-sm hover:bg-[#c29c4c] transition-all duration-200 shadow-lg shadow-[#D0AA55]/20"
           >
             View platform tour
@@ -74,7 +74,7 @@ export default function EnterpriseOperationsCommandCenter() {
           </a>
 
           <a
-            href="#"
+            href="/book-demo"
             className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-transparent border border-[#1e3a5f] text-white font-semibold text-sm hover:bg-[#0b1c2d] transition-all duration-200 shadow-sm"
           >
             Book enterprise demo

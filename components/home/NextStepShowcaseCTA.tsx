@@ -42,7 +42,7 @@ export default function NextStepShowcaseCTA() {
               {/* Text Link Action */}
               <div>
                 <a
-                  href="#"
+                  href="/solution-brief"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#c5a059] hover:underline"
                 >
                   Talk to a solutions architect

@@ -1,0 +1,10 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as PricingSection } from "./PricingSection";
+export { default as TrustedPlatformSection } from "./TrustedPlatformSection";
+export { default as FindYourPlanSection } from "./FindYourPlanSection";
+export { default as WhyGrowthSection } from "./WhyGrowthSection";
+export { default as ComparePlansSection } from "./ComparePlansSection";
+export { default as TransparentCostsSection } from "./TransparentCostsSection";
+export { default as EnterpriseSection } from "./EnterpriseSection";
+export { default as TrialAssuranceSection } from "./TrialAssuranceSection";
+export { default as FAQSection } from "./FAQSection";

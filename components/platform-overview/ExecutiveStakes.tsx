@@ -109,7 +109,7 @@ export default function ExecutiveStakes() {
               evidence into the same operating context.
             </p>
             <a
-              href="#"
+              href="/how-it-works"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#c5a059] hover:underline whitespace-nowrap shrink-0"
             >
               See how that works
