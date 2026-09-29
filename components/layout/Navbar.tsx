@@ -84,6 +84,7 @@ const navItems = [
   { label: "Trust", href: "#trust" },
   { label: "Resources", href: "/resources" },
   { label: "Company", href: "#company" },
+  { label: "Pricing", href: "/pricing" },
 ] as const;
 
 // Union of the labels: "Platform" | "Solutions" | "Industries" | ...
