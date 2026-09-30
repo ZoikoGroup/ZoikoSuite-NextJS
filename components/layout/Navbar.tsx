@@ -77,17 +77,29 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+/**
+ * Top-level nav items.
+ * Items with `hasMenu: true` open a mega menu / mobile accordion.
+ * "Pricing" is a plain link: no dropdown, it goes straight to /pricing.
+ */
 const navItems = [
-  { label: "Platform", href: "/platform" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Industries", href: "/industries" },
-  { label: "Trust", href: "#trust" },
-  { label: "Resources", href: "/resources" },
-  { label: "Company", href: "#company" },
+  { label: "Platform", href: "/platform", hasMenu: true },
+  { label: "Solutions", href: "/solutions", hasMenu: true },
+  { label: "Industries", href: "/industries", hasMenu: true },
+  { label: "Trust", href: "#trust", hasMenu: true },
+  { label: "Resources", href: "/resources", hasMenu: true },
+  { label: "Company", href: "#company", hasMenu: true },
+  { label: "Pricing", href: "/pricing", hasMenu: false },
 ] as const;
 
-// Union of the labels: "Platform" | "Solutions" | "Industries" | ...
+// Union of every label, including "Pricing"
 type NavLabel = (typeof navItems)[number]["label"];
+
+// Labels that own a dropdown (everything except Pricing)
+type MenuLabel = Exclude<NavLabel, "Pricing">;
+
+const isMenuLabel = (label: NavLabel): label is MenuLabel =>
+  label !== "Pricing";
 
 /* ------------------------------------------------------------------ */
 /*  Mega menu types                                                    */
@@ -165,7 +177,7 @@ const resolveHref = (
 /* ------------------------------------------------------------------ */
 /*  Mega menu content (from Figma)                                     */
 /* ------------------------------------------------------------------ */
-const megaMenus: Record<NavLabel, MegaMenuData> = {
+const megaMenus: Record<MenuLabel, MegaMenuData> = {
   /* ------------------------------ PLATFORM ------------------------------ */
   Platform: {
     basePath: "/platform",
@@ -1187,7 +1199,14 @@ function MegaMenuCard({
   onNavigate: () => void;
 }) {
   return (
-    <div className="flex items-stretch gap-5 bg-[#FFFFFF] rounded-2xl p-3.5 pl-7 shadow-[0_10px_30px_rgba(18,54,94,0.18)] border border-[#EAEEF4]">
+    /*
+      Height rule: the desktop nav bar is 6rem (h-24) tall and the menu is
+      anchored right under it. Capping the card at (90vh - 6rem) guarantees
+      the menu never grows past 90% of the viewport, so the bottom 10% of the
+      screen always stays idle. If the content is taller than that (short
+      laptop screens), the card scrolls internally.
+    */
+    <div className="flex items-stretch gap-5 bg-[#FFFFFF] rounded-2xl p-3.5 pl-7 shadow-[0_10px_30px_rgba(18,54,94,0.18)] border border-[#EAEEF4] max-h-[calc(90vh-3rem)] overflow-y-auto overscroll-contain">
       {/* ---------- Link columns ---------- */}
       <div className="flex-1 grid grid-cols-3 gap-x-6 pt-5 pb-5">
         {menu.columns.map((col) => (
@@ -1300,7 +1319,10 @@ type MobileGroup = {
 };
 
 /* Flatten each column (and its "extra" block) into an accordion group */
-const getMobileGroups = (label: NavLabel, menu: MegaMenuData): MobileGroup[] =>
+const getMobileGroups = (
+  label: MenuLabel,
+  menu: MegaMenuData,
+): MobileGroup[] =>
   menu.columns.flatMap((col) => {
     const groups: MobileGroup[] = [
       {
@@ -1341,7 +1363,7 @@ function MobileItemLink({
         <Icon className="w-[18px] h-[18px] text-[#FFFFFF]" strokeWidth={1.75} />
       </span>
       <span className="flex-1 min-w-0 flex flex-col gap-0.5">
-        <span className="text-[#12365E] text-sm font-semibold font-['Inter'] leading-5">
+        <span className="text-[#12365E] text-sm font-semibold font-['Inter'] leading-5 break-words">
           {entry.title}
         </span>
         <span className="text-[#9AA6B5] text-xs font-normal font-['Inter'] leading-5">
@@ -1363,8 +1385,8 @@ function MobileDrawer({
 }: {
   isOpen: boolean;
   onClose: () => void;
-  openSection: NavLabel | null;
-  onToggleSection: (item: NavLabel) => void;
+  openSection: MenuLabel | null;
+  onToggleSection: (item: MenuLabel) => void;
   openGroups: Set<string>;
   onToggleGroup: (key: string) => void;
 }) {
@@ -1382,20 +1404,24 @@ function MobileDrawer({
           aria-modal="true"
           aria-label="Main menu"
         >
-          {/* Backdrop */}
+          {/* Backdrop (the idle ~10% below the panel is tappable to close) */}
           <div
             className="absolute inset-0 bg-[#0F2B48]/40"
             onClick={onClose}
             aria-hidden="true"
           />
 
-          {/* Panel */}
+          {/*
+            Panel: capped at 90dvh so ~10% of the screen always stays idle
+            at the bottom (backdrop visible, tap to dismiss). Rounded on the
+            free bottom corner(s) so it reads as a sheet, not a full page.
+          */}
           <motion.aside
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute right-0 top-0 h-full w-full sm:max-w-[420px] bg-[#FFFFFF] flex flex-col shadow-2xl"
+            className="absolute right-0 top-0 h-[90dvh] max-h-[90dvh] w-full sm:max-w-[420px] bg-[#FFFFFF] flex flex-col shadow-2xl overflow-hidden rounded-b-2xl sm:rounded-br-none sm:rounded-bl-2xl"
           >
             {/* Header */}
             <div className="shrink-0 h-16 sm:h-20 px-4 sm:px-6 flex items-center justify-between border-b border-[#EAEEF4]">
@@ -1415,26 +1441,44 @@ function MobileDrawer({
                 suppressHydrationWarning
                 onClick={onClose}
                 aria-label="Close menu"
-                className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
+                className="w-11 h-11 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
               >
                 <LuX className="w-6 h-6 text-[#12365E]" />
               </button>
             </div>
 
             {/* Scrollable accordion list */}
-            <div className="flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6">
+            <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 sm:px-6">
               <ul>
                 {navItems.map((item) => {
-                  const menu = megaMenus[item.label];
-                  const expanded = openSection === item.label;
-                  const groups = getMobileGroups(item.label, menu);
+                  const label = item.label;
+
+                  /* ---- Pricing: plain link, no dropdown ---- */
+                  if (!isMenuLabel(label)) {
+                    return (
+                      <li key={label} className="border-b border-[#EAEEF4]">
+                        <Link
+                          href={item.href}
+                          onClick={onClose}
+                          className="w-full min-h-14 flex items-center justify-between text-left text-base font-medium font-['Inter'] text-[#12365E] hover:text-[#C0872B] active:text-[#C0872B] transition-colors"
+                        >
+                          <span>{label}</span>
+                          <LuChevronRight className="w-4 h-4 text-[#9AA6B5]" />
+                        </Link>
+                      </li>
+                    );
+                  }
+
+                  const menu = megaMenus[label];
+                  const expanded = openSection === label;
+                  const groups = getMobileGroups(label, menu);
 
                   return (
-                    <li key={item.label} className="border-b border-[#EAEEF4]">
+                    <li key={label} className="border-b border-[#EAEEF4]">
                       <button
                         type="button"
                         suppressHydrationWarning
-                        onClick={() => onToggleSection(item.label)}
+                        onClick={() => onToggleSection(label)}
                         aria-expanded={expanded}
                         className="w-full min-h-14 flex items-center justify-between text-left text-base font-medium font-['Inter'] text-[#12365E]"
                       >
@@ -1443,7 +1487,7 @@ function MobileDrawer({
                             expanded ? "text-[#C0872B]" : "text-[#12365E]"
                           }
                         >
-                          {item.label}
+                          {label}
                         </span>
                         <LuChevronDown
                           className={`w-4 h-4 transition-transform duration-200 ${
@@ -1474,11 +1518,11 @@ function MobileDrawer({
                                       suppressHydrationWarning
                                       onClick={() => onToggleGroup(group.key)}
                                       aria-expanded={groupOpen}
-                                      className="w-full h-11 px-3 rounded-lg flex items-center justify-between text-left hover:bg-[#F4F7FB] transition-colors"
+                                      className="w-full min-h-11 px-3 rounded-lg flex items-center justify-between gap-2 text-left hover:bg-[#F4F7FB] transition-colors"
                                     >
                                       <MegaHeading>{group.heading}</MegaHeading>
                                       <LuChevronDown
-                                        className={`w-3.5 h-3.5 text-[#9AA6B5] transition-transform duration-200 ${
+                                        className={`shrink-0 w-3.5 h-3.5 text-[#9AA6B5] transition-transform duration-200 ${
                                           groupOpen ? "rotate-180" : ""
                                         }`}
                                       />
@@ -1556,7 +1600,7 @@ function MobileDrawer({
 
                               {/* Featured panel, condensed for mobile */}
                               {menu.panel && (
-                                <div className="mt-3 rounded-xl bg-[#0F2B48] p-5 flex flex-col">
+                                <div className="mt-3 rounded-xl bg-[#0F2B48] p-4 sm:p-5 flex flex-col">
                                   <span className="text-[#D9A03F] text-[10px] font-semibold font-['Inter'] uppercase tracking-[0.08em] leading-4">
                                     {menu.panel.eyebrow}
                                   </span>
@@ -1597,7 +1641,7 @@ function MobileDrawer({
             </div>
 
             {/* Sticky footer actions */}
-            <div className="shrink-0 border-t border-[#EAEEF4] px-4 sm:px-6 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] flex items-center gap-3 bg-[#FFFFFF]">
+            <div className="shrink-0 border-t border-[#EAEEF4] px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 bg-[#FFFFFF]">
               <a
                 href="/sign-in"
                 onClick={onClose}
@@ -1624,14 +1668,14 @@ function MobileDrawer({
 }
 
 export default function Navbar() {
-  const [activeMenu, setActiveMenu] = useState<NavLabel | null>(null);
+  const [activeMenu, setActiveMenu] = useState<MenuLabel | null>(null);
 
   // Fixed-on-scroll shadow state (desktop + mobile)
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Mobile drawer state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMobileSection, setOpenMobileSection] = useState<NavLabel | null>(
+  const [openMobileSection, setOpenMobileSection] = useState<MenuLabel | null>(
     null,
   );
   const [openMobileGroups, setOpenMobileGroups] = useState<Set<string>>(
@@ -1651,7 +1695,7 @@ export default function Navbar() {
     }
   };
 
-  const openMenu = (item: NavLabel) => {
+  const openMenu = (item: MenuLabel) => {
     clearCloseTimeout();
     setActiveMenu(item);
   };
@@ -1659,6 +1703,12 @@ export default function Navbar() {
   const scheduleClose = () => {
     clearCloseTimeout();
     closeTimeoutRef.current = setTimeout(() => setActiveMenu(null), 80);
+  };
+
+  // Used by items without a dropdown (Pricing): hovering them closes any open menu
+  const closeMenuNow = () => {
+    clearCloseTimeout();
+    setActiveMenu(null);
   };
 
   useEffect(() => {
@@ -1673,6 +1723,16 @@ export default function Navbar() {
     return () => clearCloseTimeout();
   }, []);
 
+  // Close the desktop mega menu on Escape
+  useEffect(() => {
+    if (!activeMenu) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveMenu(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeMenu]);
+
   // Lock body scroll while the mobile drawer is open
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -1684,8 +1744,18 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
-  const toggleMobileSection = (item: NavLabel) => {
-    setOpenMobileSection((prev) => (prev === item ? null : item));
+  const toggleMobileSection = (item: MenuLabel) => {
+    const willOpen = openMobileSection !== item;
+    setOpenMobileSection(willOpen ? item : null);
+
+    // Convenience: when a section opens, reveal its first group right away
+    // so the user sees links immediately instead of a list of collapsed headings.
+    if (willOpen) {
+      const firstGroup = getMobileGroups(item, megaMenus[item])[0];
+      if (firstGroup) {
+        setOpenMobileGroups((prev) => new Set(prev).add(firstGroup.key));
+      }
+    }
   };
 
   const toggleMobileGroup = (key: string) => {
@@ -1734,56 +1804,83 @@ export default function Navbar() {
         }`}
       >
         <div className="w-full max-w-[1440px] mx-auto relative overflow-visible flex flex-col items-center">
-          {/* ============ DESKTOP TOP ROW (lg and up) — unchanged ============ */}
-          <div className="hidden lg:flex w-full h-24 items-center justify-between px-[110px] relative z-20 bg-[#FFFFFF]">
+          {/* ============ DESKTOP TOP ROW (lg and up) ============ */}
+          {/* Padding/gaps scale down between lg and xl so 7 items fit at 1024px */}
+          <div className="hidden lg:flex w-full h-24 items-center justify-between gap-2 px-5 xl:px-[110px] relative z-20 bg-[#FFFFFF]">
             {/* Brand Logo Image */}
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center shrink-0">
               <div className="relative">
                 <Image
                   src="/logo.png"
                   alt="Zoiko Suite Logo"
                   width={150}
                   height={40}
-                  className="object-contain object-left"
+                  className="object-contain object-left w-[124px] xl:w-[150px] h-auto"
                   priority
                 />
               </div>
             </Link>
 
             {/* Navigation Links */}
-            <div className="flex items-center gap-4">
-              {navItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex flex-col justify-start items-start relative"
-                  onMouseEnter={() => openMenu(item.label)}
-                  onMouseLeave={scheduleClose}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setActiveMenu(null)}
-                    className="min-h-11 px-2 py-3.5 rounded-lg inline-flex justify-start items-center gap-1.5 hover:bg-[#EAEEF4]/50 transition-colors duration-150"
-                  >
-                    <span className="text-center justify-center text-[#12365E] text-sm font-medium font-['Inter']">
-                      {item.label}
-                    </span>
-                    <div className="pb-px inline-flex flex-col justify-start items-center">
-                      <LuChevronDown
-                        className={`w-[9px] h-[9px] text-[#9AA6B5] transition-transform duration-150 ${
-                          activeMenu === item.label ? "rotate-180" : ""
-                        }`}
-                      />
+            <div className="flex items-center gap-0 xl:gap-4 min-w-0">
+              {navItems.map((item) => {
+                const label = item.label;
+
+                /* ---- Pricing: plain link, no chevron, no dropdown ---- */
+                if (!isMenuLabel(label)) {
+                  return (
+                    <div
+                      key={label}
+                      className="flex flex-col justify-start items-start relative"
+                      onMouseEnter={closeMenuNow}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={() => setActiveMenu(null)}
+                        className="min-h-11 px-1.5 xl:px-2 py-3.5 rounded-lg inline-flex justify-start items-center hover:bg-[#EAEEF4]/50 transition-colors duration-150"
+                      >
+                        <span className="text-center justify-center text-[#12365E] text-sm font-medium font-['Inter']">
+                          {label}
+                        </span>
+                      </Link>
                     </div>
-                  </Link>
-                </div>
-              ))}
+                  );
+                }
+
+                return (
+                  <div
+                    key={label}
+                    className="flex flex-col justify-start items-start relative"
+                    onMouseEnter={() => openMenu(label)}
+                    onMouseLeave={scheduleClose}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setActiveMenu(null)}
+                      className="min-h-11 px-1.5 xl:px-2 py-3.5 rounded-lg inline-flex justify-start items-center gap-1.5 hover:bg-[#EAEEF4]/50 transition-colors duration-150"
+                    >
+                      <span className="text-center justify-center text-[#12365E] text-sm font-medium font-['Inter']">
+                        {label}
+                      </span>
+                      <div className="pb-px inline-flex flex-col justify-start items-center">
+                        <LuChevronDown
+                          className={`w-[9px] h-[9px] text-[#9AA6B5] transition-transform duration-150 ${
+                            activeMenu === label ? "rotate-180" : ""
+                          }`}
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Right Side Controls */}
-            <div className="pl-4 flex items-center gap-2">
+            <div className="pl-2 xl:pl-4 flex items-center gap-1 xl:gap-2 shrink-0">
               {/* Search Icon Button */}
               <button
                 suppressHydrationWarning
+                aria-label="Search"
                 className="w-11 h-11 px-1.5 py-px rounded-[10px] flex justify-center items-center hover:bg-[#EAEEF4]/50 transition-colors"
               >
                 <LuSearch className="w-5 h-5 text-[#12365E]" />
@@ -1792,7 +1889,7 @@ export default function Navbar() {
               {/* Sign in Link */}
               <a
                 href="/sign-in"
-                className="min-h-11 px-3 py-2.5 flex justify-start items-center text-[#9AA6B5] text-sm font-medium font-['Inter'] leading-6 hover:text-[#12365E] transition-colors"
+                className="min-h-11 px-2 xl:px-3 py-2.5 flex justify-start items-center text-[#9AA6B5] text-sm font-medium font-['Inter'] leading-6 hover:text-[#12365E] transition-colors"
               >
                 Sign in
               </a>
@@ -1800,7 +1897,7 @@ export default function Navbar() {
               {/* Book Demo CTA Button */}
               <a
                 href="/book-demo"
-                className="min-h-12 px-3.5 py-3 bg-[#C0872B] rounded-[999px] border border-[#C0872B] flex justify-center items-center gap-2.5 hover:bg-[#A9761F] hover:border-[#A9761F] transition-colors"
+                className="min-h-12 px-3.5 py-3 bg-[#C0872B] rounded-[999px] border border-[#C0872B] flex justify-center items-center gap-2.5 whitespace-nowrap hover:bg-[#A9761F] hover:border-[#A9761F] transition-colors"
               >
                 <span className="justify-center text-[#FFFFFF] text-sm font-semibold font-['Inter'] leading-5">
                   Book demo
@@ -1825,11 +1922,11 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Right Side Controls */}
+            {/* Right Side Controls (44px tap targets) */}
             <div className="flex items-center gap-1">
               <button
                 suppressHydrationWarning
-                className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
+                className="w-11 h-11 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
                 aria-label="Search"
               >
                 <LuSearch className="w-5 h-5 text-[#12365E]" />
@@ -1837,7 +1934,7 @@ export default function Navbar() {
 
               <button
                 suppressHydrationWarning
-                className="w-10 h-10 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
+                className="w-11 h-11 flex justify-center items-center rounded-[10px] hover:bg-[#EAEEF4]/50 transition-colors"
                 aria-label="Open menu"
                 aria-expanded={isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen(true)}
@@ -1858,7 +1955,7 @@ export default function Navbar() {
                 transition={{ duration: 0.15, ease: "easeOut" }}
                 onMouseEnter={() => activeMenu && openMenu(activeMenu)}
                 onMouseLeave={scheduleClose}
-                className="hidden lg:block absolute top-full inset-x-0 mx-auto w-full max-w-6xl z-10"
+                className="hidden lg:block absolute top-full inset-x-0 mx-auto w-full max-w-6xl px-4 xl:px-0 z-10"
               >
                 <MegaMenuCard
                   menu={currentMenu}
