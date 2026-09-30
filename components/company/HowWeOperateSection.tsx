@@ -3,14 +3,14 @@ import Image from "next/image";
 
 export default function HowWeOperateSection() {
   return (
-    <section className="self-stretch px-28 py-24 bg-stone-100 flex flex-col justify-start items-start">
+    <section className="w-full flex justify-center py-24 bg-color-grey-95-12">
       <div className="w-full max-w-[1200px] px-8 flex flex-col justify-start items-start gap-9">
         {/* Header */}
         <div className="self-stretch inline-flex justify-start items-end flex-wrap content-end">
           <div className="inline-flex flex-col justify-start items-start gap-3.5">
             <div className="self-stretch inline-flex justify-start items-center gap-2.5">
-              <div className="w-5 h-px bg-yellow-600" />
-              <div className="justify-center text-yellow-600 text-xs font-semibold font-['Inter'] tracking-wide">
+              <div className="w-5 h-px bg-[#B8913F]" />
+              <div className="justify-center text-[#B8913F] text-xs font-semibold font-['Inter'] tracking-wide uppercase">
                 HOW WE OPERATE
               </div>
             </div>
@@ -28,7 +28,7 @@ export default function HowWeOperateSection() {
           alt="Operating principles with proof routes"
           width={1136}
           height={554}
-          className="self-stretch h-[554px] px-6 py-2 rounded-xl border border-color-orange-87"
+          className="self-stretch h-[554px] object-cover rounded-2xl"
         />
       </div>
     </section>

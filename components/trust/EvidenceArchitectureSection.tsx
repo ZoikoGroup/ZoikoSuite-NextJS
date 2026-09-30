@@ -16,14 +16,14 @@ export default function EvidenceArchitectureSection() {
           </p>
         </div>
 
-        <div className="w-full flex flex-col" style={{ borderTop: `1px solid ${C.grey95}` }}>
-          <div className="flex w-full py-[15px]" style={{ borderBottom: `1px solid ${C.grey95}` }}>
+        <div className="w-full flex flex-col border-t border-color-orange-87">
+          <div className="flex w-full py-[15px] border-b border-color-orange-87">
             <div className="w-[180px] shrink-0 pr-4 text-[10px] font-bold uppercase tracking-tight" style={{ color: C.grey58, fontFamily: FONT }}>EVIDENCE LEVEL</div>
             <div className="w-[560px] shrink-0 pr-4 text-[10px] font-bold uppercase tracking-tight" style={{ color: C.grey58, fontFamily: FONT }}>MEANING</div>
             <div className="flex-1 text-[10px] font-bold uppercase tracking-tight" style={{ color: C.grey58, fontFamily: FONT }}>PUBLIC TREATMENT</div>
           </div>
           {EVIDENCE_ROWS.map((row) => (
-            <div key={row.level} className="flex w-full py-[15px]" style={{ borderBottom: `1px solid ${C.grey95}` }}>
+            <div key={row.level} className="flex w-full py-[15px] border-b border-color-orange-87">
               <div className="w-[180px] shrink-0 pr-4 text-sm font-bold leading-5 whitespace-nowrap" style={{ color: C.azure11, fontFamily: FONT }}>{row.level}</div>
               <div className="w-[560px] shrink-0 pr-4 text-sm leading-5" style={{ color: C.grey58, fontFamily: FONT }}>
                 {row.meaning.split("\n").map((line, idx) => (
