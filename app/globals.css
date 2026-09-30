@@ -57,6 +57,8 @@
   --color-color-yellow-600: #C8A24A;
   --color-color-orange-400: #C8A24A;
   --color-color-stone-100: #F6F5F0;
+  --color-color-chatham-blue: #10446A;
+  --color-color-chathams-blue: #10446A;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -3,73 +3,101 @@ import Link from "next/link";
 
 export default function OrganizationalContextSection() {
   return (
-    <section className="w-[1200px] max-w-[1200px] mx-auto px-8 py-24 flex flex-col justify-start items-start gap-5">
-      {/* Header */}
-      <div className="self-stretch inline-flex justify-start items-end flex-wrap content-end">
-        <div className="inline-flex flex-col justify-start items-start gap-3.5">
-          <div className="self-stretch inline-flex justify-start items-center gap-2.5">
-            <div className="w-5 h-px bg-yellow-600" />
-            <div className="justify-center text-yellow-600 text-xs font-semibold font-['Inter'] tracking-wide">
-              ORGANIZATIONAL CONTEXT
+    <section className="w-full bg-color-white-solid py-24 flex justify-center">
+      <div className="w-full max-w-[1200px] px-8 flex flex-col justify-start items-start gap-9">
+        {/* Header */}
+        <div className="self-stretch inline-flex justify-start items-end flex-wrap content-end">
+          <div className="inline-flex flex-col justify-start items-start gap-3.5">
+            <div className="self-stretch inline-flex justify-start items-center gap-2.5">
+              <div className="w-5 h-px bg-[#B8913F]" />
+              <div className="justify-center text-[#B8913F] text-xs font-semibold font-['Inter'] tracking-wide uppercase">
+                ORGANIZATIONAL CONTEXT
+              </div>
             </div>
-          </div>
-          <div className="self-stretch flex flex-col justify-start items-start">
-            <h2 className="justify-center text-color-azure-12-4 text-3xl font-bold font-['Inter'] leading-9">
-              Where ZoikoSuite sits, without duplicating the dedicated pages.
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      {/* Context Cards */}
-      <div className="self-stretch pt-4 inline-flex justify-center items-start gap-5 flex-wrap content-start">
-        {/* Zoiko Tech */}
-        <div className="flex-1 self-stretch min-w-64 p-5 bg-color-white-solid rounded-xl outline outline-1 outline-offset-[-1px] outline-color-orange-87 inline-flex flex-col justify-start items-start gap-2">
-          <div className="self-stretch flex flex-col justify-start items-start">
-            <div className="self-stretch justify-center text-color-azure-12-4 text-base font-bold font-['Inter']">
-              Zoiko Tech
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <h2 className="justify-center text-color-azure-12-4 text-3xl font-bold font-['Inter'] leading-9">
+                Where ZoikoSuite sits, without duplicating the dedicated pages.
+              </h2>
             </div>
-          </div>
-          <div className="self-stretch flex flex-col justify-start items-start">
-            <p className="self-stretch justify-center text-color-grey-44 text-sm font-normal font-['Inter'] leading-5">
-              The technology organization&apos;s role in building and operating
-              the platform, using
-              <br />
-              approved current language.
-            </p>
-          </div>
-          <div className="pt-1 inline-flex justify-start items-center">
-            <Link
-              href="/zoiko-tech"
-              className="justify-center text-yellow-600 text-sm font-semibold font-['Inter']"
-            >
-              Explore Zoiko Tech →
-            </Link>
           </div>
         </div>
 
-        {/* Zoiko Group */}
-        <div className="flex-1 self-stretch min-w-64 p-5 bg-color-white-solid rounded-xl outline outline-1 outline-offset-[-1px] outline-color-orange-87 inline-flex flex-col justify-start items-start gap-2">
-          <div className="self-stretch flex flex-col justify-start items-start">
-            <div className="self-stretch justify-center text-color-azure-12-4 text-base font-bold font-['Inter']">
-              Zoiko Group
+        {/* Context Cards */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Zoiko Tech */}
+          <div className="p-6 bg-color-white-solid rounded-xl border border-color-orange-87 flex flex-col justify-between gap-4 min-h-[160px]">
+            <div className="flex flex-col gap-2">
+              <div className="text-color-azure-12-4 text-base font-bold font-['Inter']">
+                Zoiko Tech
+              </div>
+              <p className="text-color-grey-44 text-sm font-normal font-['Inter'] leading-5">
+                <span className="block whitespace-nowrap">
+                  The technology organization&apos;s role in building and operating the platform, using
+                </span>
+                <span className="block whitespace-nowrap">
+                  approved current language.
+                </span>
+              </p>
+            </div>
+            <div>
+              <Link
+                href="/zoiko-tech"
+                className="text-[#B8913F] text-sm font-semibold font-['Inter'] inline-flex items-center gap-1.5 hover:underline"
+              >
+                <span>Explore Zoiko Tech</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
-          <div className="self-stretch flex flex-col justify-start items-start">
-            <p className="self-stretch justify-center text-color-grey-44 text-sm font-normal font-['Inter'] leading-5">
-              How ZoikoSuite sits within the wider group portfolio, using
-              approved
-              <br />
-              relationship wording.
-            </p>
-          </div>
-          <div className="pt-1 inline-flex justify-start items-center">
-            <Link
-              href="/zoiko-group"
-              className="justify-center text-yellow-600 text-sm font-semibold font-['Inter']"
-            >
-              Explore Zoiko Group →
-            </Link>
+
+          {/* Zoiko Group */}
+          <div className="p-6 bg-color-white-solid rounded-xl border border-color-orange-87 flex flex-col justify-between gap-4 min-h-[160px]">
+            <div className="flex flex-col gap-2">
+              <div className="text-color-azure-12-4 text-base font-bold font-['Inter']">
+                Zoiko Group
+              </div>
+              <p className="text-color-grey-44 text-sm font-normal font-['Inter'] leading-5">
+                <span className="block whitespace-nowrap">
+                  How ZoikoSuite sits within the wider group portfolio, using approved
+                </span>
+                <span className="block whitespace-nowrap">
+                  relationship wording.
+                </span>
+              </p>
+            </div>
+            <div>
+              <Link
+                href="/zoiko-group"
+                className="text-[#B8913F] text-sm font-semibold font-['Inter'] inline-flex items-center gap-1.5 hover:underline"
+              >
+                <span>Explore Zoiko Group</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

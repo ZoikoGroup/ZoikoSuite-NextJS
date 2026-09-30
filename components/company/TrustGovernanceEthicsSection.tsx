@@ -6,64 +6,58 @@ interface ProofRoute {
   description: string;
   linkText: string;
   href: string;
-  titleSpacing: string;
-  linkSpacing: string;
 }
 
 const proofRoutes: ProofRoute[] = [
   {
     title: "Security & privacy",
     description: "Detailed controls and claim statuses live in Trust.",
-    linkText: "Trust / Security / Privacy →",
+    linkText: "Trust / Security / Privacy",
     href: "/trust",
-    titleSpacing: "pr-24",
-    linkSpacing: "pr-9",
   },
   {
     title: "Responsible AI",
     description:
       "AI operates within governance, provenance, review, and authority boundaries.",
-    linkText: "Responsible AI →",
+    linkText: "Responsible AI",
     href: "/responsible-ai",
-    titleSpacing: "pr-28",
-    linkSpacing: "pr-24",
   },
   {
     title: "Accessibility",
     description: "Company site and product accessibility commitments are distinct.",
-    linkText: "Accessibility →",
+    linkText: "Accessibility",
     href: "/accessibility",
-    titleSpacing: "pr-32",
-    linkSpacing: "pr-28",
   },
   {
     title: "Ethics / reporting",
     description: "An independent concern-reporting route, not general support.",
-    linkText: "Whistleblowing & Ethics →",
+    linkText: "Whistleblowing & Ethics",
     href: "/whistleblowing-ethics-reporting",
-    titleSpacing: "pr-24",
-    linkSpacing: "pr-10",
   },
   {
     title: "Legal",
     description: "Corporate/legal terms and notices remain canonical in Legal.",
-    linkText: "Legal Notices →",
+    linkText: "Legal Notices",
     href: "/legal-notices",
-    titleSpacing: "pr-44",
-    linkSpacing: "pr-24",
   },
 ];
 
 export default function TrustGovernanceEthicsSection() {
   return (
-    <section className="self-stretch px-28 py-24 bg-color-grey-95-12 flex flex-col justify-start items-start">
+    <section className="w-full bg-color-grey-95-12 py-24 flex justify-center">
       <div className="w-full max-w-[1200px] px-8 flex flex-col justify-start items-start gap-9">
         {/* Header */}
         <div className="self-stretch inline-flex justify-start items-end flex-wrap content-end">
           <div className="inline-flex flex-col justify-start items-start gap-3.5">
             <div className="self-stretch inline-flex justify-start items-center gap-2.5">
-              <div className="w-5 h-px bg-yellow-600" />
-              <div className="justify-center text-yellow-600 text-xs font-semibold font-['Inter'] tracking-wide">
+              <div
+                className="w-5 h-px"
+                style={{ backgroundColor: "rgba(184, 145, 63, 1)" }}
+              />
+              <div
+                className="justify-center text-xs font-semibold font-['Inter'] tracking-wide uppercase"
+                style={{ color: "rgba(184, 145, 63, 1)" }}
+              >
                 TRUST, GOVERNANCE &amp; ETHICS
               </div>
             </div>
@@ -77,32 +71,46 @@ export default function TrustGovernanceEthicsSection() {
         </div>
 
         {/* Proof Routes List */}
-        <div className="self-stretch px-6 py-2 bg-color-white-solid rounded-xl outline outline-1 outline-offset-[-1px] outline-color-orange-87 flex flex-col justify-start items-start">
+        <div className="w-full px-6 py-2 bg-color-white-solid rounded-xl border border-color-orange-87 flex flex-col justify-start items-start">
           {proofRoutes.map((route, index) => (
             <div
               key={route.title}
-              className={`self-stretch py-4 inline-flex justify-start items-start gap-5 flex-wrap content-start ${
+              className={`w-full py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 ${
                 index < proofRoutes.length - 1
                   ? "border-b border-color-orange-87"
                   : ""
               }`}
             >
-              <div className={`inline-flex flex-col justify-start items-start ${route.titleSpacing}`}>
-                <div className="justify-center text-color-azure-12-4 text-sm font-bold font-['Inter']">
+              <div className="w-full md:w-56 shrink-0">
+                <div className="text-color-azure-12-4 text-sm font-bold font-['Inter']">
                   {route.title}
                 </div>
               </div>
-              <div className="flex-1 inline-flex flex-col justify-start items-start">
-                <div className="self-stretch justify-center text-color-grey-44 text-xs font-normal font-['Inter'] leading-5">
+              <div className="flex-1">
+                <p className="text-color-grey-44 text-xs font-normal font-['Inter'] leading-5">
                   {route.description}
-                </div>
+                </p>
               </div>
-              <div className={`inline-flex flex-col justify-start items-start ${route.linkSpacing}`}>
+              <div className="w-full md:w-auto md:text-right shrink-0">
                 <Link
                   href={route.href}
-                  className="justify-center text-yellow-600 text-xs font-semibold font-['Inter']"
+                  className="text-xs font-semibold font-['Inter'] inline-flex items-center gap-1.5 hover:underline"
+                  style={{ color: "rgba(184, 145, 63, 1)" }}
                 >
-                  {route.linkText}
+                  <span>{route.linkText}</span>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
                 </Link>
               </div>
             </div>
