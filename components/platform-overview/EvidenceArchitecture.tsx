@@ -104,7 +104,7 @@ export default function EvidenceArchitecture() {
             {/* Action CTA Button */}
             <div>
               <a
-                href="#"
+                href="/evidence-architecture"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#D0AA55] text-[#07131d] font-semibold text-sm hover:bg-[#c29c4c] transition-all duration-200 shadow-lg shadow-[#D0AA55]/20"
               >
                 Explore evidence architecture
