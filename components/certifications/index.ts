@@ -1,0 +1,13 @@
+export { default as CertificationsHero } from "./CertificationsHero";
+export { default as AtAGlanceSection } from "./AtAGlanceSection";
+export { default as AssuranceRegistrySection } from "./AssuranceRegistrySection";
+export { default as HowToReadAssuranceSection } from "./HowToReadAssuranceSection";
+export { default as ScopeIsMandatorySection } from "./ScopeIsMandatorySection";
+export { default as EvidenceAccessSection } from "./EvidenceAccessSection";
+export { default as ReadinessRoadmapSection } from "./ReadinessRoadmapSection";
+export { default as IndependentValidationSection } from "./IndependentValidationSection";
+export { default as FrameworkAlignmentSection } from "./FrameworkAlignmentSection";
+export { default as ProcurementReviewSection } from "./ProcurementReviewSection";
+export { default as LifecycleRenewalSection } from "./LifecycleRenewalSection";
+export { default as RelatedTrustAreasSection } from "./RelatedTrustAreasSection";
+export { default as CertificationsFaqSection } from "./CertificationsFaqSection";
