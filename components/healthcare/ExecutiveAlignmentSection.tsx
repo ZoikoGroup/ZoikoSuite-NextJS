@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const accountabilities = [
   {
@@ -50,16 +51,19 @@ const navigationCards = [
     eyebrow: "CFO / FINANCE",
     title: "Published solution page",
     linkText: "Go to CFOs",
+    linkHref: "/cfos",
   },
   {
     eyebrow: "GENERAL COUNSEL / LEGAL",
     title: "Published solution page",
     linkText: "Go to General Counsel",
+    linkHref: "/general-counsel",
   },
   {
     eyebrow: "LEADERSHIP TEAMS",
     title: "Published solution page",
     linkText: "Go to Leadership Teams",
+    linkHref: "/leadership-teams",
   },
 ];
 
@@ -132,12 +136,12 @@ export default function ExecutiveAlignmentSection() {
 
               <div>
                 <div className="border-t border-dashed border-gray-200 pt-4">
-                  <a
-                    href="#link"
+                  <Link
+                    href={item.linkHref}
                     className="text-[13px] font-bold text-[#0F476A] hover:text-[#C59B3F] transition-colors inline-flex items-center gap-1.5"
                   >
                     {item.linkText} →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

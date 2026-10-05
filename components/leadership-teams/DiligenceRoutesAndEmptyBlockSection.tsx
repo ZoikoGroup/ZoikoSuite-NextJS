@@ -19,7 +19,11 @@ const diligenceCards: DiligenceCard[] = [
   {
     category: "DECISION ARCHITECTURE",
     title: "How the decision packet works",
-    items: ["Governance Platform", "Authority and segregation", "Documented lifecycle"],
+    items: [
+      "Governance Platform",
+      "Authority and segregation",
+      "Documented lifecycle",
+    ],
     buttonText: "SEE DECISION PACKET",
     buttonHref: "/platform-tour",
     badgeStyle: "border-emerald-300 bg-emerald-50 text-emerald-800",
@@ -27,7 +31,11 @@ const diligenceCards: DiligenceCard[] = [
   {
     category: "COORDINATION MAP",
     title: "What connects and who owns it",
-    items: ["Platform Foundation", "Deployment options", "Migration & Shadow Mode"],
+    items: [
+      "Platform Foundation",
+      "Deployment options",
+      "Migration & Shadow Mode",
+    ],
     buttonText: "SEE ARCHITECTURE",
     buttonHref: "/platform-foundation",
     badgeStyle: "border-emerald-300 bg-emerald-50 text-emerald-800",
@@ -43,7 +51,7 @@ const diligenceCards: DiligenceCard[] = [
       "Accessibility",
     ],
     buttonText: "SEE SECURITY & DPA PROVISIONS",
-    buttonHref: "/platform-overview",
+    buttonHref: "/security-overview",
     badgeStyle: "border-amber-300 bg-amber-50 text-amber-900",
   },
   {
@@ -52,13 +60,17 @@ const diligenceCards: DiligenceCard[] = [
     description:
       "Customer-case and evaluation material appears here only where an approved published resource exists. None is currently confirmed, so no eventuality allowed rather than a placeholder lien.",
     buttonText: "PUBLISHED RESOURCES ONLY",
-    buttonHref: "/platform-overview",
+    buttonHref: "/resources-center",
     badgeStyle: "border-amber-300 bg-amber-50 text-amber-900",
   },
   {
     category: "EVIDENCE",
     title: "Evidence",
-    items: ["Evidence context model", "Evidence architecture", "Evidence health states"],
+    items: [
+      "Evidence context model",
+      "Evidence architecture",
+      "Evidence health states",
+    ],
     buttonText: "EVIDENCE TO SUPPORT AUDITS",
     buttonHref: "/governance-platform",
     badgeStyle: "border-slate-300 bg-slate-100 text-slate-700",
@@ -107,7 +119,8 @@ export default function DiligenceRoutesAndEmptyBlockSection() {
             className="lg:col-span-5 flex flex-col justify-end"
           >
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Every provision above is synthetic. These are the routes where the claims get verified.
+              Every provision above is synthetic. These are the routes where the
+              claims get verified.
             </p>
           </motion.div>
         </div>
@@ -177,7 +190,11 @@ export default function DiligenceRoutesAndEmptyBlockSection() {
             No approved customer proofs published for this page
           </h3>
           <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed max-w-4xl">
-            Named customers, outcomes, metrics and quotes appear only with documented permission covering the identity, the problem, the scope, the outcome, the measurement method and the period. Without that approval, this entry remains deliberately blank and filled with unsourced corporate hype.
+            Named customers, outcomes, metrics and quotes appear only with
+            documented permission covering the identity, the problem, the scope,
+            the outcome, the measurement method and the period. Without that
+            approval, this entry remains deliberately blank and filled with
+            unsourced corporate hype.
           </p>
         </motion.div>
 
@@ -196,19 +213,22 @@ export default function DiligenceRoutesAndEmptyBlockSection() {
             <h4 className="text-base font-bold text-slate-900">
               Operational routes, no demo required
             </h4>
-            <p className="text-xs text-slate-500">
-              Reachable without a form
-            </p>
+            <p className="text-xs text-slate-500">Reachable without a form</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
-            {["Sign-in", "Documentation", "Support", "System status"].map((btn, bIdx) => (
+            {[
+              { label: "Sign-in", href: "/sign-in" },
+              { label: "Documentation", href: "/documentation" },
+              { label: "Support", href: "/support-center" },
+              { label: "System status", href: "/trust-system-status" },
+            ].map((item, bIdx) => (
               <Link
                 key={bIdx}
-                href="/platform-overview"
+                href={item.href}
                 className="px-4 py-2 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-medium text-xs shadow-2xs transition-colors"
               >
-                {btn}
+                {item.label}
               </Link>
             ))}
           </div>

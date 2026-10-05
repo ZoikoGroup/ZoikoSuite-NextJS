@@ -2,7 +2,7 @@
 
 export default function ClaimGovernance() {
   return (
-    <section className="w-full bg-[#F5F7F7]">
+    <section id="claim-classes" className="w-full bg-[#F5F7F7]">
       <div className="mx-auto w-full max-w-[1440px] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-28">
         <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-4 px-0 lg:px-12">
 

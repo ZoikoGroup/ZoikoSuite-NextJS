@@ -3,12 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function ModernizeOperationsSection() {
   return (
     <section className="w-full bg-[#08222F] py-16 md:py-24 text-white font-sans flex justify-center items-center px-6 lg:px-12">
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: Text Content & Buttons */}
+        {/* Left Column: Text Content & Links */}
         <div className="lg:col-span-6 flex flex-col items-start">
           {/* Eyebrow Tag */}
           <div className="flex items-center gap-2 mb-4">
@@ -34,10 +35,10 @@ export default function ModernizeOperationsSection() {
             recovery.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Links */}
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              type="button"
+            <Link
+              href="/book-demo"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-semibold text-gray-950 transition-all hover:opacity-90 shadow-md"
               style={{
                 backgroundColor: "#D0AA55",
@@ -46,10 +47,10 @@ export default function ModernizeOperationsSection() {
             >
               <span>Book enterprise demo</span>
               <ChevronRight className="w-4 h-4 ml-1" />
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              href="/solutions-architect"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:bg-white/10"
               style={{
                 backgroundColor: "transparent",
@@ -57,7 +58,7 @@ export default function ModernizeOperationsSection() {
               }}
             >
               Talk to a solutions architect
-            </button>
+            </Link>
           </div>
         </div>
 

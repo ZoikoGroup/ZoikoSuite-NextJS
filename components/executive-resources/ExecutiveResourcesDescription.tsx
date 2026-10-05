@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ExecutiveResourcesDescription() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 md:py-24 text-[#0F172A] font-sans">
+    <section id="answer" className="w-full bg-[#F7F5F0] py-16 md:py-24 text-[#0F172A] font-sans">
       <div className="w-full max-w-5xl mx-auto px-4">
         <div className="bg-white rounded-3xl p-8 md:p-12 border-t-4 border-t-[#D0AA55] border border-[#D0AA55] shadow-sm">
           <h2 className="text-2xl sm:text-[28px] font-bold text-[#0F172A] mb-6 tracking-tight">

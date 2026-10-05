@@ -199,7 +199,7 @@ export default function TrustProcurementValidationSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
           >
             <a
-              href="#"
+              href="/trust-center"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-lg shadow-[#0F476A]/20"
             >
               Visit the Trust Center
@@ -207,7 +207,7 @@ export default function TrustProcurementValidationSection() {
             </a>
 
             <a
-              href="#"
+              href="/solutions-architect"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#0f172a] font-semibold text-sm border border-[#CFDEE7] hover:bg-[#EFECE6] transition-all duration-200 shadow-sm"
             >
               Talk to a solutions architect

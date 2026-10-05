@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function BankingHeroSection() {
   return (
@@ -34,10 +35,10 @@ export default function BankingHeroSection() {
             actions can move with policy, authority and auditability built in.
           </p>
 
-          {/* Action Buttons */}
+          {/* Action Links */}
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              type="button"
+            <Link
+              href="/book-demo"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-gray-950 transition-all hover:opacity-90 shadow-md"
               style={{
                 backgroundColor: "#D0AA55",
@@ -46,17 +47,17 @@ export default function BankingHeroSection() {
             >
               Book enterprise demo
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              href="/solutions-architect"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:bg-white/10"
               style={{
                 border: "1px solid rgba(255, 255, 255, 0.2)",
               }}
             >
               Talk to a solutions architect
-            </button>
+            </Link>
           </div>
         </div>
 

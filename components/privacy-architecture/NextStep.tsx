@@ -156,7 +156,7 @@ export default function NextStep() {
               We use your information to respond to this request. Consent is
               never pre-checked. See the{" "}
               <a
-                href="#"
+                href="/privacy-policy"
                 className="text-[#073B47] underline underline-offset-2"
               >
                 Privacy Policy

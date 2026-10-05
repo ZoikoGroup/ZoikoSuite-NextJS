@@ -42,7 +42,7 @@ const problems = [
 
 export default function OperationalFragmentationSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#08222F] py-20 px-6 lg:px-12 font-sans">
+    <section id="answer" className="w-full bg-[#F7F5F0] text-[#08222F] py-20 px-6 lg:px-12 font-sans">
       <div className="max-w-6xl mx-auto">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">

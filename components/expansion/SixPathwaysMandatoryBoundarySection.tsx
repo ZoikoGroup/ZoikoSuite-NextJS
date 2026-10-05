@@ -40,7 +40,7 @@ const pathways: PathwayCard[] = [
 
 export default function SixPathwaysMandatoryBoundarySection() {
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#08222F] py-14 sm:py-20 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]">
+    <section id="pathways" className="w-full bg-[#F7F5F0] text-[#08222F] py-14 sm:py-20 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]">
       <div className="max-w-[1240px] w-full flex flex-col">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end mb-12">

@@ -157,7 +157,7 @@ export default function FAQSection() {
                     {item.linkText && (
                       <div className="pt-2">
                         <a
-                          href="#"
+                          href="#states"
                           className="text-[13px] font-semibold text-[#0F476A] underline hover:text-[#111827] transition-colors"
                         >
                           {item.linkText}

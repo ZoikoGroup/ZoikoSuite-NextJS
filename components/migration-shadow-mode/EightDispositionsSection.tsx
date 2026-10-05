@@ -153,7 +153,7 @@ const exceptionFields = [
 
 export default function EightDispositionsSection() {
   return (
-    <section className="bg-[#FFFFFF] py-14 sm:py-20 border-b border-[#E5E0D8]">
+    <section id="inspect" className="bg-[#FFFFFF] py-14 sm:py-20 border-b border-[#E5E0D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* ========================================================================= */}
         {/* DESKTOP VERSION (hidden lg:block) - 100% UNTOUCHED DESKTOP DESIGN         */}

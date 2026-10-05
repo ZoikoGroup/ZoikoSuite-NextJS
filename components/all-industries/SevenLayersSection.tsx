@@ -55,7 +55,7 @@ const LAYERS: LayerItem[] = [
 
 export default function SevenLayersSection() {
   return (
-    <section className="w-full bg-[#08222F] text-white py-20 px-6 lg:px-12 flex justify-center items-center font-sans">
+    <section id="seven" className="w-full bg-[#08222F] text-white py-20 px-6 lg:px-12 flex justify-center items-center font-sans">
       <div className="max-w-6xl w-full flex flex-col">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">

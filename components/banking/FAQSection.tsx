@@ -156,7 +156,7 @@ export default function FAQSection() {
                     {item.linkText && (
                       <div className="mt-1">
                         <a
-                          href="#"
+                          href="#scope"
                           className="text-sm font-semibold text-[#0F172A] hover:text-[#C59B3F] underline underline-offset-4 transition-colors inline-flex items-center gap-1"
                         >
                           {item.linkText}

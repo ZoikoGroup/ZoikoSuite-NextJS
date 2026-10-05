@@ -19,7 +19,7 @@ const FAQ_ITEMS: FaqItem[] = [
         and accessibility state. Resources not approved for publication do not
         appear.{" "}
         <a
-          href="#decision"
+          href="#answer"
           className="font-semibold text-[#0F476A] hover:underline"
         >
           Start with a decision

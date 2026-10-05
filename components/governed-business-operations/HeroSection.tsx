@@ -55,7 +55,7 @@ export default function HeroSection() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
                 <a
-                  href="#"
+                  href="/book-demo"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#c5a059] text-[#0f172a] font-semibold text-sm hover:bg-[#b08d4b] transition-all duration-200 shadow-lg shadow-[#c5a059]/20"
                 >
                   Book enterprise demo
@@ -63,7 +63,7 @@ export default function HeroSection() {
                 </a>
 
                 <a
-                  href="#"
+                  href="/solutions-architect"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent text-white font-semibold text-sm border border-[#1e293b] hover:bg-[#0f1f2e] transition-all duration-200"
                 >
                   Talk to a solutions architect

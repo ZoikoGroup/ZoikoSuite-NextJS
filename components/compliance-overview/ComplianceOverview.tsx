@@ -30,14 +30,14 @@ export default function ComplianceOverview() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               <a
-                href="#"
+                href="#request"
                 className="h-12 px-6 flex items-center justify-center gap-2 rounded-full bg-[#D0AA55] hover:bg-[#C59B3F] text-[#111827] font-semibold text-sm transition-colors shadow-sm cursor-pointer"
               >
                 <span>Request a compliance review</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="/evidence-architecture"
                 className="h-12 px-6 flex items-center justify-center rounded-full bg-transparent hover:bg-white/5 text-white border border-white/20 font-semibold text-sm transition-colors cursor-pointer"
               >
                 <span>Review Evidence Architecture</span>

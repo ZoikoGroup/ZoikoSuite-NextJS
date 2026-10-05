@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
       "Governed evaluation and operating support — seeing what needs attention, which sources and policies apply, who may decide, what evidence exists and what the permitted next step is.",
       "It does not mean a guaranteed outcome, a professional conclusion, or automatic resolution of the underlying business problem.",
     ],
-    link: { text: "See the direct answer", href: "#" },
+    link: { text: "See the direct answer", href: "#direct" },
   },
   {
     question: "Why do all ten challenges use the same proof framework?",

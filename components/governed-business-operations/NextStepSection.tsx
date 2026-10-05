@@ -35,7 +35,7 @@ export default function NextStepSection() {
           </div>
 
           <a
-            href="#"
+            href="/solutions-architect"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#D0AA55] hover:text-[#e2be6b] transition-colors"
           >
             Talk to a solutions architect

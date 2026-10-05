@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function TheCatalog() {
   return (
-    <section className="w-full bg-white py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
+    <section id="catalog" className="w-full bg-white py-16 sm:py-24 px-6 lg:px-14 flex justify-center">
       <div className="max-w-[1320px] w-full flex flex-col gap-10">
         {/* Header moved right by 30px */}
         <motion.div

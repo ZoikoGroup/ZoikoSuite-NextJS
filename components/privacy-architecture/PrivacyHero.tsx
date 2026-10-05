@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function PrivacyHero() {
   return (
     <section className="w-full bg-[#062F39]">
@@ -53,11 +55,12 @@ export default function PrivacyHero() {
             </p>
           </div>
 
-          {/* Buttons */}
+          {/* Links */}
           <div className="flex w-full flex-col items-start gap-3 pt-6 sm:flex-row sm:flex-wrap">
 
-            {/* Primary Button */}
-            <button
+            {/* Primary Link */}
+            <Link
+            href="/solutions-architect"
               className="
                 flex h-12 min-h-12 items-center justify-center
                 rounded-full bg-orange-400
@@ -71,10 +74,11 @@ export default function PrivacyHero() {
             >
               <span>Talk to a solutions architect</span>
               <span className="ml-3 text-xs font-semibold">→</span>
-            </button>
+            </Link>
 
-            {/* Secondary Button */}
-            <button
+            {/* Secondary Link */}
+            <Link
+            href="#request"
               className="
                 flex h-12 min-h-12 items-center justify-center
                 rounded-full px-6
@@ -86,7 +90,7 @@ export default function PrivacyHero() {
               "
             >
               Request an enterprise privacy review
-            </button>
+            </Link>
           </div>
         </div>
 

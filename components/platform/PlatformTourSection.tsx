@@ -41,7 +41,7 @@ const tourCards: TourCard[] = [
     description:
       "See how entity, jurisdiction, residency, source, and status remain visible when relevant.",
     actionText: "Continue Tour",
-    href: "/platform-tour",
+    href: "/evidence-architecture",
   },
   {
     number: "5",
@@ -57,7 +57,7 @@ const tourCards: TourCard[] = [
     description:
       "Understand coexistence, integration, shadow mode, and trust evidence.",
     actionText: "Book a demo",
-    href: "/book-demo",
+    href: "/deployment-options",
   },
 ];
 

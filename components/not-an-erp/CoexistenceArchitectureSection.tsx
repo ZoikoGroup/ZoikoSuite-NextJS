@@ -189,7 +189,7 @@ export default function CoexistenceArchitectureSection() {
             {/* Gold CTA Button */}
             <div className="pt-2">
               <a
-                href="#"
+                href="/solutions-architect"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#C59B27] hover:bg-[#B38B20] text-[#08222F] text-xs sm:text-sm font-bold transition-all duration-200 active:scale-95 shadow-md"
               >
                 Talk to a solutions architect

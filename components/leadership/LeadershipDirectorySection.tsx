@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function LeadershipDirectorySection() {
   return (
-    <section className="relative w-full bg-[#EFE8D8] py-20 px-6 md:px-12 lg:px-20 overflow-hidden font-sans">
+    <section id="leadership" className="relative w-full bg-[#EFE8D8] py-20 px-6 md:px-12 lg:px-20 overflow-hidden font-sans">
       <div className="max-w-6xl mx-auto flex flex-col items-start">
         {/* Header Section */}
         <div className="mb-12">

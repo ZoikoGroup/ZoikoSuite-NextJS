@@ -27,7 +27,7 @@ export default function ExploreContextCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
           {/* Primary Button */}
           <a
-            href="#"
+            href="/solutions-architect"
             className="bg-[#D0AA55] hover:bg-[#8E6A26] text-[#111827] font-semibold text-sm px-6 py-3.5 rounded-full flex items-center gap-2 transition-all shadow-lg"
           >
             <span>Talk to a solutions architect</span>
@@ -36,7 +36,7 @@ export default function ExploreContextCTA() {
 
           {/* Secondary Button */}
           <a
-            href="#"
+            href="/sign-in"
             className="bg-transparent hover:bg-white/5 border border-[#4A7893] text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all"
           >
             Browse more case studies

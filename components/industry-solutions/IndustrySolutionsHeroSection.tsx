@@ -40,13 +40,13 @@ export default function IndustrySolutionsHeroSection() {
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#solutions"
+              href="/solutions"
               className="bg-[#D0AA55] hover:bg-[#C59B3F] text-[#08222F] font-bold py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm text-sm"
             >
               Find my solution →
             </a>
             <a
-              href="#demo"
+              href="/book-demo"
               className="bg-transparent hover:bg-white/10 text-white border border-white/30 font-semibold py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
             >
               Book enterprise demo

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function WhatZoikoSuiteDoesForBanksSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 md:py-24 text-[#0F172A] font-sans flex justify-center items-center px-6 lg:px-12">
+    <section id="scope" className="w-full bg-[#F7F5F0] py-16 md:py-24 text-[#0F172A] font-sans flex justify-center items-center px-6 lg:px-12">
       <div className="w-full max-w-5xl mx-auto">
         {/* Card Container with Golden/Bronze Border */}
         <div

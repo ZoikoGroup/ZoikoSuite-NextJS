@@ -36,14 +36,14 @@ export default function EvidenceArchitectureSection() {
             {/* Action Buttons */}
             <div className="flex flex-col flex-wrap sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               <a
-                href="#"
+                href="#request"
                 className="h-12 px-6 flex items-center justify-center gap-2 rounded-full bg-[#D0AA55] hover:bg-[#C59B3F] text-[#111827] font-semibold text-sm transition-colors shadow-sm cursor-pointer"
               >
                 <span>Request an evidence architecture review</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="/solutions-architect"
                 className="h-12 px-6 flex items-center justify-center rounded-full bg-transparent hover:bg-white/5 text-white border border-white/20 font-semibold text-sm transition-colors cursor-pointer"
               >
                 <span>Talk to a solutions architect</span>

@@ -1,29 +1,41 @@
 import React from "react";
+import Link from "next/link";
+
+interface GuidanceItem {
+  category: string;
+  title: string;
+  action: string;
+  href: string;
+}
+
+const items: GuidanceItem[] = [
+  {
+    category: "IMPLEMENTATION",
+    title: "Documentation",
+    action: "Open Documentation →",
+    href: "/documentation",
+  },
+  {
+    category: "PRACTICAL",
+    title: "Knowledge Base",
+    action: "Browse Knowledge Base →",
+    href: "/knowledge-base",
+  },
+  {
+    category: "ENABLEMENT",
+    title: "Training Academy",
+    action: "Visit Training Academy →",
+    href: "/training-academy",
+  },
+  {
+    category: "EVIDENCE",
+    title: "Case Studies",
+    action: "View Case Studies →",
+    href: "/case-studies",
+  },
+];
 
 export default function PracticalGuidanceSection() {
-  const items = [
-    {
-      category: "IMPLEMENTATION",
-      title: "Documentation",
-      action: "Open Documentation →",
-    },
-    {
-      category: "PRACTICAL",
-      title: "Knowledge Base",
-      action: "Browse Knowledge Base →",
-    },
-    {
-      category: "ENABLEMENT",
-      title: "Training Academy",
-      action: "Visit Training Academy →",
-    },
-    {
-      category: "EVIDENCE",
-      title: "Case Studies",
-      action: "View Case Studies →",
-    },
-  ];
-
   return (
     <section className="w-full bg-white py-16 px-6 md:px-12 flex items-center justify-center font-sans">
       <div className="max-w-6xl w-full flex flex-col items-start">
@@ -65,12 +77,12 @@ export default function PracticalGuidanceSection() {
               </div>
 
               {/* Action Link */}
-              <a
-                href="#"
+              <Link
+                href={item.href}
                 className="text-[#0F476A] hover:text-[#C29B38] text-xs font-semibold tracking-wider transition-colors inline-flex items-center gap-1"
               >
                 {item.action}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

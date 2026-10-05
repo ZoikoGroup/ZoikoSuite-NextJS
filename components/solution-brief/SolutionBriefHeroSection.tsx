@@ -29,7 +29,7 @@ export default function SolutionBriefHeroSection() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="#demo"
+                href="/book-demo"
                 className="py-3 px-6 rounded-full bg-[#D0AA55] hover:bg-[#B89443] text-black font-bold text-xs transition-colors shadow-sm inline-flex items-center gap-1.5"
               >
                 <span>Book enterprise demo</span>
@@ -37,7 +37,7 @@ export default function SolutionBriefHeroSection() {
               </a>
 
               <a
-                href="#resources"
+                href="/executive-resources"
                 className="py-3 px-6 rounded-full bg-transparent hover:bg-white/5 border border-[#2A6386] text-white font-bold text-xs transition-colors inline-flex items-center"
               >
                 Explore executive resources

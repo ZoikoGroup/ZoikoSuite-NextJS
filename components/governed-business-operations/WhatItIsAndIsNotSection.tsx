@@ -193,7 +193,7 @@ export default function WhatItIsAndIsNotSection() {
         {/* Bottom Button */}
         <div className="flex justify-center w-full">
           <a
-            href="#"
+            href="/not-an-erp"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
           >
             Read why ZoikoSuite is not an ERP

@@ -41,14 +41,14 @@ export default function MobileNextStepSection() {
           {/* Action CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full mb-8">
             <a
-              href="#choose-tour-path"
+              href="/book-demo"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-[#D0AA55] text-[#08222F] font-semibold text-xs hover:bg-[#c29c4c] transition-colors shadow-sm"
             >
               <span>Book enterprise demo</span>
               <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
             </a>
             <a
-              href="/platform/deployment"
+              href="/solutions-architect"
               className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#1e445b] bg-[#0d2a3a] text-white font-medium text-xs hover:bg-[#12364a] transition-colors"
             >
               Talk to a solutions architect

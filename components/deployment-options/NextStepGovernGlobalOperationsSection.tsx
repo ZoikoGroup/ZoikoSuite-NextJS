@@ -31,7 +31,7 @@ export default function NextStepGovernGlobalOperationsSection() {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 w-full sm:w-auto">
           <Link
-            href="#book-demo"
+            href="/book-demo"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D0AA55] text-[#08222F] text-xs sm:text-sm font-bold hover:bg-[#e0bc6b] transition-colors shadow-sm group"
           >
             <span>Book enterprise demo</span>
@@ -39,7 +39,7 @@ export default function NextStepGovernGlobalOperationsSection() {
           </Link>
 
           <Link
-            href="#talk-architect"
+            href="/solutions-architect"
             className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-transparent border border-white/20 text-white text-xs sm:text-sm font-bold hover:bg-white/5 transition-colors"
           >
             Talk to a solutions architect

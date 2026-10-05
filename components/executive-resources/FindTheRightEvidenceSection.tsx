@@ -55,7 +55,7 @@ export default function FindTheRightEvidenceSection() {
   const [selectedId, setSelectedId] = useState<string>("understand");
 
   return (
-    <section className="w-full bg-white py-16 md:py-24 text-[#0F172A] font-sans">
+    <section id="evidence" className="w-full bg-white py-16 md:py-24 text-[#0F172A] font-sans">
       <div className="w-full max-w-6xl mx-auto px-4 text-left">
         {/* Header Grid Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-12">

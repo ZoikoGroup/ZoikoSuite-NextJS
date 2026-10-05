@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function DataLocationDimensions() {
   return (
-    <section className="w-full bg-[#08222F] py-20 px-6 lg:px-12 font-sans text-white">
+    <section id="matrix" className="w-full bg-[#08222F] py-20 px-6 lg:px-12 font-sans text-white">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function EvaluatingZoikoSuite() {
   return (
     <section
@@ -56,11 +58,11 @@ export default function EvaluatingZoikoSuite() {
           </div>
         </div>
 
-        {/* Buttons */}
+        {/* Links */}
         <div className="self-stretch pt-2 flex justify-center items-start gap-3 flex-wrap">
           {/* Primary CTA */}
-          <button
-            type="button"
+          <Link
+            href="/solutions-architect"
             className="min-h-11 px-6 py-2.5 bg-orange-400 rounded-[999px] outline outline-1 outline-offset-[-1px] outline-orange-400 flex justify-center items-center gap-2"
             style={{
               backgroundColor: "#FB923C",
@@ -86,11 +88,11 @@ export default function EvaluatingZoikoSuite() {
             >
               →
             </span>
-          </button>
+          </Link>
 
           {/* Secondary CTA */}
-          <button
-            type="button"
+          <Link
+            href="#"
             className="min-h-11 px-6 py-2.5 rounded-[999px] outline outline-1 outline-offset-[-1px] outline-color-azure-43 flex justify-center items-center"
             style={{
               outlineColor:
@@ -106,7 +108,7 @@ export default function EvaluatingZoikoSuite() {
             >
               Return to knowledge base
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -178,7 +178,7 @@ export default function BookDemoSection() {
                 <p className="text-[11px] text-[#64748B] text-center leading-relaxed pt-2">
                   We use your information to respond to this request. Consent is
                   never pre-checked. See the{" "}
-                  <a href="#privacy" className="underline hover:text-[#0F172A]">
+                  <a href="/privacy-policy" className="underline hover:text-[#0F172A]">
                     Privacy Policy
                   </a>
                   .

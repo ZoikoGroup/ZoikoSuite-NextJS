@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, ShieldCheck, X } from "lucide-react";
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 interface ComparisonItem {
   feature: string;
@@ -39,9 +40,6 @@ const comparisonData: ComparisonItem[] = [
 ];
 
 export default function CategoryClarityPage() {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const [isArchitectModalOpen, setIsArchitectModalOpen] = useState(false);
-
   return (
     <div className="w-full bg-[#08222F] text-white font-sans antialiased selection:bg-[#c5a059] selection:text-[#08222F]">
       {/* HERO SECTION */}
@@ -76,24 +74,22 @@ export default function CategoryClarityPage() {
                 jurisdictions, policies, authority, evidence, and governed AI.
               </p>
 
-              {/* Action Buttons */}
+              {/* Action Links */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
-                <button
-                  type="button"
-                  onClick={() => setIsDemoModalOpen(true)}
+                <Link
+                  href="/book-demo"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#c5a059] text-[#0f172a] font-semibold text-sm hover:bg-[#b08d4b] transition-all duration-200 shadow-lg shadow-[#c5a059]/20 cursor-pointer active:scale-95"
                 >
                   Book enterprise demo
                   <ArrowRight className="w-4 h-4 text-[#0f172a]" />
-                </button>
+                </Link>
 
-                <button
-                  type="button"
-                  onClick={() => setIsArchitectModalOpen(true)}
+                <Link
+                  href="/solutions-architect"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm border border-[#4A7893] hover:bg-[#0f1f2e] transition-all duration-200 cursor-pointer active:scale-95"
                 >
                   Talk to a solutions architect
-                </button>
+                </Link>
               </div>
 
               {/* Left Bordered Disclaimer */}

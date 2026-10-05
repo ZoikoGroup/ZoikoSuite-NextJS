@@ -21,7 +21,7 @@ const faqs = [
           </p>
 
           <a
-            href="#"
+            href="#claim-classes"
             className="mt-2 inline-flex min-h-11 items-center border-b border-transparent py-2.5 text-base font-semibold leading-6 text-[#073B47] transition hover:border-[#073B47]"
           >
             See the claim classes

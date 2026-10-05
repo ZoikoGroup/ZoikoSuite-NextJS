@@ -62,7 +62,7 @@ export default function TemplatesToolsHero() {
 
             {/* Secondary Button */}
             <a
-              href="#search"
+              href="/resources-center"
               className="inline-flex shrink-0 items-center justify-center px-6 py-3.5 rounded-full bg-transparent hover:bg-white/5 border border-white/20 font-semibold text-[13.5px] text-white transition-colors whitespace-nowrap"
             >
               Search resources

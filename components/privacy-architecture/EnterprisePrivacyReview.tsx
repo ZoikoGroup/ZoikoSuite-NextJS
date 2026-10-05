@@ -47,7 +47,7 @@ function FormField({
 
 export default function EnterprisePrivacyReview() {
   return (
-    <section className="w-full bg-[#F5F7F7]">
+    <section id="review" className="w-full bg-[#F5F7F7]">
       <div className="mx-auto w-full max-w-[1440px] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-28">
         <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-10 lg:gap-14 lg:px-12">
           {/* Header */}
@@ -210,7 +210,7 @@ export default function EnterprisePrivacyReview() {
                 We use your information to respond to this request. Consent is
                 never pre-checked. See the{" "}
                 <a
-                  href="#"
+                  href="/privacy-policy"
                   className="text-[#073B47] underline underline-offset-2"
                 >
                   Privacy Policy

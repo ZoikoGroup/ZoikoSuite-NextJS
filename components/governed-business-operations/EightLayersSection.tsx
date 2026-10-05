@@ -182,7 +182,7 @@ export default function EightLayersSection() {
         <div className="flex flex-wrap items-center justify-start gap-4 w-full">
           {/* First Button */}
           <a
-            href="#"
+            href="/solutions-architect"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#D0AA55] text-[#08222F] hover:bg-[#c29c4d] transition-colors shadow-sm"
           >
             Talk to a solutions architect
@@ -191,7 +191,7 @@ export default function EightLayersSection() {
 
           {/* Second Button: Transparent / No bg */}
           <a
-            href="#"
+            href="/documentation"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-transparent text-white hover:bg-white/5 transition-colors border border-[#1a3848]"
           >
             API and developer documentation

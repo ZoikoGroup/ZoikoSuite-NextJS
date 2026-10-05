@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function CanonicalInventorySection() {
   return (
-    <section className="w-full bg-white py-16 md:py-24 text-[#0F172A] font-sans flex justify-center items-center px-6 lg:px-12">
+    <section id="state" className="w-full bg-white py-16 md:py-24 text-[#0F172A] font-sans flex justify-center items-center px-6 lg:px-12">
       <div className="w-full max-w-6xl mx-auto flex flex-col gap-12">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">

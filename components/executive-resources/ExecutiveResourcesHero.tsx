@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ExecutiveResourcesHero() {
   return (
@@ -27,19 +28,19 @@ export default function ExecutiveResourcesHero() {
               value.
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Links */}
             <div className="flex flex-wrap items-center gap-4">
-              <button
+              <Link href="/book-demo"
                 className="px-6 py-3 rounded-full bg-[#D0AA55] hover:bg-[#B89648] text-[#06181E] text-xs sm:text-sm font-bold transition-all shadow-lg shadow-[#D0AA55]/20 cursor-pointer"
               >
                 Book enterprise demo &rarr;
-              </button>
+              </Link>
 
-              <button
+              <Link href="#evidence"
                 className="px-6 py-3 rounded-full border border-white/20 hover:border-white text-white text-xs sm:text-sm font-semibold transition-all bg-transparent cursor-pointer"
               >
                 Find the right evidence
-              </button>
+              </Link>
             </div>
           </div>
 

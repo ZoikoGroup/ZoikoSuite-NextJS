@@ -1,15 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface SectorCard {
   title: string;
   description: string;
   tags: string[];
-  linkText?: string;
-  isTransparent?: boolean;
-  statusBadge?: string;
-  statusMessage?: string;
+  linkText: string;
+  linkHref: string;
 }
 
 const SECTORS: SectorCard[] = [
@@ -19,6 +18,7 @@ const SECTORS: SectorCard[] = [
       "Regulated financial operations across entities, jurisdictions, obligations and evidence.",
     tags: ["ENTITIES", "AUTHORITY", "EVIDENCE"],
     linkText: "Explore Financial Service",
+    linkHref: "/financial-service",
   },
   {
     title: "Banking",
@@ -26,6 +26,7 @@ const SECTORS: SectorCard[] = [
       "Govern approvals, obligations, vendors, evidence and enterprise operations around banking environments.",
     tags: ["SOD", "OBLIGATIONS", "AUDIT"],
     linkText: "Explore Banking",
+    linkHref: "/banking",
   },
   {
     title: "Insurance",
@@ -33,24 +34,23 @@ const SECTORS: SectorCard[] = [
       "Govern carrier operations, delegated authority, obligations, vendors and evidence around specialist insurance systems.",
     tags: ["AUTHORITY", "OBLIGATIONS", "EVIDENCE"],
     linkText: "Explore Insurance",
+    linkHref: "/insurance",
   },
   {
     title: "Healthcare",
     description:
       "Govern administrative, workforce, vendor, financial, contractual and compliance operations in healthcare organizations.",
     tags: ["PRIVACY", "WORKFORCE", "VENDORS"],
-    isTransparent: true,
-    statusBadge: "ROUTE NOT PUBLISHED",
-    statusMessage: "No link is shown until the destination is production-ready",
+    linkText: "Explore Healthcare",
+    linkHref: "/healthcare",
   },
   {
     title: "Telecommunication & MVNOs",
     description:
       "Govern multi-market operator business operations, partner obligations, evidence and authority.",
     tags: ["MARKETS", "PARTNERS", "OBLIGATIONS"],
-    isTransparent: true,
-    statusBadge: "ROUTE NOT PUBLISHED",
-    statusMessage: "No link is shown until the destination is production-ready",
+    linkText: "Explore Telecommunication & MVNOs",
+    linkHref: "/telecom-mvnos",
   },
   {
     title: "Manufacturing",
@@ -58,6 +58,7 @@ const SECTORS: SectorCard[] = [
       "Govern enterprise operations across plants, suppliers, contracts, workforce, obligations and evidence.",
     tags: ["PLANTS", "SUPPLIERS", "EVIDENCE"],
     linkText: "Explore Manufacturing",
+    linkHref: "/manufacturing",
   },
   {
     title: "Energy & Utilities",
@@ -65,6 +66,7 @@ const SECTORS: SectorCard[] = [
       "Govern business operations around critical energy and utility environments with clear OT/IT boundaries.",
     tags: ["SITES", "CONTRACTORS", "OBLIGATIONS"],
     linkText: "Explore Energy & Utilities",
+    linkHref: "/energy-utilities",
   },
   {
     title: "Retail & Commerce",
@@ -72,6 +74,7 @@ const SECTORS: SectorCard[] = [
       "Govern entities, stores, channels, suppliers, workforce, approvals, evidence and commercial obligations.",
     tags: ["CHANNELS", "SUPPLIERS", "APPROVALS"],
     linkText: "Explore Retail & Commerce",
+    linkHref: "/retail-commerce",
   },
   {
     title: "Government & Public Sector",
@@ -79,12 +82,16 @@ const SECTORS: SectorCard[] = [
       "Govern administrative operations across agencies, entities, programs, funds, procurement, workforce and records.",
     tags: ["AGENCIES", "FUNDS", "RECORDS"],
     linkText: "Explore Government & Public Sector",
+    linkHref: "/government-public-sector",
   },
 ];
 
 export default function IndustryDirectorySection() {
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#08222F] py-20 px-6 lg:px-12 flex justify-center items-center font-sans">
+    <section
+      id="industries"
+      className="w-full bg-[#F7F5F0] text-[#08222F] py-20 px-6 lg:px-12 flex justify-center items-center font-sans"
+    >
       <div className="max-w-6xl w-full flex flex-col">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
@@ -113,7 +120,8 @@ export default function IndustryDirectorySection() {
           {/* Right Subtitle Area */}
           <div className="lg:col-span-5 flex items-start">
             <p className="text-gray-600 text-sm lg:text-base leading-relaxed">
-              Every card states what ZoikoSuite is not in that sector. Two destinations are not yet production-ready and are shown without a link rather than as a dead card.
+              Every card states what ZoikoSuite is not in that sector. All nine
+              sector destinations are now production-ready and fully linked.
             </p>
           </div>
         </div>
@@ -121,14 +129,10 @@ export default function IndustryDirectorySection() {
         {/* Sectors Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SECTORS.map((sector, index) => {
-            const isTransparent = sector.isTransparent;
-
             return (
               <div
                 key={index}
-                className={`rounded-xl p-6 shadow-sm border border-[#0F476A] flex flex-col justify-between ${
-                  isTransparent ? "bg-transparent border-dashed" : "bg-white"
-                }`}
+                className="rounded-xl p-6 shadow-sm border border-[#0F476A] bg-white flex flex-col justify-between"
                 style={{
                   borderTop: "3px solid #0F476A",
                 }}
@@ -155,23 +159,12 @@ export default function IndustryDirectorySection() {
                 </div>
 
                 <div>
-                  {sector.linkText ? (
-                    <a
-                      href="#"
-                      className="inline-block bg-[#0F476A] hover:bg-[#0a324b] text-white text-xs font-bold px-4 py-2 rounded transition-colors"
-                    >
-                      {sector.linkText}
-                    </a>
-                  ) : (
-                    <div className="flex flex-col gap-2 pt-4 border-t border-dashed border-gray-300">
-                      <span className="inline-block self-start text-[10px] font-mono font-bold tracking-wider px-2 py-0.5 rounded bg-[#FEE2E2] text-[#991B1B] border border-[#FCA5A5]">
-                        {sector.statusBadge}
-                      </span>
-                      <p className="text-[11px] text-gray-500">
-                        {sector.statusMessage}
-                      </p>
-                    </div>
-                  )}
+                  <Link
+                    href={sector.linkHref}
+                    className="inline-block bg-[#0F476A] hover:bg-[#0a324b] text-white text-xs font-bold px-4 py-2 rounded transition-colors"
+                  >
+                    {sector.linkText}
+                  </Link>
                 </div>
               </div>
             );

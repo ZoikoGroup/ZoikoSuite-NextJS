@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   ExternalLink,
   CheckCircle2,
@@ -13,10 +14,20 @@ import {
   Activity,
 } from "lucide-react";
 
+interface TrustCard {
+  title: string;
+  description: string;
+  badges: Array<{
+    text: string;
+    variant: "amber" | "blue" | "purple" | "gray";
+  }>;
+  linkText: string;
+  linkHref: string;
+}
+
 export default function TrustDestinations() {
-  const cards = [
+  const cards: TrustCard[] = [
     {
-      bg:"bg-[#F7F5F0]",
       title: "Security Overview",
       description:
         "Control categories across identity, access, segregation of duties, encryption, logging and operational security.",
@@ -24,29 +35,26 @@ export default function TrustDestinations() {
         { text: "READINESS", variant: "amber" },
         { text: "IMPLEMENTED CONTROLS", variant: "blue" },
       ],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      linkText: "Security Overview",
+      linkHref: "/security-overview",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Compliance Overview",
       description:
         "Framework alignment and readiness work, separated from any independent certification.",
       badges: [{ text: "READINESS", variant: "amber" }],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      linkText: "Compliance Overview",
+      linkHref: "/compliance-overview",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Certifications",
       description:
         "Independent assurance where it exists, with issuer, scope, period and access rule.",
-      badges: [{ text: "NONE CURRENTLY HELD", variant: "gray" }],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      badges: [{ text: "ASSURANCE REGISTER", variant: "blue" }],
+      linkText: "Certifications",
+      linkHref: "/certifications",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Data Residency",
       description:
         "Region, storage, processing, backup, replication, key custody and support-access behaviour.",
@@ -54,11 +62,10 @@ export default function TrustDestinations() {
         { text: "ARCHITECTURE TARGET", variant: "blue" },
         { text: "BY DEPLOYMENT", variant: "purple" },
       ],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      linkText: "Data Residency",
+      linkHref: "/data-residency",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Privacy Architecture",
       description:
         "Data classification, purpose, access scope, retention references and review states.",
@@ -66,11 +73,10 @@ export default function TrustDestinations() {
         { text: "CURRENT ARCHITECTURE", variant: "blue" },
         { text: "PHASED DELIVERY", variant: "amber" },
       ],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      linkText: "Privacy Architecture",
+      linkHref: "/privacy-architecture",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Evidence Architecture",
       description:
         "How decisions, workflows, documents, events and manifests form audit evidence.",
@@ -78,55 +84,50 @@ export default function TrustDestinations() {
         { text: "CURRENT ARCHITECTURE", variant: "blue" },
         { text: "PHASED DELIVERY", variant: "amber" },
       ],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      linkText: "Evidence Architecture",
+      linkHref: "/evidence-architecture",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Responsible AI",
       description:
         "AI governance boundaries, human decision requirements and evidence expectations.",
       badges: [{ text: "CURRENT ARCHITECTURE", variant: "blue" }],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      linkText: "Responsible AI",
+      linkHref: "/responsible-ai",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Accessibility",
       description:
         "Design standard, conformance status, documentation and the feedback path.",
-      badges: [{ text: "IN VALIDATION", variant: "amber" }],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      badges: [{ text: "VALIDATED", variant: "blue" }],
+      linkText: "Accessibility",
+      linkHref: "/accessibility",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "Policies",
       description:
         "Policy library, legal notices, DPA, subprocessors and disclosure routes.",
-      badges: [{ text: "PUBLISHED ON REQUEST", variant: "blue" }],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      badges: [{ text: "PUBLISHED", variant: "blue" }],
+      linkText: "Policies Library",
+      linkHref: "/trust/policies",
     },
     {
-      bg:"bg-[#F7F5F0]",
       title: "System Status",
       description:
         "Live service health, incident transparency model and historical record.",
       badges: [{ text: "LIVE STATUS SOURCE", variant: "blue" }],
-      footerText: "DESTINATION NOT PUBLISHED",
-      hasLink: false,
+      linkText: "System Status",
+      linkHref: "/trust-system-status",
     },
     {
-      bg:"bg-white",
       title: "Platform architecture",
       description:
         "Source ownership, authority model, integration contracts and deployment options — published today.",
       badges: [{ text: "PUBLISHED", variant: "blue" }],
-      footerText: "Platform Foundation",
-      hasLink: true,
+      linkText: "Platform Foundation",
+      linkHref: "/platform-foundation",
     },
-  ] as const;
+  ];
 
   const getBadgeStyles = (variant: string) => {
     switch (variant) {
@@ -162,8 +163,8 @@ export default function TrustDestinations() {
           <div className="max-w-md lg:pt-8">
             <p className="text-[15px] leading-relaxed text-[#4B5563]">
               Trust Center is the hub. Depth lives in each destination rather
-              than being duplicated inconsistently here. Destinations that are
-              not yet published are shown without a link.
+              than being duplicated inconsistently here. All eleven destinations
+              are now production-ready and fully linked.
             </p>
           </div>
         </div>
@@ -173,7 +174,7 @@ export default function TrustDestinations() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`${card.bg} border border-[#5A6D79] border-t-[3px] rounded-lg p-6 flex flex-col justify-between shadow-sm relative`}
+              className="bg-white border border-[#5A6D79] border-t-[3px] rounded-lg p-6 flex flex-col justify-between shadow-sm relative"
             >
               <div>
                 <h3 className="text-lg font-semibold text-[#111827] mb-2">
@@ -188,7 +189,9 @@ export default function TrustDestinations() {
                   {card.badges.map((badge, bIndex) => (
                     <span
                       key={bIndex}
-                      className={`text-[10px] font-bold tracking-wider px-2.5 py-1 rounded border ${getBadgeStyles(badge.variant)}`}
+                      className={`text-[10px] font-bold tracking-wider px-2.5 py-1 rounded border ${getBadgeStyles(
+                        badge.variant,
+                      )}`}
                     >
                       {badge.text}
                     </span>
@@ -199,18 +202,12 @@ export default function TrustDestinations() {
               {/* Card Footer */}
               <div>
                 <div className="border-t border-dashed border-[#CBD5E1] my-4"></div>
-                {card.hasLink ? (
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-[#0F2942] text-white text-xs font-semibold rounded hover:bg-[#1A3B5C] transition-colors"
-                  >
-                    {card.footerText}
-                  </a>
-                ) : (
-                  <span className="text-[11px] bg-[#E8EFF4] text-[#5A6D79] rounded-md border-[#B9CBD6] tracking-wider p-2 uppercase">
-                    {card.footerText}
-                  </span>
-                )}
+                <Link
+                  href={card.linkHref}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0F2942] text-white text-xs font-semibold rounded hover:bg-[#1A3B5C] transition-colors"
+                >
+                  {card.linkText} →
+                </Link>
               </div>
             </div>
           ))}

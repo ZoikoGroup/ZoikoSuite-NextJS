@@ -129,7 +129,7 @@ export default function FAQSection() {
                       {item.answer.replace("See the nine", "")}
                       {item.hasLink && (
                         <a
-                          href="#"
+                          href="#nine-patterns"
                           className="font-semibold text-[#0F172A] underline hover:text-[#A07A2E] ml-1"
                         >
                           See the nine

@@ -28,14 +28,14 @@ export default function InvestorRelationsSection() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#investor-centre"
+              href="https://zoikogroup.com/"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-[#C8A24A] text-black text-sm font-semibold tracking-wide hover:bg-[#927230] transition-colors flex items-center gap-2 shadow-sm"
             >
               Visit Zoiko Group Investor Centre ↗
             </a>
             <a
-              href="#contact-investor-relations"
+              href="#contact"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-transparent border border-[#1B3452] text-white text-sm font-semibold tracking-wide hover:bg-white/5 transition-colors"
             >

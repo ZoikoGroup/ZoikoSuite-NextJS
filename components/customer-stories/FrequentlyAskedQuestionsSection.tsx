@@ -153,7 +153,7 @@ export default function FrequentlyAskedQuestionsSection() {
                         <>
                           {" "}
                           <a
-                            href="#"
+                            href="#state"
                             className="text-[#0F172A] font-semibold underline hover:text-[#A07A2E]"
                           >
                             {item.linkText}

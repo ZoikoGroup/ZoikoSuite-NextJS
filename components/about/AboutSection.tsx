@@ -29,7 +29,7 @@ export default function AboutSection() {
 
           {/* CTA Button */}
           <a
-            href="#"
+            href="/book-demo"
             className="inline-flex items-center justify-center px-7 py-3.5 rounded-md bg-[#C8A24A] hover:bg-[#c5a880] text-[#20170A] font-bold text-sm md:text-base transition-colors duration-200 shadow-lg"
           >
             Book enterprise demo

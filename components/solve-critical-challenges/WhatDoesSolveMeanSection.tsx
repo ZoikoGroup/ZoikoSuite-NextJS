@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function WhatDoesSolveMeanSection() {
   return (
-    <section className="w-full bg-[#FAF8F5] text-[#08222F] py-14 sm:py-20 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]">
+    <section id="direct" className="w-full bg-[#FAF8F5] text-[#08222F] py-14 sm:py-20 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]">
       <div className="max-w-[1240px] w-full flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

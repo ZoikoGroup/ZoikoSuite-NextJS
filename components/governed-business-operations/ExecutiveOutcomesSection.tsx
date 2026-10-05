@@ -10,10 +10,12 @@ interface RoleContent {
   description: string;
   pills: string[];
   buttonText: string;
+  buttonHref: string;
   priorityChallenge: {
     title: string;
     proof: string;
     diligence: string;
+    href: string;
   };
 }
 
@@ -31,11 +33,13 @@ const rolesData: RoleContent[] = [
       "Control effectiveness",
     ],
     buttonText: "Explore ZoikoSuite for CFOs",
+    buttonHref: "/cfos",
     priorityChallenge: {
       title: "Authority and evidence across a multi-entity close",
       proof:
         "Proof to review: the policy decision record and the scope matrix.",
       diligence: "Diligence resource: Evidence Architecture brief.",
+      href: "#cfo-proof",
     },
   },
   {
@@ -51,11 +55,13 @@ const rolesData: RoleContent[] = [
       "Regulatory alignment",
     ],
     buttonText: "Explore ZoikoSuite for General Counsel",
+    buttonHref: "/general-counsel",
     priorityChallenge: {
       title: "Local jurisdiction exceptions under a global compliance baseline",
       proof:
         "Proof to review: the policy override logs and jurisdiction matrix.",
       diligence: "Diligence resource: Jurisdiction Intelligence brief.",
+      href: "#legal-proof",
     },
   },
   {
@@ -71,11 +77,13 @@ const rolesData: RoleContent[] = [
       "Data residency",
     ],
     buttonText: "Explore ZoikoSuite for CIOs",
+    buttonHref: "#cio-suite",
     priorityChallenge: {
       title: "Bounded service identities across asynchronous integrations",
       proof:
         "Proof to review: the service authorization tokens and execution trace.",
       diligence: "Diligence resource: Platform Foundation architecture brief.",
+      href: "#cio-proof",
     },
   },
   {
@@ -91,10 +99,12 @@ const rolesData: RoleContent[] = [
       "Approval routing",
     ],
     buttonText: "Explore ZoikoSuite for CHROs",
+    buttonHref: "#chro-suite",
     priorityChallenge: {
       title: "Segregation of duties and delegation limits in workforce changes",
       proof: "Proof to review: the authority matrix and exception logs.",
       diligence: "Diligence resource: Workforce Compliance brief.",
+      href: "#chro-proof",
     },
   },
   {
@@ -110,12 +120,14 @@ const rolesData: RoleContent[] = [
       "Cross-functional workflows",
     ],
     buttonText: "Explore ZoikoSuite for COOs",
+    buttonHref: "#coo-suite",
     priorityChallenge: {
       title:
         "Operational throughput without compromising control effectiveness",
       proof: "Proof to review: the decision cycle metrics and control logs.",
       diligence:
         "Diligence resource: Continuous Operational Intelligence brief.",
+      href: "#coo-proof",
     },
   },
 ];
@@ -199,7 +211,7 @@ export default function ExecutiveOutcomesSection() {
             {/* CTA Button */}
             <div>
               <a
-                href="#"
+                href={activeRole.buttonHref}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
               >
                 {activeRole.buttonText}
@@ -227,7 +239,7 @@ export default function ExecutiveOutcomesSection() {
 
             <div>
               <a
-                href="#"
+                href={activeRole.priorityChallenge.href}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F476A] hover:underline"
               >
                 See the proof
