@@ -56,7 +56,7 @@ export default function CertificationsHero({ onRequestEvidence }: Certifications
               </span>
             </a>
             <Link
-              href="/book-demo"
+              href="/solutions-architect"
               className="min-h-11 px-6 py-3 rounded-[10px] border border-white/35 hover:bg-white/10 transition-colors flex justify-center items-center cursor-pointer"
             >
               <span className="text-center text-color-white-solid text-sm font-semibold font-['Inter']">

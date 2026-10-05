@@ -155,7 +155,7 @@ export default function FAQSection() {
                           <>
                             {item.subAnswer.replace("See the matrix", "")}{" "}
                             <a
-                              href="#"
+                              href="#matrix"
                               className="text-[#0F476A] font-semibold underline hover:text-black"
                             >
                               See the matrix

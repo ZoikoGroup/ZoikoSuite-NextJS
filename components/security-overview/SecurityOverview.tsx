@@ -33,7 +33,7 @@ export default function SecurityOverview() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               <a
-                href="#"
+                href="#review"
                 className="h-12 px-6 flex items-center justify-center gap-2 rounded-full bg-[#D0AA55] hover:bg-[#C59B3F] text-[#111827] font-semibold text-sm transition-colors shadow-sm cursor-pointer"
               >
                 <span>Request security review</span>

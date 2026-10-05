@@ -51,7 +51,7 @@ export default function SecurityReviewHandoff() {
   };
 
   return (
-    <section className="w-full bg-white py-20 px-6 lg:px-12 font-sans text-[#111827]">
+    <section id="review" className="w-full bg-white py-20 px-6 lg:px-12 font-sans text-[#111827]">
       <div className="max-w-6xl mx-auto">
         {/* Top Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
@@ -232,7 +232,7 @@ export default function SecurityReviewHandoff() {
               <p className="text-center text-[11px] text-[#6B7280] mt-3">
                 We use your information to respond to this request. Consent is
                 never pre-checked. See the{" "}
-                <a href="#" className="underline hover:text-[#111827]">
+                <a href="/privacy-policy" className="underline hover:text-[#111827]">
                   Privacy Policy
                 </a>
                 .

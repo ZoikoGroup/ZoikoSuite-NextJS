@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function DataResidencySection() {
   return (
@@ -32,22 +33,22 @@ export default function DataResidencySection() {
               deployment. Availability varies by deployment and jurisdiction.
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Links */}
             <div className="flex flex-wrap items-center gap-4">
-              <button
-                type="button"
+              <Link
+                href="#request"
                 className="h-12 px-6 flex items-center gap-2 bg-[#D0AA55] hover:bg-[#C59B3F] text-[#111827] font-semibold rounded-full text-[13px] transition-colors shadow-sm cursor-pointer"
               >
                 <span>Request a residency assessment</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              <Link
+                href="/security-overview"
                 className="h-12 px-6 flex items-center justify-center bg-transparent hover:bg-white/5 text-white font-medium rounded-full text-[13px] border border-white/20 transition-colors cursor-pointer"
               >
                 <span>Review Security Overview</span>
-              </button>
+              </Link>
             </div>
           </div>
 

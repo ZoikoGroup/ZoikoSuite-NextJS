@@ -168,7 +168,7 @@ export default function SolutionsArchitectSection() {
                 <p className="text-[12px] text-[#6B7280] leading-relaxed">
                   We use your information to respond to this request. Consent is
                   never pre-checked. See the{" "}
-                  <a href="#" className="underline hover:text-[#111827]">
+                  <a href="/privacy-policy" className="underline hover:text-[#111827]">
                     Privacy Policy
                   </a>
                   .

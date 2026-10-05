@@ -49,7 +49,7 @@ const ladderData: LadderItem[] = [
 
 export default function ProofAndValidationLadderSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-20 px-6 lg:px-12 font-sans text-[#111827]">
+    <section id="states" className="w-full bg-[#F7F5F0] py-20 px-6 lg:px-12 font-sans text-[#111827]">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
