@@ -20,7 +20,7 @@ const resourceCards: ResourceCard[] = [
     description:
       "Concise decision-oriented materials for evaluation and leadership review.",
     cta: "Explore Executive Briefs",
-    href: "#executive-evaluation",
+    href: "/executive-briefs",
   },
   {
     number: "02",
@@ -28,7 +28,7 @@ const resourceCards: ResourceCard[] = [
     description:
       "Structured product and implementation documentation published by the owning team.",
     cta: "Open Documentation",
-    href: "#documentation-knowledge",
+    href: "/documentation",
   },
   {
     number: "03",
@@ -36,7 +36,7 @@ const resourceCards: ResourceCard[] = [
     description:
       "Practical articles, how-to guidance, and problem-solving resources where published.",
     cta: "Browse Knowledge Base",
-    href: "#documentation-knowledge",
+    href: "/knowledge-base",
   },
   {
     number: "04",
@@ -44,14 +44,14 @@ const resourceCards: ResourceCard[] = [
     description:
       "Learning and enablement resources provided through the Training Academy.",
     cta: "Visit Training Academy",
-    href: "#learning-events",
+    href: "/training-academy",
   },
   {
     number: "05",
     title: "Webinars & Events",
     description: "Live or on-demand event resources where published.",
     cta: "Explore Webinars & Events",
-    href: "#learning-events",
+    href: "/webinars-events",
   },
   {
     number: "06",
@@ -59,28 +59,28 @@ const resourceCards: ResourceCard[] = [
     description:
       "Customer or implementation stories that have been approved for publication.",
     cta: "View Case Studies",
-    href: "#executive-evaluation",
+    href: "/case-studies",
   },
   {
     number: "07",
     title: "Blog & Insights",
     description: "Published perspectives, updates, and insights.",
     cta: "Read Blog & Insights",
-    href: "#insights-tools",
+    href: "/blog-insights",
   },
   {
     number: "08",
     title: "Templates & Tools",
     description: "Reusable resources and tools approved for public use.",
     cta: "Browse Templates & Tools",
-    href: "#insights-tools",
+    href: "/templates-tools",
   },
   {
     number: "09",
     title: "Support Center",
     description: "Help and support pathways for visitors who need assistance.",
     cta: "Go to Support Center",
-    href: "#faq",
+    href: "/support-center",
   },
 ];
 
@@ -109,7 +109,8 @@ export default function ResourceNavigatorSection() {
             Explore every Resource path
           </h2>
           <p className="text-sm sm:text-base text-[#475569] font-['Archivo'] leading-7">
-            Choose the destination that best matches the kind of guidance you need. <br />
+            Choose the destination that best matches the kind of guidance you
+            need. <br />
             Each destination remains the canonical owner of its content.
           </p>
         </motion.div>

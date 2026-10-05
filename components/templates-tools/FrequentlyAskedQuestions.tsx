@@ -12,7 +12,7 @@ const faqs = [
         <br />
         <span className="text-[#475467]">
           Rather than show sample files or placeholder calculators, the catalog stays empty until a governed asset is published with its owner, version, access state and methodology. Nothing is substituted.{" "}
-          <a href="/templates-tools" className="text-[#2A6386] font-semibold no-underline hover:text-[#08222F]">
+          <a href="#catalog" className="text-[#2A6386] font-semibold no-underline hover:text-[#08222F]">
             See the catalog
           </a>
         </span>

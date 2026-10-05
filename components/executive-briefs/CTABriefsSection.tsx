@@ -27,7 +27,7 @@ export default function CTABriefsSection() {
         {/* Buttons / Action Group */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
-            href="#"
+            href="/solutions-architect"
             className="bg-[#C29B38] hover:bg-[#b08b30] text-[#111827] font-semibold text-sm px-6 py-3 rounded-full transition-colors flex items-center gap-2"
           >
             Talk to a solutions architect →

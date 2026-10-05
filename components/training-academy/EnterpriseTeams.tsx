@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function EnterpriseTeams() {
@@ -89,7 +90,7 @@ export default function EnterpriseTeams() {
             </p>
           </div>
 
-          {/* BUTTONS */}
+          {/* LinkS */}
           <div
             className="
               flex
@@ -100,8 +101,8 @@ export default function EnterpriseTeams() {
               pt-2
             "
           >
-            <button
-              type="button"
+            <Link
+              href="/solutions-architect"
               className="
                 inline-flex
                 h-11
@@ -125,10 +126,10 @@ export default function EnterpriseTeams() {
             >
               <span>Talk to a solutions architect</span>
               <span className="text-xs font-semibold leading-5">→</span>
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              href="#"
               className="
                 inline-flex
                 h-11
@@ -149,7 +150,7 @@ export default function EnterpriseTeams() {
               "
             >
               Continue browsing training
-            </button>
+            </Link>
           </div>
         </div>
       </div>
