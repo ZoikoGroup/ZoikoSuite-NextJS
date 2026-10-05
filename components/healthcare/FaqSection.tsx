@@ -157,7 +157,7 @@ export default function FaqSection() {
                     {item.linkText && (
                       <div>
                         <a
-                          href="#boundary"
+                          href="#answer"
                           onClick={(e) => e.stopPropagation()}
                           className="text-xs font-bold text-[#0F476A] hover:underline inline-flex items-center gap-1 mt-1"
                         >

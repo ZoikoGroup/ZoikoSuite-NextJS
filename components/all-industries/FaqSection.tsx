@@ -17,7 +17,7 @@ const FAQ_ITEMS: FaqItem[] = [
       "The governance model stays consistent; the operating context does not. Your specialist industry systems keep doing their core jobs.",
     ],
     linkText: "See the seven common layers",
-    linkHref: "#",
+    linkHref: "#seven",
   },
   {
     question: "Why are two industries not linked?",

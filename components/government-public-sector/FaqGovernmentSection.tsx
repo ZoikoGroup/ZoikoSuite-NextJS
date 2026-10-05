@@ -145,7 +145,7 @@ export default function FaqGovernmentSection() {
                           <>
                             {paragraph.replace("See the boundary", "")}
                             <a
-                              href="#boundary"
+                              href="#answer"
                               className="text-[#08222F] font-semibold underline hover:text-[#C59B3F]"
                               onClick={(e) => e.stopPropagation()}
                             >

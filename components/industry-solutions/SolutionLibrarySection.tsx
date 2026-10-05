@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface SolutionPattern {
   number: string;
@@ -8,6 +9,7 @@ interface SolutionPattern {
   description: string;
   roles: string;
   linkText: string;
+  linkHref: string;
 }
 
 const SOLUTION_PATTERNS: SolutionPattern[] = [
@@ -18,6 +20,7 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Govern entity and jurisdiction complexity with explicit authority, coverage states and reconciliation ownership.",
     roles: "Roles: CFO, GC, group controller, tax lead",
     linkText: "Expansion →",
+    linkHref: "/expansion",
   },
   {
     number: "SOLUTION 02",
@@ -26,6 +29,7 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Know what is due, why it is due, who owns it, and what evidence supports completion.",
     roles: "Roles: Compliance, risk, GC, program owners",
     linkText: "Critical challenges →",
+    linkHref: "/solve-critical-challenges",
   },
   {
     number: "SOLUTION 03",
@@ -34,6 +38,7 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Preserve evidence that the control operated, retrievable without retrospective assembly.",
     roles: "Roles: Internal audit, controller, compliance",
     linkText: "Evidence model →",
+    linkHref: "/governance-platform",
   },
   {
     number: "SOLUTION 04",
@@ -42,6 +47,7 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Govern worker and pay context, approvals and exceptions across entities and jurisdictions.",
     roles: "Roles: CHRO, people ops, payroll, GC",
     linkText: "Workforce boundaries →",
+    linkHref: "/leadership-teams",
   },
   {
     number: "SOLUTION 05",
@@ -50,6 +56,7 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Govern finance and tax actions with close dependencies and decision evidence.",
     roles: "Roles: CFO, controller, tax lead, treasury",
     linkText: "CFOs →",
+    linkHref: "/cfos",
   },
   {
     number: "SOLUTION 06",
@@ -58,6 +65,7 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Govern contracts, signatory authority, vendor obligations and dependency exposure.",
     roles: "Roles: GC, procurement, third-party risk",
     linkText: "General Counsel →",
+    linkHref: "/general-counsel",
   },
   {
     number: "SOLUTION 07",
@@ -66,6 +74,7 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Control material change with authority in the path and exceptions that carry owner and expiry.",
     roles: "Roles: COO, control owners, program leads",
     linkText: "Governance Platform →",
+    linkHref: "/governance-platform",
   },
   {
     number: "SOLUTION 08",
@@ -74,12 +83,13 @@ const SOLUTION_PATTERNS: SolutionPattern[] = [
       "Adopt around specialist systems without big-bang replacement risk.",
     roles: "Roles: CIO, architecture, transformation",
     linkText: "Migration & Shadow Mode →",
+    linkHref: "/migration-shadow-mode",
   },
 ];
 
 export default function SolutionLibrarySection() {
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#08222F] py-20 px-6 lg:px-12 flex justify-center items-center font-sans">
+    <section id="library" className="w-full bg-[#F7F5F0] text-[#08222F] py-20 px-6 lg:px-12 flex justify-center items-center font-sans">
       <div className="max-w-6xl w-full flex flex-col">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
@@ -147,12 +157,12 @@ export default function SolutionLibrarySection() {
                 </div>
 
                 {/* Link */}
-                <a
-                  href="#"
+                <Link
+                  href={item.linkHref}
                   className="text-xs font-bold text-[#0F476A] hover:text-[#C59B3F] transition-colors inline-flex items-center gap-1"
                 >
                   {item.linkText}
-                </a>
+                </Link>
               </div>
             </div>
           ))}

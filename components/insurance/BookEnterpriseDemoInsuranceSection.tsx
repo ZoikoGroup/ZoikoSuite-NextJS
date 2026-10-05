@@ -180,7 +180,7 @@ export default function BookEnterpriseDemoInsuranceSection() {
             <p className="text-[11px] text-gray-500 leading-relaxed mt-1">
               We use your information to respond to this request. Consent is
               never pre-checked. See the{" "}
-              <a href="#" className="underline hover:text-gray-700">
+              <a href="/privacy-policy" className="underline hover:text-gray-700">
                 Privacy Policy
               </a>
               .

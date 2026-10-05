@@ -146,7 +146,7 @@ export default function FAQSection() {
                         {item.answerParagraphs[1]}{" "}
                         {item.linkText && (
                           <a
-                            href="#"
+                            href="#library"
                             className="font-bold text-[#08222F] hover:text-[#C59B3F] transition-colors inline-block"
                             onClick={(e) => e.stopPropagation()}
                           >

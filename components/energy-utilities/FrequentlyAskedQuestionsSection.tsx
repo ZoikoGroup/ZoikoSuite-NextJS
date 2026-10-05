@@ -160,7 +160,7 @@ export default function FrequentlyAskedQuestionsSection() {
                     {item.linkText && (
                       <div className="mt-1">
                         <a
-                          href="#"
+                          href="#answer"
                           className="text-xs lg:text-sm font-semibold text-[#0F476A] hover:underline inline-flex items-center gap-1"
                         >
                           {item.linkText}

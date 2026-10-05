@@ -15,7 +15,7 @@ const FAQ_ITEMS: FaqItem[] = [
       "No. No CTA, illustration or UI mockup suggests that ZoikoSuite sends control commands to production assets.",
       "PLCs, SCADA and DCS, robots, machine tools, safety-instrumented systems, setpoints, recipes, production execution, shop-floor dispatch, inspection execution, warehouse movements and maintenance work orders are all outside scope.",
     ],
-    link: { text: "See the OT safety rule", href: "#" },
+    link: { text: "See the OT safety rule", href: "#answer" },
   },
   {
     question: "Does it replace our ERP, MES, PLM or QMS?",

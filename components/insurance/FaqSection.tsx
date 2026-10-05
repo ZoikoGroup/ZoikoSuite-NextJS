@@ -121,7 +121,7 @@ export default function FaqSection() {
                     {index === 0 && (
                       <p className="mt-3">
                         <a
-                          href="#"
+                          href="#answer"
                           className="text-xs font-semibold underline text-[#08222F] hover:text-[#C59B3F]"
                         >
                           See the scope boundary

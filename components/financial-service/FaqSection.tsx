@@ -130,7 +130,7 @@ export default function FaqSection() {
                     {item.linkText && (
                       <div>
                         <a
-                          href="#"
+                          href="#capabilities"
                           className="text-xs font-semibold text-[#0F476A] hover:underline inline-flex items-center gap-1"
                         >
                           {item.linkText}

@@ -135,7 +135,7 @@ export default function RetailFaqSection() {
                     {item.hasLink && (
                       <div className="mt-2">
                         <a
-                          href="#boundary"
+                          href="#answer"
                           className="text-xs font-mono font-bold text-[#0F476A] hover:underline inline-flex items-center gap-1"
                         >
                           See the boundary →

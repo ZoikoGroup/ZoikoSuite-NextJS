@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface AccountabilityCard {
@@ -8,6 +9,7 @@ interface AccountabilityCard {
   status: string;
   description: string;
   linkText: string;
+  linkHref: string;
 }
 
 const CARDS: AccountabilityCard[] = [
@@ -17,6 +19,7 @@ const CARDS: AccountabilityCard[] = [
     description:
       "Financial truth, close, governed approvals, entity and currency scope, evidence.",
     linkText: "Go to CFOs",
+    linkHref: "/cfos",
   },
   {
     eyebrow: "GENERAL COUNSEL / LEGAL",
@@ -24,6 +27,7 @@ const CARDS: AccountabilityCard[] = [
     description:
       "Obligations, two-layer authority, jurisdiction review, evidence classification.",
     linkText: "Go to General Counsel",
+    linkHref: "/general-counsel",
   },
   {
     eyebrow: "LEADERSHIP TEAMS",
@@ -31,6 +35,7 @@ const CARDS: AccountabilityCard[] = [
     description:
       "Decision packets, oversight mode, multi-entity rollup, obligations register.",
     linkText: "Go to Leadership Teams",
+    linkHref: "/leadership-teams",
   },
   {
     eyebrow: "CIO / ARCHITECTURE",
@@ -38,6 +43,7 @@ const CARDS: AccountabilityCard[] = [
     description:
       "Source ownership, data location, APIs, events, integrations, evidence architecture.",
     linkText: "Go to Platform Foundation",
+    linkHref: "/platform-foundation",
   },
   {
     eyebrow: "COMPLIANCE / AUDIT",
@@ -45,6 +51,7 @@ const CARDS: AccountabilityCard[] = [
     description:
       "Control outcomes, evidence states, exception registers, oversight boundaries.",
     linkText: "Evidence and audit readiness",
+    linkHref: "/governance-platform",
   },
   {
     eyebrow: "CHRO / PEOPLE",
@@ -52,6 +59,7 @@ const CARDS: AccountabilityCard[] = [
     description:
       "Workforce and payroll governance material has no published destination yet.",
     linkText: "Workforce boundaries",
+    linkHref: "/leadership-teams",
   },
 ];
 
@@ -121,13 +129,13 @@ export default function AccountabilityRouteSection() {
 
                 {/* Link / Action */}
                 <div className="pt-4 border-t border-dashed border-gray-200">
-                  <a
-                    href="#"
+                  <Link
+                    href={card.linkHref}
                     className="inline-flex items-center gap-1.5 text-xs lg:text-sm font-bold text-[#0F476A] hover:text-[#C59B3F] transition-colors"
                   >
                     {card.linkText}
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             );

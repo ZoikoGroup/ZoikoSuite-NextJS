@@ -129,7 +129,7 @@ export default function FaqSection() {
                       {item.answer}{" "}
                       {item.answer.includes("See the boundary") && (
                         <a
-                          href="#"
+                          href="#answer"
                           className="text-[#08222F] font-bold underline hover:text-[#C59B3F]"
                         >
                           See the boundary
