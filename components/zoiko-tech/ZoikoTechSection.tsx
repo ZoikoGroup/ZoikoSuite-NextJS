@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ZoikoTechSection() {
   return (
@@ -25,14 +26,14 @@ export default function ZoikoTechSection() {
             for complex operating environments.
           </p>
 
-          {/* Buttons */}
+          {/* Links */}
           <div className="flex flex-wrap items-center gap-4">
-            <button className="bg-[#C8A24A] hover:bg-[#967332] text-[#0A1D34] font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base">
+            <Link href="/solutions-architect" className="bg-[#C8A24A] hover:bg-[#967332] text-[#0A1D34] font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base">
               Talk to a solutions architect
-            </button>
-            <button className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base flex items-center gap-2">
+            </Link>
+            <Link href="https://zoikotech.com/" className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base flex items-center gap-2">
               Visit Zoiko Tech →
-            </button>
+            </Link>
           </div>
         </div>
 

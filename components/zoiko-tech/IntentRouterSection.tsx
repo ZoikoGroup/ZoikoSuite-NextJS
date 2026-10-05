@@ -6,7 +6,7 @@ export default function IntentRouterSection() {
     {
       title: "Deploy ZoikoSuite",
       actionText: "Talk to a solutions architect →",
-      href: "/contact",
+      href: "/solutions-architect",
     },
     {
       title: "Explore Zoiko Tech broadly",
@@ -17,7 +17,7 @@ export default function IntentRouterSection() {
     {
       title: "Build / integrate",
       actionText: "Developer resources →",
-      href: "/developers",
+      href: "/resources-center",
     },
     {
       title: "Partner",
@@ -27,7 +27,7 @@ export default function IntentRouterSection() {
     {
       title: "Media",
       actionText: "Newsroom / media enquiries →",
-      href: "/media",
+      href: "/newsroom",
     },
     {
       title: "Careers",
@@ -37,12 +37,12 @@ export default function IntentRouterSection() {
     {
       title: "Investors",
       actionText: "Investor Relations →",
-      href: "/investors",
+      href: "/investor-relations",
     },
     {
       title: "Group context",
       actionText: "Explore Zoiko Group →",
-      href: "/group",
+      href: "/zoiko-group",
     },
   ] as const;
 

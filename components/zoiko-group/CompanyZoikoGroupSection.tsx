@@ -27,14 +27,14 @@ export default function CompanyZoikoGroupSection() {
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#explore"
+              href="https://zoikogroup.com/"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-[#C8A24A] hover:bg-[#967432] text-[#0A1D34] font-semibold text-sm tracking-wide transition-colors flex items-center gap-2"
             >
               Explore Zoiko Group ↗
             </a>
             <a
-              href="#demo"
+              href="/book-demo"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-transparent hover:bg-white/10 text-white border border-[#1B3452] font-semibold text-sm tracking-wide transition-colors"
             >

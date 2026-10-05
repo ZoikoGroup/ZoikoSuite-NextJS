@@ -28,14 +28,14 @@ export default function SustainabilitySection() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#review-evidence"
+              href="#review"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-[#C8A24A] text-black text-sm font-semibold tracking-wide hover:bg-[#927230] transition-colors shadow-sm"
             >
               Review sustainability evidence
             </a>
             <a
-              href="#talk-to-architect"
+              href="/solutions-architect"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-transparent border border-[#1B3452] text-white text-sm font-semibold tracking-wide hover:bg-white/5 transition-colors"
             >
