@@ -40,13 +40,13 @@ export default function GovernGlobalOperationsSolveCTA() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full mb-8">
             <Link
-              href="/platform-tour"
+              href="/book-demo"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#D0AA55] text-[#08222F] font-semibold text-xs hover:bg-[#c29c4c] transition-colors shadow-sm"
             >
               <span>Book enterprise demo &rarr;</span>
             </Link>
             <Link
-              href="/platform-overview"
+              href="/solutions-architect"
               className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#1e445b] bg-[#0c2332] text-white font-medium text-xs hover:bg-[#12364a] transition-colors"
             >
               Talk to a solutions architect

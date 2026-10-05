@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface RolePath {
   role: string;
   statusText: React.ReactNode;
   description: string;
   linkText: string;
+  linkHref: string;
   highlighted?: boolean;
 }
 
@@ -23,6 +25,7 @@ const ROLE_PATHS: RolePath[] = [
     description:
       "Finance governance, close, treasury definitions, payables and receivables control, and the business-case model.",
     linkText: "Go to CFOs →",
+    linkHref: "/cfos",
   },
   {
     role: "GENERAL COUNSEL",
@@ -36,6 +39,7 @@ const ROLE_PATHS: RolePath[] = [
     description:
       "Obligations, two-layer authority, jurisdiction change review, evidence classification and privilege boundaries.",
     linkText: "Go to General Counsel →",
+    linkHref: "/general-counsel",
   },
   {
     role: "CHRO",
@@ -49,6 +53,7 @@ const ROLE_PATHS: RolePath[] = [
     description:
       "Workforce and payroll governance material has no published destination. The closest published context is the workforce boundary model in Leadership Teams.",
     linkText: "Workforce boundaries →",
+    linkHref: "/chro",
   },
   {
     role: "CIO",
@@ -62,6 +67,7 @@ const ROLE_PATHS: RolePath[] = [
     description:
       "Architecture, source ownership, data location and lifecycle, APIs, integrations, events and evidence architecture.",
     linkText: "Go to Platform Foundation →",
+    linkHref: "/platform-foundation",
   },
   {
     role: "BOARD / AUDIT COMMITTEE",
@@ -75,6 +81,7 @@ const ROLE_PATHS: RolePath[] = [
     description:
       "Read-only oversight mode, material exceptions, evidence state and audit-readiness boundaries.",
     linkText: "Oversight mode →",
+    linkHref: "/governance-platform",
   },
   {
     role: "OTHER LEADERSHIP",
@@ -87,6 +94,7 @@ const ROLE_PATHS: RolePath[] = [
     description:
       "Cross-functional decision context, the decision packet model, and the multi-entity leadership view.",
     linkText: "Go to Leadership Teams →",
+    linkHref: "/leadership-teams",
     highlighted: true,
   },
 ];
@@ -141,13 +149,12 @@ export default function RoleResourcePathsSection() {
               </div>
 
               <div className="pt-4 border-t border-dashed border-[#E2E8F0]">
-                <a
-                  href="#link"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  href={item.linkHref}
                   className="text-xs sm:text-sm font-bold text-[#0F476A] hover:underline inline-flex items-center gap-1"
                 >
                   {item.linkText}
-                </a>
+                </Link>
               </div>
             </div>
           ))}

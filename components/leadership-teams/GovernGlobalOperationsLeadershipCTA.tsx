@@ -56,7 +56,7 @@ export default function GovernGlobalOperationsLeadershipCTA() {
         >
           {/* Primary Button */}
           <Link
-            href="/contact"
+            href="/book-demo"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D0AA55] hover:bg-[#c49e49] text-[#0F172A] text-xs sm:text-sm font-bold transition-all duration-200 active:scale-95 shadow-md"
           >
             <span>Book enterprise demo</span>
@@ -65,7 +65,7 @@ export default function GovernGlobalOperationsLeadershipCTA() {
 
           {/* Secondary Button */}
           <Link
-            href="/contact"
+            href="/solutions-architect"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-transparent hover:bg-white/10 border border-[#2E6B91] text-white text-xs sm:text-sm font-medium transition-all duration-200 active:scale-95"
           >
             Talk to a solutions architect

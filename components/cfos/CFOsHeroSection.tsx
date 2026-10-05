@@ -53,7 +53,7 @@ export default function CFOsHeroSection() {
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
               <Link
-                href="/platform-tour"
+                href="/book-demo"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D0AA55] text-[#08222F] font-semibold text-[13px] hover:bg-[#c29c4c] transition-all duration-200 shadow-sm"
               >
                 <span>Book enterprise demo</span>
@@ -74,7 +74,7 @@ export default function CFOsHeroSection() {
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
             className="lg:col-span-6 hidden lg:flex justify-center lg:justify-end"
           >
-            <div className="w-full max-w-[560px] rounded-2xl overflow-hidden shadow-2xl bg-transparent">
+            <div className="w-full max-w-[560px] rounded-2xl overflow-hidden bg-transparent">
               <Image
                 src="/cfos/cf1.png"
                 alt="Govern finance with context controls and evidence illustration"

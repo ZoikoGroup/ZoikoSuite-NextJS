@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
       "A governed way to evaluate and run geographic, entity, regulatory, transaction-driven or scale-driven operating change.",
       "Each pathway connects jurisdiction and source status, professional review, governance and authority, evidence, systems ownership, phased transition and human accountability. Coverage and availability depend on approved sources and configuration.",
     ],
-    link: { text: "See the pathways", href: "#" },
+    link: { text: "See the pathways", href: "#pathways" },
   },
   {
     question: "Will ZoikoSuite set up our entity or handle registrations and filings?",

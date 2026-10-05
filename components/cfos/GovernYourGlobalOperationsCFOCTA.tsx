@@ -51,7 +51,7 @@ export default function GovernYourGlobalOperationsCFOCTA() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
           <Link
-            href="/platform-tour"
+            href="/book-demo"
             className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#D0AA55] hover:bg-[#b89547] text-[#08222F] text-xs sm:text-sm font-bold tracking-wide transition-all shadow-lg shadow-black/10 flex items-center justify-center gap-2"
           >
             <span>Book enterprise demo</span>
@@ -59,7 +59,7 @@ export default function GovernYourGlobalOperationsCFOCTA() {
           </Link>
 
           <Link
-            href="/platform-overview"
+            href="/solutions-architect"
             className="w-full sm:w-auto px-7 py-3.5 rounded-full border border-[#1E5B80] bg-[#0A3854] hover:bg-[#124263] text-white text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center justify-center"
           >
             Talk to a solutions architect

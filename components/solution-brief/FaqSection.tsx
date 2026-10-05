@@ -120,7 +120,7 @@ export default function FaqSection() {
                     </p>
                     {item.linkText && (
                       <a
-                        href="#eight-steps"
+                        href="#steps"
                         className="text-xs font-bold text-[#0F476A9] hover:underline inline-block mt-1"
                       >
                         {item.linkText} &rarr;

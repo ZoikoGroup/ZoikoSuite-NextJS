@@ -49,7 +49,7 @@ export default function LeadershipTeamsHeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
               <Link
-                href="/platform-tour"
+                href="/book-demo"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D0AA55] text-[#08222F] font-semibold text-[13px] hover:bg-[#c29c4c] transition-all duration-200 shadow-sm"
               >
                 <span>Book enterprise demo</span>
@@ -57,7 +57,7 @@ export default function LeadershipTeamsHeroSection() {
               </Link>
 
               <Link
-                href="/platform-overview"
+                href="/platform-tour"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-transparent hover:bg-white/10 text-white font-medium text-[13px] border border-[#2E6B91] transition-all duration-200 shadow-sm"
               >
                 View platform tour
@@ -77,7 +77,7 @@ export default function LeadershipTeamsHeroSection() {
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
             className="lg:col-span-6 hidden lg:flex justify-center lg:justify-end"
           >
-            <div className="w-full max-w-[560px] rounded-2xl overflow-hidden shadow-2xl bg-transparent">
+            <div className="w-full max-w-[560px] rounded-2xl overflow-hidden">
               <Image
                 src="/leadership-terms/lt1.png"
                 alt="Lead with shared operating context visual illustration"

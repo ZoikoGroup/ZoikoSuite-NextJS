@@ -158,7 +158,7 @@ export default function NextStepEnterpriseDemoSection() {
                 <p className="text-[10px] text-[#64748B] text-center mt-3 leading-relaxed">
                   We use your information to respond to this request. Consent is
                   never pre-checked. See the <br />
-                  <a href="#privacy" className="underline hover:text-[#0F172A]">
+                  <a href="/privacy-policy" className="underline hover:text-[#0F172A]">
                     Privacy Policy
                   </a>
                   .

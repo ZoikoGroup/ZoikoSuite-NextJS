@@ -39,13 +39,13 @@ export default function GeneralCounselHeroSection() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
               <Link
-                href="/platform-tour"
+                href="/book-demo"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D0AA55] text-[#08222F] font-semibold text-[13px] hover:bg-[#c29c4c] transition-all duration-200 shadow-sm"
               >
                 <span>Book enterprise demo &rarr;</span>
               </Link>
               <Link
-                href="/platform-overview"
+                href="/solutions-architect"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-medium text-[13px] transition-all duration-200 bg-[#08222F]/60"
               >
                 <span>Talk to a solutions architect</span>
