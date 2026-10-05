@@ -54,7 +54,7 @@ export default function ThreeRoutesSection() {
               See the platform against your own functions, rules and operational entities.
             </p>
             <a
-              href="/platform/deployment"
+              href="/book-demo"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D0AA55] hover:underline"
             >
               <span>Confirm your scenario with us</span>
@@ -74,7 +74,7 @@ export default function ThreeRoutesSection() {
               Systems, integration, deployment, data residency, registration and technical diligence.
             </p>
             <a
-              href="/platform/deployment"
+              href="/solutions-architect"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D0AA55] hover:underline"
             >
               <span>Bring a scenario brief with you</span>

@@ -36,7 +36,7 @@ export default function StartFromProcessYouWouldNotRiskBreakingSection() {
         {/* Tour Link */}
         <div>
           <Link
-            href="/platform-tour"
+            href="#inspect"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#38BDF8] hover:text-white transition-colors group"
           >
             <span>Or inspect the governed model in the tour</span>

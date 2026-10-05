@@ -80,7 +80,7 @@ export default function GovernedAISection() {
           {/* CTA Button */}
           <div className="pt-2">
             <a
-              href="#"
+              href="/governed-ai"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] border border-[#0F476A] hover:bg-[#0c3955] hover:border-[#0c3955] text-white text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
             >
               Explore governed AI

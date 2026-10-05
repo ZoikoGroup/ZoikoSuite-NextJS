@@ -55,14 +55,14 @@ export default function HeroSection() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap items-center gap-4 mb-6">
                 <a
-                  href="#"
+                  href="/book-demo"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#c5a059] text-[#0f172a] font-semibold text-sm hover:bg-[#b08d4b] transition-all duration-200 shadow-lg shadow-[#c5a059]/20"
                 >
                   Book enterprise demo
                   <ArrowRight className="w-4 h-4 text-[#0f172a]" />
                 </a>
                 <a
-                  href="#"
+                  href="/solutions-architect"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-sm hover:bg-white/5 transition-all duration-200 shadow-xs"
                 >
                   Talk to a solutions architect
@@ -72,7 +72,7 @@ export default function HeroSection() {
               {/* View Platform Tour Link */}
               <div className="mb-8">
                 <a
-                  href="#"
+                  href="/platform-tour"
                   className="inline-flex items-center gap-2 text-[#c5a059] font-semibold text-sm hover:underline"
                 >
                   View platform tour

@@ -25,7 +25,7 @@ const faqData: FAQItem[] = [
           Nothing on this page creates an entitlement, a warranty, or a
           contractual obligation, and it should not be relied upon in making a
           purchasing decision.{" "}
-          <a href="#" className="text-[#0F476A] hover:underline font-semibold">
+          <a href="#statement" className="text-[#0F476A] hover:underline font-semibold">
             Read the forward-looking statement
           </a>
         </p>

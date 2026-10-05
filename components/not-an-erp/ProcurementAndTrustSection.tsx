@@ -199,7 +199,7 @@ export default function ProcurementAndTrustSection() {
         {/* Bottom Dual Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <a
-            href="#"
+            href="/trust-center"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] border border-[#0F476A] hover:bg-[#0c3955] hover:border-[#0c3955] text-white text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
           >
             Visit the Trust Center
@@ -207,7 +207,7 @@ export default function ProcurementAndTrustSection() {
           </a>
 
           <a
-            href="#"
+            href="/solutions-architect"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-[#CBD5E1] hover:bg-[#F8FAFC] text-[#0F172A] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
           >
             Talk to a solutions architect

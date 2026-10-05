@@ -150,7 +150,7 @@ export default function BusinessOperationsGraphSection() {
   };
 
   return (
-    <section className="w-full bg-[#08222F] text-[#F7F5F0] py-20 px-6 lg:px-24 flex items-center justify-center">
+    <section id="graph" className="w-full bg-[#08222F] text-[#F7F5F0] py-20 px-6 lg:px-24 flex items-center justify-center">
       <div className="max-w-[1400px] w-full flex flex-col items-center">
         {/* Header Layout */}
         <div className="w-full flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
@@ -369,7 +369,7 @@ export default function BusinessOperationsGraphSection() {
         {/* Bottom CTA Button */}
         <div className="flex justify-center w-full">
           <a
-            href="#"
+            href="/platform-tour"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-[#D0AA55] text-[#08222F] hover:bg-[#b89547] transition-colors shadow-md"
           >
             View the platform tour

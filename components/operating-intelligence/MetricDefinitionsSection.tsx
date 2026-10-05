@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface MetricFamily {
   title: string;
@@ -171,10 +172,10 @@ export default function MetricDefinitionsSection() {
 
         {/* CTA Button */}
         <div>
-          <button className="bg-[#08222F] hover:bg-[#0e3448] text-white px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2 transition-colors shadow-sm">
+          <Link href="/analytics-reporting" className="bg-[#08222F] hover:bg-[#0e3448] text-white px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2 transition-colors shadow-sm">
             Explore analytics &amp; reporting
             <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

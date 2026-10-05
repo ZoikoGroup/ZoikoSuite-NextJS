@@ -119,7 +119,7 @@ export default function EvidenceByDefaultSection() {
           {/* Bottom Button */}
           <div>
             <a
-              href="#"
+              href="/evidence-architecture"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#D0AA55] text-[#08222F] hover:bg-[#b89547] transition-colors shadow-md"
             >
               Explore evidence architecture

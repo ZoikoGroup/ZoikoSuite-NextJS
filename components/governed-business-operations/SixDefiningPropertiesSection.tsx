@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -18,6 +18,7 @@ interface PropertyItem {
     fallback: string;
   };
   linkText: string;
+  href?: string;
 }
 
 const propertiesData: PropertyItem[] = [
@@ -37,6 +38,7 @@ const propertiesData: PropertyItem[] = [
       fallback: "Accessible relationship table, always present",
     },
     linkText: "See the operations graph",
+    href: "#graph",
   },
   {
     id: "prop-02",
@@ -126,10 +128,8 @@ const propertiesData: PropertyItem[] = [
 ];
 
 export default function SixDefiningPropertiesSection() {
-  const [selectedId, setSelectedId] = useState<string>("prop-01");
-
-  const activeProperty =
-    propertiesData.find((p) => p.id === selectedId) || propertiesData[0];
+  // Static active property pointing to Property 01 for the bottom static card
+  const staticProperty = propertiesData[0];
 
   return (
     <section className="w-full bg-white text-[#0f172a] py-20 px-6 lg:px-24 flex items-center justify-center">
@@ -149,46 +149,53 @@ export default function SixDefiningPropertiesSection() {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#64748b] max-w-sm leading-relaxed">
-            Select a property to see the product proof that supports it. All six
-            descriptions stay on the page.
+            Core properties defining platform capabilities and product proof.
           </p>
         </div>
 
         {/* 6 Property Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-8">
           {propertiesData.map((prop) => {
-            const isSelected = selectedId === prop.id;
-            return (
-              <motion.div
-                key={prop.id}
-                onClick={() => setSelectedId(prop.id)}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className={`cursor-pointer bg-white rounded-2xl p-6 transition-all duration-200 border ${
-                  isSelected
-                    ? "border-[#0F476A] shadow-md ring-1 ring-[#0F476A]"
-                    : "border-[#DBE3E8] hover:border-[#9ba4b5]"
-                }`}
-              >
+            const isFirst = prop.id === "prop-01";
+
+            const cardContent = (
+              <>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#c5a059] block mb-2">
                   {prop.propertyNumber}
                 </span>
-                <h3
-                  className={`text-base sm:text-lg font-bold mb-2 ${
-                    isSelected ? "text-[#0F476A]" : "text-[#0f172a]"
-                  }`}
-                >
+                <h3 className="text-base sm:text-lg font-bold mb-2 text-[#0f172a]">
                   {prop.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#64748b] leading-relaxed">
                   {prop.description}
                 </p>
+              </>
+            );
+
+            return isFirst ? (
+              <motion.a
+                key={prop.id}
+                href={prop.href}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                className="cursor-pointer bg-white rounded-2xl p-6 transition-all duration-200 border border-[#DBE3E8] hover:border-[#9ba4b5] block"
+              >
+                {cardContent}
+              </motion.a>
+            ) : (
+              <motion.div
+                key={prop.id}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                className="bg-white rounded-2xl p-6 transition-all duration-200 border border-[#DBE3E8]"
+              >
+                {cardContent}
               </motion.div>
             );
           })}
         </div>
 
-        {/* Bottom Detailed Proof Card (bg-[#0F476A]) */}
+        {/* Bottom Static Detailed Proof Card (bg-[#0F476A]) */}
         <div className="w-full bg-[#0F476A] text-white rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl">
           {/* Left Side: Proof Content */}
           <div className="lg:col-span-7 flex flex-col justify-between pr-0 lg:pr-6">
@@ -197,24 +204,24 @@ export default function SixDefiningPropertiesSection() {
                 PROOF FOR THIS PROPERTY
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                {activeProperty.proofTitle}
+                {staticProperty.proofTitle}
               </h3>
               <p className="text-xs sm:text-sm text-[#CFDEE7] leading-relaxed mb-8">
-                {activeProperty.proofDescription}
+                {staticProperty.proofDescription}
               </p>
             </div>
             <div>
               <a
-                href="#"
+                href="#graph"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#D0AA55] hover:text-[#f3cd70] transition-colors"
               >
-                {activeProperty.linkText}
+                {staticProperty.linkText}
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Right Side: Where it appears in the product (border-left #D0AA55) */}
+          {/* Right Side: Where it appears in the product */}
           <div className="lg:col-span-5 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-[#D0AA55]/40 pt-6 lg:pt-0 lg:pl-8">
             <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#D0AA55] block mb-4">
               WHERE IT APPEARS IN THE PRODUCT
@@ -223,25 +230,25 @@ export default function SixDefiningPropertiesSection() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <span className="text-[#9ba4b5] font-mono">Mockup</span>
                 <span className="sm:col-span-2 text-white font-medium">
-                  {activeProperty.details.mockup}
+                  {staticProperty.details.mockup}
                 </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <span className="text-[#9ba4b5] font-mono">Object</span>
                 <span className="sm:col-span-2 text-white font-medium">
-                  {activeProperty.details.object}
+                  {staticProperty.details.object}
                 </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <span className="text-[#9ba4b5] font-mono">Related</span>
                 <span className="sm:col-span-2 text-white font-medium">
-                  {activeProperty.details.related}
+                  {staticProperty.details.related}
                 </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <span className="text-[#9ba4b5] font-mono">Fallback</span>
                 <span className="sm:col-span-2 text-white font-medium">
-                  {activeProperty.details.fallback}
+                  {staticProperty.details.fallback}
                 </span>
               </div>
             </div>
@@ -251,7 +258,7 @@ export default function SixDefiningPropertiesSection() {
         {/* Global Bottom Explore Button */}
         <div className="flex justify-center w-full mt-12">
           <a
-            href="#"
+            href="/platform"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
           >
             Explore the platform architecture

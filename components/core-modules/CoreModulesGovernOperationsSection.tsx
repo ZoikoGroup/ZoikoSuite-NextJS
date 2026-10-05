@@ -46,14 +46,14 @@ export default function CoreModulesGovernOperationsSection() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full mb-10">
             <Link
-              href="/platform-tour"
+              href="/book-demo"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#c5a059] text-[#08222F] font-semibold text-xs hover:bg-[#dfb76c] transition-colors shadow-sm"
             >
               Book an enterprise demo
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
-              href="/platform-overview"
+              href="/solutions-architect"
               className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#1e445b] bg-[#0c2332] text-white font-medium text-xs hover:bg-[#12364a] transition-colors"
             >
               Talk to a solutions architect

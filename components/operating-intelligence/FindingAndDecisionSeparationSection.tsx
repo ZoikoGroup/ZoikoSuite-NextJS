@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Cpu, UserCheck, AlertTriangle, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export default function FindingAndDecisionSeparationSection() {
   return (
@@ -429,10 +430,10 @@ export default function FindingAndDecisionSeparationSection() {
 
         {/* Explore Governed AI Button */}
         <div>
-          <button className="bg-[#08222F] hover:bg-[#0e3448] text-white px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2 transition-colors shadow-sm">
+          <Link href="/governed-ai" className="bg-[#08222F] hover:bg-[#0e3448] text-white px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2 transition-colors shadow-sm">
             Explore governed AI
             <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

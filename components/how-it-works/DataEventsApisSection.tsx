@@ -184,7 +184,7 @@ export default function DataEventsApisSection() {
                 className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full pt-8 border-t border-[#1e293b]"
               >
                 <a
-                  href="#"
+                  href="/solutions-architect"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#c5a059] text-[#0f172a] font-semibold text-sm hover:bg-[#b08d4b] transition-all duration-200 shadow-lg shadow-[#c5a059]/20"
                 >
                   Talk to a solutions architect
@@ -192,7 +192,7 @@ export default function DataEventsApisSection() {
                 </a>
 
                 <a
-                  href="#"
+                  href="/connector-health"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent text-white font-semibold text-sm border border-[#1e293b] hover:bg-[#0f1f2e] transition-all duration-200"
                 >
                   Connector health & scopes

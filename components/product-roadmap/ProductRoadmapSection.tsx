@@ -38,7 +38,7 @@ export default function ProductRoadmapSection() {
           {/* CTA Button */}
           <div className="pt-2">
             <a
-              href="#"
+              href="/book-demo"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#c5a059] hover:bg-[#b38e48] text-[#08222F] text-xs sm:text-sm font-bold transition-all duration-200 active:scale-95 shadow-xs"
             >
               Get Demo

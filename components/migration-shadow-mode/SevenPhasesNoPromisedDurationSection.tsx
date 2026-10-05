@@ -95,7 +95,7 @@ const mobilePhases = [
 
 export default function SevenPhasesNoPromisedDurationSection() {
   return (
-    <section className="w-full bg-[#FFFFFF] text-[#08222F] py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]">
+    <section id="lifecycle" className="w-full bg-[#FFFFFF] text-[#08222F] py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]">
       <div className="max-w-[1240px] w-full flex flex-col">
         {/* ========================================================================= */}
         {/* DESKTOP VERSION (hidden lg:block) - 100% UNTOUCHED DESKTOP DESIGN         */}

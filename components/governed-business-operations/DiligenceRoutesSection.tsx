@@ -204,7 +204,7 @@ export default function DiligenceRoutesSection() {
         {/* Bottom CTA Buttons Container */}
         <div className="flex flex-wrap items-center justify-start gap-4 w-full">
           <a
-            href="#"
+            href="/trust-center"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
           >
             Visit the Trust Center
@@ -212,7 +212,7 @@ export default function DiligenceRoutesSection() {
           </a>
 
           <a
-            href="#"
+            href="/solutions-architect"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-transparent text-[#0F476A] hover:bg-[#0F476A]/5 transition-colors border border-[#DBE3E8]"
           >
             Talk to a solutions architect

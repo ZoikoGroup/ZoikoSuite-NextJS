@@ -39,7 +39,7 @@ const steps: FoundationStep[] = [
 
 export default function ScopeFirstFiveStepsSection() {
   return (
-    <section className="w-full bg-[#FAF8F5] text-[#0f172a] py-12 sm:py-16 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df] lg:hidden">
+    <section id="capabilities" className="w-full bg-[#FAF8F5] text-[#0f172a] py-12 sm:py-16 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df] lg:hidden">
       <div className="max-w-[1240px] w-full flex flex-col">
         {/* Eyebrow */}
         <div className="flex items-center gap-2 mb-2.5">

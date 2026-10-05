@@ -48,7 +48,7 @@ export default function NextStepSection() {
           {/* Link CTA */}
           <div className="pt-4">
             <a
-              href="#"
+              href="/solutions-architect"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#c5a059] hover:text-[#d4AF37] transition-colors group"
             >
               Talk to a solutions architect

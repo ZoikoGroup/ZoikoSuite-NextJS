@@ -154,7 +154,7 @@ export default function MigrationShadowModeSection() {
             className="flex justify-center w-full mb-8"
           >
             <a
-              href="#"
+              href="/migration-shadow-mode"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-lg shadow-[#0F476A]/20"
             >
               Discuss migration and shadow mode

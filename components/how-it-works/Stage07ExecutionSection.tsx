@@ -73,7 +73,7 @@ export default function Stage07ExecutionSection() {
             className="flex justify-center w-full"
           >
             <a
-              href="#"
+              href="/solutions-architect"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#c5a059] text-[#0f172a] font-semibold text-sm hover:bg-[#b08d4b] transition-all duration-200 shadow-lg shadow-[#c5a059]/20"
             >
               Talk to a solutions architect

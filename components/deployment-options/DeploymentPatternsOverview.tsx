@@ -65,7 +65,7 @@ export default function DeploymentPatternsOverview() {
   const [selectedId, setSelectedId] = useState<string>("pattern-01");
 
   return (
-    <div className="bg-[#FAF8F5] px-6 py-16 md:px-12 lg:px-16 text-[#1A1A1A] font-sans">
+    <div id="comparision" className="bg-[#FAF8F5] px-6 py-16 md:px-12 lg:px-16 text-[#1A1A1A] font-sans">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10">

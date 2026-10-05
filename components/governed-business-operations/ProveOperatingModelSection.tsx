@@ -119,7 +119,7 @@ export default function ProveOperatingModelSection() {
         {/* Bottom CTA Button & Footer Note */}
         <div className="w-full flex justify-center gap-6 mb-4">
           <a
-            href="#"
+            href="/migration-shadow-mode"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm w-fit"
           >
             Discuss migration and shadow mode

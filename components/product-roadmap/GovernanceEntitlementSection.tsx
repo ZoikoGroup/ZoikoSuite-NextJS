@@ -83,7 +83,7 @@ const cardsData: GovernanceCardProps[] = [
 
 export default function GovernanceEntitlementSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 lg:py-24 px-6 lg:px-24 font-sans antialiased text-[#0F172A]">
+    <section id="statement" className="w-full bg-[#F7F5F0] py-16 lg:py-24 px-6 lg:px-24 font-sans antialiased text-[#0F172A]">
       <div className="max-w-6xl mx-auto flex flex-col space-y-12">
         {/* Header Grid: 2 Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -192,13 +192,13 @@ export default function GovernanceEntitlementSection() {
         {/* Bottom CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
-            href="#"
+            href="/trust-center"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#0F476A] hover:bg-[#0c3955] text-white text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
           >
             Visit the Trust Center &rarr;
           </a>
           <a
-            href="#"
+            href="/solutions-architect"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full hover:bg-[#E2E8F0] border border-[#CBD5E1] text-[#334155] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
           >
             Talk to a solutions architect

@@ -208,7 +208,7 @@ export default function GovernedExecutionSection() {
         {/* Bottom CTA Button */}
         <div className="flex justify-center w-full">
           <a
-            href="#"
+            href="/how-it-works"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
           >
             See how ZoikoSuite works

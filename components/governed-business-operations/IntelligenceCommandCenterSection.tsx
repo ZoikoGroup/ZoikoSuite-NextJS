@@ -38,7 +38,7 @@ export default function IntelligenceCommandCenterSection() {
         {/* Bottom Rounded Button */}
         <div className="flex justify-center w-full">
           <a
-            href="#"
+            href="/platform-tour"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#D0AA55] text-[#08222F] hover:bg-[#c29c4d] transition-colors shadow-sm"
           >
             View the platform tour

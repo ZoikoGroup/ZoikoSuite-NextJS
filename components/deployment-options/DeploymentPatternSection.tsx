@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface BadgeItem {
   label: string;
@@ -40,13 +41,13 @@ export default function DeploymentPatternSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <button className="bg-[#D0AA55] hover:bg-[#b89445] text-[#0F172A] font-bold py-3.5 px-6 rounded-full transition-all shadow-sm flex items-center gap-2 cursor-pointer text-sm">
+            <Link href="/solutions-architect" className="bg-[#D0AA55] hover:bg-[#b89445] text-[#0F172A] font-bold py-3.5 px-6 rounded-full transition-all shadow-sm flex items-center gap-2 cursor-pointer text-sm">
               <span>Talk to a solutions architect</span>
               <span>&rarr;</span>
-            </button>
-            <button className="bg-transparent hover:bg-white/10 text-white border border-white/30 font-bold py-3.5 px-6 rounded-full transition-all cursor-pointer text-sm">
+            </Link>
+            <Link href="/book-demo" className="bg-transparent hover:bg-white/10 text-white border border-white/30 font-bold py-3.5 px-6 rounded-full transition-all cursor-pointer text-sm">
               Book enterprise demo
-            </button>
+            </Link>
           </div>
 
           {/* Badges Grid */}

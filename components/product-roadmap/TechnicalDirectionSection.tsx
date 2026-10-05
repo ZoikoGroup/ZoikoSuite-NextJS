@@ -64,7 +64,7 @@ export default function TechnicalDirectionSection() {
         {/* Bottom CTA Button */}
         <div className="flex justify-center pt-2">
           <a
-            href="#"
+            href="/solutions-architect"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] hover:bg-[#0c3955] text-white text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
           >
             Talk to a solutions architect
