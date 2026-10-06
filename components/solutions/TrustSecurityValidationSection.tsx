@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface TrustRow {
   title: string;
   description: string;
   linkText: string;
+  linkHref: string;
 }
 
 const trustRows: TrustRow[] = [
@@ -15,39 +17,46 @@ const trustRows: TrustRow[] = [
     description:
       "Security controls underpin solution delivery; claim-status label only when sourced.",
     linkText: "Security Overview",
+    linkHref: "/security-overview",
   },
   {
     title: "Privacy",
     description:
       "Privacy architecture and data handling qualify applicable workflows.",
     linkText: "Privacy Architecture",
+    linkHref: "/privacy-architecture",
   },
   {
     title: "Data residency",
     description:
       "Residency varies by deployment/jurisdiction and requires explicit status.",
     linkText: "Data Residency",
+    linkHref: "/data-residency",
   },
   {
     title: "Compliance",
     description:
       "Current compliance framework/status — no badge walls or implied certification.",
     linkText: "Compliance Overview",
+    linkHref: "/compliance-overview",
   },
   {
     title: "Responsible AI",
     description: "Control boundaries for AI-assisted capabilities.",
     linkText: "Responsible AI",
+    linkHref: "/responsible-ai",
   },
   {
     title: "Evidence",
     description: "Evidence architecture and auditability model.",
     linkText: "Evidence Architecture",
+    linkHref: "/evidence-architecture",
   },
   {
     title: "Availability",
     description: "Current operational status and incident information.",
     linkText: "System Status",
+    linkHref: "/trust-system-status",
   },
 ];
 
@@ -103,10 +112,13 @@ export default function TrustSecurityValidationSection() {
 
                 {/* Right: Link */}
                 <div className="lg:col-span-4 lg:text-right">
-                  <button className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-mono text-[#C59B3F] hover:underline focus:outline-none">
+                  <Link
+                    href={row.linkHref}
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-mono text-[#C59B3F] hover:underline focus:outline-none"
+                  >
                     <span>{row.linkText}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -33,7 +33,12 @@ export const GOAL_CARDS: GoalCard[] = [
   },
 ];
 
-export type FeaturedCard = { eyebrow: string; title: string; body: string; meta: string[] };
+export type FeaturedCard = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  meta: string[];
+};
 
 export const FEATURED_CARDS: FeaturedCard[] = [
   {
@@ -62,7 +67,14 @@ export const FEATURED_CARDS: FeaturedCard[] = [
   },
 ];
 
-export type DirectoryCard = { icon: string; title: string; body: string; cta: string; wide?: boolean };
+export type DirectoryCard = {
+  icon: string;
+  title: string;
+  body: string;
+  cta: string;
+  wide?: boolean;
+  href: string;
+};
 
 export const DIRECTORY_CARDS: DirectoryCard[] = [
   {
@@ -70,36 +82,42 @@ export const DIRECTORY_CARDS: DirectoryCard[] = [
     title: "Executive Briefs",
     body: "Concise decision-maker reference documentation.",
     cta: "Read briefs →",
+    href: "/executive-briefs",
   },
   {
     icon: "/resources/div.icon-chip (1).png",
     title: "Documentation",
     body: "Authoritative product and technical reference.",
     cta: "Open documentation →",
+    href: "/documentation",
   },
   {
     icon: "/resources/div.icon-chip (2).png",
     title: "Knowledge Base",
     body: "Problem-solving and how-to content for users,\nadmins, and implementers.",
     cta: "Search Knowledge Base →",
+    href: "/knowledge-base",
   },
   {
     icon: "/resources/div.icon-chip (3).png",
     title: "Training Academy",
     body: "Structured learning for evaluation, onboarding, and role\ndevelopment.",
     cta: "Explore Training →",
+    href: "/training-academy",
   },
   {
     icon: "/resources/div.icon-chip (4).png",
     title: "Webinars & Events",
     body: "Upcoming, live, and on-demand expert sessions.",
     cta: "View Webinars & Events →",
+    href: "/webinars-events",
   },
   {
     icon: "/resources/div.icon-chip (5).png",
     title: "Blog & Insights",
     body: "Editorial analysis, product thinking, and research\nsummaries.",
     cta: "Read Insights →",
+    href: "/blog-insights",
   },
   {
     icon: "/resources/div.icon-chip (6).png",
@@ -107,6 +125,7 @@ export const DIRECTORY_CARDS: DirectoryCard[] = [
     body: "Practical checklists, worksheets, and planning utilities — where approved.",
     cta: "Explore Tools →",
     wide: true,
+    href: "/templates-tools",
   },
 ];
 
@@ -121,7 +140,10 @@ export const TOPIC_CARDS: TopicCard[] = [
     title: "Platform & Governance",
     body: "Governed execution,\npolicy/authority, data model,\noperating intelligence.",
   },
-  { title: "Finance & Tax", body: "Ledger, close, AP/AR, tax\ncontext, controls, evidence." },
+  {
+    title: "Finance & Tax",
+    body: "Ledger, close, AP/AR, tax\ncontext, controls, evidence.",
+  },
   {
     title: "Workforce & Payroll",
     body: "Payroll, workforce compliance,\nbenefits/leave, implementation.",
@@ -172,13 +194,29 @@ export const FILTER_GROUPS: FilterGroup[] = [
   },
   {
     title: "Audience",
-    options: ["Executive", "IT / Security", "Finance", "Developer / Integrator"],
+    options: [
+      "Executive",
+      "IT / Security",
+      "Finance",
+      "Developer / Integrator",
+    ],
   },
-  { title: "Journey stage", options: ["Evaluate", "Implement", "Learn", "Troubleshoot"] },
-  { title: "Access", options: ["Public", "Registration required", "Customer sign-in"] },
+  {
+    title: "Journey stage",
+    options: ["Evaluate", "Implement", "Learn", "Troubleshoot"],
+  },
+  {
+    title: "Access",
+    options: ["Public", "Registration required", "Customer sign-in"],
+  },
 ];
 
-export type RegistryCard = { eyebrow: string; title: string; body: string; meta: string[] };
+export type RegistryCard = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  meta: string[];
+};
 
 export const REGISTRY_CARDS: RegistryCard[] = [
   {
@@ -255,7 +293,12 @@ export const REGISTRY_CARDS: RegistryCard[] = [
   },
 ];
 
-export type SimpleCard = { eyebrow: string; title: string; body: string; meta?: string[] };
+export type SimpleCard = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  meta?: string[];
+};
 
 export const KB_ARTICLES: SimpleCard[] = [
   {
@@ -283,7 +326,12 @@ export const TRAINING_CARDS: SimpleCard[] = [
   },
 ];
 
-export type WebinarCard = { badge: string; badgeTone: "live" | "ondemand"; title: string; body: string };
+export type WebinarCard = {
+  badge: string;
+  badgeTone: "live" | "ondemand";
+  title: string;
+  body: string;
+};
 
 export const WEBINAR_CARDS: WebinarCard[] = [
   {
@@ -378,7 +426,8 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Where can I learn how to use ZoikoSuite?",
-    answer: "The Training Academy offers structured learning by role and use case.",
+    answer:
+      "The Training Academy offers structured learning by role and use case.",
   },
   {
     question: "Where can I get help with an issue?",
@@ -387,10 +436,12 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Can I share or download resources?",
-    answer: "Where a download is approved, it is stated on the resource card with its version.",
+    answer:
+      "Where a download is approved, it is stated on the resource card with its version.",
   },
   {
     question: "How do I get an enterprise briefing?",
-    answer: "Request an enterprise briefing through the contact route on the Executive Briefs page.",
+    answer:
+      "Request an enterprise briefing through the contact route on the Executive Briefs page.",
   },
 ];

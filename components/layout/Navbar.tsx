@@ -86,9 +86,9 @@ const navItems = [
   { label: "Platform", href: "/platform", hasMenu: true },
   { label: "Solutions", href: "/solutions", hasMenu: true },
   { label: "Industries", href: "/industries", hasMenu: true },
-  { label: "Trust", href: "#trust", hasMenu: true },
+  { label: "Trust", href: "/trust", hasMenu: true },
   { label: "Resources", href: "/resources", hasMenu: true },
-  { label: "Company", href: "#company", hasMenu: true },
+  { label: "Company", href: "/company", hasMenu: true },
   { label: "Pricing", href: "/pricing", hasMenu: false },
 ] as const;
 

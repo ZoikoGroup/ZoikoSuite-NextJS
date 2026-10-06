@@ -85,7 +85,7 @@ export default function EnterpriseSection() {
               </button>
 
               <a
-                href="#"
+                href="/book-demo"
                 className="w-full inline-flex items-center justify-center py-3.5 px-4 rounded-xl bg-white text-[#0f172a] font-medium text-sm border border-[#101E2B40] hover:bg-[#FBFAF7] transition-colors"
               >
                 Book a demo

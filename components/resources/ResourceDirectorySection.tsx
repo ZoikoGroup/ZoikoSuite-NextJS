@@ -3,6 +3,7 @@ import SectionHead from "./SectionHead";
 import { C, FONT } from "./tokens";
 import { DIRECTORY_CARDS } from "./data";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function ResourceDirectorySection() {
   const grid = DIRECTORY_CARDS.filter((c) => !c.wide);
@@ -11,7 +12,10 @@ export default function ResourceDirectorySection() {
   return (
     <section className="w-full flex justify-center bg-white">
       <div className="w-full max-w-[1200px] px-8 py-24 flex flex-col gap-9">
-        <SectionHead eyebrow="RESOURCE TYPE DIRECTORY" title="Every destination, one sentence each." />
+        <SectionHead
+          eyebrow="RESOURCE TYPE DIRECTORY"
+          title="Every destination, one sentence each."
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[21px]">
           {grid.map((card) => (
@@ -21,16 +25,25 @@ export default function ResourceDirectorySection() {
               style={{ background: C.white, border: `1px solid ${C.orange87}` }}
             >
               <img src={card.icon} alt="" className="w-9 h-9" />
-              <div className="pt-px text-base font-bold" style={{ color: C.azure11, fontFamily: FONT }}>
+              <div
+                className="pt-px text-base font-bold"
+                style={{ color: C.azure11, fontFamily: FONT }}
+              >
                 {card.title}
               </div>
-              <div className="text-xs leading-5 whitespace-pre-wrap" style={{ color: C.grey44, fontFamily: FONT }}>
+              <div
+                className="text-xs leading-5 whitespace-pre-wrap"
+                style={{ color: C.grey44, fontFamily: FONT }}
+              >
                 {card.body}
               </div>
-              <div className="pt-px text-sm font-semibold flex items-center gap-1" style={{ color: "#123255", fontFamily: FONT }}>
+              <Link href={card.href}
+                className="pt-px text-sm font-semibold flex items-center gap-1"
+                style={{ color: "#123255", fontFamily: FONT }}
+              >
                 {card.cta.replace(" →", "")}
                 <ArrowRight className="w-3.5 h-3.5" />
-              </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -41,16 +54,26 @@ export default function ResourceDirectorySection() {
             style={{ background: C.white, border: `1px solid ${C.orange87}` }}
           >
             <img src={wide.icon} alt="" className="w-9 h-9" />
-            <div className="pt-px text-base font-bold" style={{ color: C.azure11, fontFamily: FONT }}>
+            <div
+              className="pt-px text-base font-bold"
+              style={{ color: C.azure11, fontFamily: FONT }}
+            >
               {wide.title}
             </div>
-            <div className="text-xs leading-5 whitespace-pre-wrap" style={{ color: C.grey44, fontFamily: FONT }}>
+            <div
+              className="text-xs leading-5 whitespace-pre-wrap"
+              style={{ color: C.grey44, fontFamily: FONT }}
+            >
               {wide.body}
             </div>
-            <div className="pt-px text-sm font-semibold flex items-center gap-1" style={{ color: "#123255", fontFamily: FONT }}>
+            <Link
+              href={wide.href}
+              className="pt-px text-sm font-semibold flex items-center gap-1"
+              style={{ color: "#123255", fontFamily: FONT }}
+            >
               {wide.cta.replace(" →", "")}
               <ArrowRight className="w-3.5 h-3.5" />
-            </div>
+            </Link>
           </div>
         )}
       </div>

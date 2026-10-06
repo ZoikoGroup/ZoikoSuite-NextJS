@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface ClusterCard {
   title: string;
   description: string;
   linkText: string;
+  linkHref: string;
 }
 
 const clusterCards: ClusterCard[] = [
@@ -15,18 +17,21 @@ const clusterCards: ClusterCard[] = [
     description:
       "Multi-entity finance/tax, workforce, legal/commercial, compliance obligations, approvals, evidence, and cross-border governance.",
     linkText: "Explore Financial Service",
+    linkHref: "/financial-service",
   },
   {
     title: "Banking",
     description:
       "Entity/branch governance, finance, workforce, procurement/contracts, obligations, authority/SoD, evidence, data/security context.",
     linkText: "Explore Banking",
+    linkHref: "/banking",
   },
   {
     title: "Insurance",
     description:
       "Finance, workforce, vendor/contracts, legal obligations, authority, evidence, data/privacy and enterprise controls.",
     linkText: "Explore Insurance",
+    linkHref: "/insurance",
   },
 ];
 
@@ -77,13 +82,13 @@ export default function FinancialServicesClusterSection() {
 
               {/* Pill Button Action */}
               <div>
-                <a
-                  href="#"
+                <Link
+                  href={item.linkHref}
                   className="inline-flex items-center justify-between px-5 py-3 rounded-full text-xs font-bold font-mono text-[#08222F] border border-[#D9D3C7] hover:border-[#08222F] transition-all w-full group"
                 >
                   <span>{item.linkText}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#08222F] transition-transform group-hover:translate-x-0.5" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

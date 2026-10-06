@@ -40,7 +40,7 @@ export default function SolutionsHeroSection() {
           <div className="flex flex-wrap items-center gap-4">
             {/* Primary Button */}
             <a
-              href="#"
+              href="/solve-critical-challenges"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold text-[#20180A] transition-all hover:opacity-90 shadow-lg"
               style={{
                 backgroundColor: "#D0AA55",
@@ -53,7 +53,7 @@ export default function SolutionsHeroSection() {
 
             {/* Secondary Button */}
             <a
-              href="#"
+              href="/solutions-architect"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold text-white bg-transparent border border-gray-700 hover:border-gray-500 transition-all"
             >
               Talk to a solutions architect
