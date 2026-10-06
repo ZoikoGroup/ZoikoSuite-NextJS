@@ -1805,8 +1805,8 @@ export default function Navbar() {
       >
         <div className="w-full max-w-[1440px] mx-auto relative overflow-visible flex flex-col items-center">
           {/* ============ DESKTOP TOP ROW (lg and up) ============ */}
-          {/* Padding/gaps scale down between lg and xl so 7 items fit at 1024px */}
-          <div className="hidden lg:flex w-full h-24 items-center justify-between gap-2 px-5 xl:px-[110px] relative z-20 bg-[#FFFFFF]">
+          {/* Padding/gaps scale down below 1400px so 7 items + controls never overlap */}
+          <div className="hidden lg:flex w-full h-24 items-center justify-between gap-2 px-5 xl:px-10 min-[1400px]:px-[110px] relative z-20 bg-[#FFFFFF]">
             {/* Brand Logo Image */}
             <Link href="/" className="flex items-center shrink-0">
               <div className="relative">
@@ -1822,7 +1822,7 @@ export default function Navbar() {
             </Link>
 
             {/* Navigation Links */}
-            <div className="flex items-center gap-0 xl:gap-4 min-w-0">
+            <div className="flex items-center gap-0 xl:gap-2 min-[1400px]:gap-4 whitespace-nowrap">
               {navItems.map((item) => {
                 const label = item.label;
 
@@ -1889,7 +1889,7 @@ export default function Navbar() {
               {/* Sign in Link */}
               <a
                 href="/sign-in"
-                className="min-h-11 px-2 xl:px-3 py-2.5 flex justify-start items-center text-[#9AA6B5] text-sm font-medium font-['Inter'] leading-6 hover:text-[#12365E] transition-colors"
+                className="min-h-11 px-2 xl:px-3 py-2.5 flex justify-start items-center whitespace-nowrap text-[#9AA6B5] text-sm font-medium font-['Inter'] leading-6 hover:text-[#12365E] transition-colors"
               >
                 Sign in
               </a>

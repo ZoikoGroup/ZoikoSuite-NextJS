@@ -1,9 +1,21 @@
-import { BookDemoPage } from "@/components/book-demo";
+import {
+  HeroSection,
+  WhatYouSeeSection,
+  ProductPreviewSection,
+  TailorDemoSection,
+  TrustSection,
+  FAQSection,
+} from "@/components/book-demo";
 
-export default function BookDemo() {
+export default function BookDemoPage() {
   return (
     <main>
-      <BookDemoPage />
+      <HeroSection />
+      <WhatYouSeeSection />
+      <ProductPreviewSection />
+      <TailorDemoSection />
+      <TrustSection />
+      <FAQSection />
     </main>
   );
 }
