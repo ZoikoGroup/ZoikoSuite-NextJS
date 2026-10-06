@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface IndustryCard {
@@ -8,6 +9,7 @@ interface IndustryCard {
   description: string;
   category: string;
   linkText: string;
+  linkHref: string;
 }
 
 const filterTabs = [
@@ -26,6 +28,7 @@ const industryCards: IndustryCard[] = [
       "Govern finance, tax, workforce, legal, compliance, and evidence across complex financial-service operating models.",
     category: "Regulated operations",
     linkText: "Explore Financial Service",
+    linkHref: "/financial-service",
   },
   {
     title: "Banking",
@@ -33,13 +36,15 @@ const industryCards: IndustryCard[] = [
       "Coordinate governed business operations around banking cores, entity structures, controls, approvals, and evidence.",
     category: "Regulated operations",
     linkText: "Explore Banking",
+    linkHref: "/banking",
   },
   {
     title: "Insurance",
     description:
       "Govern finance, workforce, legal, vendor, compliance, and evidence operations around insurance core systems.",
     category: "Regulated operations",
-    linkText: "Regulated operations",
+    linkText: "Explore Insurance",
+    linkHref: "/insurance",
   },
   {
     title: "Healthcare",
@@ -47,6 +52,7 @@ const industryCards: IndustryCard[] = [
       "Coordinate governed business operations around healthcare delivery systems with privacy, workforce, vendor, finance, and evidence context.",
     category: "Regulated operations",
     linkText: "Explore Healthcare",
+    linkHref: "/healthcare",
   },
   {
     title: "Telecommunication & MVNOs",
@@ -54,6 +60,7 @@ const industryCards: IndustryCard[] = [
       "Govern finance, workforce, contracts, tax, partner, compliance, and evidence operations around telecom/BSS/OSS ecosystems.",
     category: "High-workforce complexity",
     linkText: "Explore Telecommunication & MVNOs",
+    linkHref: "/telecom-mvnos",
   },
   {
     title: "Manufacturing",
@@ -61,6 +68,7 @@ const industryCards: IndustryCard[] = [
       "Connect governed corporate operations across finance, workforce, procurement, contracts, obligations, and evidence around ERP/MES/SCM estates.",
     category: "Asset / field operations",
     linkText: "Explore Manufacturing",
+    linkHref: "/manufacturing",
   },
   {
     title: "Energy & Utilities",
@@ -68,6 +76,7 @@ const industryCards: IndustryCard[] = [
       "Govern business operations, workforce, procurement, finance, obligations, and evidence around asset and utility operating systems.",
     category: "Asset / field operations",
     linkText: "Explore Energy & Utilities",
+    linkHref: "/energy-utilities",
   },
   {
     title: "Retail & Commerce",
@@ -75,6 +84,7 @@ const industryCards: IndustryCard[] = [
       "Coordinate multi-entity finance, workforce, tax, contracts, compliance, and evidence around commerce/POS platforms.",
     category: "Multi-entity / cross-border",
     linkText: "Explore Retail & Commerce",
+    linkHref: "/retail-commerce",
   },
   {
     title: "Government & Public Sector",
@@ -82,6 +92,7 @@ const industryCards: IndustryCard[] = [
       "Support governed finance, workforce, procurement, authority, obligations, and evidence with public-accountability and residency context.",
     category: "Public accountability",
     linkText: "Explore Government & Public Sector",
+    linkHref: "/government-public-sector",
   },
 ];
 
@@ -99,7 +110,10 @@ export default function IndustryDirectorySection() {
         );
 
   return (
-    <section className="w-full bg-white text-[#08222F] py-20 px-6 lg:px-12 font-sans flex justify-center">
+    <section
+      id="explore"
+      className="w-full bg-white text-[#08222F] py-20 px-6 lg:px-12 font-sans flex justify-center"
+    >
       <div className="max-w-6xl w-full flex flex-col items-start">
         {/* Header / Intro text container */}
         <div className="flex flex-col items-start mb-12">
@@ -170,13 +184,13 @@ export default function IndustryDirectorySection() {
 
               {/* Link Action */}
               <div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold font-mono text-[#08222F] hover:text-[#C59B3F] transition-colors"
+                <Link
+                  href={item.linkHref}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold font-mono text-[#08222F] hover:text-[#C59B3F] transition-colors group"
                 >
                   <span>{item.linkText}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#C59B3F]" />
-                </a>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#C59B3F] group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
           ))}

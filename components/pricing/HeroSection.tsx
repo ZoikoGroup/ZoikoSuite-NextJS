@@ -38,7 +38,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           {/* Primary Button */}
           <a
-            href="#"
+            href="/sign-in"
             className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#CDA85B] text-[#0a192f] font-semibold text-sm sm:text-base hover:bg-[#d4a85c] transition-colors duration-200 shadow-sm"
           >
             Start 30-day free trial

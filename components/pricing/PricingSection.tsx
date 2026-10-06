@@ -276,7 +276,7 @@ export default function PricingSection() {
               </a>
               <div className="text-center">
                 <a
-                  href="#"
+                  href="/book-demo"
                   className="text-xs font-medium text-[#0f172a] hover:underline inline-flex items-center"
                 >
                   Book an enterprise demo &rarr;

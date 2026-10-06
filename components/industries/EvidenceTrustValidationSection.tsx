@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface StatusBadgeCard {
@@ -16,6 +17,7 @@ interface ProofLinkRow {
   title: string;
   description: string;
   linkText: string;
+  linkHref: string;
 }
 
 const statusCards: StatusBadgeCard[] = [
@@ -83,24 +85,28 @@ const proofRows: ProofLinkRow[] = [
     description:
       "Common governance model and integration/coexistence boundaries.",
     linkText: "Platform architecture",
+    linkHref: "/platform",
   },
   {
     title: "Evidence Architecture",
     description:
       "Decision/workflow/document/event/evidence lineage — not a certification by itself.",
     linkText: "Evidence Architecture",
+    linkHref: "/evidence-architecture",
   },
   {
     title: "Security / Privacy",
     description:
       "Security, identity, privacy, residency, and deployment diligence — claim status and scope mandatory.",
     linkText: "Security Overview",
+    linkHref: "/security-overview",
   },
   {
     title: "Independent proof",
     description:
       "Certifications, attestations, partner validations where public — exact scope/date/status.",
     linkText: "Compliance Overview",
+    linkHref: "/compliance-overview",
   },
 ];
 
@@ -208,13 +214,13 @@ export default function EvidenceTrustValidationSection() {
                   </p>
                 </div>
                 <div>
-                  <a
-                    href="#"
+                  <Link
+                    href={row.linkHref}
                     className="inline-flex items-center gap-1.5 text-xs font-bold font-mono text-[#08222F] hover:text-[#C59B3F] transition-colors group"
                   >
                     <span>{row.linkText}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
