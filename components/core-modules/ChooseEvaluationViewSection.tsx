@@ -251,7 +251,7 @@ export default function ChooseEvaluationViewSection() {
                 <th className="py-3.5 px-5 font-semibold">SOURCE ROLE</th>
                 <th className="py-3.5 px-5 font-semibold">TYPICAL SCOPE BOUNDARY</th>
                 <th className="py-3.5 px-5 font-semibold">ADJACENT MODULES</th>
-                <th className="py-3.5 px-5 font-semibold text-right">ACTION</th>
+                {/* <th className="py-3.5 px-5 font-semibold text-right">ACTION</th> */}
               </tr>
             </thead>
             <tbody className="divide-y divide-[#edf2f7] text-[12.5px] text-[#334155]">
@@ -293,12 +293,12 @@ export default function ChooseEvaluationViewSection() {
                   </td>
 
                   {/* ACTION */}
-                  <td className="py-4 px-5 text-right whitespace-nowrap">
+                  {/* <td className="py-4 px-5 text-right whitespace-nowrap">
                     <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#d6e2e9] bg-white text-[11px] font-semibold text-[#08222F] hover:bg-[#08222F] hover:text-white hover:border-[#08222F] transition-all">
                       <span>Explore domain</span>
                       <ArrowRight className="w-3 h-3" />
                     </button>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>

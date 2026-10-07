@@ -98,7 +98,7 @@ export default function AuthoritativeSourceMatrixSection() {
         </div>
 
         {/* Bottom CTA Button */}
-        <div className="flex justify-center pt-2">
+        {/* <div className="flex justify-center pt-2">
           <a
             href="#"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] border border-[#0F476A] hover:bg-[#0c3955] hover:border-[#0c3955] text-white text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
@@ -106,7 +106,7 @@ export default function AuthoritativeSourceMatrixSection() {
             Review your source-of-record architecture
             <ArrowRight className="w-4 h-4 text-white" />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

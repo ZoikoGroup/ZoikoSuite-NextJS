@@ -55,10 +55,10 @@ export default function IndustriesSection() {
 
             {/* Secondary Button */}
             <a
-              href="#"
+              href="/book-demo"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold font-mono text-white bg-[#0B2432] border border-white/10 hover:border-white/30 transition-all"
             >
-              Talk to an industry specialist
+              Book a demo
             </a>
           </div>
         </div>

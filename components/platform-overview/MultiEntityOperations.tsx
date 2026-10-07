@@ -61,7 +61,7 @@ export default function MultiEntityOperations() {
           </motion.div>
 
           {/* Bottom Action CTA Button */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -74,7 +74,7 @@ export default function MultiEntityOperations() {
               Explore multi-entity operations
               <ArrowRight className="w-4 h-4 text-[#c5a059]" />
             </a>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

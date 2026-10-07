@@ -128,7 +128,7 @@ export default function GovernedAISection() {
           {/* Bottom Button */}
           <div>
             <a
-              href="/governed-ai"
+              href="/governance-platform"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
             >
               Explore governed AI

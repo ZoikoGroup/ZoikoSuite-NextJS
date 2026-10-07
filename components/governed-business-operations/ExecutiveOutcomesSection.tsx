@@ -209,7 +209,7 @@ export default function ExecutiveOutcomesSection() {
             </div>
 
             {/* CTA Button */}
-            <div>
+            {/* <div>
               <a
                 href={activeRole.buttonHref}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
@@ -217,7 +217,7 @@ export default function ExecutiveOutcomesSection() {
                 {activeRole.buttonText}
                 <ArrowRight className="w-4 h-4 text-white" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Side: Priority Challenge Card */}
@@ -237,7 +237,7 @@ export default function ExecutiveOutcomesSection() {
               </p>
             </div>
 
-            <div>
+            {/* <div>
               <a
                 href={activeRole.priorityChallenge.href}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F476A] hover:underline"
@@ -245,7 +245,7 @@ export default function ExecutiveOutcomesSection() {
                 See the proof
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 

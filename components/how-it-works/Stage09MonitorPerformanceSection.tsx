@@ -65,7 +65,7 @@ export default function Stage09MonitorPerformanceSection() {
           </motion.div>
 
           {/* Bottom Action Button */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -78,7 +78,7 @@ export default function Stage09MonitorPerformanceSection() {
               Explore analytics & reporting
               <ArrowRight className="w-4 h-4 text-white" />
             </a>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

@@ -159,7 +159,7 @@ export default function AnalyticsReporting() {
                 </p>
               </div>
 
-              <div>
+              {/* <div>
                 <a
                   href="#"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-md shadow-[#0F476A]/20"
@@ -167,7 +167,7 @@ export default function AnalyticsReporting() {
                   Explore analytics & reporting
                   <ArrowRight className="w-4 h-4 text-[#c5a059]" />
                 </a>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
