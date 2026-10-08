@@ -186,7 +186,7 @@ export default function TargetArchitectureERPSection() {
             </div>
 
             {/* CTA Button */}
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <a
                 href="#"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] border border-[#0F476A] hover:bg-[#0c3955] hover:border-[#0c3955] text-white text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
@@ -194,7 +194,7 @@ export default function TargetArchitectureERPSection() {
                 View coexistence architecture
                 <ArrowRight className="w-4 h-4 text-white" />
               </a>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right Column: 3D Visualization Image with NO outer div styling */}

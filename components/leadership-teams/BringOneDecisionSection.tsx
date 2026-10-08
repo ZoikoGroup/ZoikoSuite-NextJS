@@ -50,7 +50,7 @@ export default function BringOneDecisionSection() {
           {/* Link: Explore a governance pilot overview */}
           <div className="pt-6">
             <Link
-              href="/governance-platform"
+              href="/government-public-sector"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#D0AA55] hover:text-[#e0bc68] transition-colors"
             >
               <span>Explore a governance pilot overview</span>

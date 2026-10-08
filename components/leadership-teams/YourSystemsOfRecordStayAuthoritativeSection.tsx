@@ -104,7 +104,7 @@ export default function YourSystemsOfRecordStayAuthoritativeSection() {
             </div>
 
             {/* Action Button */}
-            <div className="mb-6 lg:mb-0">
+            {/* <div className="mb-6 lg:mb-0">
               <Link
                 href="/platform-overview"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] hover:bg-[#0c3a57] text-white text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm"
@@ -112,7 +112,7 @@ export default function YourSystemsOfRecordStayAuthoritativeSection() {
                 <span>See the system of record model</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right Column: Comparative Table */}

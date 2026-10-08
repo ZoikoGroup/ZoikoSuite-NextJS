@@ -77,12 +77,12 @@ export default function CategoryBoundary() {
               Read why ZoikoSuite is not an ERP
               <ArrowRight className="w-4 h-4 text-[#c5a059]" />
             </a>
-            <a
+            {/* <a
               href="#"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white border border-[#DBE3E8] text-[#0f172a] font-semibold text-sm hover:bg-[#f8fafc] transition-all duration-200 shadow-xs"
             >
               Discuss your current stack
-            </a>
+            </a> */}
           </motion.div>
         </div>
       </div>

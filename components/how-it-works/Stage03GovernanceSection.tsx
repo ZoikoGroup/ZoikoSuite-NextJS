@@ -84,7 +84,7 @@ export default function Stage03GovernanceSection() {
               </div>
 
               {/* Action Button */}
-              <div>
+              {/* <div>
                 <a
                   href="/governance-control-plane"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#c5a059] text-[#0f172a] font-semibold text-sm hover:bg-[#b08d4b] transition-all duration-200 shadow-lg shadow-[#c5a059]/20"
@@ -92,7 +92,7 @@ export default function Stage03GovernanceSection() {
                   Explore the governance control plane
                   <ArrowRight className="w-4 h-4 text-[#0f172a]" />
                 </a>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Right Column: Workflow Image (No border, no shadow) */}

@@ -115,7 +115,7 @@ export default function GovernedAI() {
             {/* Action CTA Button */}
             <div>
               <a
-                href="#"
+                href="/governance-platform"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-md shadow-[#0F476A]/20"
               >
                 Explore governed AI

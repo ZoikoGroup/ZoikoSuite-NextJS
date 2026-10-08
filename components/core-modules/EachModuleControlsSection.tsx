@@ -276,14 +276,14 @@ function DetailCard({ card }: { card: ModuleDetailCard }) {
       </div>
 
       {/* Action Button & Tour Link */}
-      <div className="mt-3 pt-3 border-t border-[#f1f5f9] flex flex-wrap items-center justify-between gap-2">
+      {/* <div className="mt-3 pt-3 border-t border-[#f1f5f9] flex flex-wrap items-center justify-between gap-2">
         <button className="px-3 py-1.5 rounded-lg bg-[#08222F] text-white text-[11px] font-semibold hover:bg-[#12364c] transition-colors">
           {card.actionText || "Explore module"}
         </button>
         <span className="text-[10px] text-[#8fa4b2] font-mono">
           Route to dedicated tour
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }

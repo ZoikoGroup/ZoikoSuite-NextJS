@@ -216,7 +216,7 @@ export default function JurisdictionExpansion() {
         </motion.div>
 
         {/* Bottom Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -229,7 +229,7 @@ export default function JurisdictionExpansion() {
             Check jurisdiction coverage
             <ArrowRight className="w-4 h-4" />
           </a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

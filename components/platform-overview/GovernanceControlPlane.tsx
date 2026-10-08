@@ -117,7 +117,7 @@ export default function GovernanceControlPlane() {
             </div>
 
             {/* Action CTA Button */}
-            <div>
+            {/* <div>
               <a
                 href="#"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-md shadow-[#0F476A]/20"
@@ -125,7 +125,7 @@ export default function GovernanceControlPlane() {
                 Explore the governance control plane
                 <ArrowRight className="w-4 h-4 text-[#c5a059]" />
               </a>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right Column: Holographic Control Plane Interface Image Showcase */}

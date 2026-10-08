@@ -115,7 +115,7 @@ export default function GovernedAiLifecycleSection() {
               </div>
 
               {/* Action Button */}
-              <div>
+              {/* <div>
                 <a
                   href="/governed-ai"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-lg shadow-[#0F476A]/20"
@@ -123,7 +123,7 @@ export default function GovernedAiLifecycleSection() {
                   Explore governed AI
                   <ArrowRight className="w-4 h-4 text-white" />
                 </a>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Right Column: Workflow Image (No border, no shadow) */}

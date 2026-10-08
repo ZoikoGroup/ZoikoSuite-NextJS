@@ -9,27 +9,6 @@ import {
   LuSearch,
   LuArrowRight,
   LuChevronRight,
-  LuCompass,
-  LuBoxes,
-  LuLandmark,
-  LuLayers,
-  LuShieldCheck,
-  LuUser,
-  LuTarget,
-  LuTrendingUp,
-  LuBuilding2,
-  LuPuzzle,
-  LuGraduationCap,
-  LuRefreshCw,
-  LuUsers,
-  LuNetwork,
-  LuBriefcase,
-  LuBookOpen,
-  LuCpu,
-  LuUserCheck,
-  LuClipboardCheck,
-  LuScale,
-  LuGlobe,
   LuMenu,
   LuX,
 } from "react-icons/lu";
@@ -173,6 +152,64 @@ const resolveHref = (
   explicit: string | undefined,
   label: string,
 ) => explicit ?? `${menu.basePath}/${slugify(label)}`;
+
+/** External URLs (https://...) open in a new tab; internal paths behave normally. */
+const linkProps = (href: string) =>
+  href.startsWith("http")
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
+
+/* ------------------------------------------------------------------ */
+/*  EDIT LINKS HERE                                                    */
+/*  Change any `href` below. Nothing else in the file needs touching.  */
+/*  Values can be internal ("/security") or external ("https://...")   */
+/* ------------------------------------------------------------------ */
+const editableLinks = {
+  /* Trust menu -> ADDITIONAL RESOURCES */
+  trustAdditionalResources: [
+    { label: "Security Whitepapers", href: "/security-overview" },
+    { label: "Compliance Reports", href: "/compliance-overview" },
+    { label: "Audit Reports", href: "/whistleblowing-ethics-reporting" },
+    {
+      label: "Subprocessor Transparency",
+      href: "/subprocessor-list",
+    },
+    { label: "Data Protection Addendum", href: "/dpa" },
+  ],
+
+  /* Resources menu -> POPULAR TOPICS (additional resources section) */
+  resourcesPopularTopics: [
+    { label: "Getting Started", href: "/platform" },
+    {
+      label: "Implementation Guides",
+      href: "/how-it-works",
+    },
+    { label: "Product Updates", href: "/product-roadmap" },
+  ],
+
+  /* Company menu -> QUICK LINKS */
+  companyQuickLinks: [
+    { label: "Company Overview", href: "/company" },
+    { label: "Leadership Team", href: "/leadership-teams" },
+    { label: "Partner Program", href: "/partners" },
+    { label: "Investor Resources", href: "/resources-center" },
+    {
+      label: "Sustainability Reports",
+      href: "/sustainability",
+    },
+  ],
+
+  /* Company menu -> FEATURED cards */
+  companyFeatured: {
+    globalPresence: { href: "/about" },
+    impact: { href: "/founders-vision" },
+  },
+} satisfies {
+  trustAdditionalResources: MegaLink[];
+  resourcesPopularTopics: MegaLink[];
+  companyQuickLinks: MegaLink[];
+  companyFeatured: Record<string, { href: string }>;
+};
 
 /* ------------------------------------------------------------------ */
 /*  Mega menu content (from Figma)                                     */
@@ -555,14 +592,7 @@ const megaMenus: Record<MenuLabel, MegaMenuData> = {
         ],
         extra: {
           heading: "ADDITIONAL RESOURCES",
-          links: [
-            { label: "Security Whitepapers" },
-            { label: "Compliance Reports" },
-            { label: "Audit Reports" },
-            { label: "Risk Management" },
-            { label: "Subprocessor Transparency" },
-            { label: "Data Protection Addendum", href: "/dpa" },
-          ],
+          links: editableLinks.trustAdditionalResources,
         },
       },
     ],
@@ -653,13 +683,7 @@ const megaMenus: Record<MenuLabel, MegaMenuData> = {
         ],
         extra: {
           heading: "POPULAR TOPICS",
-          links: [
-            { label: "Getting Started" },
-            { label: "Implementation Guides" },
-            { label: "Best Practices" },
-            { label: "Product Updates" },
-            { label: "Community & Forums" },
-          ],
+          links: editableLinks.resourcesPopularTopics,
         },
       },
     ],
@@ -746,15 +770,7 @@ const megaMenus: Record<MenuLabel, MegaMenuData> = {
       },
       {
         heading: "QUICK LINKS",
-        links: [
-          { label: "Company Overview" },
-          { label: "Leadership Team" },
-          { label: "Partner Program" },
-          { label: "Investor Resources" },
-          { label: "Sustainability Reports" },
-          { label: "Press Inquiries" },
-          { label: "Contact Us" },
-        ],
+        links: editableLinks.companyQuickLinks,
         extra: {
           heading: "FEATURED",
           cards: [
@@ -762,11 +778,13 @@ const megaMenus: Record<MenuLabel, MegaMenuData> = {
               title: "Our Global Presence",
               desc: "Offices, locations and local teams.",
               icon: Globe,
+              href: editableLinks.companyFeatured.globalPresence.href,
             },
             {
               title: "Our Impact",
               desc: "People, planet and long-term value.",
               icon: ShieldCheck,
+              href: editableLinks.companyFeatured.impact.href,
             },
           ],
         },
@@ -1065,6 +1083,7 @@ function MegaItemLink({
     <Link
       href={href}
       onClick={onNavigate}
+      {...linkProps(href)}
       className="group -mx-2.5 px-2.5 py-2.5 rounded-lg flex items-start gap-4 hover:bg-[#F4F7FB] transition-colors duration-150"
     >
       <span className="shrink-0 w-9 h-9 rounded-[10px] bg-[#12365E] flex items-center justify-center transition-all duration-200 group-hover:bg-[#C0872B] group-hover:scale-105">
@@ -1099,6 +1118,7 @@ function MegaPlainLink({
     <Link
       href={href}
       onClick={onNavigate}
+      {...linkProps(href)}
       className="group -mx-2.5 px-2.5 py-2.5 rounded-lg flex items-center justify-between gap-2 text-[#12365E] text-[13px] font-normal font-['Inter'] leading-5 hover:bg-[#F4F7FB] hover:text-[#C0872B] transition-colors duration-150"
     >
       <span>{label}</span>
@@ -1121,6 +1141,7 @@ function MegaFeatureCard({
     <Link
       href={href}
       onClick={onNavigate}
+      {...linkProps(href)}
       className="group rounded-lg border border-[#E3EAF3] bg-[#F4F7FB] px-4 py-4 flex items-center gap-3 hover:bg-[#FFFFFF] hover:border-[#C0872B]/50 hover:shadow-md transition-all duration-200"
     >
       <Icon
@@ -1319,10 +1340,7 @@ type MobileGroup = {
 };
 
 /* Flatten each column (and its "extra" block) into an accordion group */
-const getMobileGroups = (
-  label: MenuLabel,
-  menu: MegaMenuData,
-): MobileGroup[] =>
+const getMobileGroups = (label: MenuLabel, menu: MegaMenuData): MobileGroup[] =>
   menu.columns.flatMap((col) => {
     const groups: MobileGroup[] = [
       {
@@ -1357,6 +1375,7 @@ function MobileItemLink({
     <Link
       href={href}
       onClick={onNavigate}
+      {...linkProps(href)}
       className="group flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-[#F4F7FB] active:bg-[#F4F7FB] transition-colors duration-150"
     >
       <span className="shrink-0 w-9 h-9 rounded-[10px] bg-[#12365E] flex items-center justify-center transition-colors duration-200 group-hover:bg-[#C0872B] group-active:bg-[#C0872B]">
@@ -1558,21 +1577,25 @@ function MobileDrawer({
                                               />
                                             ))}
 
-                                            {group.links?.map((link) => (
-                                              <Link
-                                                key={link.label}
-                                                href={resolveHref(
-                                                  menu,
-                                                  link.href,
-                                                  link.label,
-                                                )}
-                                                onClick={onClose}
-                                                className="flex items-center justify-between gap-2 px-3 py-3 rounded-lg text-sm font-normal font-['Inter'] text-[#12365E] hover:bg-[#F4F7FB] hover:text-[#C0872B] active:bg-[#F4F7FB] transition-colors"
-                                              >
-                                                <span>{link.label}</span>
-                                                <LuChevronRight className="shrink-0 w-3.5 h-3.5 text-[#9AA6B5]" />
-                                              </Link>
-                                            ))}
+                                            {group.links?.map((link) => {
+                                              const linkHref = resolveHref(
+                                                menu,
+                                                link.href,
+                                                link.label,
+                                              );
+                                              return (
+                                                <Link
+                                                  key={link.label}
+                                                  href={linkHref}
+                                                  onClick={onClose}
+                                                  {...linkProps(linkHref)}
+                                                  className="flex items-center justify-between gap-2 px-3 py-3 rounded-lg text-sm font-normal font-['Inter'] text-[#12365E] hover:bg-[#F4F7FB] hover:text-[#C0872B] active:bg-[#F4F7FB] transition-colors"
+                                                >
+                                                  <span>{link.label}</span>
+                                                  <LuChevronRight className="shrink-0 w-3.5 h-3.5 text-[#9AA6B5]" />
+                                                </Link>
+                                              );
+                                            })}
 
                                             {group.cards && (
                                               <div className="flex flex-col gap-3 px-1 pt-1">
