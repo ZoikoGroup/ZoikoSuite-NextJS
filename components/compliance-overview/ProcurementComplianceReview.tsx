@@ -51,7 +51,7 @@ export default function SecurityReviewHandoff() {
   };
 
   return (
-    <section id="review" className="w-full bg-white py-20 px-6 lg:px-12 font-sans text-[#111827]">
+    <section id="request" className="w-full bg-white py-20 px-6 lg:px-12 font-sans text-[#111827]">
       <div className="max-w-6xl mx-auto">
         {/* Top Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">

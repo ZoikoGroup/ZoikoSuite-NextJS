@@ -77,7 +77,7 @@ const rolesData: RoleContent[] = [
       "Data residency",
     ],
     buttonText: "Explore ZoikoSuite for CIOs",
-    buttonHref: "#cio-suite",
+    buttonHref: "/cio",
     priorityChallenge: {
       title: "Bounded service identities across asynchronous integrations",
       proof:
@@ -99,7 +99,7 @@ const rolesData: RoleContent[] = [
       "Approval routing",
     ],
     buttonText: "Explore ZoikoSuite for CHROs",
-    buttonHref: "#chro-suite",
+    buttonHref: "/chro",
     priorityChallenge: {
       title: "Segregation of duties and delegation limits in workforce changes",
       proof: "Proof to review: the authority matrix and exception logs.",
@@ -120,7 +120,7 @@ const rolesData: RoleContent[] = [
       "Cross-functional workflows",
     ],
     buttonText: "Explore ZoikoSuite for COOs",
-    buttonHref: "#coo-suite",
+    buttonHref: "/coo",
     priorityChallenge: {
       title:
         "Operational throughput without compromising control effectiveness",
@@ -209,7 +209,7 @@ export default function ExecutiveOutcomesSection() {
             </div>
 
             {/* CTA Button */}
-            {/* <div>
+            <div>
               <a
                 href={activeRole.buttonHref}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
@@ -217,7 +217,7 @@ export default function ExecutiveOutcomesSection() {
                 {activeRole.buttonText}
                 <ArrowRight className="w-4 h-4 text-white" />
               </a>
-            </div> */}
+            </div>
           </div>
 
           {/* Right Side: Priority Challenge Card */}
