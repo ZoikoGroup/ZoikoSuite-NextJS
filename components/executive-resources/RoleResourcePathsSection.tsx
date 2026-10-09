@@ -81,7 +81,7 @@ const ROLE_PATHS: RolePath[] = [
     description:
       "Read-only oversight mode, material exceptions, evidence state and audit-readiness boundaries.",
     linkText: "Oversight mode →",
-    linkHref: "/governance-platform",
+    linkHref: "/audit-commitee",
   },
   {
     role: "OTHER LEADERSHIP",

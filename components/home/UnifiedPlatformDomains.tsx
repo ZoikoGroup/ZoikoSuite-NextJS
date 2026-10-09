@@ -34,7 +34,7 @@ const domainsData = [
   {
     icon: Users,
     title: "Workforce & Payroll",
-    href: "#",
+    href: "/workforce-payroll",
     description:
       "Governed employment and pay across local and cross-border operations.",
     tags: ["Payroll", "Benefits & leave", "Workforce compliance"],
