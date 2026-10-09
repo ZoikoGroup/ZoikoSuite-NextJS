@@ -1,0 +1,10 @@
+export { default as TopSection } from "./TopSection";
+export { default as LightTopicSection } from "./LightTopicSection";
+export { default as QuestionsRouterSection } from "./QuestionsRouterSection";
+export { default as DetailsSection } from "./DetailsSection";
+export { default as JourneySection } from "./JourneySection";
+export { default as RolesSection } from "./RolesSection";
+export { default as PropertiesSection } from "./PropertiesSection";
+export { default as FaqSection } from "./FaqSection";
+export { default as LightCtaSection } from "./LightCtaSection";
+export { default as BriefingSection } from "./BriefingSection";
