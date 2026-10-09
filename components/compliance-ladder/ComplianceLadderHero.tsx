@@ -4,61 +4,50 @@ import { ArrowRight } from "lucide-react";
 
 export default function ComplianceLadderHero() {
   return (
-    <div className="w-full bg-gradient-to-r from-[#241C59] via-[#35235F] to-[#733557] py-16 px-6 md:px-12 lg:px-16 flex items-center justify-center">
+    <section className="w-full bg-[#FFFFFF] py-16 px-6 md:px-12 lg:px-24 flex items-center justify-center">
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: Content */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left">
-          {/* Eyebrow */}
-          <span className="text-[#F0596B] font-semibold text-xs md:text-sm tracking-widest uppercase mb-4">
+        {/* Left Column: Text & CTA */}
+        <div className="lg:col-span-6 flex flex-col items-start text-left">
+          <div className="text-[11px] sm:text-xs font-semibold tracking-widest text-[#B49347] uppercase mb-3">
             COMPLIANCE LADDER
-          </span>
+          </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#1F2421] tracking-tight leading-[1.15] mb-6">
             Turn obligations <br />
-            into{" "}
-            <span className="text-[#FFAFBA]">
-              accountable, <br /> re viewable work.
-            </span>{" "}
-          </h1>
+            into accountable, <br />
+            reviewable work.
+          </h2>
 
-          {/* Description */}
-          <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
+          <p className="text-[#4B5563] text-base sm:text-lg leading-relaxed mb-8 max-w-lg">
             Explore a proposed governance approach for defining scope,
             coordinating owners, reviewing controls, resolving exceptions and
             preparing decision-ready evidence.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-6">
+          <div>
             <a
               href="#context"
-              className="bg-white text-[#241C59] font-medium text-sm px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition duration-200 inline-flex items-center"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#D9A74A] hover:bg-[#C8963D] text-white font-medium text-sm sm:text-base transition-colors shadow-sm group"
             >
-              Compliance governance demo context
-            </a>
-            <a
-              href="#six-steps"
-              className="text-[#FFB8C2] font-medium text-sm border-b border-[#FFB8C2] pb-0.5 hover:text-white hover:border-white transition duration-200 inline-flex items-center gap-1.5"
-            >
-              Explore the six steps <ArrowRight className="w-4 h-4" />
+              <span>Discuss evaluation context</span>
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
 
-        {/* Right Column: 3D Illustration */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-md aspect-[4/3] flex items-center justify-center">
+        {/* Right Column: Illustration / Image */}
+        <div className="lg:col-span-6 flex justify-center lg:justify-end">
+          <div className="relative w-full max-w-[680px] aspect-[4/3] overflow-hidden">
             <Image
-              src="/comp/1.png"
-              alt="Compliance Ladder 3D Illustration"
+              src="/chro/1.png"
+              alt="Compliance ladder 3D workflow illustration"
               fill
               priority
-              className="object-contain"
+              className="object-cover object-center"
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
