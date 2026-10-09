@@ -617,7 +617,7 @@ export default function ModernSlaveryStatement() {
     }, 700);
   };
 
-  const registerRef = (id: string) => (el: HTMLElement | null) => {
+  const setSectionRef = (id: string, el: HTMLElement | null) => {
     sectionRefs.current[id] = el;
   };
 
@@ -659,7 +659,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="commitment-scope"
             data-section-id="commitment-scope"
-            ref={registerRef("commitment-scope")}
+            ref={(el) => setSectionRef("commitment-scope", el)}
             className="scroll-mt-24"
           >
             <SectionHeading>Our Commitment and the Scope of This Statement</SectionHeading>
@@ -675,7 +675,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="org-supply-chains"
             data-section-id="org-supply-chains"
-            ref={registerRef("org-supply-chains")}
+            ref={(el) => setSectionRef("org-supply-chains", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Organization, Operations & Supply Chains</SectionHeading>
@@ -686,7 +686,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="policies-governance"
             data-section-id="policies-governance"
-            ref={registerRef("policies-governance")}
+            ref={(el) => setSectionRef("policies-governance", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Policies & Governance</SectionHeading>
@@ -697,7 +697,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="risk-assessment"
             data-section-id="risk-assessment"
-            ref={registerRef("risk-assessment")}
+            ref={(el) => setSectionRef("risk-assessment", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Risk Assessment & Priority Areas</SectionHeading>
@@ -715,7 +715,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="due-diligence"
             data-section-id="due-diligence"
-            ref={registerRef("due-diligence")}
+            ref={(el) => setSectionRef("due-diligence", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Due Diligence, Supplier Controls & Remediation</SectionHeading>
@@ -727,7 +727,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="training-awareness"
             data-section-id="training-awareness"
-            ref={registerRef("training-awareness")}
+            ref={(el) => setSectionRef("training-awareness", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Training & Awareness</SectionHeading>
@@ -738,7 +738,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="effectiveness-progress"
             data-section-id="effectiveness-progress"
-            ref={registerRef("effectiveness-progress")}
+            ref={(el) => setSectionRef("effectiveness-progress", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Effectiveness, KPIs & Year-on-Year Progress</SectionHeading>
@@ -758,7 +758,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="reporting-concerns"
             data-section-id="reporting-concerns"
-            ref={registerRef("reporting-concerns")}
+            ref={(el) => setSectionRef("reporting-concerns", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Reporting Concerns & Non-Retaliation</SectionHeading>
@@ -769,7 +769,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="next-priorities"
             data-section-id="next-priorities"
-            ref={registerRef("next-priorities")}
+            ref={(el) => setSectionRef("next-priorities", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Next-Period Priorities</SectionHeading>
@@ -784,7 +784,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="approval-publication"
             data-section-id="approval-publication"
-            ref={registerRef("approval-publication")}
+            ref={(el) => setSectionRef("approval-publication", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Approval, Signature & Publication Record</SectionHeading>
@@ -795,7 +795,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="previous-statements"
             data-section-id="previous-statements"
-            ref={registerRef("previous-statements")}
+            ref={(el) => setSectionRef("previous-statements", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Previous Statements Archive</SectionHeading>
@@ -806,7 +806,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="related-policies"
             data-section-id="related-policies"
-            ref={registerRef("related-policies")}
+            ref={(el) => setSectionRef("related-policies", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Related Policies & Resources</SectionHeading>
@@ -821,7 +821,7 @@ export default function ModernSlaveryStatement() {
           <section
             id="faq"
             data-section-id="faq"
-            ref={registerRef("faq")}
+            ref={(el) => setSectionRef("faq", el)}
             className="scroll-mt-24 pt-12"
           >
             <SectionHeading>Frequently Asked</SectionHeading>

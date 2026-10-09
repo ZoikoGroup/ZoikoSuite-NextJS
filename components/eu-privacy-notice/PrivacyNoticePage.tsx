@@ -691,7 +691,7 @@ export default function PrivacyNoticePage() {
     }, 700);
   };
 
-  const registerRef = (id: string) => (el: HTMLElement | null) => {
+  const setSectionRef = (id: string, el: HTMLElement | null) => {
     sectionRefs.current[id] = el;
   };
 
@@ -734,14 +734,14 @@ export default function PrivacyNoticePage() {
           <section
             id="controller-rep-dpo"
             data-section-id="controller-rep-dpo"
-            ref={registerRef("controller-rep-dpo")}
+            ref={(el) => setSectionRef("controller-rep-dpo", el)}
             className="scroll-mt-36"
           >
             <SectionHeading>Controller, Representative & DPO</SectionHeading>
             <SectionIntro>
               Use an accountability card model: entity identity on one side,
               contact actions on the other. For multiple entities, use a footer
-              table—each row must answer "when does this entity apply?"
+              table—each row must answer &quot;when does this entity apply?&quot;
             </SectionIntro>
             <DataTable table={CONTROLLER_TABLE} />
           </section>
@@ -750,7 +750,7 @@ export default function PrivacyNoticePage() {
           <section
             id="collection-sources"
             data-section-id="collection-sources"
-            ref={registerRef("collection-sources")}
+            ref={(el) => setSectionRef("collection-sources", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>
@@ -763,7 +763,7 @@ export default function PrivacyNoticePage() {
           <section
             id="processing-purposes"
             data-section-id="processing-purposes"
-            ref={registerRef("processing-purposes")}
+            ref={(el) => setSectionRef("processing-purposes", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>Processing Purposes Matrix</SectionHeading>
@@ -779,7 +779,7 @@ export default function PrivacyNoticePage() {
           <section
             id="legal-basis"
             data-section-id="legal-basis"
-            ref={registerRef("legal-basis")}
+            ref={(el) => setSectionRef("legal-basis", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>
@@ -792,7 +792,7 @@ export default function PrivacyNoticePage() {
           <section
             id="sharing-processors"
             data-section-id="sharing-processors"
-            ref={registerRef("sharing-processors")}
+            ref={(el) => setSectionRef("sharing-processors", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>
@@ -805,7 +805,7 @@ export default function PrivacyNoticePage() {
           <section
             id="international-transfers"
             data-section-id="international-transfers"
-            ref={registerRef("international-transfers")}
+            ref={(el) => setSectionRef("international-transfers", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>International Transfers</SectionHeading>
@@ -816,7 +816,7 @@ export default function PrivacyNoticePage() {
           <section
             id="retention-deletion"
             data-section-id="retention-deletion"
-            ref={registerRef("retention-deletion")}
+            ref={(el) => setSectionRef("retention-deletion", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>Retention & Deletion</SectionHeading>
@@ -827,7 +827,7 @@ export default function PrivacyNoticePage() {
           <section
             id="automated-decision"
             data-section-id="automated-decision"
-            ref={registerRef("automated-decision")}
+            ref={(el) => setSectionRef("automated-decision", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>
@@ -845,7 +845,7 @@ export default function PrivacyNoticePage() {
           <section
             id="eu-rights-hub"
             data-section-id="eu-rights-hub"
-            ref={registerRef("eu-rights-hub")}
+            ref={(el) => setSectionRef("eu-rights-hub", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>EU/EEA Rights Hub</SectionHeading>
@@ -864,7 +864,7 @@ export default function PrivacyNoticePage() {
           <section
             id="rights-workflow"
             data-section-id="rights-workflow"
-            ref={registerRef("rights-workflow")}
+            ref={(el) => setSectionRef("rights-workflow", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>
@@ -886,7 +886,7 @@ export default function PrivacyNoticePage() {
           <section
             id="complaints"
             data-section-id="complaints"
-            ref={registerRef("complaints")}
+            ref={(el) => setSectionRef("complaints", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>
@@ -905,7 +905,7 @@ export default function PrivacyNoticePage() {
           <section
             id="security-cookies"
             data-section-id="security-cookies"
-            ref={registerRef("security-cookies")}
+            ref={(el) => setSectionRef("security-cookies", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>
@@ -923,7 +923,7 @@ export default function PrivacyNoticePage() {
           <section
             id="contact"
             data-section-id="contact"
-            ref={registerRef("contact")}
+            ref={(el) => setSectionRef("contact", el)}
             className="scroll-mt-36 pt-12"
           >
             <SectionHeading>Contact</SectionHeading>
@@ -937,7 +937,7 @@ export default function PrivacyNoticePage() {
           <section
             id="faq"
             data-section-id="faq"
-            ref={registerRef("faq")}
+            ref={(el) => setSectionRef("faq", el)}
             className="scroll-mt-36 pb-24"
           >
             <SectionHeading>Frequently Asked</SectionHeading>
