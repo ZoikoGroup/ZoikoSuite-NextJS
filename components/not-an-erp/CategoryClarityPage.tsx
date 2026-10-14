@@ -85,7 +85,7 @@ export default function CategoryClarityPage() {
                 </Link>
 
                 <Link
-                  href="/solutions-architect"
+                  href="/solutions"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm border border-[#4A7893] hover:bg-[#0f1f2e] transition-all duration-200 cursor-pointer active:scale-95"
                 >
                   Talk to a solutions architect

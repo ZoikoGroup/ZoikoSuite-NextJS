@@ -19,7 +19,7 @@ const faqItems: FAQItem[] = [
       "One synthetic action, ACT-001, permits a single central enterprise context to demonstrate authority, policy, authority thresholds, and reviewable evidence manifest trails.",
     ],
     linkText: "Read the tour guide",
-    linkHref: "#",
+    linkHref: "#guide",
   },
   {
     question: "Can I test with private enterprise data?",

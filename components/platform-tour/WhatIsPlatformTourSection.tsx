@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function WhatIsPlatformTourSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#0f172a] py-16 px-6 lg:px-20 flex justify-center">
+    <section id="guide" className="w-full bg-[#F7F5F0] text-[#0f172a] py-16 px-6 lg:px-20 flex justify-center">
       <div className="max-w-[1240px] w-full flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

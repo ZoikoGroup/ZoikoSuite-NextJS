@@ -162,7 +162,7 @@ export default function FaqSection() {
                                   "",
                                 )}
                                 <a
-                                  href="#"
+                                  href="#stages"
                                   className="text-[#c5a059] font-medium hover:underline inline-flex items-center gap-1"
                                 >
                                   See the nine stages

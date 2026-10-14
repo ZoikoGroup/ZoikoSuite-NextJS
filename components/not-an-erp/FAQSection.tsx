@@ -22,7 +22,7 @@ const faqs: FAQItem[] = [
     qualifiedDetail:
       "Conventional ERP products generally organize transactional modules and records, and individual products vary widely in the governance, workflow, analytics, and AI they include.",
     linkText: "See the comparison snapshot",
-    linkHref: "#",
+    linkHref: "#comparision",
   },
   {
     id: "faq-2",

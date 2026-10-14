@@ -114,7 +114,7 @@ export default function GovernedActionLifecycle() {
   };
 
   return (
-    <section className="w-full bg-white text-[#0f172a] py-20 px-6 lg:px-24 flex items-center justify-center">
+    <section id="stages" className="w-full bg-white text-[#0f172a] py-20 px-6 lg:px-24 flex items-center justify-center">
       <div className="max-w-6xl w-full flex flex-col items-center">
         {/* Main Wrapper with max-w-6xl constraint */}
         <div className="w-full max-w-6xl flex flex-col">
