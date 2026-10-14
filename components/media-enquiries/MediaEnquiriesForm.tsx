@@ -30,7 +30,9 @@ export default function MediaEnquiriesForm({
 
   React.useEffect(() => {
     if (selectedCategory) {
-      setFormData((prev) => ({ ...prev, enquiryType: selectedCategory }));
+      setTimeout(() => {
+        setFormData((prev) => ({ ...prev, enquiryType: selectedCategory }));
+      }, 0);
     }
   }, [selectedCategory]);
 

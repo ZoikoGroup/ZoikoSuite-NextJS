@@ -27,10 +27,12 @@ export default function EnterpriseInquiryForm({
   // Sync if selectedRole prop changes
   React.useEffect(() => {
     if (selectedRole) {
-      setFormData((prev) => ({
-        ...prev,
-        interest: selectedRole,
-      }));
+      setTimeout(() => {
+        setFormData((prev) => ({
+          ...prev,
+          interest: selectedRole,
+        }));
+      }, 0);
     }
   }, [selectedRole]);
 
