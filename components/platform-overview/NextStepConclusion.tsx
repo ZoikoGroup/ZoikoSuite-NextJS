@@ -52,7 +52,7 @@ export default function NextStepConclusion() {
               {/* CTA Link */}
               <div>
                 <a
-                  href="#"
+                  href="/solutions"
                   className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:text-[#c5a059] transition-all duration-200 group"
                 >
                   Talk to a solutions architect

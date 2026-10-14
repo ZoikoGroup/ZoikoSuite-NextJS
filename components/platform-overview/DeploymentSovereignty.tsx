@@ -194,7 +194,7 @@ export default function DeploymentSovereignty() {
               <ArrowRight className="w-4 h-4 text-[#c5a059]" />
             </a>
             <a
-              href="#"
+              href="/solutions"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white border border-[#DBE3E8] text-[#0f172a] font-semibold text-sm hover:bg-[#f8fafc] transition-all duration-200 shadow-xs"
             >
               Talk to a solutions architect

@@ -59,7 +59,7 @@ export default function NextStepCTA() {
           </a>
 
           <a
-            href="/solution-brief"
+            href="/solutions"
             className="inline-flex items-center justify-center px-20 py-4 rounded-full border border-[#CFDEE7] text-[#0F476A] font-semibold text-sm hover:bg-[#f8fafc] transition-all duration-200 shadow-sm w-full sm:w-auto"
           >
             Talk to a solutions architect

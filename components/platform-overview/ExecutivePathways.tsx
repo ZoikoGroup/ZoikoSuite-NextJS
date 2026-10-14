@@ -79,7 +79,7 @@ const rolesData: RoleContent[] = [
       "Workflow tracing",
     ],
     ctaText: "View ZoikoSuite for CIOs",
-    ctaHref: "/security-overview",
+    ctaHref: "/cio",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Sovereign platform control",
     cardDescription:
@@ -101,7 +101,7 @@ const rolesData: RoleContent[] = [
       "Document retention",
     ],
     ctaText: "View ZoikoSuite for CHROs",
-    ctaHref: "/governed-business-operations",
+    ctaHref: "/chro",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Workforce governance",
     cardDescription:
@@ -123,7 +123,7 @@ const rolesData: RoleContent[] = [
       "SOP compliance",
     ],
     ctaText: "View ZoikoSuite for COOs",
-    ctaHref: "/modernize-operations",
+    ctaHref: "/coo",
     cardCategory: "RECOMMENDED NEXT STEP",
     cardTitle: "Operational orchestration",
     cardDescription:
