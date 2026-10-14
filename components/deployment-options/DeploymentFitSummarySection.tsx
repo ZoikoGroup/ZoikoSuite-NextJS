@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function DeploymentFitSummarySection() {
   return (
-    <section className="w-full bg-white py-16 md:py-24 text-[#0F172A] font-sans flex justify-center items-center px-4">
+    <section id="summary" className="w-full bg-white py-16 md:py-24 text-[#0F172A] font-sans flex justify-center items-center px-4">
       <div className="w-full max-w-6xl mx-auto flex flex-col gap-12">
         {/* Header Content */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">

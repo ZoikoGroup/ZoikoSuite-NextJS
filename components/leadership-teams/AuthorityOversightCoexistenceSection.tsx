@@ -23,7 +23,7 @@ const faqItems: AccordionItem[] = [
     ],
     link: {
       text: "Read the overview",
-      href: "/platform-overview",
+      href: "#overview",
     },
   },
   {

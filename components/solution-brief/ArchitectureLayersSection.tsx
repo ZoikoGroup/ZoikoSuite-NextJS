@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ArchitectureLayersSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] py-16 md:py-24 text-[#0F172A] font-sans overflow-hidden">
+    <section id="scenario" className="w-full bg-[#F7F5F0] py-16 md:py-24 text-[#0F172A] font-sans overflow-hidden">
       <div className="w-full max-w-6xl mx-auto px-4 text-left">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-12">

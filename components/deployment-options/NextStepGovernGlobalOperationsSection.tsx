@@ -39,7 +39,7 @@ export default function NextStepGovernGlobalOperationsSection() {
           </Link>
 
           <Link
-            href="/solutions-architect"
+            href="/solutions"
             className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-transparent border border-white/20 text-white text-xs sm:text-sm font-bold hover:bg-white/5 transition-colors"
           >
             Talk to a solutions architect

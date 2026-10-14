@@ -40,7 +40,7 @@ export default function NextStepRequirementsSection() {
 
             <div className="pt-2">
               <Link
-                href="#build-summary"
+                href="#summary"
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#D0AA55] hover:text-[#e0bc6b] transition-colors group"
               >
                 <span>Build a requirement summary first</span>

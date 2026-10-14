@@ -35,17 +35,6 @@ export default function IntelligenceAndControlAnalyticsSection() {
             className="w-full h-auto object-cover block"
           />
         </div>
-
-        {/* Bottom Rounded Button */}
-        <div className="flex justify-center w-full">
-          <a
-            href="/analytics-reporting"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
-          >
-            Explore analytics & reporting
-            <ArrowRight className="w-4 h-4 text-white" />
-          </a>
-        </div>
       </div>
     </section>
   );

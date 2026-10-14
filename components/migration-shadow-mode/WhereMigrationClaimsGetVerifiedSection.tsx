@@ -3,6 +3,18 @@
 import React from "react";
 import Link from "next/link";
 
+interface OperationalResource {
+  label: string;
+  href: string;
+}
+
+const operationalResources: OperationalResource[] = [
+  { label: "Documentation", href: "/documentation" },
+  { label: "Support", href: "/support-center" },
+  { label: "System status", href: "/trust-system-status" },
+  { label: "Release notes", href: "/blog-insights" },
+];
+
 export default function WhereMigrationClaimsGetVerifiedSection() {
   return (
     <section className="w-full bg-[#FBF9F4] text-[#08222F] py-14 sm:py-20 border-b border-[#E5E0D8]">
@@ -18,7 +30,8 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#5A6D77] max-w-md leading-relaxed md:pt-6">
-            Every product view above is a synthetic fixture. These are the routes where the real answers live.
+            Every product view above is a synthetic fixture. These are the
+            routes where the real answers live.
           </p>
         </div>
 
@@ -35,12 +48,18 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
               </h3>
               <ul className="space-y-1.5 text-xs text-slate-600 mb-6">
                 <li>
-                  <Link href="/platform-foundation" className="hover:text-[#C59A41] hover:underline">
+                  <Link
+                    href="/platform-foundation"
+                    className="hover:text-[#C59A41] hover:underline"
+                  >
                     Platform Foundation
                   </Link>
                 </li>
                 <li>
-                  <Link href="/platform-overview" className="hover:text-[#C59A41] hover:underline">
+                  <Link
+                    href="/platform-overview"
+                    className="hover:text-[#C59A41] hover:underline"
+                  >
                     Source-of-record model
                   </Link>
                 </li>
@@ -67,12 +86,17 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
               </h3>
               <ul className="space-y-1.5 text-xs text-slate-600 mb-6">
                 <li>
-                  <Link href="/governance-platform" className="hover:text-[#C59A41] hover:underline">
+                  <Link
+                    href="/governance-platform"
+                    className="hover:text-[#C59A41] hover:underline"
+                  >
                     Governance Platform
                   </Link>
                 </li>
                 <li>
-                  <span className="text-slate-500">Evidence and audit readiness</span>
+                  <span className="text-slate-500">
+                    Evidence and audit readiness
+                  </span>
                 </li>
                 <li>
                   <span className="text-slate-500">Governed lifecycle</span>
@@ -94,11 +118,16 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
               </p>
               <ul className="space-y-1.5 text-xs text-slate-600 mb-6">
                 <li>
-                  <span className="text-slate-700 font-medium">Security overview</span>
+                  <span className="text-slate-700 font-medium">
+                    Security overview
+                  </span>
                 </li>
                 <li>
                   <span className="text-slate-700">
-                    Data Processing Agreement <span className="text-[10px] font-mono text-slate-400">PDF · new tab</span>
+                    Data Processing Agreement{" "}
+                    <span className="text-[10px] font-mono text-slate-400">
+                      PDF · new tab
+                    </span>
                   </span>
                 </li>
                 <li>
@@ -126,7 +155,9 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
                 Source and implementation dependent
               </h3>
               <p className="text-[11px] text-slate-600 leading-relaxed mb-6">
-                Shadow Mode support, observation method and scope depend on approved implementation. This page shows the contract model, not a guarantee that it is available for your estate.
+                Shadow Mode support, observation method and scope depend on
+                approved implementation. This page shows the contract model, not
+                a guarantee that it is available for your estate.
               </p>
             </div>
             <div>
@@ -143,7 +174,10 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
                 Professional boundary
               </p>
               <p className="text-[11px] text-slate-600 leading-relaxed mb-6">
-                Migration activity does not constitute legal, tax, accounting, audit or regulatory advice. Qualified professionals remain responsible for regulated judgment, including retention and decommissioning decisions.
+                Migration activity does not constitute legal, tax, accounting,
+                audit or regulatory advice. Qualified professionals remain
+                responsible for regulated judgment, including retention and
+                decommissioning decisions.
               </p>
             </div>
             <div>
@@ -160,7 +194,10 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
                 No outcome guarantee
               </p>
               <p className="text-[11px] text-amber-950/80 leading-relaxed mb-6">
-                No timeline, availability, integration, jurisdiction, provider, hosting, certification, service level or migration outcome is published merely because it appears in a specification. Each requires its own approved source.
+                No timeline, availability, integration, jurisdiction, provider,
+                hosting, certification, service level or migration outcome is
+                published merely because it appears in a specification. Each
+                requires its own approved source.
               </p>
             </div>
             <div>
@@ -184,17 +221,15 @@ export default function WhereMigrationClaimsGetVerifiedSection() {
           </p>
 
           <div className="flex flex-wrap gap-2">
-            {["Documentation", "Support", "System status", "Release notes"].map(
-              (pill, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  className="px-4 py-1.5 rounded-full border border-slate-300 bg-white text-xs font-medium text-slate-800 hover:border-slate-500 hover:bg-slate-50 transition-colors shadow-xs"
-                >
-                  {pill}
-                </button>
-              )
-            )}
+            {operationalResources.map((resource, idx) => (
+              <Link
+                key={idx}
+                href={resource.href}
+                className="px-4 py-1.5 rounded-full border border-slate-300 bg-white text-xs font-medium text-slate-800 hover:border-slate-500 hover:bg-slate-50 transition-colors shadow-xs inline-block"
+              >
+                {resource.label}
+              </Link>
+            ))}
           </div>
         </div>
 

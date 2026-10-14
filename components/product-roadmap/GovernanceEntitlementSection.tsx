@@ -198,7 +198,7 @@ export default function GovernanceEntitlementSection() {
             Visit the Trust Center &rarr;
           </a>
           <a
-            href="/solutions-architect"
+            href="/solutions"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full hover:bg-[#E2E8F0] border border-[#CBD5E1] text-[#334155] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
           >
             Talk to a solutions architect

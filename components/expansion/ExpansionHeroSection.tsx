@@ -60,7 +60,7 @@ export default function ExpansionHeroSection() {
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </Link>
               <Link
-                href="/solutions-architect"
+                href="/solutions"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-medium text-[13px] transition-all duration-200 bg-[#08222F]/60"
               >
                 <span>Talk to a solutions architect</span>

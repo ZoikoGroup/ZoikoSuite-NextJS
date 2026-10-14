@@ -59,7 +59,7 @@ export default function BookDemoSection() {
 
             <div>
               <a
-                href="#synthetic-scenario"
+                href="#scenario"
                 className="text-xs font-bold text-[#D0AA55] hover:underline inline-flex items-center gap-1.5"
               >
                 <span>Or inspect the synthetic scenario first</span>

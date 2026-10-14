@@ -182,7 +182,7 @@ export default function EightLayersSection() {
         <div className="flex flex-wrap items-center justify-start gap-4 w-full">
           {/* First Button */}
           <a
-            href="/solutions-architect"
+            href="/solutions"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#D0AA55] text-[#08222F] hover:bg-[#c29c4d] transition-colors shadow-sm"
           >
             Talk to a solutions architect

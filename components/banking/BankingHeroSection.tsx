@@ -50,7 +50,7 @@ export default function BankingHeroSection() {
             </Link>
 
             <Link
-              href="/solutions-architect"
+              href="/solutions"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:bg-white/10"
               style={{
                 border: "1px solid rgba(255, 255, 255, 0.2)",

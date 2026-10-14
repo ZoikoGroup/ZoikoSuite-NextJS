@@ -50,7 +50,7 @@ export default function InsuranceOperationsSection() {
 
             {/* Secondary Button */}
             <a
-              href="/solutions-architect"
+              href="/solutions"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold text-white bg-transparent border border-gray-700 hover:border-gray-500 transition-all"
             >
               Talk to a solutions architect

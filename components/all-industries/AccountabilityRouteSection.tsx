@@ -59,7 +59,7 @@ const CARDS: AccountabilityCard[] = [
     description:
       "Workforce and payroll governance material has no published destination yet.",
     linkText: "Workforce boundaries",
-    linkHref: "/leadership-teams",
+    linkHref: "/chro",
   },
 ];
 

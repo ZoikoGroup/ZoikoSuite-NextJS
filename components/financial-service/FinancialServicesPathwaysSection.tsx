@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Check, AlertCircle, ShieldAlert, ArrowRight } from "lucide-react";
 
 export default function FinancialServicesPathwaysSection() {
@@ -24,9 +25,8 @@ export default function FinancialServicesPathwaysSection() {
 
           <div className="lg:col-span-5">
             <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
-              Banking and Insurance are separate destinations with their own
-              claim boundaries. This page deliberately does not cover their
-              subject matter.
+              Explore available pathways and destinations across our platform
+              architecture, role views, and published operational resources.
             </p>
           </div>
         </div>
@@ -34,63 +34,82 @@ export default function FinancialServicesPathwaysSection() {
         {/* Top Row: 4 Cards (2x2 on medium, 4 columns on large) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1: Banking */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0]">
+          <Link
+            href="/banking"
+            className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0] hover:border-[#A07A2E] transition-all group"
+          >
             <div className="flex flex-col gap-3">
-              <h3 className="text-base font-bold text-[#0F172A]">Banking</h3>
+              <h3 className="text-base font-bold text-[#0F172A] group-hover:text-[#0F476A] transition-colors">
+                Banking
+              </h3>
               <p className="text-xs text-[#475569] leading-relaxed pb-3 border-b border-dashed border-[#CBD5E1]">
                 Core banking, payments processing and prudential subject matter
-                belong to that destination and are not claimed here.
+                across institutional workflows.
               </p>
-              <p className="text-[10px] text-[#475569] font-sans">
-                Route pending approval
-              </p>
+              <div className="pt-1">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0F476A] text-white text-[11px] font-semibold group-hover:bg-[#0B354F] transition-colors">
+                  View Banking
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
             </div>
             <div className="mt-6">
               <div
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider"
                 style={{
-                  backgroundColor: "#FBF2DF",
-                  border: "1px solid #9C6B12",
-                  color: "#9C6B12",
+                  backgroundColor: "#EAF5F0",
+                  border: "1px solid #1E7A5A",
+                  color: "#1E7A5A",
                 }}
               >
-                <AlertCircle className="w-3 h-3" style={{ color: "#9C6B12" }} />
-                NOT YET PUBLISHED
+                <Check className="w-3 h-3 text-[#1E7A5A]" />
+                PUBLISHED
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Card 2: Insurance */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0]">
+          <Link
+            href="/insurance"
+            className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0] hover:border-[#A07A2E] transition-all group"
+          >
             <div className="flex flex-col gap-3">
-              <h3 className="text-base font-bold text-[#0F172A]">Insurance</h3>
+              <h3 className="text-base font-bold text-[#0F172A] group-hover:text-[#0F476A] transition-colors">
+                Insurance
+              </h3>
               <p className="text-xs text-[#475569] leading-relaxed pb-3 border-b border-dashed border-[#CBD5E1]">
-                Policy administration and claims processing belong to that
-                destination and are not claimed here.
+                Policy administration and claims processing details tailored for
+                modern enterprise insurance operators.
               </p>
-              <p className="text-[10px] text-[#475569] font-sans">
-                Route pending approval
-              </p>
+              <div className="pt-1">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0F476A] text-white text-[11px] font-semibold group-hover:bg-[#0B354F] transition-colors">
+                  View Insurance
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
             </div>
             <div className="mt-6">
               <div
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider"
                 style={{
-                  backgroundColor: "#FBF2DF",
-                  border: "1px solid #9C6B12",
-                  color: "#9C6B12",
+                  backgroundColor: "#EAF5F0",
+                  border: "1px solid #1E7A5A",
+                  color: "#1E7A5A",
                 }}
               >
-                <AlertCircle className="w-3 h-3" style={{ color: "#9C6B12" }} />
-                NOT YET PUBLISHED
+                <Check className="w-3 h-3 text-[#1E7A5A]" />
+                PUBLISHED
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Card 3: All industries */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0]">
+          <Link
+            href="/organization-type"
+            className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0] hover:border-[#A07A2E] transition-all group"
+          >
             <div className="flex flex-col gap-3">
-              <h3 className="text-base font-bold text-[#0F172A]">
+              <h3 className="text-base font-bold text-[#0F172A] group-hover:text-[#0F476A] transition-colors">
                 All industries
               </h3>
               <p className="text-xs text-[#475569] leading-relaxed pb-3 border-b border-dashed border-[#CBD5E1]">
@@ -98,10 +117,10 @@ export default function FinancialServicesPathwaysSection() {
                 sector.
               </p>
               <div className="pt-1">
-                <button className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0F476A] text-white text-[11px] font-semibold hover:bg-[#0B354F] transition-colors">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0F476A] text-white text-[11px] font-semibold group-hover:bg-[#0B354F] transition-colors">
                   Organization Type
                   <ArrowRight className="w-3 h-3" />
-                </button>
+                </span>
               </div>
             </div>
             <div className="mt-6">
@@ -117,12 +136,15 @@ export default function FinancialServicesPathwaysSection() {
                 PUBLISHED
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Card 4: Industry solutions */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0]">
+          <Link
+            href="/solve-critical-challenges"
+            className="bg-white rounded-2xl p-6 flex flex-col justify-between shadow-sm border border-[#E2E8F0] hover:border-[#A07A2E] transition-all group"
+          >
             <div className="flex flex-col gap-3">
-              <h3 className="text-base font-bold text-[#0F172A]">
+              <h3 className="text-base font-bold text-[#0F172A] group-hover:text-[#0F476A] transition-colors">
                 Industry solutions
               </h3>
               <p className="text-xs text-[#475569] leading-relaxed pb-3 border-b border-dashed border-[#CBD5E1]">
@@ -130,10 +152,10 @@ export default function FinancialServicesPathwaysSection() {
                 contract.
               </p>
               <div className="pt-1">
-                <button className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0F476A] text-white text-[11px] font-semibold hover:bg-[#0B354F] transition-colors">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0F476A] text-white text-[11px] font-semibold group-hover:bg-[#0B354F] transition-colors">
                   Solve Critical Challenges
                   <ArrowRight className="w-3 h-3" />
-                </button>
+                </span>
               </div>
             </div>
             <div className="mt-6">
@@ -149,7 +171,7 @@ export default function FinancialServicesPathwaysSection() {
                 PUBLISHED
               </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Bottom Row: 3 Cards (3 columns) */}
@@ -161,13 +183,24 @@ export default function FinancialServicesPathwaysSection() {
                 Governance and controls
               </span>
               <div className="flex flex-col gap-1.5 pt-2 pb-3 border-b border-dashed border-[#CBD5E1]">
-                <span className="text-xs font-semibold text-[#0F172A]">
-                  Governance Platform
-                </span>
-                <span className="text-xs text-[#0F172A]">
-                  Authority and segregation
-                </span>
-                <span className="text-xs text-[#0F172A]">Finance modules</span>
+                <Link
+                  href="/governance-platform"
+                  className="text-xs font-semibold text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Governance Platform →
+                </Link>
+                <Link
+                  href="/governed-business-operations"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Authority and segregation →
+                </Link>
+                <Link
+                  href="/core-modules"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Finance modules →
+                </Link>
               </div>
             </div>
             <div className="mt-6">
@@ -192,13 +225,24 @@ export default function FinancialServicesPathwaysSection() {
                 Architecture and data
               </span>
               <div className="flex flex-col gap-1.5 pt-2 pb-3 border-b border-dashed border-[#CBD5E1]">
-                <span className="text-xs font-semibold text-[#0F172A]">
-                  Platform Foundation
-                </span>
-                <span className="text-xs text-[#0F172A]">
-                  Data location and lifecycle
-                </span>
-                <span className="text-xs text-[#0F172A]">APIs and events</span>
+                <Link
+                  href="/platform-foundation"
+                  className="text-xs font-semibold text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Platform Foundation →
+                </Link>
+                <Link
+                  href="/data-residency"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Data location and lifecycle →
+                </Link>
+                <Link
+                  href="/documentation"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  APIs and events →
+                </Link>
               </div>
             </div>
             <div className="mt-6">
@@ -223,11 +267,24 @@ export default function FinancialServicesPathwaysSection() {
                 Role destinations
               </span>
               <div className="flex flex-col gap-1.5 pt-2 pb-3 border-b border-dashed border-[#CBD5E1]">
-                <span className="text-xs font-semibold text-[#0F172A]">
-                  CFOs
-                </span>
-                <span className="text-xs text-[#0F172A]">General Counsel</span>
-                <span className="text-xs text-[#0F172A]">Leadership teams</span>
+                <Link
+                  href="/cfos"
+                  className="text-xs font-semibold text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  CFOs →
+                </Link>
+                <Link
+                  href="/general-counsel"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  General Counsel →
+                </Link>
+                <Link
+                  href="/leadership-teams"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Leadership teams →
+                </Link>
               </div>
             </div>
             <div className="mt-6">
@@ -252,13 +309,24 @@ export default function FinancialServicesPathwaysSection() {
                 Evaluation resources
               </span>
               <div className="flex flex-col gap-1.5 pt-2 pb-3 border-b border-dashed border-[#CBD5E1]">
-                <span className="text-xs font-semibold text-[#0F172A]">
-                  Solution Brief
-                </span>
-                <span className="text-xs text-[#0F172A]">
-                  Executive Resources
-                </span>
-                <span className="text-xs text-[#0F172A]">Platform Tour</span>
+                <Link
+                  href="/solution-brief"
+                  className="text-xs font-semibold text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Solution Brief →
+                </Link>
+                <Link
+                  href="/executive-resources"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Executive Resources →
+                </Link>
+                <Link
+                  href="/platform-tour"
+                  className="text-xs text-[#0F172A] hover:text-[#0F476A] transition-colors"
+                >
+                  Platform Tour →
+                </Link>
               </div>
             </div>
             <div className="mt-6">

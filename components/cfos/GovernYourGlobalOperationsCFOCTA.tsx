@@ -59,7 +59,7 @@ export default function GovernYourGlobalOperationsCFOCTA() {
           </Link>
 
           <Link
-            href="/solutions-architect"
+            href="/solutions"
             className="w-full sm:w-auto px-7 py-3.5 rounded-full border border-[#1E5B80] bg-[#0A3854] hover:bg-[#124263] text-white text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center justify-center"
           >
             Talk to a solutions architect

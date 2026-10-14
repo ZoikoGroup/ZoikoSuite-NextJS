@@ -55,7 +55,7 @@ export default function StartWithJurisdictionLeastSureAboutSection() {
 
           <div>
             <Link
-              href="#jurisdiction-registry"
+              href="#jurisdiction"
               className="text-xs sm:text-sm font-medium text-[#D0AA55] hover:underline inline-flex items-center gap-1.5"
             >
               Or review the jurisdiction register first →
@@ -200,7 +200,7 @@ export default function StartWithJurisdictionLeastSureAboutSection() {
 
               <p className="text-[10px] text-slate-500 leading-normal pt-1">
                 We use contact information to respond to this request. Consent is never pre-checked. See the{" "}
-                <Link href="/privacy" className="text-slate-700 underline hover:text-slate-900">
+                <Link href="/privacy-policy" className="text-slate-700 underline hover:text-slate-900">
                   Privacy Notice
                 </Link>
                 .

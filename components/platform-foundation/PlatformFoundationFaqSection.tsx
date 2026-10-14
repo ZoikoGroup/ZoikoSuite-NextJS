@@ -18,7 +18,7 @@ const faqItems: FAQItem[] = [
         </p>
         <p className="text-slate-600">
           Ten canonical capabilities sit beneath governed operations, keeping policy ownership, identities, failures, evidence and implementation boundaries visible. Availability varies by agreement tier, tenant model and deployment scope.{" "}
-          <a href="#capabilities" className="text-[#c5a059] hover:underline font-medium">
+          <a href="#capability" className="text-[#c5a059] hover:underline font-medium">
             See the capability map
           </a>
         </p>
