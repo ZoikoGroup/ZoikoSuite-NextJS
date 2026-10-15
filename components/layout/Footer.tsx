@@ -1,7 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaGithub, FaLinkedin, FaYoutube, FaXTwitter } from "react-icons/fa6";
-import { LuGlobe, LuRss } from "react-icons/lu";
+import {
+  LuGlobe,
+  LuRss,
+  LuCopyright,
+  LuBuilding2,
+  LuSettings,
+  LuFileBadge,
+  LuScale,
+  LuUsers,
+} from "react-icons/lu";
 
 /**
  * ZoikoSuite site footer.
@@ -224,39 +233,73 @@ const PRIVACY_LINKS: FooterLink[] = [
   },
 ];
 
-type FinePrintBlock = { eyebrow: string; body: React.ReactNode };
+type IconType = React.ComponentType<{ className?: string }>;
+
+/** Circled "R" (registered mark). Lucide has no equivalent, so this is
+ *  drawn with the same stroke style as the Lucide icons. */
+const LuRegistered: IconType = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <path d="M9.5 16.5V7.5h3.25a2.5 2.5 0 0 1 0 5H9.5" />
+    <path d="M12.75 12.5l2.25 4" />
+  </svg>
+);
+
+type FinePrintBlock = {
+  eyebrow: string;
+  Icon: IconType;
+  body: React.ReactNode;
+};
 
 const FINE_PRINT: FinePrintBlock[] = [
   {
     eyebrow: "Copyright",
+    Icon: LuCopyright,
     body: "© 2026 Zoiko Suite Inc. All rights reserved.",
   },
   {
     eyebrow: "Product and group",
+    Icon: LuBuilding2,
     body: "ZoikoSuite® is a governed business operations intelligence platform developed and operated by Zoiko Tech, a Zoiko Group company.",
   },
   {
     eyebrow: "Trademark",
+    Icon: LuRegistered,
     body: "ZoikoSuite, Zoiko Tech, Zoiko Group, their respective logos, product names, and related marks are trademarks or registered trademarks of their respective owners. Other names and marks may be the property of their respective owners.",
   },
   {
     eyebrow: "Availability",
+    Icon: LuSettings,
     body: "Product descriptions, architecture statements, roadmap references, jurisdiction coverage, compliance capabilities, security controls, integrations, and deployment options may describe planned, configurable, or market-dependent functionality and do not constitute a guarantee of future availability.",
   },
   {
     eyebrow: "Standards and certifications",
+    Icon: LuFileBadge,
     body: "References to standards, frameworks, and control objectives describe design targets or alignment unless an independently verified certification or attestation is expressly stated.",
   },
   {
     eyebrow: "Professional advice",
+    Icon: LuScale,
     body: "ZoikoSuite does not provide legal, tax, accounting, audit, investment, employment, or other regulated professional advice.",
   },
   {
     eyebrow: "Locations",
+    Icon: LuGlobe,
     body: "Global Headquarters: 1401 21st Street, Suite R, Sacramento, CA 95811, United States. European Headquarters: 167–169 Great Portland Street, 5th Floor, London W1W 5PF, United Kingdom.",
   },
   {
     eyebrow: "Institutional statement",
+    Icon: LuUsers,
     body: (
       <>
         <span className="font-semibold text-white/[81.2%]">
@@ -358,10 +401,10 @@ function LegalLinkRow({
   const textClass =
     tone === "muted"
       ? "text-slate-400 hover:text-white"
-      : "text-white/[63.2%] hover:text-white";
+      : "text-slate-400 hover:text-white";
 
   return (
-    <div className="flex flex-wrap items-center">
+    <div className="flex flex-wrap items-center justify-center">
       {links.map((link, i) => (
         <Link
           key={link.label}
@@ -373,6 +416,24 @@ function LegalLinkRow({
           {link.label}
         </Link>
       ))}
+    </div>
+  );
+}
+
+/** NEW: single fine-print block (gold icon box + mono eyebrow + body). */
+function FinePrintItem({ block }: { block: FinePrintBlock }) {
+  const { Icon } = block;
+  return (
+    <div className="flex items-start gap-3">
+      <div className="flex size-10 flex-shrink-0 items-center justify-center rounded-lg border border-[#C09442]">
+        <Icon className="size-5 text-[#C09442]" />
+      </div>
+      <div className="flex min-w-0 flex-col gap-1">
+        <div className="font-mono text-[11px] font-medium uppercase tracking-wider text-[#5F7E90]">
+          {block.eyebrow}
+        </div>
+        <p className="text-sm leading-6 text-[#8CA6B4]">{block.body}</p>
+      </div>
     </div>
   );
 }
@@ -447,10 +508,10 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="my-12 h-px w-full bg-white/10" />
+        <div className="my-8 h-px w-full bg-white/10" />
 
         {/* Legal links */}
-        <div className="flex flex-col gap-2 text-center border-t border-white/19 pt-7">
+        <div className="flex flex-col gap-2 text-center pt-2">
           <Eyebrow>Legal</Eyebrow>
           <div className="flex flex-col">
             <LegalLinkRow links={LEGAL_LINKS} tone="muted" />
@@ -458,20 +519,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Fine print */}
-        <div className="mt-12 flex flex-col gap-8 border-t border-white/19 pt-8 text-center">
+        {/* NEW: Fine print (below Legal) */}
+        <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 border-t border-white/19 pt-10 sm:grid-cols-2 lg:grid-cols-4">
           {FINE_PRINT.map((block) => (
-            <div
-              key={block.eyebrow}
-              className="mx-auto flex max-w-4xl flex-col gap-2"
-            >
-              <div className="font-mono text-[10px] uppercase leading-4 tracking-wider text-white/47">
-                {block.eyebrow}
-              </div>
-              <div className="text-xs leading-5 text-white/[63.2%]">
-                {block.body}
-              </div>
-            </div>
+            <FinePrintItem key={block.eyebrow} block={block} />
           ))}
         </div>
       </div>
