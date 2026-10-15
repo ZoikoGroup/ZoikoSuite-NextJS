@@ -130,7 +130,7 @@ export default function FAQSection() {
                     {item.linkText && (
                       <div>
                         <a
-                          href="#comparison"
+                          href="#patterns"
                           className="text-xs sm:text-sm font-bold text-[#A07A2E] hover:underline inline-flex items-center gap-1"
                         >
                           {item.linkText}

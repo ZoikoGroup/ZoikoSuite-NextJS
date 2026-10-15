@@ -1,62 +1,86 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface AccountableRole {
   role: string;
   description: string;
   callout?: string;
+  href: string; // Manually updateable link for each role
 }
 
 const executiveRoles: AccountableRole[] = [
   {
     role: "CFO",
-    description: "Balance sheet integrity, approval authority, backward payment context, no alter-native routes.",
+    description:
+      "Balance sheet integrity, approval authority, backward payment context, no alter-native routes.",
+    href: "/cfos",
   },
   {
     role: "General Counsel",
-    description: "Contract obligations, legal review tracking, privilege boundaries, jurisdictional exposure.",
+    description:
+      "Contract obligations, legal review tracking, privilege boundaries, jurisdictional exposure.",
+    href: "/general-counsel",
   },
   {
     role: "CHRO",
-    description: "Workforce data borders, purpose-limited access, payroll release governance, no surveillance.",
+    description:
+      "Workforce data borders, purpose-limited access, payroll release governance, no surveillance.",
+    href: "/chro",
   },
   {
     role: "CIO",
-    description: "System ownership, integration health, coexistence with existing systems, deployment scope.",
+    description:
+      "System ownership, integration health, coexistence with existing systems, deployment scope.",
+    href: "/cio",
   },
   {
     role: "COO",
-    description: "Cross-functional throughput, bottlenecks, owner accountability, exception frequency.",
+    description:
+      "Cross-functional throughput, bottlenecks, owner accountability, exception frequency.",
+    href: "/coo",
   },
 ];
 
 const controlRoles: AccountableRole[] = [
   {
     role: "Controller",
-    description: "Period-end and journal authority, reconciliation state, and evidence completeness.",
+    description:
+      "Period-end and journal authority, reconciliation state, and evidence completeness.",
+    href: "/controller-light",
   },
   {
     role: "Tax Leader",
-    description: "Obligation calendar, coverage status with source tables, and professional review routing.",
+    description:
+      "Obligation calendar, coverage status with source tables, and professional review routing.",
+    href: "/tax-ladder",
   },
   {
     role: "Compliance Leader",
-    description: "Control outcomes, exception ownership, and auditor and regulator-ready evidence.",
+    description:
+      "Control outcomes, exception ownership, and auditor and regulator-ready evidence.",
+    href: "/compliance-ladder",
   },
 ];
 
 const oversightRoles: AccountableRole[] = [
   {
     role: "Audit Committee",
-    description: "Material exceptions, control provenance gaps, and traceability without operational access.",
-    callout: "Oversight roles have no operational approval authority by default; approval and execute controls are not present unless a protocol state separately authorizes them.",
+    description:
+      "Material exceptions, control provenance gaps, and traceability without operational access.",
+    callout:
+      "Oversight roles have no operational approval authority by default; approval and execute controls are not present unless a protocol state separately authorizes them.",
+    href: "/audit-committee",
   },
   {
     role: "Board of Directors",
-    description: "Strategy and risk context, assurance posture, and entity-level exception concentration.",
-    callout: "Oversight roles have no operational approval authority by default; approval and execute controls are not present unless a protocol state separately authorizes them.",
+    description:
+      "Strategy and risk context, assurance posture, and entity-level exception concentration.",
+    callout:
+      "Oversight roles have no operational approval authority by default; approval and execute controls are not present unless a protocol state separately authorizes them.",
+    href: "/executive-resources",
   },
 ];
 
@@ -92,7 +116,8 @@ export default function ThreeGroupsWhatAccountableForSection() {
             className="lg:col-span-5 flex flex-col justify-end"
           >
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              No role is preselected. Nothing on this page infers your function from tracking or profile data — you choose where to start.
+              No role is preselected. Nothing on this page infers your function
+              from tracking or profile data — you choose where to start.
             </p>
           </motion.div>
         </div>
@@ -103,7 +128,9 @@ export default function ThreeGroupsWhatAccountableForSection() {
             <span className="text-[10px] font-mono font-bold tracking-wider text-amber-700 uppercase">
               GROUP 01
             </span>
-            <span className="text-sm font-bold text-slate-800">Executive operators</span>
+            <span className="text-sm font-bold text-slate-800">
+              Executive operators
+            </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
             {executiveRoles.map((item, idx) => (
@@ -123,9 +150,12 @@ export default function ThreeGroupsWhatAccountableForSection() {
                     {item.description}
                   </p>
                 </div>
-                <span className="text-[9.5px] font-mono font-semibold text-slate-400 pt-2 border-t border-slate-100 block hover:text-[#0F476A] transition-colors cursor-pointer">
+                <Link
+                  href={item.href}
+                  className="text-[9.5px] font-mono font-semibold text-slate-400 pt-2 border-t border-slate-100 block hover:text-[#0F476A] transition-colors"
+                >
                   VIEW TYPICAL APPROVAL →
-                </span>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -137,7 +167,9 @@ export default function ThreeGroupsWhatAccountableForSection() {
             <span className="text-[10px] font-mono font-bold tracking-wider text-amber-700 uppercase">
               GROUP 02
             </span>
-            <span className="text-sm font-bold text-slate-800">Control & assurance leaders</span>
+            <span className="text-sm font-bold text-slate-800">
+              Control & assurance leaders
+            </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {controlRoles.map((item, idx) => (
@@ -157,9 +189,12 @@ export default function ThreeGroupsWhatAccountableForSection() {
                     {item.description}
                   </p>
                 </div>
-                <span className="text-[9.5px] font-mono font-semibold text-slate-400 pt-2 border-t border-slate-100 block hover:text-[#0F476A] transition-colors cursor-pointer">
+                <Link
+                  href={item.href}
+                  className="text-[9.5px] font-mono font-semibold text-slate-400 pt-2 border-t border-slate-100 block hover:text-[#0F476A] transition-colors"
+                >
                   VIEW TYPICAL APPROVAL →
-                </span>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -199,9 +234,12 @@ export default function ThreeGroupsWhatAccountableForSection() {
                     </div>
                   )}
                 </div>
-                <span className="text-[9.5px] font-mono font-semibold text-slate-400 pt-2 border-t border-slate-100 block hover:text-[#0F476A] transition-colors cursor-pointer">
+                <Link
+                  href={item.href}
+                  className="text-[9.5px] font-mono font-semibold text-slate-400 pt-2 border-t border-slate-100 block hover:text-[#0F476A] transition-colors"
+                >
                   VIEW TYPICAL APPROVAL →
-                </span>
+                </Link>
               </motion.div>
             ))}
           </div>

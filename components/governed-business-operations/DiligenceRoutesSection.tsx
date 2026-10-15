@@ -212,7 +212,7 @@ export default function DiligenceRoutesSection() {
           </a>
 
           <a
-            href="/solutions-architect"
+            href="/solutions"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-transparent text-[#0F476A] hover:bg-[#0F476A]/5 transition-colors border border-[#DBE3E8]"
           >
             Talk to a solutions architect

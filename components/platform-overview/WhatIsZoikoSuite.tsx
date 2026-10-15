@@ -27,7 +27,7 @@ const features = [
 
 export default function WhatIsZoikoSuite() {
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#0f172a] py-20 px-6 lg:px-24 flex items-center justify-center">
+    <section id="definition" className="w-full bg-[#F7F5F0] text-[#0f172a] py-20 px-6 lg:px-24 flex items-center justify-center">
       <div className="max-w-[1280px] w-full flex flex-col items-center">
         {/* Main Card Wrapper with Golden Border & max-w-6xl constraint */}
         <motion.div

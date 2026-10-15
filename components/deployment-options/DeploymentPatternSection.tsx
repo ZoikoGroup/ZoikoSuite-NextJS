@@ -41,7 +41,7 @@ export default function DeploymentPatternSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <Link href="/solutions-architect" className="bg-[#D0AA55] hover:bg-[#b89445] text-[#0F172A] font-bold py-3.5 px-6 rounded-full transition-all shadow-sm flex items-center gap-2 cursor-pointer text-sm">
+            <Link href="/solutions" className="bg-[#D0AA55] hover:bg-[#b89445] text-[#0F172A] font-bold py-3.5 px-6 rounded-full transition-all shadow-sm flex items-center gap-2 cursor-pointer text-sm">
               <span>Talk to a solutions architect</span>
               <span>&rarr;</span>
             </Link>

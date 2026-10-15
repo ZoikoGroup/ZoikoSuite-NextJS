@@ -58,7 +58,7 @@ export default function GlobalOperationsCTA() {
             <ArrowRight className="w-4 h-4 text-[#0f172a]" />
           </a>
           <a
-            href="#"
+            href="/solutions"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-sm hover:bg-[#07131d]/60 transition-all duration-200 shadow-xs"
           >
             Talk to a solutions architect

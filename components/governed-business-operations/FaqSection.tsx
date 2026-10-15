@@ -128,7 +128,7 @@ export default function FaqSection() {
                         {faq.subAnswer}
                         {faq.linkText && (
                           <a
-                            href="#"
+                            href="#definition"
                             className="inline-block ml-1.5 text-[#0F476A] font-semibold hover:underline"
                           >
                             {faq.linkText}

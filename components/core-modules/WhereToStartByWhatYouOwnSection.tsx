@@ -101,15 +101,14 @@ export default function WhereToStartByWhatYouOwnSection() {
                 </span>
 
                 <div className="mb-3">
-                  <a
-                    href={card.linkHref}
+                  <div
                     className="group inline-flex items-baseline gap-1 text-[13.5px] font-bold text-[#08222F] hover:text-[#c5a059] transition-colors leading-snug"
                   >
                     <span>{card.title}</span>
                     <span className="font-normal text-xs text-[#64748b]">
                       → {card.linkText}
                     </span>
-                  </a>
+                  </div>
                 </div>
 
                 <p className="text-xs text-[#566573] leading-relaxed">

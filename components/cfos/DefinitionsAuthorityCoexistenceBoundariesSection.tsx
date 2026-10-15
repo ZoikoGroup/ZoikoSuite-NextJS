@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
       "Governed context for material financial decisions — entity, period, currency, source and freshness, plus the policy, delegated authority, evidence and accountable owner that apply.",
       "It coordinates finance work across approved systems while authoritative records remain where they already sit.",
     ],
-    link: { text: "See the ownership badges", href: "#" },
+    link: { text: "See the ownership badges", href: "#read" },
   },
   {
     question: "Does it replace our ERP or banking platform?",

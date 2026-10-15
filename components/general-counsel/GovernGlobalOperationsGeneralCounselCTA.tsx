@@ -45,7 +45,7 @@ export default function GovernGlobalOperationsGeneralCounselCTA() {
               <span>Book enterprise demo &rarr;</span>
             </Link>
             <Link
-              href="/solutions-architect"
+              href="/solutions"
               className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#1e445b] bg-[#0c2332] text-white font-medium text-xs hover:bg-[#12364a] transition-colors"
             >
               Talk to a solutions architect

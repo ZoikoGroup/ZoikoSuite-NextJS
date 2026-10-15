@@ -171,12 +171,12 @@ export default function MetricDefinitionsSection() {
         </div>
 
         {/* CTA Button */}
-        <div>
+        {/* <div>
           <Link href="/analytics-reporting" className="bg-[#08222F] hover:bg-[#0e3448] text-white px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2 transition-colors shadow-sm">
             Explore analytics &amp; reporting
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

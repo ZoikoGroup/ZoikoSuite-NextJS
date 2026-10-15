@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function WhereModuleClaimsVerifiedSection() {
@@ -29,7 +28,9 @@ export default function WhereModuleClaimsVerifiedSection() {
           {/* Right Column */}
           <div className="lg:col-span-5 flex items-center lg:pt-4">
             <p className="text-[#566573] text-[13.5px] sm:text-sm leading-relaxed max-w-[480px]">
-              A high-fidelity mockup is not evidence that a capability is live. These are the routes where availability, controls and evidence get checked.
+              A high-fidelity mockup is not evidence that a capability is live.
+              These are the routes where availability, controls and evidence get
+              checked.
             </p>
           </div>
         </div>
@@ -46,7 +47,9 @@ export default function WhereModuleClaimsVerifiedSection() {
                 Registry governed, not inferred
               </h3>
               <p className="text-xs text-[#566573] leading-relaxed mb-4">
-                Public route availability language, claim review and review date sourced from the Module Publication Registry. A blocked or pending record cannot render a public capability claim.
+                Public route availability language, claim review and review date
+                sourced from the Module Publication Registry. A blocked or
+                pending record cannot render a public capability claim.
               </p>
             </div>
           </div>
@@ -61,16 +64,18 @@ export default function WhereModuleClaimsVerifiedSection() {
                 Shared controls across modules
               </h3>
               <p className="text-xs text-[#566573] leading-relaxed mb-4">
-                Policy, jurisdiction intelligence, approvals, delegated authority segregation, evidence, audit readiness, governed AI and analytics.
+                Policy, jurisdiction intelligence, approvals, delegated
+                authority segregation, evidence, audit readiness, governed AI
+                and analytics.
               </p>
             </div>
             <div className="space-y-1.5 pt-3 border-t border-[#f1f5f9] text-xs">
-              <Link href="/governance/control-plane" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+              <div className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
                 Governance Control plane
-              </Link>
-              <Link href="/governance/lifecycle" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+              </div>
+              <div className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
                 Governed lifecycle
-              </Link>
+              </div>
             </div>
           </div>
 
@@ -84,16 +89,22 @@ export default function WhereModuleClaimsVerifiedSection() {
                 Architecture and integration
               </h3>
               <p className="text-xs text-[#566573] leading-relaxed mb-4">
-                Multi-entity and multi-jurisdiction scope, residency, APIs and integrations, migration and Shadow Mode, evidence and event architecture.
+                Multi-entity and multi-jurisdiction scope, residency, APIs and
+                integrations, migration and Shadow Mode, evidence and event
+                architecture.
               </p>
             </div>
             <div className="space-y-1.5 pt-3 border-t border-[#f1f5f9] text-xs">
-              <Link href="/platform/deployment" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+              <div
+                className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+              >
                 Deployment options
-              </Link>
-              <Link href="/platform/integrations" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+              </div>
+              <div
+                className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+              >
                 Integrations architecture
-              </Link>
+              </div>
             </div>
           </div>
 
@@ -104,21 +115,31 @@ export default function WhereModuleClaimsVerifiedSection() {
                 Security and privacy
               </span>
               <div className="space-y-2 text-xs">
-                <Link href="/trust/security-overview" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Security overview
-                </Link>
-                <Link href="/trust/data-processing-agreement" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                </div>
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Data Processing Agreement (DPA preview)
-                </Link>
-                <Link href="/trust/subprocessors" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                </div>
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Subprocessors
-                </Link>
-                <Link href="/trust/responsible-ai" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                </div>
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Responsible AI
-                </Link>
-                <Link href="/trust/accessibility" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                </div>
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Accessibility
-                </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -130,15 +151,21 @@ export default function WhereModuleClaimsVerifiedSection() {
                 Evidence and assurance
               </span>
               <div className="space-y-2 text-xs">
-                <Link href="/trust/evidence-architecture" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Evidence architecture
-                </Link>
-                <Link href="/platform/cross-module-manifest" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                </div>
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Cross-module manifest
-                </Link>
-                <Link href="/trust/evidence-health-model" className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors">
+                </div>
+                <div
+                  className="block text-[#08222F] font-semibold hover:text-[#c5a059] transition-colors"
+                >
                   Evidence health model
-                </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -150,7 +177,10 @@ export default function WhereModuleClaimsVerifiedSection() {
                 Professional boundary
               </span>
               <p className="text-xs text-[#785929] leading-relaxed">
-                No module provides legal, tax, accounting, audit, investment or employment advice. Qualified professionals remain responsible for regulated judgment and use, and no certification mark is displayed until independently verified.
+                No module provides legal, tax, accounting, audit, investment or
+                employment advice. Qualified professionals remain responsible
+                for regulated judgment and use, and no certification mark is
+                displayed until independently verified.
               </p>
             </div>
           </div>

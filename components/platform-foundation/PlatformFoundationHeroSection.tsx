@@ -55,7 +55,7 @@ export default function PlatformFoundationHeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
               <Link
-                href="/solutions-architect"
+                href="/solutions"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D0AA55] text-[#08222F] font-semibold text-[13px] hover:bg-[#c29c4c] transition-all duration-200 shadow-sm"
               >
                 <span>Talk to a solutions architect</span>

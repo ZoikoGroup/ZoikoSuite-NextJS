@@ -74,10 +74,10 @@ export default function HeroSection() {
                 </a>
 
                 <a
-                  href="#choose-tour-path"
+                  href="/book-demo"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#0d2a3a] text-white font-medium text-[13px] border border-[#1e445b] hover:bg-[#12364a] transition-all duration-200 shadow-sm"
                 >
-                  Choose a tour path
+                  Book a demo
                 </a>
               </div>
 

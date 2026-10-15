@@ -47,7 +47,7 @@ const groups: CapabilityGroup[] = [
     ],
     allCount: "ten",
     buttonText: "show all ten capabilities +",
-    customHref:"/governance-platform"
+    customHref: "/governance-platform",
   },
   {
     group: "Group 03",
@@ -57,12 +57,15 @@ const groups: CapabilityGroup[] = [
     items: [
       { label: "Platform Architecture", href: "/foundation/architecture" },
       { label: "Multi-Entity Operations", href: "/foundation/multi-entity" },
-      { label: "Multi-Jurisdiction Operations", href: "/foundation/multi-jurisdiction" },
+      {
+        label: "Multi-Jurisdiction Operations",
+        href: "/foundation/multi-jurisdiction",
+      },
       { label: "Data Residency", href: "/foundation/data-residency" },
     ],
     allCount: "ten",
     buttonText: "show all ten foundations +",
-    customHref:"/platform-foundation"
+    customHref: "/platform-foundation",
   },
 ];
 
@@ -148,12 +151,9 @@ export default function PlatformArchitecture() {
                     <div className="space-y-3 mb-6 border-t border-[#E2E8F0] pt-6">
                       {group.items.map((item, itemIdx) => (
                         <div key={itemIdx}>
-                          <Link
-                            href={item.href}
-                            className="text-xs sm:text-sm font-medium text-[#0f172a] hover:text-[#c5a059] transition-colors inline-block"
-                          >
+                          <span className="text-xs sm:text-sm font-medium text-[#0f172a] hover:text-[#c5a059] transition-colors inline-block">
                             {item.label}
-                          </Link>
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -180,18 +180,11 @@ export default function PlatformArchitecture() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
           >
             <a
-              href="#"
+              href="/platform"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0F476A] text-white font-semibold text-sm hover:bg-[#0b354f] transition-all duration-200 shadow-lg shadow-[#0F476A]/20 w-full sm:w-auto"
             >
-              Explore platform capabilities
-              <ArrowRight className="w-4 h-4 text-[#c5a059]" />
-            </a>
-
-            <a
-              href="#"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white border border-[#DBE3E8] text-[#0F476A] font-semibold text-sm hover:bg-[#f8fafc] transition-all duration-200 shadow-sm w-full sm:w-auto"
-            >
               View platform architecture
+              <ArrowRight className="w-4 h-4 text-[#c5a059]" />
             </a>
           </motion.div>
         </div>

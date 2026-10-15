@@ -205,17 +205,6 @@ export default function EnterpriseValueFrameworkSection() {
             assumptions.
           </p>
         </div>
-
-        {/* Bottom CTA Button */}
-        <div className="flex justify-center w-full">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#0F476A] text-white hover:bg-[#0c3955] transition-colors shadow-sm"
-          >
-            Request a value assessment
-            <ArrowRight className="w-4 h-4 text-white" />
-          </a>
-        </div>
       </div>
     </section>
   );

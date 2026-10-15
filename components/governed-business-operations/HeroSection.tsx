@@ -63,7 +63,7 @@ export default function HeroSection() {
                 </a>
 
                 <a
-                  href="/solutions-architect"
+                  href="/solutions"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent text-white font-semibold text-sm border border-[#1e293b] hover:bg-[#0f1f2e] transition-all duration-200"
                 >
                   Talk to a solutions architect

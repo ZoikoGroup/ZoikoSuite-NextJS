@@ -70,7 +70,7 @@ export default function CategoryFormulaSection() {
   const activePart = formulaParts[selectedIndex];
 
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#0f172a] py-20 px-6 lg:px-24 flex items-center justify-center">
+    <section id="definition" className="w-full bg-[#F7F5F0] text-[#0f172a] py-20 px-6 lg:px-24 flex items-center justify-center">
       <div className="max-w-7xl w-full flex flex-col items-center">
         {/* Outer Container Box with Gold/Brown Border */}
         <div className="w-full bg-white border border-[#D0AA55] border-t-4 border-t-[#D0AA55] rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col">

@@ -157,10 +157,10 @@ const OFFICES: Office[] = [
       "United States",
     ],
     contacts: [
-      { label: "Enterprise sales", href: "/contact/enterprise-sales" },
-      { label: "Corporate enquiries", href: "/contact/corporate" },
-      { label: "Media enquiries", href: "/contact/media" },
-      { label: "Partner enquiries", href: "/contact/partners" },
+      { label: "Enterprise sales", href: "/enterprise-sales" },
+      { label: "Corporate enquiries", href: "/corporate-enquiries" },
+      { label: "Media enquiries", href: "/media-enquiries" },
+      { label: "Partner enquiries", href: "/partner-enquiries" },
     ],
   },
   {
@@ -174,17 +174,17 @@ const OFFICES: Office[] = [
     contacts: [
       {
         label: "European enterprise sales",
-        href: "/contact/eu-enterprise-sales",
+        href: "/european-enterprise-sales",
       },
       {
         label: "UK and European partnerships",
-        href: "/contact/eu-partnerships",
+        href: "/uk-european-partnerships",
       },
       {
         label: "Privacy and data protection",
-        href: "/trust/privacy-architecture",
+        href: "/privacy-data-protection",
       },
-      { label: "Regional support", href: "/resources/support-center" },
+      { label: "Regional support", href: "/regional-support" },
     ],
   },
 ];

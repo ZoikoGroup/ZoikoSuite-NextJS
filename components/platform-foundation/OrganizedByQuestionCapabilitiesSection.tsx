@@ -32,11 +32,12 @@ const capabilityGroups: CapabilityGroup[] = [
     ],
   },
   {
-    question: "Where does data live, and how does it move through its lifecycle?",
+    question:
+      "Where does data live, and how does it move through its lifecycle?",
     items: [
       {
         title: "Data Residency",
-        subtext: "Proof rules \"Data Location & Lifecycle\" · Route pending",
+        subtext: 'Proof rules "Data Location & Lifecycle" · Route pending',
       },
       {
         title: "Data and Event Architecture",
@@ -78,7 +79,10 @@ const capabilityGroups: CapabilityGroup[] = [
 
 export default function OrganizedByQuestionCapabilitiesSection() {
   return (
-    <section className="w-full bg-white text-[#0f172a] py-16 sm:py-20 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]">
+    <section
+      id="capability"
+      className="w-full bg-white text-[#0f172a] py-16 sm:py-20 px-4 sm:px-6 lg:px-20 flex justify-center border-t border-[#ede9df]"
+    >
       <div className="max-w-[1240px] w-full flex flex-col">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end mb-10 sm:mb-12">
@@ -109,8 +113,8 @@ export default function OrganizedByQuestionCapabilitiesSection() {
           >
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               Grouped by evaluation question rather than by internal team. Each
-              capability shows its publication state, and none links out until
-              a route is approved.
+              capability shows its publication state, and none links out until a
+              route is approved.
             </p>
           </motion.div>
         </div>
@@ -166,7 +170,13 @@ export default function OrganizedByQuestionCapabilitiesSection() {
             Non-negotiated technical baselines.
           </p>
           <div className="flex flex-wrap gap-2 pt-1">
-            {["Sign in", "Documentation", "Support", "System status", "API resources"].map((pill, idx) => (
+            {[
+              "Sign in",
+              "Documentation",
+              "Support",
+              "System status",
+              "API resources",
+            ].map((pill, idx) => (
               <span
                 key={idx}
                 className="px-3 py-1.5 rounded-full border border-slate-200 bg-white text-[11px] font-medium text-slate-700 shadow-2xs hover:border-[#D0AA55] transition-colors"

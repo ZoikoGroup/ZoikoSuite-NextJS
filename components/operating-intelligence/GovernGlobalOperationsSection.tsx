@@ -54,7 +54,7 @@ export default function GovernGlobalOperationsSection() {
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
-              href="/solutions-architect"
+              href="/solutions"
               className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#1e445b] bg-[#0c2332] text-white font-medium text-xs hover:bg-[#12364a] transition-colors"
             >
               Talk to a solutions architect

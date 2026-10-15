@@ -84,17 +84,6 @@ export default function GovernanceControlPlaneSection() {
               </div>
             ))}
           </div>
-
-          {/* CTA Button */}
-          <div className="pt-4">
-            <a
-              href="/governance-control-plane"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0F476A] hover:bg-[#0a2c3d] text-white text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
-            >
-              Explore the governance control plane
-              <ArrowRight className="w-4 h-4 text-white" />
-            </a>
-          </div>
         </motion.div>
 
         {/* Right Column: Image with NO outer div styling */}

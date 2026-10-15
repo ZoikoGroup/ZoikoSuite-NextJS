@@ -207,7 +207,7 @@ export default function ProcurementAndTrustSection() {
           </a>
 
           <a
-            href="/solutions-architect"
+            href="/solutions"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-[#CBD5E1] hover:bg-[#F8FAFC] text-[#0F172A] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95 shadow-xs"
           >
             Talk to a solutions architect

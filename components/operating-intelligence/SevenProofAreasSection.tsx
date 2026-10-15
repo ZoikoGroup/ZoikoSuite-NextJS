@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface ProofArea {
   category: string;
@@ -12,6 +13,30 @@ interface ProofArea {
   tagIcon: "dot" | "triangle" | "square";
   tagColor: string;
 }
+
+interface DataArea {
+  label: string;
+  href: string;
+}
+
+const data: DataArea[] = [
+  {
+    label: "Documentation",
+    href: "/documentation",
+  },
+  {
+    label: "Support",
+    href: "/support-center",
+  },
+  {
+    label: "System status",
+    href: "/trust-system status",
+  },
+  {
+    label: "Release notes",
+    href: "/blog-insights",
+  },
+];
 
 const proofAreas: ProofArea[] = [
   {
@@ -114,7 +139,11 @@ export default function SevenProofAreasSection() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: idx * 0.04, ease: "easeOut" }}
+              transition={{
+                duration: 0.35,
+                delay: idx * 0.04,
+                ease: "easeOut",
+              }}
               className="rounded-xl border border-[#dce5ec] bg-white p-5 sm:p-6 shadow-xs flex flex-col justify-between"
             >
               <div>
@@ -129,9 +158,12 @@ export default function SevenProofAreasSection() {
                 </p>
 
                 {/* Sub links list */}
-                <div className="space-y-1 mb-6 text-xs text-[#08222F] font-medium underline underline-offset-2 decoration-[#cbd5e1] hover:decoration-[#08222F] cursor-pointer">
+                <div className="space-y-1 mb-6 text-xs text-[#08222F] font-medium decoration-[#cbd5e1] hover:decoration-[#08222F] cursor-pointer">
                   {area.links.map((link, lIdx) => (
-                    <div key={lIdx} className="hover:text-[#c5a059] transition-colors">
+                    <div
+                      key={lIdx}
+                      className="hover:text-[#c5a059] transition-colors"
+                    >
                       {link}
                     </div>
                   ))}
@@ -164,27 +196,27 @@ export default function SevenProofAreasSection() {
             Already a customer?
           </h3>
           <p className="text-xs sm:text-[13px] text-[#566874] leading-relaxed mb-5">
-            Reach operational resources directly. No form and no lead submission required.
+            Reach operational resources directly. No form and no lead submission
+            required.
           </p>
 
           <div className="flex flex-wrap items-center gap-2.5">
-            {["Documentation", "Support", "System status", "Release notes"].map(
-              (btn, bIdx) => (
-                <button
-                  key={bIdx}
-                  className="px-4 py-2 rounded-full border border-[#cbd5e1] bg-[#f8fafc] hover:bg-[#eef2f6] text-xs font-medium text-[#08222F] transition-colors"
-                >
-                  {btn}
-                </button>
-              )
-            )}
+            {data.map((btn, bIdx) => (
+              <Link
+                href={btn.href}
+                className="px-4 py-2 rounded-full border border-[#cbd5e1] bg-[#f8fafc] hover:bg-[#eef2f6] text-xs font-medium text-[#08222F] transition-colors"
+              >
+                {btn.label}
+              </Link>
+            ))}
           </div>
         </div>
 
         {/* Footer Audit Note */}
         <div className="pt-2">
           <p className="text-[11px] text-[#788e9d] leading-relaxed">
-            Status last reviewed 31 July 2026. No certification mark is displayed until independently verified and approved.
+            Status last reviewed 31 July 2026. No certification mark is
+            displayed until independently verified and approved.
           </p>
         </div>
       </div>

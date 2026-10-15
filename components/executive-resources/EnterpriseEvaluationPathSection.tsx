@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface EvaluationStage {
   stageNumber: string;
   title: string;
   description: string;
   linkText: string;
+  href: string; // Manually updateable link for each stage
 }
 
 const EVALUATION_STAGES: EvaluationStage[] = [
@@ -15,30 +17,35 @@ const EVALUATION_STAGES: EvaluationStage[] = [
     title: "Product",
     description: "What the platform is and where its boundaries sit.",
     linkText: "Platform overview →",
+    href: "/platform-overview",
   },
   {
     stageNumber: "STAGE 02",
     title: "Governance",
     description: "Policy, authority, segregation, evidence and governed AI.",
     linkText: "Governance Platform →",
+    href: "/governance-platform",
   },
   {
     stageNumber: "STAGE 03",
     title: "Architecture",
     description: "Scope, data location, interfaces, events and coexistence.",
     linkText: "Platform Foundation →",
+    href: "/platform-foundation",
   },
   {
     stageNumber: "STAGE 04",
     title: "Trust",
     description: "Deployment, residency, security posture and boundaries.",
     linkText: "Deployment options →",
+    href: "/deployment-options",
   },
   {
     stageNumber: "STAGE 05",
     title: "Implementation",
     description: "Migration, Shadow Mode, readiness gates and activation.",
     linkText: "Migration & Shadow Mode →",
+    href: "/migration-shadow-mode",
   },
 ];
 
@@ -89,13 +96,12 @@ export default function EnterpriseEvaluationPathSection() {
               </div>
 
               <div className="pt-4 border-t border-dashed border-[#E2E8F0]">
-                <a
-                  href="#link"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  href={item.href}
                   className="text-xs font-bold text-[#0F476A] hover:underline inline-flex items-center gap-1"
                 >
                   {item.linkText}
-                </a>
+                </Link>
               </div>
             </div>
           ))}

@@ -74,7 +74,7 @@ export default function ThreeRoutesSection() {
               Systems, integration, deployment, data residency, registration and technical diligence.
             </p>
             <a
-              href="/solutions-architect"
+              href="/solutions"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D0AA55] hover:underline"
             >
               <span>Bring a scenario brief with you</span>

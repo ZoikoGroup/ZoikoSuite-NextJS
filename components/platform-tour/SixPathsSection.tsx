@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface PathCard {
   recommended?: boolean;
@@ -65,6 +66,7 @@ const pathCards: PathCard[] = [
 ];
 
 export default function SixPathsSection() {
+  const router = useRouter();
   return (
     <section id="choose-tour-path" className="w-full bg-white text-[#0f172a] py-20 px-6 lg:px-20 flex justify-center">
       <div className="max-w-[1240px] w-full flex flex-col">
@@ -160,12 +162,12 @@ export default function SixPathsSection() {
               {/* Card Action Button */}
               <div className="pt-2">
                 {card.isDarkButton ? (
-                  <button className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#0f476a] text-white text-[12.5px] font-semibold hover:bg-[#0c3955] transition-colors shadow-sm">
+                  <button onClick={()=>router.push("/sign-in")} className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#0f476a] text-white text-[12.5px] font-semibold hover:bg-[#0c3955] transition-colors shadow-sm">
                     <span>Start this path</span>
                     <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
                   </button>
                 ) : (
-                  <button className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#0f476a] border border-[#a5bac8] text-[12.5px] font-semibold hover:bg-[#f3f7fa] transition-colors shadow-sm">
+                  <button onClick={()=>router.push("/sign-in")} className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#0f476a] border border-[#a5bac8] text-[12.5px] font-semibold hover:bg-[#f3f7fa] transition-colors shadow-sm">
                     <span>Start this path</span>
                     <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
                   </button>
