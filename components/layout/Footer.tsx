@@ -195,7 +195,7 @@ const LEGAL_LINKS: FooterLink[] = [
   { label: "Cookie Policy", href: "/cookie-policy" },
   { label: "Cookie Preferences", href: "/cookie-preferences" },
   { label: "Data Processing Agreement", href: "/dpa" },
-  { label: "Subprocessor List", href: "/subprocessors" },
+  { label: "Subprocessor List", href: "/subprocessor-list" },
   { label: "Acceptable Use Policy", href: "/acceptable-use-policy" },
   { label: "Accessibility Statement", href: "/accessibility-statement" },
   { label: "Responsible Ai", href: "/responsible-ai" },
@@ -210,7 +210,7 @@ const LEGAL_LINKS: FooterLink[] = [
 ];
 
 const PRIVACY_LINKS: FooterLink[] = [
-  { label: "California Privacy Notice", href: "/legal/privacy/california" },
+  { label: "California Privacy Notice", href: "/california-privacy-notice" },
   { label: "UK Privacy Notice", href: "/uk-privacy-notice" },
   { label: "EU Privacy Notice", href: "/eu-privacy-notice" },
   {
