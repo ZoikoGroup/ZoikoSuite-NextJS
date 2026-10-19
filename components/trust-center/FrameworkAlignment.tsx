@@ -59,7 +59,7 @@ const getBadgeStyles = (color: BadgeColor): string => {
 
 export default function FrameworkAlignment() {
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-12 lg:px-20 font-sans">
+    <section id="certification" className="w-full bg-white py-16 px-6 md:px-12 lg:px-20 font-sans">
       <div className="max-w-6xl mx-auto">
         {/* Top Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">

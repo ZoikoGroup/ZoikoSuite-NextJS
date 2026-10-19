@@ -120,7 +120,7 @@ export default function FaqAccordionSection() {
                       {item.answer}
                       {index === 0 && (
                         <a
-                          href="#"
+                          href="/compliance-overview"
                           className="text-[#111827] font-semibold underline hover:text-[#C9B07A] transition-colors ml-1"
                         >
                           See compliance status

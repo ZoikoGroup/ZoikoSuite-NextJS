@@ -62,7 +62,7 @@ export default function EvaluatingZoikoSuite() {
         <div className="self-stretch pt-2 flex justify-center items-start gap-3 flex-wrap">
           {/* Primary CTA */}
           <Link
-            href="/solutions-architect"
+            href="/solutions"
             className="min-h-11 px-6 py-2.5 bg-orange-400 rounded-[999px] outline outline-1 outline-offset-[-1px] outline-orange-400 flex justify-center items-center gap-2"
             style={{
               backgroundColor: "#FB923C",
@@ -92,7 +92,7 @@ export default function EvaluatingZoikoSuite() {
 
           {/* Secondary CTA */}
           <Link
-            href="#"
+            href="#library"
             className="min-h-11 px-6 py-2.5 rounded-[999px] outline outline-1 outline-offset-[-1px] outline-color-azure-43 flex justify-center items-center"
             style={{
               outlineColor:

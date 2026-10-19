@@ -5,6 +5,11 @@ interface ProductCard {
   title: string;
 }
 
+interface IssueItem {
+  title: string;
+  href: string;
+}
+
 const productCards: ProductCard[] = [
   { title: "Governance & Policy" },
   { title: "Evidence & Audit" },
@@ -12,12 +17,12 @@ const productCards: ProductCard[] = [
   { title: "Integrations & APIs" },
 ];
 
-const issuesList: string[] = [
-  "Access & sign-in",
-  "Setup & configuration",
-  "Troubleshooting",
-  "Billing & account",
-  "Security & privacy",
+const issuesList: IssueItem[] = [
+  { title: "Access & sign-in", href: "/sign-in" },
+  { title: "Setup & configuration", href: "/deployment-options" },
+  { title: "Troubleshooting", href: "/sign-in" },
+  { title: "Billing & account", href: "/sign-in" },
+  { title: "Security & privacy", href: "/security-overview" },
 ];
 
 export default function BrowseByProductOrIssue() {
@@ -42,9 +47,9 @@ export default function BrowseByProductOrIssue() {
             <div
               key={index}
               style={{ borderRadius: "14px" }}
-              className="bg-white border border-[#0F476A] border-t-[4px] p-6 flex items-center shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all min-h-[90px]"
+              className="group bg-white border border-[#0F476A] border-t-[4px] p-6 flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-all min-h-[90px]"
             >
-              <span className="text-[#111827] font-semibold text-base">
+              <span className="text-[#111827] font-semibold text-base group-hover:text-[#0F476A] transition-colors">
                 {item.title}
               </span>
             </div>
@@ -61,13 +66,14 @@ export default function BrowseByProductOrIssue() {
           </span>
           <div className="flex flex-col divide-y divide-[#E5E7EB]">
             {issuesList.map((issue, index) => (
-              <div
+              <a
                 key={index}
-                className="py-4 flex items-center justify-between text-[#111827] font-medium text-base hover:text-[#0F476A] cursor-pointer transition-colors first:pt-0 last:pb-0"
+                href={issue.href}
+                className="group py-4 flex items-center justify-between text-[#111827] font-medium text-base hover:text-[#0F476A] cursor-pointer transition-colors first:pt-0 last:pb-0"
               >
-                <span>{issue}</span>
-                <ArrowRight className="w-4 h-4 text-[#16262F]" />
-              </div>
+                <span>{issue.title}</span>
+                <ArrowRight className="w-4 h-4 text-[#16262F] group-hover:text-[#0F476A] group-hover:translate-x-0.5 transition-all" />
+              </a>
             ))}
           </div>
         </div>

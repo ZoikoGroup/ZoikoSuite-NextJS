@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const learningPaths = [
@@ -41,7 +42,7 @@ const learningPaths = [
 
 export default function LearningPaths() {
   return (
-    <section className="w-full bg-[#F5F5F3]">
+    <section id="paths" className="w-full bg-[#F5F5F3]">
       <div
         className="
           mx-auto
@@ -216,8 +217,7 @@ export default function LearningPaths() {
 
                 {/* Link */}
                 <div className="mt-auto border-b border-[#D7E2E6] pt-1.5 pb-2">
-                  <button
-                    type="button"
+                  <Link href="/sign-in"
                     className="
                       text-sm
                       font-semibold
@@ -228,7 +228,7 @@ export default function LearningPaths() {
                     "
                   >
                     View learning path →
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

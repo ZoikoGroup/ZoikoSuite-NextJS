@@ -102,7 +102,7 @@ export default function EnterpriseTeams() {
             "
           >
             <Link
-              href="/solutions-architect"
+              href="/solutions"
               className="
                 inline-flex
                 h-11
@@ -129,7 +129,7 @@ export default function EnterpriseTeams() {
             </Link>
 
             <Link
-              href="#"
+              href="#paths"
               className="
                 inline-flex
                 h-11

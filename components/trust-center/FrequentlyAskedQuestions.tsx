@@ -137,7 +137,7 @@ export default function FrequentlyAskedQuestions() {
                             an issuer, scope, period and access rule can be
                             published alongside it.{" "}
                             <a
-                              href="#"
+                              href="#certification"
                               className="text-[#111827] font-medium underline hover:text-[#C9B07A]"
                             >
                               See the separation

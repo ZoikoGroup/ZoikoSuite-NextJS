@@ -9,6 +9,7 @@ interface LibraryCard {
   title: string;
   updated: string;
   cta: string;
+  href: string;
 }
 
 const libraryCards: LibraryCard[] = [
@@ -17,24 +18,28 @@ const libraryCards: LibraryCard[] = [
     title: "Mapping approval authority to workflow steps",
     updated: "Updated Sep 9, 2026",
     cta: "Read article",
+    href: "/knowledge-base",
   },
   {
     category: "Templates & Tools",
     title: "Policy exception request template",
     updated: "Updated Aug 22, 2026",
     cta: "Use resource",
+    href: "/templates-tools",
   },
   {
     category: "Blog & Insights",
     title: "Why scope belongs in the policy record",
     updated: "Updated Sep 5, 2026",
     cta: "Read insight",
+    href: "/blog-insights",
   },
   {
     category: "Webinars & Events",
     title: "Live session: evidence architecture walkthrough",
     updated: "Sep 24, 2026 · Upcoming",
     cta: "View event",
+    href: "/webinars-events",
   },
 ];
 
@@ -60,8 +65,7 @@ export default function ResourceLibrarySection() {
       const matchesFilter =
         activeFilter === "All types" || card.category === activeFilter;
       const matchesQuery =
-        q === "" ||
-        `${card.title} ${card.category}`.toLowerCase().includes(q);
+        q === "" || `${card.title} ${card.category}`.toLowerCase().includes(q);
       return matchesFilter && matchesQuery;
     });
   }, [activeFilter, query]);
@@ -148,7 +152,7 @@ export default function ResourceLibrarySection() {
               return (
                 <motion.a
                   key={card.title}
-                  href="#library"
+                  href={card.href}
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

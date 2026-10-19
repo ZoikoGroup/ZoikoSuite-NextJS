@@ -33,7 +33,7 @@ export default function AllDocumentationSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-12 flex items-center justify-center font-sans">
+    <section id="library" className="w-full bg-white py-16 px-6 md:px-12 flex items-center justify-center font-sans">
       <div className="max-w-6xl w-full flex flex-col items-start">
         {/* Section Label / Subtitle */}
         <div className="flex items-center gap-2 mb-3">

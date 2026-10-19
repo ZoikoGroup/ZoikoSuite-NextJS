@@ -16,7 +16,7 @@ const faqData: FaqItem[] = [
     answer:
       "No. Security framework readiness is not presented as certification, and no independent assurance exists to share. If your procurement process requires a SOC 2 report or ISO certificate as a gate, that gate cannot currently be met. Knowing so early is more useful than discovering it at contract stage.",
     linkText: "See compliance status",
-    linkHref: "#",
+    linkHref: "#request",
   },
   {
     question: "What encryption do you use?",

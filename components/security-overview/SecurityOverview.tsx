@@ -40,7 +40,7 @@ export default function SecurityOverview() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="/sign-in"
                 className="h-12 px-6 flex items-center justify-center rounded-full bg-transparent hover:bg-white/5 text-white border border-white/20 font-semibold text-sm transition-colors cursor-pointer"
               >
                 <span>Download Security &amp; Trust Brief</span>

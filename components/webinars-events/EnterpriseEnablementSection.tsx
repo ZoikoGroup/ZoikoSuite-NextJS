@@ -26,10 +26,10 @@ export default function EnterpriseEnablementSection() {
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="/contact"
+            href="/solutions"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded bg-[#d0aa55] hover:bg-[#c29b38] text-[#20180a] font-semibold text-[15px] border border-[#d0aa55] transition-colors"
           >
-            <span>Talk to sales</span>
+            <span>Talk to solutions architect</span>
             <span className="font-mono text-sm font-semibold">→</span>
           </Link>
 
