@@ -9,6 +9,7 @@ import {
   EnterpriseSection,
   TrialAssuranceSection,
   FAQSection,
+  PricingCTASection,
 } from "@/components/pricing";
 
 export default function PricingPage() {
@@ -24,6 +25,7 @@ export default function PricingPage() {
       <EnterpriseSection />
       <TrialAssuranceSection />
       <FAQSection />
+      <PricingCTASection />
     </main>
   );
 }
