@@ -38,7 +38,7 @@ export default function TrustCenterSection() {
           <div className="flex flex-wrap items-center gap-4">
             {/* Primary Button */}
             <a
-              href="/trust-center"
+              href="#areas"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold text-[#20180A] transition-all hover:opacity-90 shadow-lg"
               style={{
                 backgroundColor: "#D0AA55",

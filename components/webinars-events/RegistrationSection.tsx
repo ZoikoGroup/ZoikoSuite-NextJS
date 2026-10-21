@@ -161,7 +161,7 @@ export default function RegistrationSection() {
               <p className="text-[13px] text-[#5a6d79] mt-1">
                 See our{" "}
                 <Link
-                  href="/privacy-architecture"
+                  href="/privacy-policy"
                   className="font-semibold text-[#0f476a] hover:underline"
                 >
                   Privacy Policy

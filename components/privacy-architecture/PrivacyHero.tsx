@@ -60,7 +60,7 @@ export default function PrivacyHero() {
 
             {/* Primary Link */}
             <Link
-            href="/solutions-architect"
+            href="/solutions"
               className="
                 flex h-12 min-h-12 items-center justify-center
                 rounded-full bg-orange-400
