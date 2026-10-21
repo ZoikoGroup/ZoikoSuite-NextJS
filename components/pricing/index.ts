@@ -8,3 +8,4 @@ export { default as TransparentCostsSection } from "./TransparentCostsSection";
 export { default as EnterpriseSection } from "./EnterpriseSection";
 export { default as TrialAssuranceSection } from "./TrialAssuranceSection";
 export { default as FAQSection } from "./FAQSection";
+export { default as PricingCTASection } from "./PricingCTASection";

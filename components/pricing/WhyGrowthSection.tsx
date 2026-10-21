@@ -1,64 +1,91 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
+
+const growthFeatures = [
+  {
+    tag: "CONTROL",
+    title: "Standardize approvals and governance.",
+    description:
+      "Advanced close, approval workflows, custom roles and control mapping keep every entity working the same way.",
+    imageSrc: "/pricing-page/pp4.png",
+    imageAlt: "Standardize approvals and governance",
+  },
+  {
+    tag: "VISIBILITY",
+    title: "See across entities, and ahead.",
+    description:
+      "Multi-entity reporting, budgets and forecasting give leaders one consolidated view of the business.",
+    imageSrc: "/pricing-page/pp5.png",
+    imageAlt: "See across entities, and ahead",
+  },
+  {
+    tag: "AUTOMATION",
+    title: "Let workflows do the repeat work.",
+    description:
+      "A workflow builder, standard integrations, and API and AI allowances remove manual reconciliation.",
+    imageSrc: "/pricing-page/pp6.png",
+    imageAlt: "Let workflows do the repeat work",
+  },
+];
 
 export default function WhyGrowthSection() {
   return (
-    <section className="relative w-full bg-[#F6F5F0] py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Top Tag / Subheading */}
-        <div className="flex items-center justify-center space-x-2 mb-4">
-          <span className="h-[1px] w-6 bg-[#dfb36a]" />
-          <span className="text-xs font-bold tracking-widest text-[#dfb36a] uppercase">
+    <section className="relative w-full bg-[#FBF9F4] py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 border-b border-[#E5E0D8]">
+      <div className="max-w-7xl mx-auto text-left">
+        {/* Eyebrow */}
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-4 h-[2px] bg-[#CDA85B]" />
+          <span className="text-[10.5px] font-mono font-semibold uppercase tracking-[0.2em] text-[#CDA85B]">
             WHY GROWTH
           </span>
-          <span className="h-[1px] w-6 bg-[#dfb36a]" />
         </div>
 
         {/* Main Heading */}
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0f172a] mb-16 max-w-3xl mx-auto leading-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold tracking-tight text-[#08222F] mb-2 leading-tight">
           Why Growth is the plan most growing teams choose.
         </h2>
 
-        {/* Three Columns Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-          {/* Column 1: Control */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-[#E8F0F5] flex items-center justify-center text-[#0f172a] font-bold text-base mb-6">
-              C
-            </div>
-            <h3 className="text-lg font-bold text-[#0f172a] mb-2">Control</h3>
-            <p className="text-sm text-[#64748b] leading-relaxed max-w-xs">
-              Standardize approvals and governance across every entity and
-              workflow.
-            </p>
-          </div>
+        {/* Subtitle */}
+        <p className="text-xs sm:text-sm text-slate-500 font-normal leading-relaxed mb-10 sm:mb-12 max-w-2xl">
+          Growth adds $150 a month over Starter, and this is what that step buys.
+        </p>
 
-          {/* Column 2: Visibility */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-[#E8F0F5] flex items-center justify-center text-[#0f172a] font-bold text-base mb-6">
-              V
-            </div>
-            <h3 className="text-lg font-bold text-[#0f172a] mb-2">
-              Visibility
-            </h3>
-            <p className="text-sm text-[#64748b] leading-relaxed max-w-xs">
-              Multi-entity reporting and forecasting give you one consolidated
-              view.
-            </p>
-          </div>
+        {/* 3 Feature Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+          {growthFeatures.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl sm:rounded-3xl border border-[#E5E0D8] overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+            >
+              {/* Image Header */}
+              <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100">
+                <Image
+                  src={item.imageSrc}
+                  alt={item.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
 
-          {/* Column 3: Automation */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-[#E8F0F5] flex items-center justify-center text-[#0f172a] font-bold text-base mb-6">
-              A
+              {/* Text Body */}
+              <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
+                <div>
+                  <span className="text-[10.5px] font-mono font-bold tracking-[0.15em] text-[#CDA85B] uppercase block mb-2">
+                    {item.tag}
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-[#08222F] leading-snug mb-2.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
             </div>
-            <h3 className="text-lg font-bold text-[#0f172a] mb-2">
-              Automation
-            </h3>
-            <p className="text-sm text-[#64748b] leading-relaxed max-w-xs">
-              Workflows, integrations and AI allowances remove manual
-              reconciliation.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>

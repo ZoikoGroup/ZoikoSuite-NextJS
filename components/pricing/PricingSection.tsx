@@ -1,290 +1,297 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
 import { Check } from "lucide-react";
 
 export default function PricingSection() {
-  return (
-    <section className="relative w-full bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Content */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0f172a] mb-4">
-            Choose how you want to pay
-          </h2>
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
 
-          {/* Toggle Pills */}
-          <div className="inline-flex items-center bg-[#f1f5f9] p-1 rounded-full border border-[#e2e8f0]">
+  return (
+    <section className="relative w-full bg-[#F8F9FA] py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-[#E5E0D8]">
+      <div className="max-w-6xl mx-auto">
+        {/* Toggle Bar Card */}
+        <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-200/90 shadow-sm p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
+          <div>
+            <h2 className="text-base sm:text-lg font-bold text-[#08222F] tracking-tight">
+              Choose how you want to pay
+            </h2>
+            <p className="text-xs text-slate-500 mt-0.5">
+              {billingCycle === "monthly"
+                ? "Billed monthly · USD · plus applicable sales tax"
+                : "Billed annually · USD · plus applicable sales tax"}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 self-end sm:self-auto">
             <button
               type="button"
-              className="px-5 py-1.5 rounded-full bg-[#0f172a] text-white font-medium text-sm shadow-sm transition-all"
+              onClick={() => setBillingCycle("annual")}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                billingCycle === "annual"
+                  ? "bg-[#08222F] text-white shadow-xs"
+                  : "bg-white border border-slate-300 text-slate-700 hover:border-slate-400"
+              }`}
+            >
+              Annually
+            </button>
+            <button
+              type="button"
+              onClick={() => setBillingCycle("monthly")}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                billingCycle === "monthly"
+                  ? "bg-[#08222F] text-white shadow-xs"
+                  : "bg-white border border-slate-300 text-slate-700 hover:border-slate-400"
+              }`}
             >
               Monthly
             </button>
-            <button
-              type="button"
-              className="px-5 py-1.5 rounded-full text-[#64748b] font-medium text-sm hover:text-[#0f172a] transition-all"
-            >
-              Annual
-            </button>
           </div>
-
-          {/* Subtitle note */}
-          <p className="text-xs sm:text-sm text-[#64748b] mt-4">
-            Annual billing will appear here once an approved annual rate is live
-            in your market &mdash; no invented &quot;save %&quot; claims.
-          </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-4">
-          {/* Starter Card */}
-          <div className="bg-white rounded-2xl border border-[#e2e8f0] p-8 flex flex-col justify-between shadow-sm relative">
+        {/* 3 Pricing Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {/* Card 1: Starter */}
+          <div className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all">
             <div>
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-[#0f172a] mb-2">
-                  Starter
-                </h3>
-                <p className="text-sm text-[#64748b] leading-relaxed min-h-[40px]">
-                  For small businesses that need a complete, controlled
-                  financial foundation.
+              {/* Header */}
+              <div className="mb-4">
+                <p className="text-xs font-mono font-bold uppercase tracking-wider text-[#B88E3E] mb-2">
+                  STARTER
+                </p>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed min-h-[36px]">
+                  A complete, controlled foundation for running one business.
                 </p>
               </div>
 
               {/* Price */}
-              <div className="mb-6 flex items-baseline">
-                <span className="text-4xl font-extrabold text-[#0f172a]">
-                  $49
+              <div className="mb-4">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl sm:text-[44px] font-extrabold text-[#08222F] tracking-tight leading-none">
+                    {billingCycle === "annual" ? "$39" : "$49"}
+                  </span>
+                </div>
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-1">
+                  {billingCycle === "annual"
+                    ? "per month · billed annually"
+                    : "per month · billed monthly"}
+                </p>
+              </div>
+
+              {/* Scope Badge */}
+              <div className="bg-[#F4F5F7] border border-slate-100 rounded-lg py-2.5 px-3 text-center mb-6">
+                <span className="text-xs font-semibold text-slate-800">
+                  1 legal entity &bull; up to 5 full users
                 </span>
-                <span className="text-sm text-[#64748b] ml-1">/mo</span>
-              </div>
-              <p className="text-xs text-[#64748b] mb-6 -mt-4">
-                per month, billed monthly
-              </p>
-
-              {/* Highlight badge/pill */}
-              <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-3 py-2 text-xs font-semibold text-[#0f172a] mb-8 text-center">
-                1 legal entity &bull; up to 5 full platform users
               </div>
 
-              {/* Feature List */}
-              <ul className="space-y-3.5 mb-8 text-sm text-[#334155]">
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Core accounting: GL, AR, AP &amp; expenses</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Bank reconciliation &amp; financial statements</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Tax and compliance calendar</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Legal document repository</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Immutable activity/audit trail</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Standard dashboards &amp; core business controls</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>CSV import/export + standard support</span>
-                </li>
+              {/* Feature Bullets */}
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Core accounting: GL, AR, AP & expenses",
+                  "Bank reconciliation & financial statements",
+                  "Tax and compliance calendar",
+                  "Legal document repository",
+                  "Immutable activity/audit trail",
+                  "Standard dashboards & core business controls",
+                  "CSV import/export + standard support",
+                ].map((feat, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-[#E0F2FE] flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-2.5 h-2.5 text-[#0284C7] stroke-[3]" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] text-slate-700 leading-snug">
+                      {feat}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
+            {/* Bottom Button & Link */}
             <div>
-              <a
-                href="#"
-                className="w-full inline-flex items-center justify-center py-3 px-4 rounded-xl bg-[#0a192f] text-white font-medium text-sm hover:bg-[#112240] transition-colors mb-4"
+              <Link
+                href="/sign-in"
+                className="w-full inline-flex items-center justify-center py-3 px-4 rounded-lg bg-[#08222F] hover:bg-[#0E3547] text-white font-semibold text-xs sm:text-sm transition-colors mb-3 shadow-xs"
               >
                 Start 30-day free trial
-              </a>
+              </Link>
               <div className="text-center">
-                <a
-                  href="#"
-                  className="text-xs font-medium text-[#0f172a] hover:underline inline-flex items-center"
+                <Link
+                  href="#features"
+                  className="text-xs font-semibold text-[#08222F] hover:text-[#C59A41] transition-colors"
                 >
-                  View full features &rarr;
-                </a>
+                  View full features
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* Growth Card (Recommended) */}
-          <div className="bg-white rounded-2xl border-2 border-[#dfb36a] p-8 flex flex-col justify-between shadow-xl relative -mt-2 mb-2">
-            {/* Recommended Tag */}
-            <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2">
-              <span className="bg-[#dfb36a] text-[#0f172a] text-[10px] font-bold tracking-wider px-3 py-1 rounded-full uppercase shadow-sm">
-                Recommended
+          {/* Card 2: Growth (Recommended) */}
+          <div className="bg-white rounded-2xl border-2 border-[#D4A853] p-6 sm:p-8 flex flex-col justify-between shadow-md relative">
+            {/* Top Recommended Tag */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span className="bg-[#D4A853] text-[#08222F] text-[10px] font-bold tracking-wider px-3.5 py-1 rounded-full uppercase shadow-xs">
+                RECOMMENDED
               </span>
             </div>
 
             <div>
-              <div className="mb-6 mt-1">
-                <h3 className="text-xl font-bold text-[#0f172a] mb-2">
-                  Growth
-                </h3>
-                <p className="text-sm text-[#64748b] leading-relaxed min-h-[40px]">
-                  For growing businesses that need connected finance, operations
-                  and automation.
+              {/* Header */}
+              <div className="mb-4">
+                <p className="text-xs font-mono font-bold uppercase tracking-wider text-[#B88E3E] mb-2">
+                  GROWTH
+                </p>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed min-h-[36px]">
+                  Connected finance, operations, automation and control for a growing organization.
                 </p>
               </div>
 
               {/* Price */}
-              <div className="mb-6 flex items-baseline">
-                <span className="text-4xl font-extrabold text-[#0f172a]">
-                  $199
-                </span>
-                <span className="text-sm text-[#64748b] ml-1">/mo</span>
-              </div>
-              <p className="text-xs text-[#64748b] mb-6 -mt-4">
-                per month, billed monthly
-              </p>
-
-              {/* Highlight badge/pill */}
-              <div className="bg-[#fef9ec] border border-[#fde6b3] rounded-lg px-3 py-2 text-xs font-semibold text-[#0f172a] mb-8 text-center">
-                Up to 5 legal entities &bull; up to 25 full users
-              </div>
-
-              {/* Feature List */}
-              <ul className="space-y-3.5 mb-8 text-sm text-[#334155]">
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Everything in Starter</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Multi-entity operations &amp; custom roles</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Advanced close, approvals &amp; workflows</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Forecasting, budgets &amp; management reporting</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Tax, audit, legal &amp; compliance workspaces</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Workflow builder + AI standard allowance</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>
-                    Standard integrations, API &amp; webhook allowance
+              <div className="mb-4">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl sm:text-[44px] font-extrabold text-[#08222F] tracking-tight leading-none">
+                    {billingCycle === "annual" ? "$159" : "$199"}
                   </span>
-                </li>
+                </div>
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-1">
+                  {billingCycle === "annual"
+                    ? "per month · billed annually"
+                    : "per month · billed monthly"}
+                </p>
+              </div>
+
+              {/* Scope Badge */}
+              <div className="bg-[#F4F5F7] border border-slate-100 rounded-lg py-2.5 px-3 text-center mb-6">
+                <span className="text-xs font-semibold text-slate-800">
+                  Up to 5 legal entities &bull; up to 25 full users
+                </span>
+              </div>
+
+              {/* Feature Bullets */}
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Everything in Starter",
+                  "Multi-entity operations & custom roles",
+                  "Advanced close, approvals & workflows",
+                  "Forecasting, budgets & management reporting",
+                  "Tax, audit, legal & compliance workspaces",
+                  "Workflow builder + AI standard allowance",
+                  "Standard integrations, API & webhook allowance",
+                ].map((feat, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-[#E0F2FE] flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-2.5 h-2.5 text-[#0284C7] stroke-[3]" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] text-slate-700 leading-snug">
+                      {feat}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
+            {/* Bottom Button & Link */}
             <div>
-              <a
-                href="#"
-                className="w-full inline-flex items-center justify-center py-3 px-4 rounded-xl bg-[#dfb36a] text-[#0f172a] font-medium text-sm hover:bg-[#d4a85c] transition-colors mb-4 shadow-sm"
+              <Link
+                href="/sign-in"
+                className="w-full inline-flex items-center justify-center py-3 px-4 rounded-lg bg-[#D4A853] hover:bg-[#c29841] text-[#08222F] font-bold text-xs sm:text-sm transition-colors mb-3 shadow-sm"
               >
                 Start 30-day free trial
-              </a>
+              </Link>
               <div className="text-center">
-                <a
-                  href="#"
-                  className="text-xs font-medium text-[#0f172a] hover:underline inline-flex items-center"
+                <Link
+                  href="#why-growth"
+                  className="text-xs font-semibold text-[#08222F] hover:text-[#C59A41] transition-colors"
                 >
-                  See why Growth fits &rarr;
-                </a>
+                  See why Growth fits
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* Enterprise Card */}
-          <div className="bg-white rounded-2xl border border-[#e2e8f0] p-8 flex flex-col justify-between shadow-sm relative">
+          {/* Card 3: Enterprise */}
+          <div className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all">
             <div>
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-[#0f172a] mb-2">
-                  Enterprise
-                </h3>
-                <p className="text-sm text-[#64748b] leading-relaxed min-h-[40px]">
-                  For complex organizations that need governed scale, security
-                  and control.
+              {/* Header */}
+              <div className="mb-4">
+                <p className="text-xs font-mono font-bold uppercase tracking-wider text-[#B88E3E] mb-2">
+                  ENTERPRISE
+                </p>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed min-h-[36px]">
+                  Governed scale for complex organizations, multi-entity groups and advanced requirements.
                 </p>
               </div>
 
               {/* Price */}
-              <div className="mb-6 flex items-baseline">
-                <span className="text-4xl font-extrabold text-[#0f172a]">
-                  $999
+              <div className="mb-4">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-0.5">
+                  FROM
+                </p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl sm:text-[44px] font-extrabold text-[#08222F] tracking-tight leading-none">
+                    $999
+                  </span>
+                </div>
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-1">
+                  per month · contracted scope
+                </p>
+              </div>
+
+              {/* Scope Badge */}
+              <div className="bg-[#F4F5F7] border border-slate-100 rounded-lg py-2.5 px-3 text-center mb-6">
+                <span className="text-xs font-semibold text-slate-800">
+                  Contracted scale
                 </span>
-                <span className="text-sm text-[#64748b] ml-1">+/mo</span>
-              </div>
-              <p className="text-xs text-[#64748b] mb-6 -mt-4">
-                From, subject to Price Book approval
-              </p>
-
-              {/* Highlight badge/pill */}
-              <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-lg px-3 py-2 text-xs font-semibold text-[#0f172a] mb-8 text-center">
-                Contracted entities, users, scale &amp; controls
               </div>
 
-              {/* Feature List */}
-              <ul className="space-y-3.5 mb-8 text-sm text-[#334155]">
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Everything in Growth</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Group consolidation &amp; intercompany controls</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Advanced segregation of duties</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>SSO, SCIM &amp; enterprise security controls</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Custom compliance/control frameworks</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Enterprise data feeds &amp; custom integrations</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2.5 mt-0.5 shrink-0" />
-                  <span>Contracted SLA, onboarding &amp; success coverage</span>
-                </li>
+              {/* Feature Bullets */}
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Everything in Growth",
+                  "Group consolidation & intercompany controls",
+                  "Advanced segregation of duties",
+                  "SSO, SCIM & enterprise security controls",
+                  "Custom compliance/control frameworks",
+                  "Enterprise data feeds & custom integrations",
+                  "Contracted SLA, onboarding & success coverage",
+                ].map((feat, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-[#E0F2FE] flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-2.5 h-2.5 text-[#0284C7] stroke-[3]" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] text-slate-700 leading-snug">
+                      {feat}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
+            {/* Bottom Button & Link */}
             <div>
-              <a
-                href="#"
-                className="w-full inline-flex items-center justify-center py-3 px-4 rounded-xl bg-[#0a192f] text-white font-medium text-sm hover:bg-[#112240] transition-colors mb-4"
+              <Link
+                href="/book-demo"
+                className="w-full inline-flex items-center justify-center py-3 px-4 rounded-lg bg-white border border-[#08222F] hover:bg-slate-50 text-[#08222F] font-semibold text-xs sm:text-sm transition-colors mb-3"
               >
                 Talk to Sales
-              </a>
+              </Link>
               <div className="text-center">
-                <a
+                <Link
                   href="/book-demo"
-                  className="text-xs font-medium text-[#0f172a] hover:underline inline-flex items-center"
+                  className="text-xs font-semibold text-[#08222F] hover:text-[#C59A41] transition-colors"
                 >
-                  Book an enterprise demo &rarr;
-                </a>
+                  Book an enterprise demo
+                </Link>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Disclaimer Footer Note */}
+        <p className="text-xs text-slate-500 max-w-2xl mx-auto text-center mt-10 leading-relaxed font-normal">
+          30 days. No charge during the trial. Paid service begins only after explicit plan and billing acceptance. Prices are shown plus applicable sales tax and may vary by market.
+        </p>
       </div>
     </section>
   );
