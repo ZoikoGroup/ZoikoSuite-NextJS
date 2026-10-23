@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function ZoikoGroupSustainabilityContextSection() {
   const cards = [
@@ -6,21 +7,27 @@ export default function ZoikoGroupSustainabilityContextSection() {
       title: "Environmental Stewardship",
       description:
         "Short attributed summary + link to current Zoiko Group sustainability source.",
+      href: "https://zoikogroup.com/",
+      external: true,
     },
     {
       title: "Inclusive Social Progress",
       description:
         "Short attributed summary + Group link; no transfer of Group metrics into ZoikoSuite.",
+      href: "https://zoikogroup.com/",
+      external: true,
     },
     {
       title: "Ethical & Responsible Innovation",
       description:
         "Connects conceptually to ZoikoSuite Responsible AI and Trust, with separate evidence.",
+      href: "/responsible-ai",
     },
     {
       title: "Governance & Transparency",
       description:
         "Connects to ZoikoSuite evidence/claim governance; Group reporting remains Group-owned.",
+      href: "/trust-center",
     },
   ] as const;
 
@@ -43,10 +50,14 @@ export default function ZoikoGroupSustainabilityContextSection() {
         {/* 2x2 Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
+              {...("external" in card && card.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-between min-h-[160px] relative"
+              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-between min-h-[160px] relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-lg font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -54,7 +65,7 @@ export default function ZoikoGroupSustainabilityContextSection() {
               <p className="text-gray-600 font-light leading-relaxed text-[15.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

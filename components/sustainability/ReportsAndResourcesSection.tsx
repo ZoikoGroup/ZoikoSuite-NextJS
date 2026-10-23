@@ -1,19 +1,24 @@
 import React from "react";
+import Link from "next/link";
 
 export default function ReportsAndResourcesSection() {
   const cards = [
     {
       title: "Sustainability overview / methodology",
       description: "Public if approved; versioned with effective date.",
+      href: "/sustainability#review",
     },
     {
       title: "ZoikoGroup sustainability report",
       description: "External authoritative link, labeled as Group-level.",
+      href: "https://zoikogroup.com/",
+      external: true,
     },
     {
       title: "Historical reports",
       description:
         "Archived with a superseded label — never silently replaced.",
+      href: "/sustainability#review",
     },
   ] as const;
 
@@ -36,10 +41,14 @@ export default function ReportsAndResourcesSection() {
         {/* 3-Column Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
+              {...("external" in card && card.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start relative"
+              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-base font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -47,7 +56,7 @@ export default function ReportsAndResourcesSection() {
               <p className="text-gray-600 font-light leading-relaxed text-[15.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

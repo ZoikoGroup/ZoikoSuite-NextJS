@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function RelationshipMapSection() {
@@ -9,6 +10,7 @@ export default function RelationshipMapSection() {
       bgColor: "bg-white",
       textColor: "text-[#0b1329]",
       descColor: "text-gray-600",
+      href: "/zoiko-group",
     },
     {
       title: "Zoiko Tech",
@@ -17,6 +19,7 @@ export default function RelationshipMapSection() {
       bgColor: "bg-[#0E2843]",
       textColor: "text-white",
       descColor: "text-gray-200",
+      href: "/zoiko-tech",
     },
     {
       title: "ZoikoSuite",
@@ -25,6 +28,7 @@ export default function RelationshipMapSection() {
       bgColor: "bg-[#EFE8D8]",
       textColor: "text-[#0b1329]",
       descColor: "text-gray-600",
+      href: "/about",
     },
   ] as const;
 
@@ -54,9 +58,10 @@ export default function RelationshipMapSection() {
         <div className="w-full flex flex-col md:flex-row items-center gap-4">
           {cards.map((card, index) => (
             <React.Fragment key={index}>
-              <div
+              <Link
+                href={card.href}
                 style={{ borderRadius: "14px" }}
-                className={`w-full md:w-1/3 p-8 border border-[#DCD6C8] shadow-sm flex flex-col items-start justify-center min-h-[180px] relative ${card.bgColor}`}
+                className={`w-full md:w-1/3 p-8 border border-[#DCD6C8] shadow-sm flex flex-col items-start justify-center min-h-[180px] relative ${card.bgColor} hover:border-[#A8843A] transition-colors`}
               >
                 <h3
                   className={`text-base md:text-lg font-semibold tracking-tight mb-2 ${card.textColor}`}
@@ -68,7 +73,7 @@ export default function RelationshipMapSection() {
                 >
                   {card.description}
                 </p>
-              </div>
+              </Link>
 
               {/* Arrow between cards (hidden after the last card) */}
               {index < cards.length - 1 && (

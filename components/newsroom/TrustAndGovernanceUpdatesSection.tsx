@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function TrustAndGovernanceUpdatesSection() {
   const rows = [
@@ -6,25 +7,34 @@ export default function TrustAndGovernanceUpdatesSection() {
       updateClass: "Security",
       examples:
         "Security architecture update, independently validated assessment summary, material disclosure.",
-      canonicalHandoff:
-        "Security Overview / Security Disclosure / System Status",
+      canonicalHandoff: [
+        { label: "Security Overview", href: "/security-overview" },
+        { label: "Security Disclosure", href: "/security-disclosure" },
+        { label: "System Status", href: "/trust-system-status" },
+      ],
     },
     {
       updateClass: "Compliance & Certifications",
       examples:
         "Framework readiness, audit/attestation publication, scope change, expiration/renewal.",
-      canonicalHandoff: "Compliance Overview / Certifications",
+      canonicalHandoff: [
+        { label: "Compliance Overview", href: "/compliance-overview" },
+        { label: "Certifications", href: "/certifications" },
+      ],
     },
     {
       updateClass: "Privacy & Residency",
       examples: "Privacy architecture or residency availability change.",
-      canonicalHandoff: "Privacy Architecture / Data Residency",
+      canonicalHandoff: [
+        { label: "Privacy Architecture", href: "/privacy-architecture" },
+        { label: "Data Residency", href: "/data-residency" },
+      ],
     },
     {
       updateClass: "Responsible AI",
       examples:
         "AI governance policy, model/provider governance, transparency update.",
-      canonicalHandoff: "Responsible AI",
+      canonicalHandoff: [{ label: "Responsible AI", href: "/responsible-ai" }],
     },
   ] as const;
 
@@ -81,7 +91,17 @@ export default function TrustAndGovernanceUpdatesSection() {
                 <span className="md:hidden text-xs font-semibold text-gray-400 uppercase block mb-1">
                   Canonical Handoff
                 </span>
-                {row.canonicalHandoff}
+                {row.canonicalHandoff.map((handoff, handoffIndex) => (
+                  <React.Fragment key={handoff.href}>
+                    {handoffIndex > 0 ? " / " : null}
+                    <Link
+                      href={handoff.href}
+                      className="hover:text-[#A8843A] hover:underline"
+                    >
+                      {handoff.label}
+                    </Link>
+                  </React.Fragment>
+                ))}
               </div>
             </div>
           ))}

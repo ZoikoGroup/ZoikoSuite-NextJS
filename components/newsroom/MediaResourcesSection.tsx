@@ -1,22 +1,27 @@
 import React from "react";
+import Link from "next/link";
 
 export default function MediaResourcesSection() {
   const cards = [
     {
       title: "Company fact sheet",
       description: "Version, owner, approved claims, review date.",
+      href: "/about",
     },
     {
       title: "Logo pack",
       description: "Approved variants, usage terms, trademark guidance.",
+      href: "/trademark-guidelines",
     },
     {
       title: "Product screenshots",
       description: "Version/date, caption, publication rights.",
+      href: "/platform-tour",
     },
     {
       title: "Executive bios",
       description: "Verified title, approved bio, portrait rights.",
+      href: "/leadership",
     },
   ] as const;
 
@@ -39,10 +44,11 @@ export default function MediaResourcesSection() {
         {/* 4-Column Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#E5E0D5] bg-white shadow-sm flex flex-col items-start justify-center min-h-[160px] relative"
+              className="w-full p-8 border border-[#E5E0D5] bg-white shadow-sm flex flex-col items-start justify-center min-h-[160px] relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-lg font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -50,7 +56,7 @@ export default function MediaResourcesSection() {
               <p className="text-gray-600 font-light leading-relaxed text-[16.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

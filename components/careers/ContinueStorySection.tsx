@@ -48,7 +48,7 @@ const storyLinks: StoryLink[] = [
       "Explore broader Group opportunities \u2014 labeled as",
       "external/parent-company context.",
     ],
-    href: "#",
+    href: "https://zoikogroup.com/",
     external: true,
   },
 ];

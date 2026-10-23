@@ -29,6 +29,8 @@ export default function InvestorRelationsSection() {
           <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://zoikogroup.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-[#C8A24A] text-black text-sm font-semibold tracking-wide hover:bg-[#927230] transition-colors flex items-center gap-2 shadow-sm"
             >

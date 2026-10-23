@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function GovernanceAndTrustSection() {
   const cards = [
@@ -6,16 +7,19 @@ export default function GovernanceAndTrustSection() {
       badge: "GROUP CONTEXT",
       title: "Corporate governance",
       description: "One-sentence group-level context.",
+      href: "/investor-relations",
     },
     {
       badge: "ZOIKOSUITE PRODUCT CONTROL",
       title: "Security & data protection",
       description: "Explains the governance boundary explicitly.",
+      href: "/security-overview",
     },
     {
       badge: "ZOIKOSUITE PRODUCT CONTROL",
       title: "Responsible AI",
       description: "Human-accountability and governance context.",
+      href: "/responsible-ai",
     },
   ] as const;
 
@@ -39,10 +43,11 @@ export default function GovernanceAndTrustSection() {
         {/* 3-Column Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 bg-[#FFFFFF0D] border border-[#FFFFFF24] shadow-sm flex flex-col items-start justify-between min-h-[180px] relative"
+              className="w-full p-8 bg-[#FFFFFF0D] border border-[#FFFFFF24] shadow-sm flex flex-col items-start justify-between min-h-[180px] relative hover:border-[#A8843A] transition-colors"
             >
               <div>
                 <span className="text-[#A8843A] text-[10px] font-semibold tracking-[0.15em] uppercase mb-3 block">
@@ -55,7 +60,7 @@ export default function GovernanceAndTrustSection() {
               <p className="text-gray-300 font-light leading-relaxed text-[15.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 

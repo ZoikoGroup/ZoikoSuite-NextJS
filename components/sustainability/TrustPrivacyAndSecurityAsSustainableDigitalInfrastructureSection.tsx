@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function TrustPrivacyAndSecurityAsSustainableDigitalInfrastructureSection() {
   const cards = [
@@ -6,26 +7,32 @@ export default function TrustPrivacyAndSecurityAsSustainableDigitalInfrastructur
       title: "Privacy architecture",
       description:
         "Responsible collection, purpose, retention, and rights handling.",
+      href: "/privacy-architecture",
     },
     {
       title: "Security",
       description: "Resilient, controlled operations and risk reduction.",
+      href: "/security-overview",
     },
     {
       title: "Data residency",
       description: "Deployment- and jurisdiction-aware data location choices.",
+      href: "/data-residency",
     },
     {
       title: "Evidence",
       description: "Defensible records for decisions, controls, and claims.",
+      href: "/evidence-architecture",
     },
     {
       title: "Responsible AI",
       description: "Governed intelligence and human accountability.",
+      href: "/responsible-ai",
     },
     {
       title: "Accessibility",
       description: "Inclusive access and usability.",
+      href: "/accessibility",
     },
   ] as const;
 
@@ -55,10 +62,11 @@ export default function TrustPrivacyAndSecurityAsSustainableDigitalInfrastructur
         {/* 3x2 Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-between min-h-[160px] relative"
+              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-between min-h-[160px] relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-lg font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -66,7 +74,7 @@ export default function TrustPrivacyAndSecurityAsSustainableDigitalInfrastructur
               <p className="text-gray-600 font-light leading-relaxed text-[15.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

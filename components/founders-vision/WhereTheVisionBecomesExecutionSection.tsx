@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function WhereTheVisionBecomesExecutionSection() {
   const cards = [
@@ -6,16 +7,19 @@ export default function WhereTheVisionBecomesExecutionSection() {
       title: "Meet the people accountable for execution.",
       description:
         "See the leaders responsible for product, operations, governance, technology, trust, and enterprise delivery.",
+      href: "/leadership",
     },
     {
       title: "Build with aligned institutions and ecosystems.",
       description:
         "Understand how ZoikoSuite approaches strategic, technology, implementation, and ecosystem partnerships.",
+      href: "/partners",
     },
     {
       title: "Build systems that matter.",
       description:
         "Join teams working on governed infrastructure for complex, multi-entity and cross-border operations.",
+      href: "/careers",
     },
   ] as const;
 
@@ -38,9 +42,10 @@ export default function WhereTheVisionBecomesExecutionSection() {
         {/* Cards Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
-              className="w-full bg-white rounded-2xl p-8 shadow-sm flex flex-col items-start border border-gray-200/60"
+              href={card.href}
+              className="w-full bg-white rounded-2xl p-8 shadow-sm flex flex-col items-start border border-gray-200/60 hover:border-[#A8843A] transition-colors"
             >
               {/* Title */}
               <h3 className="text-[#0b1329] text-base md:text-lg font-semibold tracking-tight mb-3">
@@ -51,7 +56,7 @@ export default function WhereTheVisionBecomesExecutionSection() {
               <p className="text-gray-600 text-sm md:text-base font-light leading-relaxed">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

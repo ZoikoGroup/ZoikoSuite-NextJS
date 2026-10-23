@@ -27,7 +27,7 @@ export default function FoundersVisionSection() {
 
           {/* CTA Links */}
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/platform-tour" className="bg-[#C8A24A] hover:bg-[#957332] text-[#0b1329] font-medium text-sm md:text-base px-6 py-3 rounded-xl transition-colors shadow-sm">
+            <Link href="/platform" className="bg-[#C8A24A] hover:bg-[#957332] text-[#0b1329] font-medium text-sm md:text-base px-6 py-3 rounded-xl transition-colors shadow-sm">
               Explore the platform
             </Link>
             <Link href="/book-demo" className="bg-transparent hover:bg-white/5 text-white font-medium text-sm md:text-base px-6 py-3 rounded-xl border border-white/20 transition-colors">

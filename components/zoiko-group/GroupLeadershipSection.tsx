@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GroupLeadershipSection() {
   return (
@@ -38,9 +39,12 @@ export default function GroupLeadershipSection() {
           <div className="flex flex-col items-start gap-4">
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-3">
-                <h3 className="text-lg font-semibold text-[#0b1329] tracking-tight">
+                <Link
+                  href="/founders-vision"
+                  className="text-lg font-semibold text-[#0b1329] tracking-tight hover:text-[#A8843A] hover:underline"
+                >
                   Lennox McLeod
-                </h3>
+                </Link>
                 <span className="text-[#A8843A] text-[10px] font-semibold tracking-[0.15em] uppercase bg-[#FBF8F2] px-3 py-1 rounded-full border border-[#E5E0D5]">
                   ZOIKO GROUP
                 </span>

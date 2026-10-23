@@ -1,18 +1,22 @@
 import React from "react";
+import Link from "next/link";
 
 export default function SustainabilityAndResponsibilitySection() {
   const cards = [
     {
       title: "Sustainability & impact",
       description: "One paragraph of Group context; no invented metrics.",
+      href: "/sustainability",
     },
     {
       title: "Responsible AI",
       description: "Group policy context + product governance boundary.",
+      href: "/responsible-ai",
     },
     {
       title: "Accessibility & privacy",
       description: "Product-specific controls only — see Trust Center.",
+      href: "/trust-center",
     },
   ] as const;
 
@@ -43,10 +47,11 @@ export default function SustainabilityAndResponsibilitySection() {
         {/* 3-Column Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#E5E0D5] bg-white shadow-sm flex flex-col items-start justify-between min-h-[180px] relative"
+              className="w-full p-8 border border-[#E5E0D5] bg-white shadow-sm flex flex-col items-start justify-between min-h-[180px] relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-lg font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -54,7 +59,7 @@ export default function SustainabilityAndResponsibilitySection() {
               <p className="text-gray-600 font-light leading-relaxed text-[15.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

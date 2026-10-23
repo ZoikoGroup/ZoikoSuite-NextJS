@@ -1,31 +1,39 @@
 import React from "react";
+import Link from "next/link";
 
 export default function WhereToGoFromHereSection() {
   const cards = [
     {
       title: "About ZoikoSuite",
       description: "Understand the company/product context.",
+      href: "/about",
     },
     {
       title: "Trust Center",
       description:
         "Security, privacy, compliance, evidence, and Responsible AI.",
+      href: "/trust-center",
     },
     {
       title: "Partners",
       description: "Explore governed ecosystem relationships.",
+      href: "/partners",
     },
     {
       title: "Leadership",
       description: "Meet the accountable leaders.",
+      href: "/leadership",
     },
     {
       title: "Careers",
       description: "Explore current roles.",
+      href: "/careers",
     },
     {
       title: "Zoiko Group Newsroom",
       description: "Broader Group-level news, clearly attributed.",
+      href: "https://zoikogroup.com/",
+      external: true,
     },
   ] as const;
 
@@ -48,10 +56,14 @@ export default function WhereToGoFromHereSection() {
         {/* 3x2 Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
+              {...("external" in card && card.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#E5E0D5] bg-white shadow-sm flex flex-col items-start justify-center relative"
+              className="w-full p-8 border border-[#E5E0D5] bg-white shadow-sm flex flex-col items-start justify-center relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-lg md:text-xl font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -59,7 +71,7 @@ export default function WhereToGoFromHereSection() {
               <p className="text-gray-600 font-light leading-relaxed text-[16.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function BuildWithWorkWithUsSection() {
   const cards = [
@@ -6,22 +7,26 @@ export default function BuildWithWorkWithUsSection() {
       category: "FOUNDER'S VISION",
       title: "Why we are building ZoikoSuite",
       description: "Long-term thesis and principles behind the company.",
+      href: "/founders-vision",
     },
     {
       category: "LEADERSHIP",
       title: "Meet the leaders accountable for the platform",
       description: "Executive roles, responsibilities, and governance.",
+      href: "/leadership",
     },
     {
       category: "PARTNERS",
       title: "Build and deliver with ZoikoSuite",
       description:
         "Technology, implementation, advisory, and ecosystem relationships.",
+      href: "/partners",
     },
     {
       category: "CAREERS",
       title: "Help build governed business operations",
       description: "Mission, ways of working, and open roles.",
+      href: "/careers",
     },
   ] as const;
 
@@ -44,9 +49,10 @@ export default function BuildWithWorkWithUsSection() {
         {/* Cards Grid (3 columns top, 1 bottom or flexible grid layout) */}
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200 flex flex-col"
+              href={card.href}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200 flex flex-col hover:border-[#A8843A] transition-colors"
             >
               <div>
                 {/* Category Header */}
@@ -66,7 +72,7 @@ export default function BuildWithWorkWithUsSection() {
                   {card.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

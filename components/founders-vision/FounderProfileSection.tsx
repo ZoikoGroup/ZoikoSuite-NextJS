@@ -81,13 +81,13 @@ export default function FounderProfileSection() {
                   {item.isLinks ? (
                     <div className="flex items-center gap-6">
                       <a
-                        href="#leadership"
+                        href="/leadership"
                         className="text-[#0b1329] font-medium hover:underline"
                       >
                         Meet our leadership
                       </a>
                       <a
-                        href="#zoikosuite"
+                        href="/about"
                         className="text-[#0b1329] font-medium hover:underline"
                       >
                         About ZoikoSuite

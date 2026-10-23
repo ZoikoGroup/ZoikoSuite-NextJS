@@ -6,7 +6,7 @@ export default function IntentRouterSection() {
     {
       title: "Deploy ZoikoSuite",
       actionText: "Talk to a solutions architect →",
-      href: "/solutions-architect",
+      href: "/solutions",
     },
     {
       title: "Explore Zoiko Tech broadly",

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function ContactRoutingSection() {
   const cards = [
@@ -6,28 +7,34 @@ export default function ContactRoutingSection() {
       title: "ZoikoSuite enterprise evaluation",
       description:
         "Product, architecture, deployment, and procurement discussion.",
+      href: "/enterprise-sales",
     },
     {
       title: "ZoikoSuite support",
       description: "Existing customers and technical support.",
+      href: "/support-center",
     },
     {
       title: "Corporate enquiry",
       description:
         "Questions about Group structure or public corporate information.",
+      href: "/corporate-enquiries",
     },
     {
       title: "Investor Relations",
       description: "Institutional investors and long-term capital partners.",
+      href: "/investor-relations",
     },
     {
       title: "Press & media",
       description: "Media enquiries, interviews, press assets.",
+      href: "/media-enquiries",
     },
     {
       title: "Careers",
       description:
         "Candidates and recruiting questions; employer identified per role.",
+      href: "/careers",
     },
   ] as const;
 
@@ -50,10 +57,11 @@ export default function ContactRoutingSection() {
         {/* 3x2 Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-center relative"
+              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-center relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-lg font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -61,7 +69,7 @@ export default function ContactRoutingSection() {
               <p className="text-gray-600 font-light leading-relaxed text-[16.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
