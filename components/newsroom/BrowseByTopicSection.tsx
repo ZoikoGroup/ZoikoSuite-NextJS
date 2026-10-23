@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function BrowseByTopicSection() {
   const cards = [
@@ -6,30 +7,36 @@ export default function BrowseByTopicSection() {
       title: "Product & Platform",
       description:
         "Material platform, module, integration, deployment, and availability announcements.",
+      href: "/platform",
     },
     {
       title: "Trust & Governance",
       description:
         "Security, privacy, Responsible AI, evidence, accessibility, certification/readiness, policy, residency.",
+      href: "/trust",
     },
     {
       title: "Company",
       description:
         "Institutional company, leadership, operating-model, location, and organizational announcements.",
+      href: "/company",
     },
     {
       title: "Partners & Ecosystem",
       description:
         "Approved partner, integration, implementation, or alliance announcements.",
+      href: "/partners",
     },
     {
       title: "Research & Insights",
       description:
         "Approved research, benchmarks, technical papers, executive insights.",
+      href: "/blog-insights",
     },
     {
       title: "Events & Speaking",
       description: "Approved conferences, webinars, keynotes, press briefings.",
+      href: "/webinars-events",
     },
   ] as const;
 
@@ -52,10 +59,11 @@ export default function BrowseByTopicSection() {
         {/* 3x2 Grid Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
+              href={card.href}
               style={{ borderRadius: "14px" }}
-              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-center min-h-[180px] relative"
+              className="w-full p-8 border border-[#DCD6C8] bg-white shadow-sm flex flex-col items-start justify-center min-h-[180px] relative hover:border-[#A8843A] transition-colors"
             >
               <h3 className="text-lg md:text-xl font-semibold tracking-tight text-[#0b1329] mb-3">
                 {card.title}
@@ -63,7 +71,7 @@ export default function BrowseByTopicSection() {
               <p className="text-gray-600 font-light leading-relaxed text-[16.5px]">
                 {card.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

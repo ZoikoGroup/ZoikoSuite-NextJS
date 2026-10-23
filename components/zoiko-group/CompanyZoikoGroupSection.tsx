@@ -28,6 +28,8 @@ export default function CompanyZoikoGroupSection() {
           <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://zoikogroup.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-[#C8A24A] hover:bg-[#967432] text-[#0A1D34] font-semibold text-sm tracking-wide transition-colors flex items-center gap-2"
             >

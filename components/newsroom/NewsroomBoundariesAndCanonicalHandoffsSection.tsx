@@ -1,37 +1,45 @@
 import React from "react";
+import Link from "next/link";
 
 export default function NewsroomBoundariesAndCanonicalHandoffsSection() {
   const rows = [
     {
       topic: "Live service incident",
       canonicalDestination: "Trust → System Status",
+      href: "/trust-system-status",
       newsroomRole: "Link only; no parallel incident timeline.",
     },
     {
       topic: "Certification/attestation status",
       canonicalDestination: "Trust → Certifications",
+      href: "/certifications",
       newsroomRole:
         "Announce verified milestone with exact scope; no badge-only claim.",
     },
     {
       topic: "Release notes",
       canonicalDestination: "Product / Documentation release-note system",
+      href: "/documentation",
       newsroomRole: "Newsroom only for material changes.",
     },
     {
       topic: "Investor information",
       canonicalDestination: "Company → Investor Relations or Group IR",
+      href: "/investor-relations",
       newsroomRole: "Never implies public-company reporting requirements.",
     },
     {
       topic: "Careers",
       canonicalDestination: "Company → Careers",
+      href: "/careers",
       newsroomRole:
         "Leadership/culture news may cross-link; employment facts stay in Careers/ATS.",
     },
     {
       topic: "Parent-company news",
       canonicalDestination: "Zoiko Group Newsroom",
+      href: "https://zoikogroup.com/",
+      external: true,
       newsroomRole: "Cross-linked with explicit Zoiko Group attribution.",
     },
   ] as const;
@@ -80,7 +88,15 @@ export default function NewsroomBoundariesAndCanonicalHandoffsSection() {
                 <span className="md:hidden text-xs font-semibold text-gray-400 uppercase block mb-1">
                   Canonical Destination
                 </span>
-                {row.canonicalDestination}
+                <Link
+                  href={row.href}
+                  {...("external" in row && row.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="hover:text-[#A8843A] hover:underline"
+                >
+                  {row.canonicalDestination}
+                </Link>
               </div>
 
               {/* Newsroom Role */}

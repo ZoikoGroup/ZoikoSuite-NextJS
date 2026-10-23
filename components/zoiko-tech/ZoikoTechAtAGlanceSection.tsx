@@ -66,6 +66,8 @@ export default function ZoikoTechAtAGlanceSection() {
               ) : (
                 <a
                   href={card.linkHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#0b1329] font-semibold hover:underline text-[16.5px] inline-flex items-center gap-1"
                 >
                   {card.linkText}

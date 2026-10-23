@@ -1,35 +1,43 @@
 import React from "react";
+import Link from "next/link";
 
 export default function StrategicCapitalAndPartnershipRoutingSection() {
   const rows = [
     {
       intent: "Institutional equity / growth capital",
       route: "Investor Relations",
+      href: "/investor-relations",
     },
     {
       intent: "Sovereign / infrastructure capital",
       route: "Investor Relations + Strategic Partnerships when approved",
+      href: "/investor-relations",
     },
     {
       intent: "Debt / credit relationship",
       route: "Finance / Investor Relations route",
+      href: "/investor-relations",
     },
     {
       intent: "Commercial partnership only",
       route: "Partners / Strategic Partnerships",
+      href: "/partners",
     },
     {
       intent: "M&A / corporate development",
       route:
         "Corporate Development route if publicly exposed; otherwise IR triage",
+      href: "/corporate-enquiries",
     },
     {
       intent: "Enterprise customer",
       route: "ZoikoSuite sales",
+      href: "/enterprise-sales",
     },
     {
       intent: "Media",
       route: "Newsroom / Press Office",
+      href: "/media-enquiries",
     },
   ] as const;
 
@@ -64,7 +72,12 @@ export default function StrategicCapitalAndPartnershipRoutingSection() {
 
               {/* Route Column */}
               <div className="w-full md:w-7/12 text-gray-600 font-light leading-relaxed text-[15.5px]">
-                {row.route}
+                <Link
+                  href={row.href}
+                  className="hover:text-[#A8843A] hover:underline"
+                >
+                  {row.route}
+                </Link>
               </div>
             </div>
           ))}

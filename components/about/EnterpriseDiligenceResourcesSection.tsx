@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function EnterpriseDiligenceResourcesSection() {
   const cards = [
@@ -7,24 +8,28 @@ export default function EnterpriseDiligenceResourcesSection() {
       title: "Executive Platform Brief",
       description:
         "Category, control model, and operating case in concise form.",
+      href: "/executive-briefs",
     },
     {
       category: "CFO · CIO · PROCUREMENT",
       title: "Why ZoikoSuite Is Not an ERP",
       description:
         "Where the governance layer sits relative to existing transaction systems.",
+      href: "/not-an-erp",
     },
     {
       category: "ARCHITECTURE · RISK · AUDIT",
       title: "Governance Architecture Brief",
       description:
         "Policy evaluation, authority resolution, governed execution path.",
+      href: "/governance-platform",
     },
     {
       category: "CISO · PRIVACY · PROCUREMENT",
       title: "Security & Trust Brief",
       description:
         "Control objectives, claim status, deployment and residency model.",
+      href: "/trust-center",
     },
   ] as const;
 
@@ -47,9 +52,10 @@ export default function EnterpriseDiligenceResourcesSection() {
         {/* Cards Grid (2x2) */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200 flex flex-col justify-between"
+              href={card.href}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200 flex flex-col justify-between hover:border-[#A8843A] transition-colors"
             >
               <div>
                 {/* Category Header */}
@@ -69,7 +75,7 @@ export default function EnterpriseDiligenceResourcesSection() {
                   {card.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

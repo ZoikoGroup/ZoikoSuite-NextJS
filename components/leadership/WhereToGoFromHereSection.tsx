@@ -7,7 +7,7 @@ export default function WhereToGoFromHereSection() {
       description:
         "Understand what ZoikoSuite is, how it is structured, and what it is built to govern.",
       linkText: "Read About →",
-      linkHref: "#",
+      linkHref: "/about",
       isCurrent: false,
     },
     {
@@ -15,7 +15,7 @@ export default function WhereToGoFromHereSection() {
       description:
         "Read the principles behind governance-first business operations intelligence.",
       linkText: "Read the vision →",
-      linkHref: "#",
+      linkHref: "/founders-vision",
       isCurrent: false,
     },
     {
@@ -30,7 +30,7 @@ export default function WhereToGoFromHereSection() {
       description:
         "See how technology, implementation, and ecosystem partners fit into governed delivery.",
       linkText: "Explore partnerships →",
-      linkHref: "#",
+      linkHref: "/partners",
       isCurrent: false,
     },
     {
@@ -38,7 +38,7 @@ export default function WhereToGoFromHereSection() {
       description:
         "Build systems that matter with teams focused on governed enterprise operations.",
       linkText: "Explore careers →",
-      linkHref: "#",
+      linkHref: "/careers",
       isCurrent: false,
     },
   ];

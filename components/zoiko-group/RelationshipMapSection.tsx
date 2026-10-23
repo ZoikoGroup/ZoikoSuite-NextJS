@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function RelationshipMapSection() {
   const rows = [
@@ -8,6 +9,7 @@ export default function RelationshipMapSection() {
       description:
         "Governed Business Operations Intelligence platform; product, Trust, sales, support, and customer-facing experience.",
       note: "Not presented as a separate parent company unless verified legal structure says so.",
+      href: "/about",
     },
     {
       level: "L2",
@@ -15,6 +17,7 @@ export default function RelationshipMapSection() {
       description:
         "Technology company / platform developer and operator context for ZoikoSuite.",
       note: "Not implied that every Zoiko Tech product shares ZoikoSuite data or infrastructure.",
+      href: "/zoiko-tech",
     },
     {
       level: "L3",
@@ -22,6 +25,7 @@ export default function RelationshipMapSection() {
       description:
         "Parent-group institutional context, governance, portfolio, capital, and long-term operating model.",
       note: "Not implied: automatic parent guarantee, shared liability, or product support.",
+      href: "/zoiko-group",
     },
     {
       level: "L4",
@@ -29,6 +33,8 @@ export default function RelationshipMapSection() {
       description:
         "Contextual portfolio of independently accountable operating businesses.",
       note: "Not implied: bundle, integration, shared customer account, or common data plane.",
+      href: "https://zoikogroup.com/",
+      external: true,
     },
   ] as const;
 
@@ -67,9 +73,15 @@ export default function RelationshipMapSection() {
                 <span className="text-[#A8843A] font-serif font-bold text-lg min-w-[28px]">
                   {row.level}
                 </span>
-                <span className="text-[#0b1329] font-semibold text-base tracking-tight">
+                <Link
+                  href={row.href}
+                  {...("external" in row && row.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="text-[#0b1329] font-semibold text-base tracking-tight hover:text-[#A8843A] hover:underline"
+                >
                   {row.name}
-                </span>
+                </Link>
               </div>
 
               {/* Description */}

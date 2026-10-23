@@ -28,10 +28,10 @@ export default function ZoikoTechSection() {
 
           {/* Links */}
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/solutions-architect" className="bg-[#C8A24A] hover:bg-[#967332] text-[#0A1D34] font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base">
+            <Link href="/solutions" className="bg-[#C8A24A] hover:bg-[#967332] text-[#0A1D34] font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base">
               Talk to a solutions architect
             </Link>
-            <Link href="https://zoikotech.com/" className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base flex items-center gap-2">
+            <Link href="https://zoikotech.com/" target="_blank" rel="noopener noreferrer" className="bg-transparent hover:bg-white/10 text-white border border-white/20 font-semibold px-6 py-3 rounded-xl transition-colors text-sm md:text-base flex items-center gap-2">
               Visit Zoiko Tech →
             </Link>
           </div>

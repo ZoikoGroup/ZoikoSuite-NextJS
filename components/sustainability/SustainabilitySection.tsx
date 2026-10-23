@@ -35,7 +35,7 @@ export default function SustainabilitySection() {
               Review sustainability evidence
             </a>
             <a
-              href="/solutions-architect"
+              href="/solutions"
               style={{ borderRadius: "8px" }}
               className="px-6 py-3 bg-transparent border border-[#1B3452] text-white text-sm font-semibold tracking-wide hover:bg-white/5 transition-colors"
             >
