@@ -1,0 +1,47 @@
+/*
+ * ZoikoSuite Assistant — website colour tokens.
+ *
+ * Doc 01 §07: "Exact colors, avatar and spacing must use approved production
+ * tokens." The widget (assistant.css) is shared with the console and keeps
+ * its own palette there; on the website its colour roles take the site's
+ * navy, gold and cream tokens (app/globals.css). Only colour roles change:
+ * sizes, spacing and states stay as specified in assistant.css.
+ *
+ * Contrast (WCAG 2.2 AA, Doc 01 §17): white on --za-accent / --za-user-bg
+ * >= 9:1; --za-accent-text >= 7:1 on its surface; --za-focus and
+ * --za-option-border >= 3:1 against the surface they sit on.
+ */
+
+html [data-za-root] {
+  --za-surface: #ffffff;
+  --za-surface-muted: #f6f1e6;      /* cream (grey-93-7) */
+  --za-header-bg: #fbfaf7;          /* cream (grey-98-8) */
+  --za-card-bg: #ffffff;
+  --za-border: #dcd6c8;             /* orange-82 */
+  --za-text: #0a1d34;               /* navy (azure-12-3) */
+  --za-text-muted: #4b5872;         /* azure-37-2: 7.1:1 on white */
+  --za-accent: #0f476a;             /* site navy CTA: send, dot */
+  --za-accent-text: #12365e;        /* title, labels: 11:1 on white */
+  --za-accent-soft: #f6f1e6;        /* pill and option hover */
+  --za-option-border: #a8843a;      /* gold (orange-44): 3.3:1 */
+  --za-user-bg: linear-gradient(135deg, #0f476a 0%, #0e2843 100%);
+  --za-user-text: #ffffff;
+  --za-focus: #12365e;
+}
+
+html [data-za-root][data-za-theme="dark"] {
+  --za-surface: #0a1d34;            /* azure-12-3 */
+  --za-surface-muted: #0e2843;      /* azure-16 */
+  --za-header-bg: #081729;
+  --za-card-bg: #0e2843;
+  --za-border: #1a4270;             /* azure-27-3 */
+  --za-text: #f6f1e6;
+  --za-text-muted: #c7d2e2;         /* azure-66-3: 11:1 */
+  --za-accent: #1a4270;             /* white send icon: 10:1 */
+  --za-accent-text: #d4b266;        /* gold (orange-62): 8:1 on the panel */
+  --za-accent-soft: rgba(200, 162, 74, 0.14);
+  --za-option-border: #a8843a;
+  --za-user-bg: linear-gradient(135deg, #1a4270 0%, #0f476a 100%);
+  --za-user-text: #ffffff;
+  --za-focus: #d4b266;
+}
