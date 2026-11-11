@@ -20,6 +20,33 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## ZoikoSuite Assistant (chatbot)
+
+Every page except `/sign-in` and `/sign-up` shows the ZoikoSuite Assistant, the
+anonymous public chatbot specified in the Suivo Docs 01–11. It is the same
+widget as the console's (`zoiko-suite-frontend-platform/components/assistant`)
+and talks to the `public-ai-svc` service in `zoiko-suite-backend`.
+
+- `components/assistant/` — the widget. `mount.ts` decides where it shows and
+  the Doc 02 §22 page family each page sends (pricing, platform, trust,
+  support, demo, else the four Homepage chips).
+- `app/public-ai/v1/[...path]/route.ts` — same-origin proxy to the service.
+  Only the assistant's own headers cross; cookies and `Authorization` are
+  dropped, cross-site calls are refused, and nothing is cached but `/config`
+  and `/menu`.
+
+Server settings (environment variables):
+
+| Variable | Default | Production |
+|---|---|---|
+| `ZOIKO_PUBLIC_AI_URL` | `http://127.0.0.1:8001` | the service's internal URL |
+| `ZOIKO_PUBLIC_AI_ORIGIN` | `http://localhost:3000` | this site's origin, e.g. `https://www.zoikosuite.com`; it must also be in the service's `PUBLIC_AI_ALLOWED_ORIGINS` |
+| `LAUNCHER_BOTTOM_OFFSET` | `0` | px to lift the launcher above a cookie banner or sticky footer |
+
+Locally, start the service once from `zoiko-suite-backend` (it then restarts by
+itself): `docker compose -f deployments/docker-compose.public-ai-dev.yml up -d --build`.
+Port 3000 is the console's; run this site on another port, e.g. `npx next dev -p 3005`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

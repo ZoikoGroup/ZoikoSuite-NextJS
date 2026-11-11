@@ -3,6 +3,8 @@ import { Inter, Archivo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { AssistantMount } from "@/components/assistant/AssistantMount";
+import { launcherOffset, resolveLogos } from "@/components/assistant/logos.server";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +38,10 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
 
         <Footer />
+
+        {/* ZoikoSuite Assistant (Docs 01-11): anonymous public chat on every
+            page but sign-in/sign-up; see components/assistant/mount.ts. */}
+        <AssistantMount logos={resolveLogos()} launcherOffset={launcherOffset()} />
       </body>
     </html>
   );
