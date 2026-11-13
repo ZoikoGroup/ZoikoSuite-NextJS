@@ -42,6 +42,11 @@ Server settings (environment variables):
 | `ZOIKO_PUBLIC_AI_URL` | `http://127.0.0.1:8001` | the service's internal URL |
 | `ZOIKO_PUBLIC_AI_ORIGIN` | `http://localhost:3000` | this site's origin, e.g. `https://www.zoikosuite.com`; it must also be in the service's `PUBLIC_AI_ALLOWED_ORIGINS` |
 | `LAUNCHER_BOTTOM_OFFSET` | `0` | px to lift the launcher above a cookie banner or sticky footer |
+| `ZOIKO_SITE_ORIGIN` | (from the Host / X-Forwarded-Host header) | optional: this site's public origin(s), comma-separated, if the proxy in front rewrites the Host header |
+
+Behind Cloudflare or nginx the chat route sees an internal URL, so it accepts
+the browser's `Sec-Fetch-Site: same-origin` and otherwise compares `Origin` with
+the public host; other sites are still refused.
 
 Locally, start the service once from `zoiko-suite-backend` (it then restarts by
 itself): `docker compose -f deployments/docker-compose.public-ai-dev.yml up -d --build`.
