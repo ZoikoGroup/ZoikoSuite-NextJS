@@ -76,18 +76,45 @@ export function responseHeaders(upstream: Headers, path = ""): Headers {
 }
 
 /**
- * SEC-T012: refuse cross-site callers. Browsers mark these with
- * Sec-Fetch-Site; when an Origin is present it must be this app's own.
+ * The origins this site is reached at. Behind a CDN or reverse proxy
+ * (Cloudflare, nginx) the request URL Next sees is the internal one
+ * (http://localhost:3000), not the public https://zoikosuite.com, so the
+ * public origin also comes from the forwarded host and protocol, the Host
+ * header and the optional ZOIKO_SITE_ORIGIN setting.
  */
-export function crossSite(incoming: Headers, url: string): boolean {
-  if (incoming.get("sec-fetch-site") === "cross-site") return true;
+export function siteOrigins(incoming: Headers, url: string, env: Record<string, string | undefined> = process.env): Set<string> {
+  const out = new Set<string>();
+  try {
+    out.add(new URL(url).origin);
+  } catch {
+    /* no usable request URL */
+  }
+  const proto = (incoming.get("x-forwarded-proto") ?? "").split(",")[0].trim() || "https";
+  for (const host of [incoming.get("x-forwarded-host"), incoming.get("host")]) {
+    const h = (host ?? "").split(",")[0].trim();
+    if (/^[A-Za-z0-9.-]+(:\d{1,5})?$/.test(h)) {
+      out.add(`${proto}://${h}`);
+      out.add(`https://${h}`);
+    }
+  }
+  for (const o of (env.ZOIKO_SITE_ORIGIN ?? "").split(",")) {
+    if (o.trim()) out.add(o.trim().replace(/\/+$/, ""));
+  }
+  return out;
+}
+
+/**
+ * SEC-T012: refuse cross-site callers. A browser marks every fetch with
+ * Sec-Fetch-Site, which page scripts cannot set, so it decides when present.
+ * Otherwise an Origin, when sent, must be one of this site's own.
+ */
+export function crossSite(incoming: Headers, url: string, env: Record<string, string | undefined> = process.env): boolean {
+  const site = incoming.get("sec-fetch-site");
+  if (site === "cross-site") return true;
+  if (site === "same-origin" || site === "same-site" || site === "none") return false;
   const origin = incoming.get("origin");
   if (!origin) return false;
-  try {
-    return origin !== new URL(url).origin;
-  } catch {
-    return true;
-  }
+  return !siteOrigins(incoming, url, env).has(origin);
 }
 
 /**
@@ -97,14 +124,10 @@ export function crossSite(incoming: Headers, url: string): boolean {
  * console's approved Origin (added by forwardHeaders) is never lent to a
  * caller that did not show one. GET stays open to header-less callers.
  */
-export function writeAllowed(method: string, incoming: Headers, url: string): boolean {
+export function writeAllowed(method: string, incoming: Headers, url: string, env: Record<string, string | undefined> = process.env): boolean {
   if (method !== "POST" && method !== "DELETE") return true;
   if (incoming.get("sec-fetch-site") === "same-origin") return true;
   const origin = incoming.get("origin");
   if (!origin) return false;
-  try {
-    return origin === new URL(url).origin;
-  } catch {
-    return false;
-  }
+  return siteOrigins(incoming, url, env).has(origin);
 }
