@@ -385,7 +385,7 @@
    the narrowest it is dropped (it is decorative; the title names the panel). */
 @container za-panel (max-width: 410px) {
   .za-header-tile { height: 28px !important; padding: 0 6px !important; }
-  .za-header-tile img { height: 20px !important; width: auto !important; }
+  .za-header-tile img { height: 16px !important; width: auto !important; }
 }
 @container za-panel (max-width: 380px) {
   .za-header-tile { display: none !important; }
