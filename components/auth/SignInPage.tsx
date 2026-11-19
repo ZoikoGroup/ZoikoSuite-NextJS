@@ -529,11 +529,11 @@ export default function SignInPage() {
           {/* Logo on small screens, where the brand panel is hidden */}
           <Link href="/" className="lg:hidden mb-6 flex">
             <Image
-              src="/logo.png"
+              src="/zoikosuite-logo.webp"
               alt="Zoiko Suite Logo"
-              width={140}
-              height={40}
-              className="h-auto w-[130px] object-contain object-left"
+              width={170}
+              height={29}
+              className="h-auto w-[170px] object-contain object-left"
               priority
             />
           </Link>

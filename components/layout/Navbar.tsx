@@ -1445,11 +1445,12 @@ function MobileDrawer({
             {/* Header */}
             <div className="shrink-0 h-16 sm:h-20 px-4 sm:px-6 flex items-center justify-between border-b border-[#EAEEF4]">
               <Link href="/" onClick={onClose} className="flex items-center">
-                <div className="w-[120px] h-[48px] relative overflow-hidden">
+                <div className="w-[150px] h-[40px] relative overflow-hidden">
                   <Image
-                    src="/logo.png"
+                    src="/zoikosuite-logo.webp"
                     alt="Zoiko Suite Logo"
                     fill
+                    sizes="150px"
                     className="object-contain object-left"
                   />
                 </div>
@@ -1834,11 +1835,11 @@ export default function Navbar() {
             <Link href="/" className="flex items-center shrink-0">
               <div className="relative">
                 <Image
-                  src="/logo.png"
+                  src="/zoikosuite-logo.webp"
                   alt="Zoiko Suite Logo"
-                  width={150}
-                  height={40}
-                  className="object-contain object-left w-[124px] xl:w-[150px] h-auto"
+                  width={200}
+                  height={34}
+                  className="object-contain object-left w-[160px] xl:w-[200px] h-auto"
                   priority
                 />
               </div>
@@ -1934,11 +1935,12 @@ export default function Navbar() {
           <div className="flex lg:hidden w-full h-16 sm:h-20 items-center justify-between px-4 sm:px-6 relative z-20 bg-[#FFFFFF]">
             {/* Brand Logo Image */}
             <Link href="/" className="flex items-center">
-              <div className="w-[120px] h-[48px] relative overflow-hidden">
+              <div className="w-[150px] h-[40px] relative overflow-hidden">
                 <Image
-                  src="/logo.png"
+                  src="/zoikosuite-logo.webp"
                   alt="Zoiko Suite Logo"
                   fill
+                  sizes="150px"
                   className="object-contain object-left"
                   priority
                 />

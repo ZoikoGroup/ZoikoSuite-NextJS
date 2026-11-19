@@ -52,7 +52,7 @@ export function ZTile({ src, size, radius, className }: { src: string; size: num
 }
 
 /**
- * The full wordmark (public/logo.png, 336×144) on a white container, so its
+ * The full wordmark (public/zoikosuite-logo.webp, 6226×1054) on a white container, so its
  * navy lettering stays visible on the dark theme. Used in the panel header
  * and the privacy notice. Width is fixed from the aspect ratio so nothing
  * moves while it loads; a failed image becomes the "ZoikoSuite" word.
@@ -69,7 +69,7 @@ export function FullLogo({ src, className }: { src: string; className?: string }
         <span className="text-sm font-semibold text-[#0a1a30]">ZoikoSuite</span>
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt="" width={65} height={28} onError={() => setFailed(true)} className="h-7 w-auto object-contain" />
+        <img src={src} alt="" width={118} height={20} onError={() => setFailed(true)} className="h-5 w-auto object-contain" />
       )}
     </span>
   );

@@ -453,15 +453,15 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="ZoikoSuite home"
-              className="inline-block w-40"
+              className="inline-block"
             >
-              <div className="flex h-20 w-40 overflow-hidden p-3">
+              <div className="flex w-56 items-center rounded-lg bg-white px-4 py-3">
                 <Image
-                  src="/navbar/footerLogo.png"
+                  src="/zoikosuite-logo.webp"
                   alt="ZoikoSuite Logo"
-                  width={140}
-                  height={74}
-                  className="h-auto w-auto object-contain"
+                  width={192}
+                  height={33}
+                  className="h-auto w-full object-contain"
                 />
               </div>
             </Link>
